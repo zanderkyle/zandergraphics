@@ -1,0 +1,22 @@
+/**
+ * @package   Versatility4 Template - RocketTheme
+* @version   $Id: menustyle1.css 26096 2015-01-27 14:14:12Z james $
+* @author    RocketTheme, LLC http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+* @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * Rockettheme Versatility4 Template uses the Joomla Framework (http://www.joomla.org), a GNU/GPLv2 content management system
+ *
+ */
+
+#horiz-menu {display: block;height: 43px;line-height: 43px;padding: 0 6px;background: url(../images/horiz-menu-bar.png) 0 0 repeat-x;}
+ul#horiznav.menutop, #horiz-menu ul.menutop {padding: 0;margin: 0;position: relative;z-index:120;}
+#horiz-menu li, #horiz-menu li a {z-index:200;position:relative;}
+#horiz-menu a, #horiz-menu .separator {white-space: nowrap;display: block;float: left;height: 43px;line-height: 43px;font-weight: normal;font-size: 120%;overflow: hidden;text-decoration: none;z-index: 100;cursor: pointer;padding: 0 15px;background: url(../images/horiz-menu-div.png) 100% 50% no-repeat;}
+#horiz-menu li.active a, #horiz-menu li.active .separator {z-index: 100;cursor: pointer;height: 43px;}
+#sub-menu {height: 28px;line-height: 28px;padding: 1px 0;display: block;z-index: 1;}
+#submenu-container {background: url(../images/sub-menu-bar.png) 0 43px repeat-x;z-index: 1;padding-bottom: 2px;}
+#sub-menu ul.menusub {padding: 0;margin: 0;position: relative;height: 28px;z-index: 1;}
+#sub-menu a, #sub-menu .separator {white-space: nowrap;display: block;float: left;height: 29px;line-height: 28px;font-size: 110%;overflow: hidden;text-decoration: none;z-index: 100;cursor: pointer;padding: 0 16px;}
+#sub-menu ul.menusub li span {padding: 0;margin: 0;height: 28px;line-height: 28px;}
+#sub-menu ul.menusub li.active a {font-weight: bold;}

@@ -1,0 +1,19 @@
+/**
+ * @package   Versatility4 Template - RocketTheme
+* @version   $Id: rokslidestrip.css 28763 2015-09-02 16:39:33Z james $
+* @author    RocketTheme, LLC http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+* @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * Rockettheme Versatility4 Template uses the Joomla Framework (http://www.joomla.org), a GNU/GPLv2 content management system
+ *
+ */
+#moduleslider-size hr {clear: both;height: 0;border: 0;display: none;}
+#rokslide-wrapper del {text-decoration: none;clear: both;}
+ul#rokslide-toolbar {margin: 0;list-style-type: none;white-space: nowrap;}
+#rokslide-toolbar li {float: left;display: block;}
+#rokslide-toolbar span {cursor: pointer;display: block;text-align: center;padding: 0 18px;}
+div#frame {clear: both;position: relative;overflow: hidden;z-index: 1;}
+div#frame div.button {display: none;}
+#scroller {margin: 0 auto;overflow: hidden;}
+#moduleslide .tab-pane {overflow: hidden;float: left;}

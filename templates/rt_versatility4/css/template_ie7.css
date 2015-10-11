@@ -1,0 +1,27 @@
+/**
+ * @package   Versatility4 Template - RocketTheme
+* @version   $Id: template_ie7.css 26096 2015-01-27 14:14:12Z james $
+* @author    RocketTheme, LLC http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+* @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * Rockettheme Versatility4 Template uses the Joomla Framework (http://www.joomla.org), a GNU/GPLv2 content management system
+ *
+ */
+/* font tweaking for optima/lucida font */
+#ff-optima h1,#ff-optima h2,#ff-optima h3,#ff-optima h4,#ff-optima h5,#ff-optima h6, #ff-lucida h1,#ff-lucida h2,#ff-lucida h3,#ff-lucida h4,#ff-lucida h5,#ff-lucida h6 {letter-spacing: -0.07em;}
+body#ff-optima, body#ff-lucida {letter-spacing: -0.03em;}
+body#ff-georgia, body#ff-georgia.f-default {font-size: 12px;}
+.menu span {cursor:pointer;}
+#bottom-menu, #maincol, #leftcol, #rightcol, #bottom, .module, .moduletable, .variation-chooser, #news-rotator, #news-rotator .story, #news-rotator-bg, .moduletable-rotator .rokstories-layout2 {zoom: 1;}
+.module input.button, .moduletable input.button {font-size: 75%;}
+a.readon2 {line-height: 150%;}
+#horiz-menu li li a, #horiz-menu li.active li a, #horiz-menu li li .separator, #horiz-menu li.active li .separator {width:100%;}
+#horiz-menu ul ul li a.daddy, #horiz-menu ul ul li a.daddy:hover, #horiz-menu ul li.active.parent ul li a.daddy, #horiz-menu ul ul li .separator.daddy, #horiz-menu ul ul li .separator.daddy:hover, #horiz-menu ul li.active.parent ul li .separator.daddy {background-position: 90% 60%;}
+#news-rotator .image {position: absolute;left: 2px;top: 0;}
+.sidenav-block, .moduletable-hilite7, .moduletable_menu {position: relative;z-index: 2;}
+.sidenav-block ul, .moduletable_menu ul {position: relative; z-index: 10;}
+.module input.button, .moduletable input.button, .module-hilite1 input.button, module-hilite2 input.button, module-hilite3 input.button, .module-hilite4 input.button, .module-hilite5 input.button, .module-hilite6 input.button, .module-hilite7 input.button, .module-hilite8 input.button, .module-hilite9 input.button, .module-clean input.button, .moduletable-hilite1 input.button, .moduletable-hilite2 input.button, .moduletable-hilite3 input.button, .moduletable-hilite4 input.button, .moduletable-hilite5 input.button, .moduletable-hilite6 input.button, .moduletable-hilite7 input.button, .moduletable-hilite8 input.button, .moduletable-hilite9 input.button, .moduletable-clean input.button {font-size: 8px;}
+#searchmod {height: 28px;}
+#bottom-menu .menu-bottom a, #bottom-menu .menu-bottom a#active_menu.mainlevel {line-height: 50px;}
+#horiz-menu li.sfHover li.sfHover {background: none;}

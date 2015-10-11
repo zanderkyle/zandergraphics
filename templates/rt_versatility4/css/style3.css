@@ -1,0 +1,154 @@
+/**
+ * @package   Versatility4 Template - RocketTheme
+* @version   $Id: style3.css 28771 2015-09-07 16:41:33Z james $
+* @author    RocketTheme, LLC http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+* @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * Rockettheme Versatility4 Template uses the Joomla Framework (http://www.joomla.org), a GNU/GPLv2 content management system
+ *
+ */
+/* @group Style3 Colors */
+
+/* Primary Colors */
+
+body {background: #DCE6E2;}
+a {color: #72918B;}
+
+#horiz-menu, #horiz-menu ul ul, ul.menu li.active.parent ul, ul.menu li.active.parent {background-color: #34596E;}
+.contentheading, h1, h4, .module h3 span, .moduletable h3 span, .submenu-block h3 span, .module-clean h3 span, .moduletable-clean h3 span, .module-hilite4 h3 span, .moduletable-hilite4 h3 span, a#active_menu.mainlevel, a.child:hover, a#active_menu.sublevel, a.sublevel:hover, #rokslide-toolbar li.current, #rokslide-toolbar li:hover {color: #34596E;}
+
+#submenu-container, .menustyle2 #horiz-menu li.active a, .menustyle2 #horiz-menu li.active .separator, .sidenav-block, .moduletable ul.menu, .moduletable_menu {background-color: #1E3643;}
+#top-menu ul.menu {background: none}
+.module-hilite5, .moduletable-hilite5, .module-hilite7, .moduletable-hilite7 {background: #1E3643;}
+.module-hilite2 h3 span, .moduletable-hilite2 h3 span, .module-hilite2 a, .moduletable-hilite2 a, ul.menu li.active.parent a:hover, ul.menu li.active.parent .separator:hover, ul.menu li.active.parent li.active.parent a:hover, ul.menu li.active.parent li.active.parent .separator:hover, ul.menu li.active li.active a, ul.menu li.active li.active .separator, ul.menu li.active.parent ul li.active.parent a.daddy, ul.menu li.active.parent ul li.active.parent .separator.daddy, ul.menu li.active li.active li.active a, ul.menu li.active li.active li.active .separator, .menustyle2 #sub-menu a:hover, .menustyle2 #sub-menu ul.menusub li.active a {color: #1E3643;}
+#horiz-menu {border-top: 1px solid #1E3643;}
+
+.module-hilite5 h3 span, .moduletable-hilite5 h3 span, .module-hilite5 a, .moduletable-hilite5 a, .module-hilite7 h3 span, .moduletable-hilite7 h3 span, .module-hilite7 a, .moduletable-hilite7 a, ul.menu a:hover, ul.menu .separator:hover, ul.menu li.active a, ul.menu li.active .separator, .menustyle2 #horiz-menu li.active a, .menustyle2 #horiz-menu li.active .separator, .menustyle2 #horiz-menu li a:hover, .menustyle2 #horiz-menu li .separator:hover, .menustyle2 #sub-menu a, .menustyle3 #sub-menu a, .menustyle4 #sub-menu a, .moduletable-hilite7 ul.menu li li#current.active a, .moduletable-hilite7 ul.menu li li.current.active a,, .moduletable-hilite7 ul.menu li li a.child:hover, .moduletable-hilite7 ul.menu li li a.sublevel:hover, .moduletable-hilite7 ul.menu li.active.parent a.daddy:hover, #top-menu a.child:hover {color: #8DB2C9;}
+#horiz-menu ul ul li a:hover {color: #8DB2C9 !important;}
+
+.menustyle1 ul.menu li.active.current a.child, .menustyle1 ul.menu li#current.active a.child, .menustyle1 ul.menu li a:hover, .menustyle1 ul.menu li.parent a.daddy:hover, .menustyle1 ul.menu li.parent li a.child:hover,
+.menustyle2 ul.menu li.active.current a.child, .menustyle2 ul.menu li#current.active a.child, .menustyle2 ul.menu li a:hover, .menustyle2 ul.menu li.parent a.daddy:hover, .menustyle2 ul.menu li.parent li a.child:hover,
+.menustyle3 ul.menu li.active.current a.child, .menustyle3 ul.menu li#current.active a.child, .menustyle3 ul.menu li a:hover, .menustyle3 ul.menu li.parent a.daddy:hover, .menustyle3 ul.menu li.parent li a.child:hover, .menustyle3 #sub-menu ul.menusub li a.child, .menustyle4 ul.menu li.active.current a.child, .menustyle4 ul.menu li#current.active a.child, .menustyle4 ul.menu li a:hover, .menustyle4 ul.menu li.parent a.daddy:hover, .menustyle4 ul.menu li.parent li a.child:hover, .menustyle1 #sub-menu ul.menusub li a.child, .menustyle2 #sub-menu ul.menusub li a.child, .menustyle2 #sub-menu ul.menusub li a.child, .menustyle4 #sub-menu ul.menusub li a.child, .menustyle1 .moduletable-hilite7 h3 span, .menustyle2 .moduletable-hilite7 h3 span, .menustyle3 .moduletable-hilite7 h3 span, .menustyle4 .moduletable-hilite7 h3 span, .menustyle2 #horiz-menu ul.menutop li.parent.active a.child, .menustyle2 #horiz-menu ul.menutop li a.child:hover {color: #8DB2C9;}
+
+.module-hilite6, .moduletable-hilite6 {background: #444;border: 1px solid #333;}
+.module-hilite8, .moduletable-hilite8 {background: #444;}
+.module-hilite3, .moduletable-hilite3 {background: #d7d7d7;border: 1px solid #c7c7c7;}
+.module-hilite9, .moduletable-hilite9 {background: #d7d7d7;}
+.module-hilite1, .moduletable-hilite1 {background: #B8D9D4;border: 1px solid #A8C2BE;}
+.module-hilite2, .moduletable-hilite2 {background: #DCE6E2;border: 1px solid #C1CBC7;}
+
+.module-hilite5, .moduletable-hilite5 {border: 1px solid #003F67;}
+
+.module-hilite6 h3 span, .moduletable-hilite6 h3 span, .module-hilite6 a, .moduletable-hilite6 a, .module-hilite8 h3 span, .moduletable-hilite8 h3 span, .module-hilite8 a, .moduletable-hilite8 a, .moduletable-hilite8 a#active_menu.mainlevel, .moduletable-hilite8 a#active_menu.sublevel, .moduletable-hilite8 a.child:hover, .moduletable-hilite8 a.sublevel:hover {color: #aaa;}
+
+.module-hilite1 h3 span, .moduletable-hilite1 h3 span, .module-hilite1 a, .moduletable-hilite1 a, .moduletable-rotator .feature-title{color: #66847E;}
+
+#bottom-menu .menu-bottom a {color: #C8D0CE;}
+#bottom, #bottommodules .module h3 span, .footer-module .moduletable h3 span {color: #3F504E;}
+
+/* Neutral Colors */
+
+#bottom a, a.readon2:hover, .module input.button:hover, .moduletable input.button:hover {color: #000;}
+
+body, .componentheading, h2, .module h3, .moduletable h3, .submenu-block h3, .module-clean h3, .moduletable-clean h3, #bottommodules .module h3, .footer-module .moduletable h3, body.icon1 .module-hilite1 h3, body.icon1 .moduletable-hilite1 h3, body.icon1 .module-hilite2 h3, body.icon1 .moduletable-hilite2 h3, body.icon1 .module-hilite3 h3, body.icon1 .moduletable-hilite3 h3, body.icon1 .module-hilite4 h3, body.icon1 .moduletable-hilite4 h3, body.icon2 .module-hilite1 h3, body.icon2 .moduletable-hilite1 h3, body.icon2 .module-hilite2 h3, body.icon2 .moduletable-hilite2 h3, body.icon2 .module-hilite3 h3, body.icon2 .moduletable-hilite3 h3, body.icon2 .module-hilite4 h3, body.icon2 .moduletable-hilite4 h3, body.icon3 .module-hilite1 h3, body.icon3 .moduletable-hilite1 h3, body.icon3 .module-hilite2 h3, body.icon3 .moduletable-hilite2 h3, body.icon3 .module-hilite3 h3, body.icon3 .moduletable-hilite3 h3, body.icon3 .module-hilite4 h3, body.icon3 .moduletable-hilite4 h3, #bottom-menu .menu-bottom a:hover, #bottom-menu .menu-bottom a#active_menu.mainlevel, #headerblock-right, .logo-module, #searchmod .inputbox, a.readon2, .moduletable-hilite9 a.child, .moduletable-hilite9 a.sublevel, a.readon2:hover {color: #333;}
+
+span.small, td.createdate, td.modifydate, .module-hilite3 h3 span, .moduletable-hilite3 h3 span, .module-hilite3 a, .moduletable-hilite3 a, .module-hilite9 h3 span, .moduletable-hilite9 h3 span, .module-hilite9 a, .moduletable-hilite9 a, a.child, a.sublevel, span.pathway, .moduletable-hilite9 a#active_menu.mainlevel, .moduletable-hilite9 a#active_menu.sublevel, .moduletable-hilite9 a.child:hover, .moduletable-hilite9 a.sublevel:hover {color: #666;}
+
+.sidenav-block .module-menu h3, #banner-mod, .moduletable_menu h3 {color: #ccc;}
+
+.sidenav-block .module-menu h3 span, #searchmod input.button, .module-hilite5, .moduletable-hilite5, .module-hilite6, .moduletable-hilite6, .module-hilite7, .moduletable-hilite7, .module-hilite8, .moduletable-hilite8, body.icon1 .module-hilite5 h3, body.icon1 .moduletable-hilite5 h3, body.icon1 .module-hilite6 h3, body.icon1 .moduletable-hilite6 h3, body.icon2 .module-hilite5 h3, body.icon2 .moduletable-hilite5 h3, body.icon2 .module-hilite6 h3, body.icon2 .moduletable-hilite6 h3, body.icon3 .module-hilite5 h3, body.icon3 .moduletable-hilite5 h3, body.icon3 .module-hilite6 h3, body.icon3 .moduletable-hilite6 h3, .module-hilite7, .moduletable-hilite7, .module-hilite8, .moduletable-hilite8, ul.menu li.active.parent a, ul.menu li.active.parent .separator, ul.menu li.active.parent li.active.parent a, ul.menu li.active.parent li.active.parent .separator, ul.menu a, ul.menu .separator, .menustyle1 #sub-menu a, .menustyle4 #horiz-menu li:hover, #horiz-menu a, #horiz-menu .separator, #horiz-menu li a, #horiz-menu li .separator, .menustyle2 #sub-menu a:hover, .menustyle2 #sub-menu ul.menusub li.active a, .menustyle3 #horiz-menu li.active a, .menustyle3 #horiz-menu li.active .separator, .menustyle3 #horiz-menu li:hover a, .menustyle3 #horiz-menu li:hover .separator, .menustyle3 #sub-menu a:hover, .menustyle3 #sub-menu ul.menusub li.active a, .menustyle3 #sub-menu li.active a, .menustyle3 #sub-menu li.active .separator, .menustyle4 #sub-menu a:hover, .menustyle4 #sub-menu ul.menusub li.active a, .menustyle4 #horiz-menu li.active a, .menustyle4 #horiz-menu li.active .separator, .menustyle1 #horiz-menu li.active a, .menustyle1 #horiz-menu li.active .separator, .menustyle1 #horiz-menu li:hover a, .menustyle1 #horiz-menu li:hover .separator, .menustyle3 #horiz-menu li:hover, .moduletable-hilite7 a.child, .moduletable-hilite7 a.sublevel, .moduletable-hilite8 a.child, .moduletable-hilite8 a.sublevel, .moduletable-rotator .feature-desc, .moduletable_menu h3 span, .menustyle2 #horiz-menu li.active li a, .menustyle1 #sub-menu ul.menusub li a.child:hover, .menustyle2 #sub-menu ul.menusub li a.child:hover, .menustyle3 #sub-menu ul.menusub li a.child:hover, .menustyle4 #sub-menu ul.menusub li a.child:hover, .menustyle1 #sub-menu ul.menusub li a.child {color: #fff;}
+#mainmodules3, .module-hilite4, .moduletable-hilite4, input#mod_login_username.inputbox, input#mod_login_password.inputbox, input#modlgn-username.inputbox, input#modlgn-passwd.inputbox, .module input.button, .moduletable input.button {background: #fff;}
+#main-body, #moduleslider-size {background-color: #fff;}
+
+#header-bar {background-color: #EFEFEF;}
+#bottom {background: #B8BFBC;}
+#topbanner {background: #fbfbfb;}
+.tool-tip {background: #f6f6f6;}
+tr.sectiontableentry1 td, td.sectiontableentry1 {background: #f7f7f7 url(../images/module-h3.png) 0 0 repeat-x;}
+.module input.button:hover, .moduletable input.button:hover {background: #eee;}
+
+/* Borders */
+
+#header-divider, .maincontent-surround, #mainmodules .block, #mainmodules2 .block, #leftcol .moduletable, #rightcol .moduletable, #maincol .banner-module .moduletable, #maincol .banner-module2 .moduletable, #moduleslider-size.alt, .showcase-module .moduletable, .showcase-module2 .moduletable {border-top: 1px solid #ddd;}
+#leftcol, .showcase-module, #mainmodules .block.first, #mainmodules .block.middle, #mainmodules2 .block.first, #mainmodules2 .block.middle, #horiz-menu, #sub-menu, #main-body, #header-bar {border-right: 1px solid #ddd;}
+#rightcol, .showcase-module, #horiz-menu, #sub-menu, #main-body, #header-bar {border-left: 1px solid #ddd;}
+#topbanner, #pathway, fieldset, #main-body {border-bottom: 1px solid #ddd;}
+#mainmodules3, #moduleslider-size.alt-bottom, .module-hilite4, .moduletable-hilite4 {border: 1px solid #ddd;}
+
+.module input.button, .moduletable input.button, input#mod_login_username.inputbox, input#mod_login_password.inputbox, input#modlgn-username.inputbox, input#modlgn-passwd.inputbox {border: 1px solid #ccc;}
+
+#horiz-menu ul ul {border: 1px solid #ddd;}
+#bottom, #bottom-menu {border-right: 1px solid #bbb;border-left: 1px solid #bbb;}
+ul.menu li, .moduletable-hilite7 table td {border-bottom: 1px solid #1A2E39;}
+.moduletable-hilite8 table td {border-bottom: 1px solid #333;}
+.moduletable-hilite9 table td {border-bottom: 1px solid #c7c7c7;}
+.tool-tip {border: 1px solid #e6e6e6;}
+tr.sectiontableentry1 td, tr.sectiontableentry2 td, td.sectiontableentry1, td.sectiontableentry2 {border-bottom: 1px solid #f1f1f1;}
+
+/* @end */
+
+/* @group Style3 Images */
+
+#header-bar {background-image: url(../images/header-bar.png);background-position: 0 0;background-repeat: repeat-x;}
+#logo {background: url(../images/style3/logo.png) 0 0 no-repeat;}
+#searchmod input.button {background: url(../images/style3/search-button.png) no-repeat;}
+#searchmod .inputbox {background: url(../images/search-bg.png) 0 0 no-repeat;}
+#main-body {background-image: url(../images/module-bottom-bg.png);background-position: 50% 100%;background-repeat: repeat-x;}
+#bottom-menu {background: url(../images/style3/bottom-menu-bar.png) 0 0 repeat-x;}
+img#rocket {background: url(../images/style3/rocket.png) 0 0 no-repeat;}
+img#rocket2 {background: url(../images/style3/rocket2.png) 0 0 no-repeat;}
+.module h3, .moduletable h3 {background: url(../images/module-h3.png) 0 0 repeat-x;}
+#maincol .module, #maincol .moduletable {background: url(../images/module-bottom-bg.png) 50% 100% repeat-x;}
+body.icon1 .module-hilite1 h3, body.icon1 .moduletable-hilite1 h3, body.icon1 .module-hilite2 h3, body.icon1 .moduletable-hilite2 h3, body.icon1 .module-hilite3 h3, body.icon1 .moduletable-hilite3 h3, body.icon1 .module-hilite4 h3, body.icon1 .moduletable-hilite4 h3 {background: url(../images/h3-icon1.png) 0 1px no-repeat;}
+body.icon2 .module-hilite1 h3, body.icon2 .moduletable-hilite1 h3, body.icon2 .module-hilite2 h3, body.icon2 .moduletable-hilite2 h3, body.icon2 .module-hilite3 h3, body.icon2 .moduletable-hilite3 h3, body.icon2 .module-hilite4 h3, body.icon2 .moduletable-hilite4 h3 {background: url(../images/h3-icon2.png) 0 1px no-repeat;}
+body.icon3 .module-hilite1 h3, body.icon3 .moduletable-hilite1 h3, body.icon3 .module-hilite2 h3, body.icon3 .moduletable-hilite2 h3, body.icon3 .module-hilite3 h3, body.icon3 .moduletable-hilite3 h3, body.icon3 .module-hilite4 h3, body.icon3 .moduletable-hilite4 h3 {background: url(../images/h3-icon3.png) 0 1px no-repeat;}
+body.icon1 .module-hilite5 h3, body.icon1 .moduletable-hilite5 h3, body.icon1 .module-hilite6 h3, body.icon1 .moduletable-hilite6 h3 {background: url(../images/h3-icon1.png) 0 1px no-repeat;}
+body.icon2 .module-hilite5 h3, body.icon2 .moduletable-hilite5 h3, body.icon2 .module-hilite6 h3, body.icon2 .moduletable-hilite6 h3 {background: url(../images/h3-icon2.png) 0 1px no-repeat;}
+body.icon3 .module-hilite5 h3, body.icon3 .moduletable-hilite5 h3, body.icon3 .module-hilite6 h3, body.icon3 .moduletable-hilite6 h3 {background: url(../images/h3-icon3.png) 0 1px no-repeat;}
+
+a.child, a.sublevel {background: url(../images/menu-bullet.png) 8px 15px no-repeat;}
+.moduletable-hilite7 a.child, .moduletable-hilite8 a.child, .moduletable-hilite7 a.daddy, .moduletable-hilite8 a.daddy {background: url(../images/sidenav-arrow.png) 0 12px no-repeat;}
+.moduletable-hilite7 a.sublevel, .moduletable-hilite8 a.sublevel {background: url(../images/sidenav-arrow.png) 0 1px no-repeat;}
+.sidenav-block-right {background: url(../images/sidenav-block-r.png) 100% 0 no-repeat;}
+.sidenav-block-left {background: url(../images/sidenav-block-l.png) 0 0 no-repeat;}
+#horiz-menu ul ul li a.daddy span, #horiz-menu ul ul li a.daddy:hover span, #horiz-menu ul li.active.parent ul li a.daddy span, #horiz-menu ul ul li .separator.daddy span, #horiz-menu ul ul li .separator.daddy:hover span, #horiz-menu ul li.active.parent ul li .separator.daddy span {background: url(../images/sidenav-arrow.png) 95% 60% no-repeat;}
+ul.menu li.active.parent li span, ul.menu li.active.parent li.active.parent span {background: url(../images/sidenav-arrow.png) 14px 50% no-repeat;}
+ul.menu li.active.parent li li span, ul.menu li.active.parent li.active.parent span {background-position: 18px 50%;}
+/*ul.menu li.active.parent li.active a span, ul.menu li.active.parent li.active.parent a.daddy span {background: url(../images/style3/sidenav-arrow-active.png) 14px 50% no-repeat;}*/
+.menustyle1 #horiz-menu li.active, .menustyle1 #horiz-menu li:hover, .menustyle1 #horiz-menu li.sfHover {background: url(../images/style3/menustyle1/horiz-menu-tab-r.png) 100% 0 no-repeat;}
+.menustyle1 #horiz-menu li.active a, .menustyle1 #horiz-menu li.active .separator, .menustyle1 #horiz-menu li:hover a, .menustyle1 #horiz-menu li:hover .separator, .menustyle1 #horiz-menu li.sfHover a, .menustyle1 #horiz-menu li.sfHover .separator {background: url(../images/style3/menustyle1/horiz-menu-tab-l.png) 0 0 no-repeat;}
+.menustyle1 #sub-menu ul.menusub {background: url(../images/style3/menustyle1/sub-menu-active-bg.png) 0 0 repeat-x;border: 1px solid #6F8998;}
+.menustyle3 #horiz-menu li.active {background: url(../images/style3/menustyle3/3-horiz-menu-tab-l.png) 0 50% no-repeat;}
+.menustyle3 #horiz-menu li.active a, .menustyle3 #horiz-menu li.active .separator {background: url(../images/style3/menustyle3/3-horiz-menu-tab-r.png) 100% 50% no-repeat;}
+.menustyle3 #horiz-menu li:hover, .menustyle3 #horiz-menu li.sfHover {background: url(../images/style3/menustyle3/3-horiz-menu-tab-l.png) 0 50% no-repeat;}
+.menustyle3 #horiz-menu li:hover a, .menustyle3 #horiz-menu li:hover .separator, .menustyle3 #horiz-menu li.sfHover a, .menustyle3 #horiz-menu li.sfHover .separator {background: url(../images/style3/menustyle3/3-horiz-menu-tab-r.png) 100% 50% no-repeat;}
+.menustyle3 #sub-menu li.active {background: url(../images/style3/menustyle3/3-sub-menu-tab-l.png) 0 50% no-repeat;}
+.menustyle3 #sub-menu li.active a, .menustyle3 #sub-menu li.active .separator {background: url(../images/style3/menustyle3/3-sub-menu-tab-r.png) 100% 50% no-repeat;}
+.menustyle4 #horiz-menu {background: url(../images/style3/menustyle4/4-horiz-menu-bar.png) 0 0 repeat-x;}
+.menustyle4 #horiz-menu a, .menustyle4 #horiz-menu .separator, .menustyle4 #horiz-menu li.active:hover a, .menustyle4 #horiz-menu li.active:hover .separator, .menustyle4 #horiz-menu li.active.sfHover a, .menustyle4 #horiz-menu li.active.sfHover .separator {background: url(../images/style3/menustyle4/4-horiz-menu-div.png) 100% 50% no-repeat;}
+.menustyle4 #horiz-menu li.active {background: url(../images/style3/menustyle4/4-horiz-menu-div.png) 100% 0 no-repeat;}
+.menustyle4 #horiz-menu li.active a, .menustyle4 #horiz-menu li.active .separator {background: url(../images/style3/menustyle4/4-horiz-menu-active.png) 50% 0 no-repeat;}
+.menustyle4 #horiz-menu li:hover, .menustyle4 #horiz-menu li.sfHover {background: url(../images/style3/menustyle4/4-horiz-menu-active.png) 50% 0 no-repeat;}
+.menustyle4 #sub-menu {background: url(../images/style3/menustyle4/4-sub-menu-bar.png) 0 0 repeat-x;}
+.menustyle4 #sub-menu li.active a {background: url(../images/style3/menustyle4/4-sub-menu-active.png) 50% 0 no-repeat;}
+#bottom-menu .menu-bottom a {background: url(../images/style3/bottom-menu-div.png) 100% 50% no-repeat;}
+
+a.readon {background: url(../images/menu-bullet.png) 0 5px no-repeat;}
+a.readon2 {background: url(../images/readon.png) 0 0 no-repeat;}
+span.pathway img {background: url(../images/menu-bullet.png) 0 50% no-repeat;}
+a.large .button {background: url(../images/font-lg.png) 0 0 no-repeat;}
+a.small .button {background: url(../images/font-sm.png) 0 0 no-repeat;}
+
+.module-clean input.button, .moduletable-clean input.button, .module-hilite1 input.button, .module-hilite2 input.button, .module-hilite3 input.button, .moduletable-hilite1 input.button, .moduletable-hilite2 input.button, .moduletable-hilite3 input.button, .module-hilite4 input.button, .moduletable-hilite4 input.button, .module-hilite5 input.button, .moduletable-hilite5 input.button, .module-hilite6 input.button, .moduletable-hilite6 input.button, .module-hilite7 input.button, .moduletable-hilite7 input.button, .module-hilite8 input.button, .moduletable-hilite8 input.button, .module-hilite9 input.button, .moduletable-hilite9 input.button {background: url(../images/login-button.png) 0 0 no-repeat;}
+
+#moduleslider-size {background-image: url(../images/module-bottom-bg.png);background-position: 0 100%;background-repeat: repeat-x;}
+#rokslide-toolbar {background: url(../images/module-h3.png) 0 100% repeat-x;}
+#tabmodules li {background: url(../images/tabber-div.png) 100% 100% no-repeat;}
+
+.moduletable-rotator {background: url(../images/style3/showcase-bg-left.png) 0 0 no-repeat;}
+.moduletable-rotator .rokstories-layout2 {background: url(../images/style3/showcase-bg-right.png) 100% 0 no-repeat;}
+.moduletable-rotator .feature-block {background: url(../images/style3/stripe-bg.png) 0 85px repeat-x;}
+.moduletable-rotator .rokstories-layout2 .feature-arrow-l, .moduletable-rotator .rokstories-layout2 .feature-arrow-r {background-image:url(../images/news-scroller-controls.png);}
+
+/* @end */

@@ -1,0 +1,21 @@
+/**
+ * @package   Versatility4 Template - RocketTheme
+* @version   $Id: menustyle4.css 26096 2015-01-27 14:14:12Z james $
+* @author    RocketTheme, LLC http://www.rockettheme.com
+* @copyright Copyright (C) 2007 - 2015 RocketTheme, LLC
+* @license   http://www.gnu.org/licenses/gpl-2.0.html GNU/GPLv2 only
+ *
+ * Rockettheme Versatility4 Template uses the Joomla Framework (http://www.joomla.org), a GNU/GPLv2 content management system
+ *
+ */
+/* MenuStyle 4 */
+
+#horiz-menu {display: block;height: 42px;line-height: 42px;padding: 0;}
+ul#horiznav.menutop, #horiz-menu ul.menutop {padding: 0 2px;margin: 0;position: relative;z-index:120;}
+#horiz-menu li, #horiz-menu li a {z-index:200;position:relative;}
+#horiz-menu a, #horiz-menu .separator {white-space: nowrap;display: block;float: left;height: 42px;line-height: 43px;font-weight: normal;font-size: 120%;overflow: hidden;text-decoration: none;z-index: 100;cursor: pointer;padding: 0 15px;}
+#horiz-menu li.active a, #horiz-menu li.active .separator {z-index: 100;cursor: pointer;height: 42px;}
+#sub-menu {height: 36px;line-height: 36px;padding: 0;display: block;z-index: 1;}
+#sub-menu ul.menusub {padding: 0 8px;margin: 0;position: relative;height: 36px;z-index: 1;}
+#sub-menu a, #sub-menu .separator {white-space: nowrap;display: block;float: left;height: 36px;line-height: 36px;font-size: 110%;overflow: hidden;text-decoration: none;z-index: 100;cursor: pointer;padding: 0 8px;margin-right: 10px;}
+#sub-menu ul.menusub li span {padding:0 0 0 0;margin: 0;height: 36px;line-height: 36px;}

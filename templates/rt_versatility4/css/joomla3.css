@@ -1,0 +1,253 @@
+body [class^="icon-"],
+body [class*=" icon-"] {
+	display: inline-block;
+	width: auto;
+	height: auto;
+	*margin-right: .3em;
+	line-height: 16px;
+	background-image: none;
+	margin: 0;
+	text-shadow: none;
+}
+
+/* Pagination Overrides */
+.pagination [class^="icon-"], 
+.pagination [class*=" icon-"] {
+	width: auto;
+	height: auto;
+	line-height: inherit;
+}
+.pagination .icon-next:before,
+.pagination .icon-forward:before {
+	content: "\e000";
+}
+.pagination .icon-previous:before,
+.pagination .icon-backward:before {
+	content: "\7d";
+}
+.pagination .icon-first:before,
+.pagination .icon-step-backward:before {
+	content: "\7c";
+}
+.pagination .icon-last:before,
+.pagination .icon-step-forward:before {
+	content: "\7b";
+}
+
+
+/* Frontend Editor */
+
+#modules-form .collapse {
+  height: auto !important;
+}
+
+#modules-form fieldset {
+  border: 0;
+}
+
+#adminForm [class^="icon-"],
+#adminForm [class*=" icon-"] {
+  padding-right: 3px;
+}
+
+#imageForm button, 
+#uploadform button, 
+body .edit .btn,
+body #login-form .btn, 
+#modules-form .btn {
+	display: inline-block;
+	position: relative;
+	cursor: pointer;
+
+	text-shadow: none;
+	box-shadow: none;
+	color: inherit;
+}
+
+#adminForm .pagination-toolbar.clearfix {overflow: visible;}
+
+#modules-form .btn:before {
+	left: -4px;
+}
+#modules-form .btn:after {
+	right: -4px;
+}
+#modules-form .btn:hover,
+#modules-form .btn:active,
+#modules-form .btn:focus {
+	background-color: inherit;
+	background-position: 0 0;
+	outline: 0;
+	box-shadow: none;
+}
+
+body .edit .btn:hover,
+body #login-form .btn:hover,
+#modules-form .btn:hover {
+	background-color: transparent;
+}
+
+body .btn-group + .btn-group {
+	margin-left: 15px;
+}
+
+body #maincontent-block .nav > .active > a {
+	cursor: pointer;
+	display: inline-block;
+	height: 29px;
+	line-height: 29px;
+	font-size: 12px;
+	font-weight: bold;
+	margin: 0 7px;
+	padding: 0 4px;
+	position: relative;
+	border-radius: 0;
+	color: inherit;
+}
+
+body #maincontent-block .edit .nav > .active > a {
+	height: 19px;
+	line-height: 18px;
+	font-weight: normal;
+	padding: 8px 12px;
+	margin: 0 2px 0 0;
+}
+
+body #maincontent-block .nav > .active > a:before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -7px;
+	height: 29px;
+	width: 7px;
+}
+body #maincontent-block .nav > .active > a:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: -7px;
+	height: 29px;
+	width: 7px;
+}
+
+body .edit #editor-xtd-buttons .btn,
+body #modules-form #editor-xtd-buttons .btn {
+	margin-right: 15px;
+}
+body.light .edit #editor-xtd-buttons .btn,
+body.light #modules-form #editor-xtd-buttons .btn {
+	color: #4D4D4D;
+}
+.btn.btn-primary,
+body.dark .edit .btn.btn-primary,
+body.dark #modules-form .btn.btn-primary {
+	margin-right: 0;
+	color: #006dcc;
+	background: inherit;
+}
+body .well .btn-primary {
+	color: #fff;
+}
+#adminForm fieldset div [class^="input-"] div {
+	line-height: 20px;
+}
+body .edit [class^="input-"] .btn [class^="icon-"],
+#modules-form [class^="input-"] .btn [class^="icon-"] {
+	line-height: inherit;
+}
+body .jmodedit .icon-edit:before {
+	display: none;
+}
+
+body .edit .input-append .btn {
+	margin-right: 15px;
+}
+body .breadcrumb {
+	background-color: transparent;
+	padding: 0;
+	margin: 0;
+}
+body .breadcrumb a,
+body .breadcrumb li,
+body .breadcrumb span {
+	text-shadow: none;
+}
+
+body .edit .page-header,
+body #modules-form .nav-tabs,
+body #modules-form .page-header {
+	border: 0;
+}
+
+body .thumbnail {
+	margin-bottom: 9px;
+}
+
+body .thumbnail > li {
+	float: left;
+	margin-bottom: 18px;
+	margin-left: 20px;
+}
+.width-10 {
+	width: 10px;
+}
+.width-20 {
+	width: 20px;
+}
+.width-30 {
+	width: 30px;
+}
+.width-40 {
+	width: 40px;
+}
+.width-50 {
+	width: 50px;
+}
+.width-60 {
+	width: 60px;
+}
+.width-70 {
+	width: 70px;
+}
+.width-80 {
+	width: 80px;
+}
+.width-90 {
+	width: 90px;
+}
+.width-100 {
+	width: 100px;
+}
+.height-10 {
+	height: 10px;
+}
+.height-20 {
+	height: 20px;
+}
+.height-30 {
+	height: 30px;
+}
+.height-40 {
+	height: 40px;
+}
+.height-50 {
+	height: 50px;
+}
+.height-60 {
+	height: 60px;
+}
+.height-70 {
+	height: 70px;
+}
+.height-80 {
+	height: 80px;
+}
+.height-90 {
+	height: 90px;
+}
+.height-100 {
+	height: 100px;
+}
+.center {
+	text-align: center;
+}
