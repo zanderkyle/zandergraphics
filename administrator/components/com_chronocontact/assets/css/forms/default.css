@@ -1,0 +1,63 @@
+/* global */
+.gform-all{
+	margin:0px auto;padding-top:0px;width:auto;
+	font-family:'Arial','Verdana','Tahoma','sans-serif';
+	font-size:inherit;
+}
+.gform-all input{}
+/* labels */
+.gform-label{width:150px !important;}
+.gform-sub-label{font-size:11px; margin-top:3px; display:block; color:grey}
+.gform-label-left{min-width:150px !important; max-width:250px !important; display:inline-block; float:left; padding:1px 10px 1px 1px; text-align:left; font-weight: bold;}
+.gform-label-top{display:inline-block; white-space:normal; font-weight: bold; margin-bottom: 9px;}
+.gform-label-right {width:150px !important; margin-right:0; padding-right:15px; font-weight: bold;}
+/* inputs */
+.gform-textbox, .gform-textarea, .gform-radio-other-input, .gform-captcha input {
+	padding:5px !important;
+	border:1px solid #ccc !important;
+	font-size:13px !important;
+	line-height:14px !important;
+}
+.gform-dropdown {padding: 2px; font-size:13px;}
+.gform-radio, .gform-checkbox {/*vertical-align: top;*/ margin:0px !important;}
+.gform-radio-item label, .gform-checkbox-item label {font-size:13px; margin:0px !important;}
+/* lines */
+.gform-input{display:inline-block;}
+.gform-line-td{
+	padding:2px 0px 2px 0px !important;
+	margin:6px 0 !important;
+	width: 100% !important;
+	clear:both !important;
+	display:inline-block !important;
+	border: 0 none !important;
+}
+.gform-line-tr{
+	padding:0 !important;
+	margin:0 !important;
+	width: 100% !important;
+	clear:both !important;
+	display:inline-block /*!important*/;
+	border: 0 none !important;
+}
+.gform-subinput-container{margin-bottom:3px;}
+.gform-subinput-container-wide{display:inline-block; margin: 0px 3px 3px 0px; float:left;}
+.gform-radio-item, .gform-checkbox-item{float:left;	margin: 0px 0px 6px 0px;}
+.gform-single-column, .gform-multiple-column{display:inline-block;}
+.gform-single-column .gform-radio-item, .gform-single-column .gform-checkbox-item{clear:left;}
+.SSS {width: 30px;}
+.SS {width: 70px;}
+.S {width: 110px;}
+.M {width: 230px;}
+.L {width: 350px; }
+.XL{width:430px;}
+.XXL{width:500px;}
+.depth-1 {padding-left: 15px !important;}
+.depth-2 {padding-left: 30px !important;}
+.depth-3 {padding-left: 45px !important;}
+.depth-4 {padding-left: 60px !important;}
+.depth-5 {padding-left: 75px !important;}
+.depth-6 {padding-left: 90px !important;}
+.depth-7 {padding-left: 105px !important;}
+.depth-8 {padding-left: 120px !important;}
+.depth-9 {padding-left: 135px !important;}
+.depth-10 {padding-left: 150px !important;}

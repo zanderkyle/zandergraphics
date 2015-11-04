@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade" client="site">
+	<name>Protected by RSFirewall! Module</name>
+	<author>RSJoomla!</author>
+	<creationDate>June 2013</creationDate>
+	<copyright>(C) 2013 www.rsjoomla.com</copyright>
+	<license>GNU General Public License</license>
+	<authorEmail>support@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.0.0 R49</version>
+	<description>MOD_RSFIREWALL_XML_DESCRIPTION</description>
+	<files>
+		<filename module="mod_rsfirewall_protected">mod_rsfirewall_protected.php</filename>
+		<filename>index.html</filename>
+		<folder>assets</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsfirewall_protected.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rsfirewall_protected.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="size" label="MOD_RSFIREWALL_PROTECTED_SIZE" description="MOD_RSFIREWALL_PROTECTED_SIZE_DESC" type="radio" class="btn-group" default="small">
+					<option value="small">MOD_RSFIREWALL_PROTECTED_SIZE_SMALL</option>
+					<option value="large">MOD_RSFIREWALL_PROTECTED_SIZE_LARGE</option>
+				</field>
+				<field name="moduleclass_sfx" type="text" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

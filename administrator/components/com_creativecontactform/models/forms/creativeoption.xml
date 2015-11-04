@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<field name="id" type="hidden"/>
+		<field name="name" type="text" label="COM_CREATIVECONTACTFORM_LABEL_LABEL" description="COM_CREATIVECONTACTFORM_LABEL_DESCRIPTION" size="40" class="inputbox" default="" required="required"/>
+		<field id="id_field" name="id_field" type="sql" label="COM_CREATIVECONTACTFORM_FIELD_LABEL" description="COM_CREATIVECONTACTFORM_FIELD_DESCRIPTION"  default="1" query="SELECT sfi.name, sfi.id as id_val, sf.name,sf.id as id_form, CONCAT(sfi.name,' - (FORM: ', sf.name, ')') as name_val FROM #__creative_fields as sfi JOIN #__creative_forms as sf ON sf.id = sfi.id_form WHERE sfi.published != -2 ORDER BY id_form,id_val" key_field="id_val" value_field="name_val" />
+		<field id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		<field name="created" type="calendar" label="COM_CREATIVECONTACTFORM_CREATED_LABEL" default="NOW"  description="COM_CREATIVECONTACTFORM_CREATED_DESCRIPTION" class="inputbox" size="22" format="%Y-%m-%d %H:%M:%S" filter="user_utc" />
+	</fieldset>
+</form>

@@ -1,0 +1,268 @@
+.creativecontactform_wrapper {
+	-moz-box-shadow:  0px 0px 0px 0px  #fff;
+	-webkit-box-shadow:  0px 0px 0px 0px  #fff;
+	box-shadow: 0px 0px 0px 0px  #fff;
+	border: 1px solid #dedede;
+	background-color: #ffffff;	
+	color: #111111;
+	font-size: 13px;
+}
+.creativecontactform_wrapper:hover {
+	-moz-box-shadow:  0px 0px 7px 0px  #bababa;
+	-webkit-box-shadow:  0px 0px 7px 0px  #bababa;
+	box-shadow:  0px 0px 7px 0px  #bababa;
+}
+.creativecontactform_header {
+	padding:  15px  15px 15px 15px;
+	border-bottom: 0px solid #ffffff;
+}
+.creativecontactform_body {
+	padding:  5px  15px 10px 15px;
+}
+.creativecontactform_footer {
+	padding:  0px  15px 15px 15px;
+	border-top: 0px solid #ffffff;
+}
+.creativecontactform_title {
+	color: #000000;
+	font-size: 28px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	text-decoration: none;
+	text-shadow: 2px 1px 2px #ffffff;
+	font-family: inherit
+}
+.creativecontactform_field_name {
+	color: #000000;
+	font-size: 13px;
+	font-style: normal;
+	font-weight: normal;
+	text-align: left;
+	text-decoration: none;
+	text-shadow: 2px 1px 1px #ffffff;
+	margin:  0px  0px 1px 3px;
+	font-family: inherit
+}
+.answer_name label {
+	color: #000000;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: 2px 1px 1px #ffffff;
+}
+.answer_name label.without_parent_label {
+	font-size: 13px;
+}
+.creativecontactform_field_required {
+	color: #ff0000;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: normal;
+	text-shadow: 0px 0px 0px #ffffff;
+}
+.creativecontactform_send,
+.creativecontactform_send_new,
+.creative_fileupload
+ {
+	background-color: #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0'); /* for IE */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e0e0e0));/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #ffffff, #e0e0e0); /* Safari 5.1, Chrome 10+ */
+	background: -moz-linear-gradient(top, #ffffff, #e0e0e0);/* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #ffffff, #e0e0e0);/* IE 10 */
+	background: -o-linear-gradient(top, #ffffff, #e0e0e0);/* Opera 11.10+ */
+	padding: 12px 26px;
+	-moz-box-shadow:  0px 0px 0px 0px  #525252;	
+	-webkit-box-shadow:  0px 0px 0px 0px  #525252;	
+	box-shadow:  0px 0px 0px 0px  #525252;	
+	border-style: solid;
+	border-width: 1px;
+	border-color: #c2c2c2;
+	float: right;
+	font-size: 14px;
+	color: #666666;
+	font-style: normal;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 0px 3px #ffffff;
+	font-family: inherit;
+}
+.creativecontactform_send:hover,.creativecontactform_send_new:hover, 
+.creativecontactform_send:active,.creativecontactform_send_new:active, 
+.creativecontactform_send:focus,.creativecontactform_send_new:focus
+{
+	background-color: #ffffff;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#e0e0e0'); /* for IE */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffffff), to(#e0e0e0));/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #ffffff, #e0e0e0); /* Safari 5.1, Chrome 10+ */
+	background: -moz-linear-gradient(top, #ffffff, #e0e0e0);/* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #ffffff, #e0e0e0);/* IE 10 */
+	background: -o-linear-gradient(top, #ffffff, #e0e0e0);/* Opera 11.10+ */
+	
+	color: #6b6b6b;
+	text-shadow: 0px 0px 3px #ffffff;
+	-moz-box-shadow:  0px 0px 6px 0px  #999999;
+	-webkit-box-shadow:  0px 0px 6px 0px  #999999;
+	box-shadow:  0px 0px 6px 0px  #999999;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #cfcfcf;
+}	        	
+.creativecontactform_submit_wrapper {
+	width: 	95%;
+}
+.creativecontactform_input_element input,
+.creativecontactform_input_element textarea,
+.creativecontactform_input_element{
+	font-size: 14px;
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px #ffffff;
+	text-align: left;
+	font-family: inherit;
+}
+.creativecontactform_input_element:hover,
+.creativecontactform_input_element:focus,
+.creativecontactform_input_element.focused {
+	background-color: #ffffff;
+	-moz-box-shadow:  0px 0px 10px 2px  #d4d4d4;
+	-webkit-box-shadow:  0px 0px 10px 2px  #d4d4d4;
+	box-shadow:  0px 0px 10px 2px  #d4d4d4;
+	border-style: solid;
+	border-width: 1px;
+	border-color: #cccccc;
+}
+.creativecontactform_input_element,
+.creativecontactform_input_element.closed:hover {
+	background-color: #ffffff;
+	-moz-box-shadow:  0px 0px 10px 0px  #f5f5f5;	
+	-webkit-box-shadow:  0px 0px 10px 0px  #f5f5f5;		
+	box-shadow:  0px 0px 10px 0px  #f5f5f5;		
+	border-style: solid;
+	border-width: 1px;
+	border-color: #cccccc;
+	-webkit-border-top-left-radius: 0px;
+	-moz-border-radius-topleft: 0px;
+	border-top-left-radius: 0px;
+	-webkit-border-top-right-radius: 0px;
+	-moz-border-radius-topright: 0px;
+	border-top-right-radius: 0px;
+	-webkit-border-bottom-left-radius: 0px;
+	-moz-border-radius-bottomleft: 0px;
+	border-bottom-left-radius: 0px;
+	-webkit-border-bottom-right-radius: 0px;
+	-moz-border-radius-bottomright: 0px;
+	border-bottom-right-radius: 0px;
+}
+.creativecontactform_input_element input:hover,
+.creativecontactform_input_element input:focus,
+.creativecontactform_input_element textarea:hover,
+.creativecontactform_input_element textarea:focus,
+.creativecontactform_input_element.focused input,
+.creativecontactform_input_element.focused textarea {
+	color: #1c1c1c;
+	text-shadow: 0px 0px 0px #ffffff;
+}
+.creativecontactform_error .creativecontactform_field_name,
+.creativecontactform_error .creativecontactform_field_name:hover {
+	color: #c70808;
+	text-shadow: 2px 1px 1px #ffffff;
+}
+.creativecontactform_error .creativecontactform_input_element,
+.creativecontactform_error .creativecontactform_input_element:hover {
+	background-color: #ffdbdd;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffdbdd', endColorstr='#ffdbdd'); /* for IE */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffdbdd), to(#ffdbdd));/* Safari 4-5, Chrome 1-9 */
+	background: -webkit-linear-gradient(top, #ffdbdd, #ffdbdd); /* Safari 5.1, Chrome 10+ */
+	background: -moz-linear-gradient(top, #ffdbdd, #ffdbdd);/* Firefox 3.6+ */
+	background: -ms-linear-gradient(top, #ffdbdd, #ffdbdd);/* IE 10 */
+	background: -o-linear-gradient(top, #ffdbdd, #ffdbdd);/* Opera 11.10+ */
+	-moz-box-shadow: inset 0px 0px 19px 0px  #ebaaaa;	
+	-webkit-box-shadow: inset 0px 0px 19px 0px  #ebaaaa;		
+	box-shadow: inset 0px 0px 19px 0px  #ebaaaa;		
+	border-color: #ff9999;
+}
+.creativecontactform_error input,
+.creativecontactform_error .creative_input_dummy_wrapper,
+.creativecontactform_error input:hover,
+.creativecontactform_error .focused input:hover,
+.creativecontactform_error .focused input,
+.creativecontactform_error .focused textarea,
+.creativecontactform_error textarea,
+.creativecontactform_error textarea:hover {
+	color: #363636;
+	text-shadow: 0px 0px 0px #ffffff;
+}
+.creativecontactform_pre_text {
+	margin-top: 3px;
+	margin-bottom: 0;
+	margin-right: 0;
+	margin-left: 0;
+	padding: 3px 0 0 0;
+	width: 82%;
+	font-size: 13px;
+	color: #000000;
+	font-style: normal;
+	font-weight: normal;
+	text-decoration: none;
+	text-shadow: 0px 0px 0px #ffffff;
+	text-align: left;
+	border-top: 1px dotted #a8a8a8;
+	font-family: inherit;
+}
+.creativecontactform_field_box_textarea_inner {
+		margin: 0;
+}
+.creativecontactform_field_box_inner {
+		margin: 0;
+}
+.creativecontactform_wrapper .answer_name {
+	float: left!important;
+	text-align: left !important;
+}
+.creativecontactform_wrapper .answer_name label {
+	margin: 6px 0px 0 33px;
+}
+.answer_input {
+	float: left !important;
+	margin-left: -100%;
+}
+.creativecontactform_field_required {
+	right: -12px !important;
+}
+
+.creative_field_box_wrapper_1 {
+	width:50%;
+}
+.creative_field_box_wrapper_2 {
+	width:50%;
+}
+.creative_field_box_wrapper_0 .creativecontactform_field_box_inner {
+	width:60%;
+}
+.creative_field_box_wrapper_1 .creativecontactform_field_box_inner {
+	width:90%;
+}
+.creative_field_box_wrapper_2 .creativecontactform_field_box_inner {
+	width:90%;
+}
+.creative_field_box_wrapper_0 .creativecontactform_field_box_textarea_inner {
+	width:95%;
+}
+.creative_field_box_wrapper_1 .creativecontactform_field_box_textarea_inner {
+	width:90%;
+}
+.creative_field_box_wrapper_2 .creativecontactform_field_box_textarea_inner {
+	width:90%;
+}
+.creative_field_box_wrapper_0 .creative_textarea_wrapper {
+	height:150px;
+}
+.creative_field_box_wrapper_1 .creative_textarea_wrapper,
+.creative_field_box_wrapper_2 .creative_textarea_wrapper {
+	height:130px;
+}

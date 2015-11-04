@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config addfieldpath="/plugins/system/nnframework/fields">
+	<fieldset name="details">
+		<field name="published" type="radio" class="btn-group" default="1" label="JPUBLISHED" description="NN_PUBLISHED_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="name" type="text" class="span12" default="" label="JGLOBAL_TITLE" description="RR_NAME_DESC" />
+		<field name="description" type="nn_textareaplus" class="span12" height="160" default="" label="JGLOBAL_DESCRIPTION" description="RR_DESCRIPTION_DESC" />
+	</fieldset>
+
+	<fieldset name="search">
+		<field name="@toggler_search_regex_a" type="nn_toggler" param="regex" value="1" />
+		<field name="@block_search_regex" type="note" class="alert alert-notice" description="RR_REGULAR_EXPRESSIONS_ON_DESC" />
+		<field name="@toggler_search_regex_b" type="nn_toggler" />
+		<field name="search" type="nn_textareaplus" class="span12" height="120" texttype="regex" default="" label="RR_SEARCH" description="RR_SEARCH_DESC" />
+	</fieldset>
+
+	<fieldset name="replace">
+		<field name="replace" type="nn_textareaplus" class="span12" height="120" texttype="regex" default="" label="RR_REPLACE" description="RR_REPLACE_DESC" />
+	</fieldset>
+
+	<fieldset name="xml">
+	</fieldset>
+
+	<fieldset name="options">
+		<field name="@notice_use_xml" type="nn_plaintext" label="RR_USE_XML_FILE" description="RR_USE_XML_FILE_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="regex" type="radio" class="btn-group" default="0" label="RR_REGULAR_EXPRESSIONS" description="RR_REGULAR_EXPRESSIONS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_1a" type="nn_toggler" param="regex" value="0" />
+		<field name="treat_as_list" type="radio" class="btn-group" default="0" label="RR_TREAT_AS_LIST" description="RR_TREAT_AS_LIST_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="word_search" type="radio" class="btn-group" default="0" label="RR_WORD_SEARCH" description="RR_WORD_SEARCH_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_1b" type="nn_toggler" />
+		<field name="@toggler_options_regex_2a" type="nn_toggler" param="regex" value="1" />
+		<field name="s_modifier" type="radio" class="btn-group" default="1" label="RR_USE_S_MODIFIER" description="RR_USE_S_MODIFIER_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_options_regex_2b" type="nn_toggler" />
+		<field name="casesensitive" type="radio" class="btn-group" default="0" label="RR_CASE_SENSITIVE" description="RR_CASE_SENSITIVE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="thorough" type="radio" class="btn-group" default="0" label="RR_THOROUGH" description="RR_THOROUGH_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@notice_treat_as_php" type="nn_plaintext" label="RR_TREAT_AS_PHP" description="RR_TREAT_AS_PHP_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+	</fieldset>
+
+	<fieldset name="areas">
+		<field name="area" type="nn_list" default="body" label="RR_ENABLE_IN_AREA" description="RR_ENABLE_IN_AREA_DESC">
+			<option value="articles">RR_AREA_CONTENT</option>
+			<option value="component">RR_AREA_COMPONENT</option>
+			<option value="head">RR_AREA_HEAD</option>
+			<option value="body">RR_AREA_BODY</option>
+			<option value="everywhere">RR_AREA_EVERYWHERE</option>
+		</field>
+		<field name="@toggler_areas_articles_a" type="nn_toggler" param="area" value="articles" />
+		<field name="@block_areas_articles" type="note" class="alert alert-info" description="RR_AREA_CONTENT_DESC" />
+		<field name="enable_in_title" type="radio" class="btn-group" default="1" label="RR_ENABLE_IN_TITLE" description="RR_ENABLE_IN_TITLE_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_areas_articles_b" type="nn_toggler" />
+		<field name="enable_in_feeds" type="radio" class="btn-group" default="1" label="RR_ENABLE_IN_FEEDS" description="RR_ENABLE_IN_FEEDS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="enable_in_admin" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_ADMIN" description="RR_ENABLE_IN_ADMIN_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+			<option value="2">NN_ONLY</option>
+		</field>
+		<field name="@toggler_areas_enable_in_admin_a" type="nn_toggler" param="enable_in_admin" value="1,2" />
+		<field name="@block_areas_enable_in_admin" type="note" class="alert alert-notice" description="RR_ENABLE_IN_ADMIN_ARE_YOU_SURE" />
+		<field name="@toggler_areas_enable_in_admin_b" type="nn_toggler" />
+
+		<field name="enable_in_edit_forms" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_EDIT_FORMS" description="RR_ENABLE_IN_EDIT_FORMS_DESC">
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+		<field name="@toggler_enable_in_edit_forms_a" type="nn_toggler" param="enable_in_edit_forms" value="1" />
+		<field name="@block_enable_in_edit_forms" type="note" class="alert alert-danger" description="RR_ENABLE_IN_EDIT_FORMS_ARE_YOU_SURE" />
+		<field name="@toggler_enable_in_edit_forms_b" type="nn_toggler" />
+
+		<field name="@notice_between_start" type="nn_plaintext" label="RR_ONLY_BETWEEN_START" description="RR_ONLY_BETWEEN_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_between_end" type="nn_plaintext" label="RR_ONLY_BETWEEN_END" description="RR_ONLY_BETWEEN_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+	</fieldset>
+
+	<fieldset name="tags">
+		<field name="@notice_enable_tags" type="nn_plaintext" label="RR_ENABLE_IN_TAGS" description="RR_ENABLE_IN_TAGS_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_limit_tagselect" type="nn_plaintext" label="RR_LIMIT_TO_TAG_SELECTION" description="RR_LIMIT_TO_TAG_SELECTION_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+	</fieldset>
+
+	<fieldset name="assignments">
+		<field name="@notice_assignments" type="note" description="NN_ONLY_AVAILABLE_IN_PRO" />
+	</fieldset>
+</config>

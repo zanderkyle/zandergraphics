@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.3.0" type="package" method="upgrade">
+    <name>Akeeba Ticket System package</name>
+    <author>Nicholas K. Dionysopoulos</author>
+    <creationDate>2015-10-14</creationDate>
+    <packagename>ats</packagename>
+    <version>2.0.1</version>
+    <url>https://www.akeebabackup.com</url>
+    <packager>Akeeba Ltd</packager>
+    <packagerurl>https://www.akeebabackup.com</packagerurl>
+    <copyright>Copyright (c)2011-2015 Nicholas K. Dionysopoulos</copyright>
+    <license>GNU GPL v3 or later</license>
+    <description>Akeeba Ticket System installation package v.2.0.1</description>
+
+    <!-- List of extensions to install -->
+    <files>
+        <!-- Component -->
+        <file type="component" id="com_ats">com_ats-core.zip</file>
+
+        <!-- Modules -->
+        <file type="module" client="site" id="mod_atscredits">mod_atscredits.zip</file>
+        <file type="module" client="site" id="mod_atstickets">mod_atstickets.zip</file>
+
+        <!-- Plugins: ats -->
+        <file type="plugin" group="ats" id="akeebasubs">plg_ats_akeebasubs.zip</file>
+        <file type="plugin" group="ats" id="akeebasubslegacy">plg_ats_akeebasubslegacy.zip</file>
+        <file type="plugin" group="ats" id="customfields">plg_ats_customfields.zip</file>
+        <file type="plugin" group="ats" id="gravatar">plg_ats_gravatar.zip</file>
+
+        <!-- Plugins: finder -->
+		<file type="plugin" group="finder" id="ats">plg_finder_ats.zip</file>
+
+		<!-- Plugins: search -->
+		<file type="plugin" group="search" id="ats">plg_search_ats.zip</file>
+
+		<!-- Plugins: user -->
+		<file type="plugin" group="user" id="ats">plg_user_ats.zip</file>
+    </files>
+
+    <!-- Installation script -->
+    <scriptfile>script.ats.php</scriptfile>
+
+    <!-- Update servers -->
+    <updateservers>
+        <server type="extension" priority="1" name="Akeeba Ticket System">http://cdn.akeebabackup.com/updates/atscore.xml</server>
+    </updateservers>
+</extension>

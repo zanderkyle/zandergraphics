@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="protocol" type="list" class="inputbox" label="COM_RSSEO_SITEMAP_PROTOCOL" description="COM_RSSEO_SITEMAP_PROTOCOL_DESC" size="1" default="0">
+		<option value="0">HTTP</option>
+		<option value="1">HTTPS</option>
+	</field>
+	<field name="modified" type="text" class="input-xlarge" label="COM_RSSEO_SITEMAP_LAST_MODIFIED" description="COM_RSSEO_SITEMAP_LAST_MODIFIED_DESC" size="30" />
+	
+	<field name="auto" type="list" class="inputbox" label="COM_RSSEO_SITEMAP_INCLUDE_AUTO" description="COM_RSSEO_SITEMAP_INCLUDE_AUTO_DESC" size="1" filter="intval" default="0">
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
+	</field>
+</form>

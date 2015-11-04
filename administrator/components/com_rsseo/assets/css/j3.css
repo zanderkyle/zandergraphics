@@ -1,0 +1,32 @@
+.icon-rsseo:before {
+    content: "y";
+}
+
+.icon-history:before {
+    content: "u";
+}
+
+.icon-back:before {
+    content: "'";
+}
+
+.icon-compete:before{
+    content: "w";
+}
+
+.icon-restore:before{
+    content: "5";
+}
+
+.icon-html:before{
+    content: "l";
+}
+
+.incorrect-code {
+	width: auto !important;
+}
+
+.dashboard-container .span2 {
+	margin-left: 0 !important;
+    margin-right: 10px;
+}

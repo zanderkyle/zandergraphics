@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="1.6.0" method="upgrade">
+	<name>ChronoContact</name>
+	<creationDate>14.March.2013</creationDate>
+	<author>Chronoman</author>
+	<copyright>ChronoEngine.com 2012</copyright>
+	<authorEmail>webmaster@chronoengine.com</authorEmail>
+	<authorUrl>www.chronoengine.com</authorUrl>
+	<version>4.0 RC2</version>
+	<license>GPL</license>
+	<description>The ChronoContact component will let you create amazing forms quickly on your Joomla! website.</description>
+
+	<installfile>install.chronocontact.php</installfile>
+	<uninstallfile>uninstall.chronocontact.php</uninstallfile>
+	<files>
+		<filename>chronocontact.php</filename>
+		<filename>index.html</filename>
+		<folder>views</folder>
+	</files>
+	<install>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.chronocontact.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.chronocontact.sql</file>
+		</sql>
+	</uninstall>	
+	<administration>		
+		<menu img="components/com_chronocontact/CF.png" link="com_chronocontact" view="main">COM_CHRONOCONTACT</menu>
+		<submenu>
+			<menu>COM_CHRONOCONTACT</menu>
+			<menu act="validateinstall">COM_CHRONOCONTACT_VALIDATE</menu>
+		</submenu>
+		<files folder="admin">
+			<filename>chronocontact.php</filename>
+			<filename>bootstrap.php</filename>
+			<filename>config.php</filename>
+			<filename>gcloader.php</filename>
+			<filename>CF.png</filename>
+			<filename>index.html</filename>
+			<folder>admin</folder>
+			<folder>assets</folder>
+			<folder>extensions</folder>
+			<folder>helpers</folder>
+			<folder>libs</folder>
+			<folder>locales</folder>
+			<folder>sql</folder>
+			<folder>uploads</folder>
+			<folder>vendors</folder>
+		</files>
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB.com_chronocontact.sys.ini</language>
+			<language tag="en-GB">language/en-GB.com_chronocontact.menu.ini</language>
+			<language tag="en-GB">language/en-GB.com_chronocontact.ini</language>
+		</languages>
+	</administration>
+</extension>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5.0" type="plugin" group="ats" method="upgrade">
+	<name>PLG_ATS_AKEEBASUBSLEGACY</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<authorEmail>nicholas@dionysopoulos.me</authorEmail>
+	<authorUrl>http://www.akeebabackup.com</authorUrl>
+	<copyright>Copyright (c)2011-2014 Nicholas K. Dionysopoulos</copyright>
+	<license>GNU General Public License version 3, or later</license>
+	<creationDate>August 2012</creationDate>
+	<version>1.0</version>
+	<description>PLG_ATS_AKEEBASUBSLEGACY_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="akeebasubslegacy">akeebasubslegacy.php</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_ats_akeebasubslegacy.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_ats_akeebasubslegacy.sys.ini</language>
+	</languages>
+
+  <config>
+    <fields name="params">
+      <fieldset name="basic">
+        <field name="displayCountry" type="list" default="2"
+               label="PLG_ATS_AKEEBASUBSLEGACY_COUNTRY" description="PLG_ATS_AKEEBASUBSLEGACY_COUNTRY_DESC">
+          <option value="0">PLG_ATS_AKEEBASUBSLEGACY_NEVER</option>
+          <option value="1">PLG_ATS_AKEEBASUBSLEGACY_ALWAYS</option>
+          <option value="2">PLG_ATS_AKEEBASUBSLEGACY_MANAGERS</option>
+        </field>
+      </fieldset>
+    </fields>
+  </config>
+</extension>

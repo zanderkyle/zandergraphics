@@ -42,6 +42,43 @@
 		<position>position-12</position>
 		<position>position-13</position>
 		<position>position-14</position>
+		<position>front1a</position>
+		<position>front1b</position>
+		<position>front1c</position>
+		<position>front1d</position>
+		<position>front2a</position>
+		<position>front2b</position>
+		<position>front2c</position>
+		<position>front2d</position>
+		<position>front3a</position>
+		<position>front3b</position>
+		<position>front3c</position>
+		<position>front3d</position>
+		<position>front4a</position>
+		<position>front4b</position>
+		<position>front4c</position>
+		<position>front4d</position>
+		<position>bottom1a</position>
+		<position>bottom1b</position>
+		<position>bottom1c</position>
+		<position>bottom1d</position>
+		<position>bottom2a</position>
+		<position>bottom2b</position>
+		<position>bottom2c</position>
+		<position>bottom2d</position>
+		<position>bottom3a</position>
+		<position>bottom3b</position>
+		<position>bottom3c</position>
+		<position>bottom3d</position>
+		<position>bottom4a</position>
+		<position>bottom4b</position>
+		<position>bottom4c</position>
+		<position>bottom4d</position>
+		<position>footer1a</position>
+		<position>footer1b</position>
+		<position>footer1c</position>
+		<position>footer1d</position>
+		<position>copyright-top</position>
 		<position>footer</position>
 	</positions>
 	<languages folder="language">

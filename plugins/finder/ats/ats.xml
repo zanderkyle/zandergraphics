@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="finder" method="upgrade">
+	<name>plg_finder_ats</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<creationDate>June 2012</creationDate>
+	<copyright>Copyright (C) 2011 - 2012 AkeebaBackup.com. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>nikosdion@gmail.com</authorEmail>
+	<authorUrl>www.AkeebaBackup.com</authorUrl>
+	<version>1.0</version>
+	<description>PLG_FINDER_ATS_XML_DESCRIPTION</description>
+
+	<files>
+		<file plugin="ats">ats.php</file>
+	</files>
+
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_ats.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_finder_ats.sys.ini</language>
+	</languages>
+</extension>

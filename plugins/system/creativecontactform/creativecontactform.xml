@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="system" version="2.5" method="upgrade">
+    <name>Creative Contact Form</name>
+    <creationDate>March 2013</creationDate>
+    <author>Creative Solutions</author>
+    <copyright>Copyright (©) 2008-2015 Creative Solutions company. All rights reserved.</copyright>
+    <authorEmail>info@creative-solutions.net</authorEmail>
+    <authorUrl>http://creative-solutions.net</authorUrl>
+    <version>3.0.0</version>
+    <license>GNU/GPL</license>
+    <description>PLG_CREATIVECONTACTFORM_DESCRIPTION</description>
+
+    <files>
+    	<filename>index.html</filename>
+        <filename plugin="creativecontactform">creativecontactform.php</filename>
+    </files>
+
+    <languages folder="language">
+        <language tag="en-GB">en-GB/en-GB.plg_system_creativecontactform.ini</language>
+        <!-- <language tag="fr-FR">fr-FR/fr-FR.plg_system_creativecontactform.ini</language> -->
+    </languages>
+
+    <config>
+        <fields name="params">
+        </fields>
+    </config>
+</extension>

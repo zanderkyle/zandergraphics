@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form cssfiles="media://com_ats/css/backend.css">
+
+  <fieldset name="basic_configuration"
+            label="COM_ATS_OFFLINESCHEDULES_GROUP_BASIC"
+            class="span6">
+
+    <field name="title" type="Text"
+           label="COM_ATS_COMMON_TITLE"
+           class="input-large"
+           required="true" />
+
+    <field name="descr" type="Text"
+           label="COM_ATS_COMMON_DESCR"
+           class="input-large" />
+
+    <field name="enabled" type="GenericList" label="JSTATUS"
+           labelclass="todo-label"
+           description="JFIELD_PUBLISHED_DESC" class="inputbox"
+           filter="intval" size="1" default="1"
+      >
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+    </field>
+  </fieldset>
+
+</form>

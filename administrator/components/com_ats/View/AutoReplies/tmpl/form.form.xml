@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+  cssfiles="media://com_ats/css/backend.css,media://com_ats/css/frontend.css"
+  >
+
+  <fieldset name="basic_configuration"
+            label="COM_ATS_OFFLINESCHEDULES_GROUP_BASIC"
+            class="span6">
+
+    <field name="title" type="Text"
+           label="COM_ATS_COMMON_TITLE"
+           class="input-large"
+           required="true" />
+
+    <field name="params[categories][]" name_from="params" type="ViewTemplate"
+           label="COM_ATS_SUBMENU_CATEGORIES"
+           description="COM_ATS_AUTOREPLIES_CATEGORIES_DESC"
+           source="admin:com_ats/AutoReplies/form_categories"
+    />
+
+    <field name="run_after_manager" type="GenericList" label="COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER"
+           class="inputbox advancedSelect" filter="intval" size="1" default="0">
+        <option value="0">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_NO</option>
+        <option value="1">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_YES</option>
+        <option value="2">COM_ATS_AUTOREPLIES_RUN_AFTER_MANAGER_ALWAYS</option>
+    </field>
+
+    <field name="num_posts" type="Text" label="COM_ATS_AUTOREPLIES_NUM_POSTS"
+           description="COM_ATS_AUTOREPLIES_NUM_POSTS_DESC" class="inputbox" filter="intval" />
+
+    <field name="min_after" type="Text" label="COM_ATS_AUTOREPLIES_MIN_AFTER"
+           description="COM_ATS_AUTOREPLIES_MIN_AFTER_DESC" class="inputbox" filter="intval" />
+
+    <field name="attachment" type="GenericList" label="COM_ATS_AUTOREPLIES_ATTACHMENT"
+           class="inputbox advancedSelect" filter="intval" size="1" default="2">
+      <option value="0">COM_ATS_AUTOREPLIES_NO_ATTACHMENT</option>
+      <option value="1">COM_ATS_AUTOREPLIES_WITH_ATTACHMENT</option>
+      <option value="2">COM_ATS_AUTOREPLIES_ATTACHMENT_ALWAYS</option>
+    </field>
+
+    <field name="enabled" type="GenericList" label="JSTATUS"
+           labelclass=""
+           description="JFIELD_PUBLISHED_DESC" class="inputbox advancedSelect"
+           filter="intval" size="1" default="1">
+      <option value="1">JPUBLISHED</option>
+      <option value="0">JUNPUBLISHED</option>
+    </field>
+  </fieldset>
+
+  <fieldset name="keywords"
+            label="COM_ATS_AUTOREPLIES_KEYWORDS"
+            class="span6">
+
+    <field name="keywords_title" type="Textarea" class="input-xlarge" rows="5"
+           label="COM_ATS_AUTOREPLIES_KEYWORDS_TITLE"
+           description="COM_ATS_AUTOREPLIES_KEYWORDS_TITLE_DESC" />
+
+    <field name="keywords_text" type="Textarea" class="input-xlarge" rows="5"
+           label="COM_ATS_AUTOREPLIES_KEYWORDS_TEXT"
+           description="COM_ATS_AUTOREPLIES_KEYWORDS_TEXT_DESC" />
+  </fieldset>
+
+  <fieldset name="editor"
+            label="COM_ATS_AUTOREPLIES_BOT_REPLY"
+            class="span11">
+
+    <field name="reply" type="EditorBbcode" emptylabel="true"/>
+
+  </fieldset>
+</form>

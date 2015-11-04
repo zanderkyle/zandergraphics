@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="Creative Contact Form">
+		<message>
+         <![CDATA[Creative Contact Form]]>
+		</message>
+	</layout>
+	<state>
+		<name>Creative Contact Form</name>
+		<description>Creative Contact Form</description>
+		<params>
+		</params>
+	</state>
+
+	 <fields name="request">
+		<fieldset name="request" label="Form Options" addfieldpath="/administrator/components/com_creativecontactform/fields">
+			 <field name="form" type="form" section="com_creativecontactform" default="0" label="Form" description="Select Creative Form" required="true"/>
+		</fieldset>
+	</fields>
+</metadata>

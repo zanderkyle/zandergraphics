@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade" client="site">
+	<name>MOD_ATSTICKETS</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<creationDate>June 2014</creationDate>
+	<copyright>Copyright (C) 2011-2014 Nicholas K. Dionysopoulos / AkeebaBackup.com</copyright>
+	<license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>nicholas@akeebabackup.com</authorEmail>
+	<authorUrl>www.akeebabackup.com</authorUrl>
+	<version>1.0</version>
+	<description>MOD_ATSTICKETS_DESCRIPTION</description>
+	<files>
+		<file module="mod_atstickets">mod_atstickets.php</file>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_atstickets.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="MOD_ATSTICKETS_SUFFIX_LABEL" description="MOD_ATSTICKETS_SUFFIX_DESC" />
+                <field name="show_open" type="list" default="1"
+                       label="MOD_ATSTICKETS_SHOWOPEN_LABEL" description="MOD_ATSTICKETS_SHOWOPEN_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="show_pending" type="list" default="1"
+                       label="MOD_ATSTICKETS_SHOWPENDING_LABEL" description="MOD_ATSTICKETS_SHOWPENDING_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="show_closed" type="list" default="1"
+                       label="MOD_ATSTICKETS_SHOWCLOSED_LABEL" description="MOD_ATSTICKETS_SHOWCLOSED_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+                <field name="show_mytickets" type="list" default="1"
+                       label="MOD_ATSTICKETS_SHOWMYTICKETS_LABEL" description="MOD_ATSTICKETS_SHOWMYTICKETS_DESC">
+                    <option value="1">JYES</option>
+                    <option value="0">JNO</option>
+                </field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="1" label="MOD_ATSTICKETS_CACHING_LABEL" description="MOD_ATSTICKETS_CACHING_DESC">
+					<option value="1">MOD_ATSTICKETS_CACHING_OPT_GLOBAL</option>
+					<option value="0">MOD_ATSTICKETS_CACHING_OPT_NONE</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="MOD_ATSTICKETS_CACHETIME_LABEL" description="MOD_ATSTICKETS_CACHETIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

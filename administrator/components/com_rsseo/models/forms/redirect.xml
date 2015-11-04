@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="id" type="hidden" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
+	<field name="from" type="text" class="input-xxlarge" label="COM_RSSEO_REDIRECTS_FROM" description="COM_RSSEO_REDIRECTS_FROM_DESC" required="true" size="70" />
+	<field name="to" type="text" class="input-xxlarge" label="COM_RSSEO_REDIRECTS_TO" description="COM_RSSEO_REDIRECTS_TO_DESC" required="true" size="70" />
+	<field name="type" type="list" class="inputbox" label="COM_RSSEO_REDIRECT_TYPE" description="COM_RSSEO_REDIRECT_TYPE_DESC" size="1" default="301">
+		<option value="301">COM_RSSEO_REDIRECT_TYPE_PERMANENT</option>
+		<option value="302">COM_RSSEO_REDIRECT_TYPE_TEMPORARY</option>
+	</field>
+	<field name="published" type="list" class="inputbox" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" size="1" filter="intval" default="1">
+		<option value="1">JPUBLISHED</option>
+		<option value="0">JUNPUBLISHED</option>
+	</field>
+</form>

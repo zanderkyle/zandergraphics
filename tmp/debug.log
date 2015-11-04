@@ -1,0 +1,68 @@
+2015-10-26 02:34:24 Start Scan Process ver. 4.0 [scanner ver. 2.0]
+2015-10-26 02:34:24 Change Time limit: TRUE , Value: 7200
+2015-10-26 02:34:24 Current Memory limit: 256M
+2015-10-26 02:34:24 OS info: Linux (Linux deville.websitewelcome.com 3.12.41-77.ELK6.x86_64 #1 SMP Fri May 1 18:21:30 CDT 2015 x86_64)
+2015-10-26 02:34:24 PHP ver: 5.3.29
+2015-10-26 02:34:24 Domain: http://zandergraphics.net/stage/
+2015-10-26 02:34:24 Scan path: /home/kgonyea/public_html/stage/
+2015-10-26 02:34:24 Session report key: 83512e881d7a73545efe76f386289bb2
+2015-10-26 02:34:24 Report URL: https://www.siteguarding.com/antivirus/viewreport?report_id=83512e881d7a73545efe76f386289bb2
+2015-10-26 02:34:24 TMP folder: /home/kgonyea/public_html/stage/tmp/
+2015-10-26 02:34:27 -----------------------------------------------------------------------
+2015-10-26 02:34:27 Collecting info about the files [METHOD 2]
+2015-10-26 02:34:27 Excluded Folders: 0
+2015-10-26 02:34:31 Save collected file_list
+2015-10-26 02:34:31 Total files: 5786
+2015-10-26 02:34:31 -----------------------------------------------------------------------
+2015-10-26 02:34:31 Start - Pack with SSH
+2015-10-26 02:34:46 Pack file: /home/kgonyea/public_html/stage/tmp/pack.tar
+2015-10-26 02:34:46 Pack file is 7.96Mb
+2015-10-26 02:34:46 -----------------------------------------------------------------------
+2015-10-26 02:34:46 Start - Send Packed files to SG server
+2015-10-26 02:34:46 Pack URL: /tmp/pack.tar
+2015-10-26 02:34:46 CURL CURLOPT_INFILE: /home/kgonyea/public_html/stage/tmp/pack.tar
+2015-10-26 02:34:46 CURL CURLOPT_INFILESIZE: 8348285
+2015-10-26 02:34:47 CURL info - Array
+(
+    [url] => http://www.siteguarding.com/ext/antivirus/index.php?action=uploadfiles_ver2
+    [content_type] => text/html
+    [http_code] => 200
+    [header_size] => 236
+    [request_size] => 240
+    [filetime] => -1
+    [ssl_verify_result] => 0
+    [redirect_count] => 0
+    [total_time] => 1.236096
+    [namelookup_time] => 0.000237
+    [connect_time] => 0.040018
+    [pretransfer_time] => 0.04004
+    [size_upload] => 8348959
+    [size_download] => 0
+    [speed_download] => 0
+    [speed_upload] => 6754296
+    [download_content_length] => 0
+    [upload_content_length] => 8348959
+    [starttransfer_time] => 0.08035
+    [redirect_time] => 0
+    [certinfo] => Array
+        (
+        )
+
+    [redirect_url] => 
+)
+
+2015-10-26 02:34:47 Pack file sent for analyze - OK
+2015-10-26 02:34:50 -----------------------------------------------------------------------
+2015-10-26 02:34:50 Start - Report generating
+2015-10-26 02:39:57 Done. Sending your report by email
+2015-10-26 02:39:57 Report Sent - OK
+2015-10-26 02:39:57 -----------------------------------------------------------------------
+2015-10-26 02:39:57 Array
+(
+    [type] => 2
+    [message] => curl_setopt(): supplied argument is not a valid File-Handle resource
+    [file] => /home/kgonyea/public_html/stage/administrator/components/com_jantivirus/classes/scanner.class.php
+    [line] => 734
+)
+
+2015-10-26 02:39:57 PHP process has been terminated

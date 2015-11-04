@@ -1,0 +1,721 @@
+/**
+ * Joomla! component Creative Contact Form
+ *
+ * @version $Id: 2012-04-05 14:30:25 svn $
+ * @author creative-solutions.net
+ * @package Creative Contact Form
+ * @subpackage com_creativecontactform
+ * @license GNU/GPL
+ *
+ */
+.creativecontactform_wrapper.creative_contact_module {
+	width: 100% !important;
+}
+.creative_contact_module .creativecontactform_title {
+	font-size: 22px !important;
+	font-weight: normal !important;
+}
+.creativecontactform_wrapper {
+	width: 98%;
+	margin: 15px auto;
+	padding: 0 !important;
+	position: relative !important;
+	float: none !important;
+	
+	-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+.creativecontactform_wrapper * {
+	font-family: inherit;
+}
+
+.creativecontactform_wrapper input,.creativecontactform_wrapper textarea{
+	line-height: 17px !important;
+}
+.creativecontactform_pre_text {
+	line-height: 1.2 !important;
+}
+
+.creativecontactus_field_name {
+	display: block !important;
+	float: none !important;
+}
+
+.creativecontactform_wrapper_inner {
+	position: relative !important;
+}
+
+.creativecontactform_form {
+	display: block !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.creativecontactform_title {
+	margin: 0 0 0 0 !important;
+	padding: 0 !important;
+	line-height: 1.2 !important;
+}
+.creativecontactform_send,.creativecontactform_send_new {
+	cursor: pointer !important;
+	outline: none !important;
+	height: auto !important;
+	width: auto !important;
+	line-height: 15px !important;
+	display: block;
+
+	-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+
+.creativecontactform_field_box {
+	margin: 0 0 10px 0 !important;
+	padding: 0 !important;
+}
+.creative_contact_module .creativecontactform_field_box {
+	margin: 0 0 5px 0 !important;
+}
+
+.creativecontactform_field_name {
+	display: block !important;
+	padding: 0 0px 0 0 !important;
+	float: none !important;
+}
+.creativecontactform_submit_wrapper {
+	position: relative;
+}
+.creative_contact_module .creativecontactform_send,
+.creative_contact_module .creativecontactform_send_new {
+	padding: 5px 15px !important;
+}
+.creativecontactform_clear {
+	background: none !important;
+	border: 0 !important;
+	clear: both !important;
+	display: block !important;
+	float: none !important;
+	font-size: 0 !important;
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	overflow: hidden !important;
+	visibility: hidden !important;
+	width: 0 !important;
+	height: 0 !important;
+}
+
+.creativecontactform_loading_wrapper {
+	position: absolute !important;
+	top: 0 !important;
+	left: 0 !important;
+	bottom: 0 !important;
+	right: 0 !important;
+	display: none;
+	z-index: 100 !important;
+
+	background-color: #fff !important;
+}
+
+.creative_title_holder {
+	clear: both !important;
+	margin: 0 0 10px 0 !important;
+	padding: 0 !important;
+	height: 0px !important;
+}
+
+/********************************************************************************************************************INPUT RULES************************************************************************************************************************ */
+.creative_input_reset {
+	display: block !important;
+	width: auto !important;
+	height: 18px !important;
+	border: none !important;
+	background: none !important;
+	margin: 0 !important;
+	padding: 0  !important;
+	outline: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+	width: 100% !important;
+
+	box-sizing:border-box !important;
+	-moz-box-sizing:border-box !important; /* Firefox */
+	-webkit-box-sizing:border-box !important;
+}
+/*inputs  width and height control ************************************** */
+.creativecontactform_input_element {
+	width: 100% !important;
+	height: 27px;
+	position: relative !important;
+	display: inline-block !important;
+
+	-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+.creative_contact_module .creativecontactform_input_element {
+	width: auto !important;
+	margin: 0 5px 5px 0 !important;
+}
+
+/************************************************************************ */
+.creative_input_dummy_wrapper {
+	position: relative;
+	padding: 3px 8px 0px 8px;
+}
+
+.creative_textarea_reset {
+	display: block !important;
+	float: none !important;
+	background-image: none !important;
+	width: 100% !important;
+	border: none !important;
+	background: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	outline: none !important;
+	-moz-box-shadow: none !important;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+
+	box-sizing:border-box !important;
+	-moz-box-sizing:border-box !important; /* Firefox */
+	-webkit-box-sizing:border-box !important;
+}
+/*TEXT area width. height control *********************************************************************************************************************************************** */
+.creative_textarea_wrapper {
+	/*width: 95% !important;
+	height: 150px !important;*/
+}
+.creative_textarea {
+	resize: none !important;
+	height: 90%;
+}
+
+.creativecontactform_submit_wrapper {
+}
+/***********************************************3.0.0 updates************************************************************************************************** */
+.creative_textarea_dummy_wrapper {
+	padding: 5px 8px 8px 8px !important;
+	position: relative !important;
+	height: 100%;
+}
+.creative_label_txt_wrapper {
+	position: relative;
+	display: inline;	
+}
+.creativecontactform_field_required  {
+	position: absolute;
+	right: -12px;
+	top: 3px;
+}
+.creative_checkbox_wrapper {
+	overflow: hidden;
+}
+.creative_checkbox_label_wrapper {
+	display: inline-block !important;
+}
+.creativecontactform_field_name_wrapper {
+	width: 100%;
+	margin:0 auto;
+}
+
+/**************************************************Font Effects*********************************************************************************************************/
+.ccf_font_effect_none {
+
+}
+.ccf_font_effect_emboss {
+	text-shadow: 0px 1px 1px #fff, 0 -1px 1px #000 !important;
+}
+.ccf_font_effect_fire {
+	text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70, 0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40 !important;
+}
+
+.ccf_font_effect_fire_animation {
+  -webkit-animation-duration:0.8s;
+  -webkit-animation-name:ccf-font-effect-fire-animation-keyframes;
+  -webkit-animation-iteration-count:infinite;
+  -webkit-animation-direction:alternate;
+}
+.ccf_font_effect_neon {
+	text-shadow: 0 0 0.1em #fff, 0 0 0.2em #fff, 0 0 0.3em #fff, 0 0 0.4em #f7f,0 0 0.6em #f0f, 0 0 0.8em #f0f, 0 0 1.0em #f0f, 0 0 1.2em #f0f !important;
+}
+.ccf_font_effect_outline {
+	text-shadow:0 1px 1px #000, 0 -1px 1px #000, 1px 0 1px #000, -1px 0 1px #000 !important;
+}
+.ccf_font_effect_shadow_multiple {
+  text-shadow: .04em .04em 0 #fff,.08em .08em 0 #aaa !important;
+  -webkit-text-shadow: .04em .04em 0 #fff, .08em .08em 0 #aaa !important;
+}
+.ccf_font_effect_3d {
+  	text-shadow: 0px 1px 0px #c7c8ca, 0px 2px 0px #b1b3b6, 0px 3px 0px #9d9fa2, 0px 4px 0px #8a8c8e, 0px 5px 0px #77787b, 0px 6px 0px #636466, 0px 7px 0px #4d4d4f, 0px 8px 7px #001135 !important;
+}
+.ccf_font_effect_3d_float {
+	text-shadow: 0 0.032em 0 #b0b0b0, 0px 0.15em 0.11em rgba(0,0,0,0.15), 0px 0.25em 0.021em rgba(0,0,0,0.1), 0px 0.32em 0.32em rgba(0,0,0,0.1) !important;
+}
+@-webkit-keyframes ccf-font-effect-fire-animation-keyframes {
+  0% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  25% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.05em 0.17em #FE0, 0.04em -0.12em 0.22em #FC0, 0.04em -0.13em 0.27em #F90, 0.05em -0.23em 0.33em #F70, 0.07em -0.28em 0.47em #F70, 0.1em -0.3em 0.8em #F50, 0.1em -0.3em 0.9em #F40;
+  }
+  50% {    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+  75% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0 -0.06em 0.18em #FE0, 0.05em -0.15em 0.23em #FC0, 0.05em -0.15em 0.3em #F90, 0.07em -0.25em 0.4em #F70, 0.09em -0.3em 0.5em #F70, 0.1em -0.3em 0.9em #F50, 0.1em -0.3em 1.0em #F40;
+  }
+  100% {
+    text-shadow: 0 -0.05em 0.2em #FFF, 0.01em -0.02em 0.15em #FE0, 0.01em -0.05em 0.15em #FC0, 0.02em -0.15em 0.2em #F90, 0.04em -0.20em 0.3em #F70,0.05em -0.25em 0.4em #F70, 0.06em -0.2em 0.9em #F50, 0.1em -0.1em 1.0em #F40;
+  }
+}
+/**************************************************END Font Effects*********************************************************************************************************/
+/**************************************************Contact Data *********************************************************************************************************/
+.ccf_content_element {
+	overflow: hidden;
+	margin-bottom: 10px;
+}
+.ccf_content_element_icon_wrapper {
+	float: left;
+	overflow: hidden;
+	margin-left: -100%;
+}
+.ccf_content_element_content_wrapper {
+	float: left;
+	overflow: hidden;
+	width: 100%;
+	margin-top: 5px;
+}
+.ccf_content_element span {
+	display: inline;
+}
+.ccf_content_element_label {
+	vertical-align: middle;
+
+	font-weight: normal;
+	font-size: 14px;
+	margin-right: 10px;
+	color: rgb(71, 71, 71);
+}
+.ccf_content_icon {
+	vertical-align: middle;
+
+	height: 25px;
+	width: 25px;
+	vertical-align: middle;
+	display: inline-block !important;
+	margin-right: 7px;
+
+	background-size: auto 100%;
+	background-color: transparent;
+	background-repeat: no-repeat;
+	background-position: 0px 0px;
+}
+/*Template 1*/
+.ccf_sections_template_1 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_1/address.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_1/phone.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_1/mobile.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_1/email.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_1/fax.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_1/map.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_1/link.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_1/tip.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_1/info.png");
+}
+.ccf_sections_template_1 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_1/question.png");
+}
+/*Template 2*/
+.ccf_sections_template_2 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_2/address.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_2/phone.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_2/mobile.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_2/email.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_2/fax.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_2/map.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_2/link.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_2/tip.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_2/info.png");
+}
+.ccf_sections_template_2 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_2/question.png");
+}
+/*Template 3*/
+.ccf_sections_template_3 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_3/address.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_3/phone.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_3/mobile.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_3/email.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_3/fax.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_3/map.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_3/link.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_3/tip.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_3/info.png");
+}
+.ccf_sections_template_3 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_3/question.png");
+}
+/*Template 4*/
+.ccf_sections_template_4 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_4/address.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_4/phone.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_4/mobile.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_4/email.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_4/fax.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_4/map.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_4/link.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_4/tip.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_4/info.png");
+}
+.ccf_sections_template_4 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_4/question.png");
+}
+/*Template 5*/
+.ccf_sections_template_5 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_5/address.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_5/phone.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_5/mobile.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_5/email.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_5/fax.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_5/map.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_5/link.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_5/tip.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_5/info.png");
+}
+.ccf_sections_template_5 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_5/question.png");
+}
+/*Template 6*/
+.ccf_sections_template_6 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_6/address.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_6/phone.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_6/mobile.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_6/email.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_6/fax.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_6/map.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_6/link.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_6/tip.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_6/info.png");
+}
+.ccf_sections_template_6 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_6/question.png");
+}
+/*Template 7*/
+.ccf_sections_template_7 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_7/address.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_7/phone.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_7/mobile.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_7/email.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_7/fax.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_7/map.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_7/link.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_7/tip.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_7/info.png");
+}
+.ccf_sections_template_7 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_7/question.png");
+}
+/*Template 8*/
+.ccf_sections_template_8 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_8/address.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_8/phone.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_8/mobile.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_8/email.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_8/fax.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_8/map.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_8/link.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_8/tip.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_8/info.png");
+}
+.ccf_sections_template_8 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_8/question.png");
+}
+/*Template 9*/
+.ccf_sections_template_9 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_9/address.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_9/phone.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_9/mobile.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_9/email.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_9/fax.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_9/map.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_9/link.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_9/tip.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_9/info.png");
+}
+.ccf_sections_template_9 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_9/question.png");
+}
+/*Template 10*/
+.ccf_sections_template_10 .ccf_content_icon_address {
+	background-image: url("../images/contact_data/template_10/address.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_phone {
+	background-image: url("../images/contact_data/template_10/phone.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_mobile {
+	background-image: url("../images/contact_data/template_10/mobile.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_email {
+	background-image: url("../images/contact_data/template_10/email.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_fax {
+	background-image: url("../images/contact_data/template_10/fax.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_map {
+	background-image: url("../images/contact_data/template_10/map.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_link {
+	background-image: url("../images/contact_data/template_10/link.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_tip {
+	background-image: url("../images/contact_data/template_10/tip.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_info {
+	background-image: url("../images/contact_data/template_10/info.png");
+}
+.ccf_sections_template_10 .ccf_content_icon_question {
+	background-image: url("../images/contact_data/template_10/question.png");
+}
+
+
+
+.ccf_content_styling {
+	font-weight: normal;
+	color: rgb(0, 175, 253);
+}
+/*creative popup********************************************************************************/
+.creative_timing_creative-popup {
+	display: none !important;
+}
+.ccf_popup_link {
+	color: rgb(0, 98, 208);
+	font-weight: bold;
+	text-decoration: underline;
+	cursor: pointer;
+
+	transition: all 0.3s ease-out 0s;
+	-webkit-transition: all 0.3s ease-out 0s;
+	-moz-transition: all 0.3s ease-out 0s;
+}
+.ccf_popup_link:hover {
+	color: rgb(221, 0, 0);
+}
+
+#creative_popup_wrapper {
+	position: absolute !important;
+	background-color: #fff !important;
+	border-radius: 6px !important;
+	moz-border-radius: 6px !important;
+	-webkit-border-radius: 6px !important;
+	box-shadow: 0 0 15px 0 #222 !important;
+	moz-box-shadow: 0 0 15px 0 #222 !important;
+	-webkit-box-shadow: 0 0 15px 0 #222 !important;
+	top: 0;
+	left: 0;
+	z-index: 10001 !important;
+}
+
+.ccf_close_popup {
+	position: absolute;
+	width: 32px;
+	height: 32px;
+	top: -16px;
+	right: -16px;
+	z-index: 10003 !important;
+	cursor: pointer;
+
+	transition: all 0.2s ease-out 0s;
+	-webkit-transition: all 0.2s ease-out 0s;
+	-moz-transition: all 0.2s ease-out 0s;
+}
+.ccf_close_popup:hover {
+	transform: scale(1.1,1.1);
+}
+.ccf_close_popup:hover .ccf_close_popup_bg {
+	background-color: rgb(194, 0, 15);
+}
+.ccf_close_popup_icon {
+	position: absolute;
+	background: transparent url("../images/close_popup.png") 0px 0px no-repeat;
+	background-size: 100% 100%;
+	width: 32px;
+	height: 32px;
+	top: 0px;
+	left: 0px;
+	z-index: 10002 !important;
+}
+.ccf_close_popup_bg {
+	z-index: 10001 !important;
+	position: absolute;
+	background-color: #767676;
+	top: 8px;
+	left: 9px;
+	width: 16px;
+	height: 16px;
+
+	transition: all 0.2s ease-out 0s;
+	-webkit-transition: all 0.2s ease-out 0s;
+	-moz-transition: all 0.2s ease-out 0s;
+}
+.ccf_popup_inner_wrapper {
+	position: absolute;
+	top: 10px;
+	left: 20px;
+	right: 20px;
+	bottom: 20px;
+	overflow-y: auto;
+}
+.ccf_transparent {
+	background: none !important;
+	background-color: transparent !important;
+}
+

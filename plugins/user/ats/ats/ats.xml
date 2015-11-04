@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="ats">
+		<fieldset name="ats"
+			label="PLG_USER_ATS_SLIDER_LABEL"
+		>
+			<field
+				name="signature"
+				type="textarea"
+				id="signature"
+				cols="50"
+				rows="5"
+				description="PLG_USER_ATS_FIELD_SIGNATURE_DESC"
+				filter="safehtml"
+				label="PLG_USER_ATS_FIELD_SIGNATURE_LABEL"
+				message="PLG_USER_ATS_FIELD_SIGNATURE_MESSAGE"
+				required="false"
+				readonly="false"
+				default=" "
+			/>
+		</fieldset>
+	</fields>
+</form>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5" method="upgrade">
+    <name>COM_CREATIVECONTACTFORM</name>
+    <creationDate>March 2013</creationDate>
+    <author>Creative Solutions</author>
+    <copyright>Copyright (©) 2008-2015 Creative Solutions. All rights reserved.</copyright>
+    <authorEmail>info@creative-solutions.net</authorEmail>
+    <authorUrl>http://creative-solutions.net</authorUrl>
+    <version>3.0.0</version>
+    <license>GNU/GPL</license>
+    <description>COM_CREATIVECONTACTFORM_DESCRIPTION</description>
+    
+    <scriptfile>scriptfile.php</scriptfile>
+
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">install/sql/install.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">install/sql/uninstall.sql</file>
+		</sql>
+	</uninstall>
+	
+	<!-- user part -->
+    <files folder="site">
+        <filename>controller.php</filename>
+        <filename>index.html</filename>
+        <filename>router.php</filename>
+        <filename>creativecontactform.php</filename>
+        <filename>sendmail.php</filename>
+        <folder>models</folder>
+        <folder>views</folder>
+        <folder>assets</folder>
+        <folder>helpers</folder>
+    </files>
+    
+    <languages folder="site">
+			<language tag="en-GB">language/en-GB/en-GB.com_creativecontactform.ini</language>
+			<!-- <language tag="fr-FR">language/fr-FR/fr-FR.com_creativecontactform.ini</language> -->
+	</languages>
+	
+    <!-- administration part -->
+    <administration>
+	    <menu view="cpanel" img="components/com_creativecontactform/assets/images/project_16.png">COM_CREATIVECONTACTFORM_MENU</menu>
+	    <submenu>
+	    	<menu view="cpanel" link="option=com_creativecontactform">COM_CREATIVECONTACTFORM_MENU_OVERVIEW</menu>
+	    	<menu view="cpanel" link="option=com_creativecontactform&amp;view=creativeforms">COM_CREATIVECONTACTFORM_MENU_FORMS</menu>
+	    	<menu view="cpanel" link="option=com_creativecontactform&amp;view=creativefields">COM_CREATIVECONTACTFORM_MENU_FIELDS</menu>
+	    	<menu view="cpanel" link="option=com_creativecontactform&amp;view=templates">COM_CREATIVECONTACTFORM_MENU_TEMPLATES</menu>
+		</submenu>
+	    <files folder="admin">
+	        <filename>controller.php</filename>
+	        <filename>creativecontactform.php</filename>
+	        <filename>config.xml</filename>
+	        <filename>index.html</filename>
+			
+	        <folder>install</folder>
+	        <folder>assets</folder>
+	        <folder>helpers</folder>
+	        <folder>models</folder>
+	        <folder>tables</folder>
+	        <folder>views</folder>
+	        <folder>controllers</folder>
+	        <folder>elements</folder>
+	        <folder>fields</folder>
+	    </files>
+	    
+	   	<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_creativecontactform.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_creativecontactform.sys.ini</language>
+			<!-- <language tag="fr-FR">language/fr-FR/fr-FR.com_creativecontactform.ini</language> -->
+			<!-- <language tag="fr-FR">language/fr-FR/fr-FR.com_creativecontactform.sys.ini</language> -->
+		</languages>
+    </administration>
+</extension>

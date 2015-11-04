@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params" addfieldpath="/administrator/components/com_ats/models/elements">
+		<fieldset name="ats"
+			label="COM_ATS_CATEGORY_OPTIONS"
+		>
+			<field
+				name="defposttext"
+				type="textarea"
+				id="defposttext"
+				cols="50"
+				rows="5"
+				label="COM_ATS_CATEGORY_DEFPOSTTEXT_LBL"
+				description="COM_ATS_CATEGORY_DEFPOSTTEXT_DESC"
+				filter="safehtml"
+				required="false"
+				readonly="false"
+				default=" "
+			/>
+
+			<field
+				name="instantreply"
+				id="instantreply"
+				type="list"
+				label="COM_ATS_CATEGORY_INSTANTREPLY_LBL"
+				description="COM_ATS_CATEGORY_INSTANTREPLY_DESC"
+				required="true"
+				readonly="false"
+				default="0"
+			>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+			<field
+				name="dicats"
+				type="dicatsel"
+				id="dicats"
+				label="COM_ATS_CATEGORY_DICATS_LBL"
+				description="COM_ATS_CATEGORY_DICATS_DESC"
+				required="false"
+				readonly="false"
+				default=""
+			/>
+
+			<field
+				name="category_email"
+				type="text"
+				label="COM_ATS_CATEGORY_EMAIL_LBL"
+				description="COM_ATS_CATEGORY_EMAIL_DESC"
+				default=""
+				size="40"
+				/>
+
+			<field
+				name="defaultprivate"
+				id="defaultprivate"
+				type="list"
+				label="COM_ATS_CATEGORY_DEFAULTPRIVATE_LBL"
+				description="COM_ATS_CATEGORY_DEFAULTPRIVATE_DESC"
+				required="true"
+				readonly="false"
+				default="0"
+			>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+
+      <field
+          name="forcetype"
+          type="list"
+          label="COM_ATS_CATEGORY_FORCETYPE_LBL"
+          description="COM_ATS_CATEGORY_FORCETYPE_DESC"
+          default=""
+      >
+          <option value="">COM_ATS_COMMON_SELECT_DASH</option>
+          <option value="PUB">COM_ATS_CATEGORY_FORCETYPE_PUBLIC</option>
+          <option value="PRIV">COM_ATS_CATEGORY_FORCETYPE_PRIVATE</option>
+      </field>
+
+      <field name="notify_managers"
+             type="atsmanagerlist"
+             label="COM_ATS_CATEGORY_NOTIFY_MANAGERS_LBL"
+             description="COM_ATS_CATEGORY_NOTIFY_MANAGERS_DESC"
+             default="all" />
+
+      <field name="exclude_managers"
+             type="atsmanagerlist" hidetip="true"
+             label="COM_ATS_CATEGORY_EXCLUDE_MANAGERS_LBL"
+             description="COM_ATS_CATEGORY_EXCLUDE_MANAGERS_DESC"
+             default="" />
+		</fieldset>
+
+		<fieldset name="atscredits"
+					label="COM_ATS_CATEGORY_OPTIONS_CREDITS"
+		>
+			<field
+				name="credits_newpublic"
+				type="text"
+				label="COM_ATS_CATEGORY_CREDITS_NEWPUBLIC_LBL"
+				description="COM_ATS_CATEGORY_CREDITS_NEWPUBLIC_DESC"
+				default="0"
+				size="5"
+				/>
+			<field
+				name="credits_replypublic"
+				type="text"
+				label="COM_ATS_CATEGORY_CREDITS_REPLYPUBLIC_LBL"
+				description="COM_ATS_CATEGORY_CREDITS_REPLYPUBLIC_DESC"
+				default="0"
+				size="5"
+				/>
+			<field
+				name="credits_newprivate"
+				type="text"
+				label="COM_ATS_CATEGORY_CREDITS_NEWPRIVATE_LBL"
+				description="COM_ATS_CATEGORY_CREDITS_NEWPRIVATE_DESC"
+				default="0"
+				size="5"
+				/>
+			<field
+				name="credits_replyprivate"
+				type="text"
+				label="COM_ATS_CATEGORY_CREDITS_REPLYPRIVATE_LBL"
+				description="COM_ATS_CATEGORY_CREDITS_REPLYPRIVATE_DESC"
+				default="0"
+				size="5"
+				/>
+
+            <field
+				name="modifier_lowpriority"
+				type="text"
+				label="COM_ATS_CATEGORY_CREDITS_MODIFIER_LOW_LBL"
+				description="COM_ATS_CATEGORY_CREDITS_MODIFIER_LOW_DESC"
+				default="0"
+				size="5"
+				/>
+
+            <field
+                name="modifier_normalpriority"
+                type="text"
+                label="COM_ATS_CATEGORY_CREDITS_MODIFIER_NORMAL_LBL"
+                description="COM_ATS_CATEGORY_CREDITS_MODIFIER_NORMAL_DESC"
+                default="0"
+                size="5"
+                />
+
+            <field
+                name="modifier_highpriority"
+                type="text"
+                label="COM_ATS_CATEGORY_CREDITS_MODIFIER_HIGH_LBL"
+                description="COM_ATS_CATEGORY_CREDITS_MODIFIER_HIGH_DESC"
+                default="0"
+                size="5"
+                />
+
+		</fieldset>
+	</fields>
+</form>

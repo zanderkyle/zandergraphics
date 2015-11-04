@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="utf-8"?>
+<config>
+	<fieldset name="general" label="COM_RSSEO_CONFIGURATION_GENERAL">
+		<field name="global_register_code" type="text" class="input-xxlarge" description="COM_RSSEO_CONFIGURATION_GENERAL_LICENSE_CODE_DESC" label="COM_RSSEO_CONFIGURATION_GENERAL_LICENSE_CODE" size="70" />
+		<field name="global_dateformat" type="text" class="input-large" default="d M y H:i" description="COM_RSSEO_CONFIGURATION_GENERAL_DATE_FORMAT_DESC" label="COM_RSSEO_CONFIGURATION_GENERAL_DATE_FORMAT" size="70" />
+	</fieldset>
+	
+	<fieldset name="seoperformance" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE">
+		<field name="google_domain" type="list" class="inputbox" default="0" size="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_DOMAIN" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_DOMAIN_DESC">
+			<option value="google.com">International (google.com)</option>
+			<option value="google.cat">Catalan Linguistic and Cultural Community (google.cat)</option>
+			<option value="google.com.af">Afghanistan (google.com.af)</option>
+			<option value="google.dz">Algeria (google.dz)</option>
+			<option value="google.as">American Samoa (google.as)</option>
+			<option value="google.it.ao">Angola (google.it.ao)</option>
+			<option value="google.com.ag">Antigua and Barbuda (google.com.ag)</option>
+			<option value="google.com.ar">Argentina (google.com.ar)</option>
+			<option value="google.com.am">Armenia (google.am)</option>
+			<option value="google.com.au">Australia (google.com.au)</option>
+			<option value="google.at">Austria (google.at)</option>
+			<option value="google.az">Azerbaijan (google.az)</option>
+			<option value="google.bs">Bahamas (google.bs)</option>
+			<option value="google.com.bh">Bahrain (google.com.bh)</option>
+			<option value="google.com.bd">Bangladesh (google.com.bd)</option>
+			<option value="google.com.by">Belarus (google.com.by)</option>
+			<option value="google.be">Belgium (google.be)</option>
+			<option value="google.com.bz">Belize (google.com.bz)</option>
+			<option value="google.com.bo">Bolivia (google.com.bo)</option>
+			<option value="google.ba">Bosnia and Herzegovina (google.ba)</option>
+			<option value="google.co.bw">Botswana (google.co.bw)</option>
+			<option value="google.com.br">Brazil (google.com.br)</option>
+			<option value="google.com.bn">Brunei (google.com.bn)</option>
+			<option value="google.bg">Bulgaria (google.bg)</option>
+			<option value="google.com.kh">Cambodia (google.com.kh)</option>
+			<option value="google.ca">Canada (google.ca)</option>
+			<option value="google.cl">Chile (google.cl)</option>
+			<option value="google.cn">China (google.cn)</option>
+			<option value="google.com.co">Colombia (google.com.co)</option>
+			<option value="google.cd">Congo, Democratic Republic of the (google.cd)</option>
+			<option value="google.cg">Congo (google.cg)</option>
+			<option value="google.co.cr">Costa Rica (google.co.cr)</option>
+			<option value="google.ci">Côte d'Ivoire (google.ci)</option>
+			<option value="google.hr">Croatia (google.hr)</option>
+			<option value="google.com.cu">Cuba (google.com.cu)</option>
+			<option value="google.cz">Czech Republic (google.cz)</option>
+			<option value="google.dk">Denmark (google.dk)</option>
+			<option value="google.com.do">Dominican Republic (google.com.do)</option>
+			<option value="google.com.ec">Ecuador (google.com.ec)</option>
+			<option value="google.com.eg">Egypt (google.com.eg)</option>
+			<option value="google.com.sv">El Salvador (google.com.sv)</option>
+			<option value="google.ee">Estonia (google.ee)</option>
+			<option value="google.com.et">Ethiopia (google.com.et)</option>
+			<option value="google.fj">Fiji (google.com.fj)</option>
+			<option value="google.fi">Finland (google.fi)</option>
+			<option value="google.fr">France (google.fr)</option>
+			<option value="google.ge">Georgia (google.ge)</option>
+			<option value="google.de">Germany (google.de)</option>
+			<option value="google.com.gh">Ghana (google.com.gh)</option>
+			<option value="google.gr">Greece (google.gr)</option>
+			<option value="google.gp">Guadeloupe (google.gp)</option>
+			<option value="google.com.gt">Guatemala (google.com.gt)</option>
+			<option value="google.gy">Guyana (google.gy)</option>
+			<option value="google.ht">Haiti (google.ht)</option>
+			<option value="google.hn">Honduras (google.hn)</option>
+			<option value="google.com.hk">Hong Kong (google.com.hk)</option>
+			<option value="google.hu">Hungary (google.hu)</option>
+			<option value="google.is">Iceland (google.is)</option>
+			<option value="google.co.in">India (google.co.in)</option>
+			<option value="google.co.id">Indonesia (google.co.id)</option>
+			<option value="google.ie">Ireland (google.ie)</option>
+			<option value="google.co.il">Israel (google.co.il)</option>
+			<option value="google.it">Italy (google.it)</option>
+			<option value="google.com.jm">Jamaica (google.com.jm)</option>
+			<option value="google.co.jp">Japan (google.co.jp)</option>
+			<option value="google.jo">Jordan (google.jo)</option>
+			<option value="google.kz">Kazakhstan (google.kz)</option>
+			<option value="google.co.ke">Kenya (google.co.ke)</option>
+			<option value="google.com.kw">Kuwait (google.com.kw)</option>
+			<option value="google.la">Laos (google.la)</option>
+			<option value="google.lv">Latvia (google.lv)</option>
+			<option value="google.com.lb">Lebanon (google.com.lb)</option>
+			<option value="google.co.ls">Lesotho (google.co.ls)</option>
+			<option value="google.com.ly">Libya (google.com.ly)</option>
+			<option value="google.lt">Lithuania (google.lt)</option>
+			<option value="google.lu">Luxembourg (google.lu)</option>
+			<option value="google.mg">Madagascar (google.mg)</option>
+			<option value="google.com.my">Malaysia (google.com.my)</option>
+			<option value="google.mv">Maldives (google.mv)</option>
+			<option value="google.com.mt">Malta (google.com.mt)</option>
+			<option value="google.mu">Mauritius (google.mu)</option>
+			<option value="google.com.mx">Mexico (google.com.mx)</option>
+			<option value="google.md">Moldova (google.md)</option>
+			<option value="google.mn">Mongolia (google.mn)</option>
+			<option value="google.me">Montenegro (google.me)</option>
+			<option value="google.co.ma">Morocco (google.co.ma)</option>
+			<option value="google.co.mz">Mozambique (google.co.mz)</option>
+			<option value="google.com.na">Namibia (google.com.na)</option>
+			<option value="google.com.np">Nepal (google.com.np)</option>
+			<option value="google.nl">Netherlands (google.nl)</option>
+			<option value="google.co.nz">New Zealand (google.co.nz)</option>
+			<option value="google.com.ni">Nicaragua (google.com.ni)</option>
+			<option value="google.com.ng">Nigeria (google.com.ng)</option>
+			<option value="google.no">Norway (google.no)</option>
+			<option value="google.com.om">Oman (google.com.om)</option>
+			<option value="google.com.pk">Pakistan (google.com.pk)</option>
+			<option value="google.com.pa">Panama (google.com.pa)</option>
+			<option value="google.com.py">Paraguay (google.com.py)</option>
+			<option value="google.com.pe">Peru (google.com.pe)</option>
+			<option value="google.com.ph">Philippines (google.com.ph)</option>
+			<option value="google.pl">Poland (google.pl)</option>
+			<option value="google.pt">Portugal (google.pt)</option>
+			<option value="google.com.pr">Puerto Rico (google.com.pr)</option>
+			<option value="google.com.qa">Qatar (google.com.qa)</option>
+			<option value="google.ro">Romania (google.ro)</option>
+			<option value="google.ru">Russia (google.ru)</option>
+			<option value="google.rw">Rwanda (google.rw)</option>
+			<option value="google.sm">San Marino (google.sm)</option>
+			<option value="google.com.sa">Saudi Arabia (google.com.sa)</option>
+			<option value="google.sn">Senegal (google.sn)</option>
+			<option value="google.rs">Serbia (google.rs)</option>
+			<option value="google.sc">Seychelles (google.sc)</option>
+			<option value="google.com.sg">Singapore (google.com.sg)</option>
+			<option value="google.sk">Slovakia (google.sk)</option>
+			<option value="google.si">Slovenia (google.si)</option>
+			<option value="google.co.za">South Africa (google.co.za)</option>
+			<option value="google.co.kr">South Korea (google.co.kr)</option>
+			<option value="google.es">Spain (google.es)</option>
+			<option value="google.lk">Sri Lanka (google.lk)</option>
+			<option value="google.se">Sweden (google.se)</option>
+			<option value="google.ch">Switzerland (google.ch)</option>
+			<option value="google.com.tw">Taiwan (google.com.tw)</option>
+			<option value="google.co.tz">Tanzania (google.co.tz)</option>
+			<option value="google.co.th">Thailand (google.co.th)</option>
+			<option value="google.tt">Trinidad and Tobago (google.tt)</option>
+			<option value="google.com.tr">Turkey (google.com.tr)</option>
+			<option value="google.co.ug">Uganda (google.co.ug)</option>
+			<option value="google.com.ua">Ukraine (google.com.ua)</option>
+			<option value="google.ae">United Arab Emirates (google.ae)</option>
+			<option value="google.co.uk">United Kingdom (google.co.uk)</option>
+			<option value="google.com.uy">Uruguay (google.com.uy)</option>
+			<option value="google.co.ve">Venezuela (google.co.ve)</option>
+			<option value="google.com.vn">Vietnam (google.com.vn)</option>
+			<option value="google.co.vi">Virgin Islands, U.S. (google.co.vi)</option>
+		</field>
+		
+		<field name="enable_pr" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_PAGE_RANK" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_PAGE_RANK_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_googlep" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_PAGES" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_PAGES_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_googleb" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_BACKLINKS" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_GOOGLE_BACKLINKS_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_bingp" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_BING_PAGES" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_BING_PAGES_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_bingb" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_BING_BACKLINKS" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_BING_BACKLINKS_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_alexa" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_ALEXA_RANK" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_ALEXA_RANK_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_tehnorati" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_TECHNORATI_RANK" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_TECHNORATI_RANK_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="enable_dmoz" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_DMOZ_RANK" description="COM_RSSEO_CONFIGURATION_SEO_PERFORMANCE_DMOZ_RANK_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+	</fieldset>
+	
+	<fieldset name="googleanalytics" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS">
+		<field name="analytics_enable" type="radio" class="btn-group" default="0" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_ENABLE" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_ENABLE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="analytics_username" type="text" class="input-large" default="" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_USERNAME_DESC" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_USERNAME" size="50" />
+		<field name="analytics_password" type="password" class="input-large" default="" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_PASSWORD_DESC" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_PASSWORD" size="50" />
+		<field name="analytics_key" type="text" class="input-large" default="" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_KEY_DESC" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_KEY" size="50" />
+		
+		<field name="ga_tracking" type="radio" class="btn-group" default="0" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_ENABLE_TRACKING" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_ENABLE_TRACKING_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="ga_code" type="text" class="input-large" default="" description="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_CODE_DESC" label="COM_RSSEO_CONFIGURATION_GOOGLE_ANALYTICS_CODE" size="50" />
+	</fieldset>
+	
+	<fieldset name="crawler" label="COM_RSSEO_CONFIGURATION_CRAWLER">
+		<field name="crawler_enable_auto" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_AUTO" description="COM_RSSEO_CONFIGURATION_CRAWLER_AUTO_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_level" type="list" class="inputbox" default="1" size="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_LEVEL" description="COM_RSSEO_CONFIGURATION_CRAWLER_LEVEL_DESC">
+			<option value="-1">COM_RSSEO_CONFIGURATION_CRAWLER_LEVEL_UNLIMITED</option>
+			<option	value="1">1</option>
+			<option	value="2">2</option>
+			<option	value="3">3</option>
+			<option	value="4">4</option>
+			<option	value="5">5</option>
+			<option	value="6">6</option>
+			<option	value="7">7</option>
+			<option	value="8">8</option>
+			<option	value="9">9</option>
+			<option	value="10">10</option>
+		</field>
+		
+		<field name="spacer1" type="spacer" hr="true" />
+		
+		<field name="site_name_in_title" type="list" class="inputbox" default="0" size="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE" description="COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE_DESC" >
+			<option value="0">JNO</option>
+			<option value="1">COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE_AFTER</option>
+			<option value="2">COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE_BEFORE</option>
+		</field>
+		<field name="site_name_separator" type="text" class="input-small" default="|" description="COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE_SEPARATOR_DESC" label="COM_RSSEO_CONFIGURATION_CRAWLER_SITE_NAME_TITLE_SEPARATOR" size="50" />
+		
+		<field name="spacer2" type="spacer" hr="true" />
+		
+		<field name="crawler_sef" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_SEF" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_SEF_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_title_duplicate" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DUPLICATE_TITLE" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DUPLICATE_TITLE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_title_length" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_TITLE_LENGTH" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_TITLE_LENGTH_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_description_duplicate" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DUPLICATE_DESCR" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DUPLICATE_DESCR_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_description_length" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DESCR_LENGTH" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_DESCR_LENGTH_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_keywords" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_KEYWORDS" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_KEYWORDS_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_headings" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_HEADINGS" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_HEADINGS_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_images" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_IMAGES" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_IMAGES_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_images_alt" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_ALT_IMAGE" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_ALT_IMAGE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_images_hw" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_HW_IMAGE" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_HW_IMAGE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="crawler_intext_links" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_IE_LINKS" description="COM_RSSEO_CONFIGURATION_CRAWLER_CHECK_IE_LINKS_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="crawler_ignore" type="textarea" translate_default="true" default="COM_RSSEO_CONFIGURATION_CRAWLER_IGNORE_DEFAULT" class="inputbox span5" rows="10" cols="70" description="COM_RSSEO_CONFIGURATION_CRAWLER_IGNORE_DESC" label="COM_RSSEO_CONFIGURATION_CRAWLER_IGNORE" />
+		<field name="spacer3" type="spacer" label="COM_RSSEO_CONFIGURATION_CRAWLER_IGNORE_INFO" />
+	</fieldset>
+	
+	<fieldset name="replacements" label="COM_RSSEO_CONFIGURATION_REPLACEMENTS">
+		<field name="enable_keyword_replace" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_REPLACEMENTS_ENABLE" description="COM_RSSEO_CONFIGURATION_REPLACEMENTS_ENABLE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="approved_chars" type="text" class="input-large" translate_default="true" default="COM_RSSEO_CONFIGURATION_REPLACEMENTS_DEFAULT" size="50" label="COM_RSSEO_CONFIGURATION_REPLACEMENTS_CHARS" description="COM_RSSEO_CONFIGURATION_REPLACEMENTS_CHARS_DESC" />
+	</fieldset>
+	
+	
+	<fieldset name="subdomains" label="COM_RSSEO_CONFIGURATION_SUBDOMAINS">
+		<field name="subdomains" type="textarea" default="" class="inputbox span5" rows="10" cols="70" description="COM_RSSEO_CONFIGURATION_SUBDOMAINS_DESC" label="COM_RSSEO_CONFIGURATION_SUBDOMAINS_LABEL" />
+	</fieldset>
+	
+	<fieldset name="curl" label="COM_RSSEO_CONFIGURATION_CURL" description="COM_RSSEO_CONFIGURATION_CURL_DESC">
+		<field name="proxy_enable" type="radio" class="btn-group" default="0" label="COM_RSSEO_CONFIGURATION_CURL_PROXY_ENABLE" description="COM_RSSEO_CONFIGURATION_CURL_PROXY_ENABLE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		
+		<field name="proxy_server" type="text" class="input-large" default="" label="COM_RSSEO_CONFIGURATION_CURL_SERVER" description="COM_RSSEO_CONFIGURATION_CURL_SERVER_DESC" size="50" />
+		<field name="proxy_port" type="text" class="input-large" default="" label="COM_RSSEO_CONFIGURATION_CURL_PORT" description="COM_RSSEO_CONFIGURATION_CURL_PORT_DESC" size="50" />
+		<field name="proxy_username" type="text" class="input-large" default="" label="COM_RSSEO_CONFIGURATION_CURL_USERNAME" description="COM_RSSEO_CONFIGURATION_CURL_USERNAME_DESC" size="50" />
+		<field name="proxy_password" type="password" class="input-large" default="" label="COM_RSSEO_CONFIGURATION_CURL_PASSWORD" description="COM_RSSEO_CONFIGURATION_CURL_PASSWORD_DESC" size="50" />
+		
+	</fieldset>
+	
+	<fieldset name="kdensity" label="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY">
+		<field name="keyword_density_enable" type="radio" class="btn-group" default="1" label="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_ENABLE" description="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_ENABLE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="copykeywords" type="radio" class="btn-group" default="0" label="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_COPY" description="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_COPY_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field name="overwritekeywords" type="radio" class="btn-group" default="0" label="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_OVERWRITE" description="COM_RSSEO_CONFIGURATION_KEYWORD_DENSITY_OVERWRITE_DESC" >
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+	</fieldset>
+	
+	<fieldset name="permissions" label="JCONFIG_PERMISSIONS_LABEL" description="JCONFIG_PERMISSIONS_DESC">
+		<field name="rules" type="rules" label="JCONFIG_PERMISSIONS_LABEL" class="inputbox" validate="rules" filter="rules" component="com_rsseo" section="component"/>
+		
+		<field type="hidden" name="sitemapauto" default="" />
+		<field type="hidden" name="ga_account" default="" />
+		<field type="hidden" name="ga_start" default="" />
+		<field type="hidden" name="ga_end" default="" />
+		<field type="hidden" name="ga_token" default="" />
+		<field type="hidden" name="sitemap_menus" default="" />
+		<field type="hidden" name="sitemap_excludes" default="" />
+	</fieldset>
+
+</config>

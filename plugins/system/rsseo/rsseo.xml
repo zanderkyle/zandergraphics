@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="system" method="upgrade">
+	<name>plg_system_rsseo</name>
+	<author>RSJoomla!</author>
+	<creationDate>June 2012</creationDate>
+	<license>GNU General Public License</license>
+	<authorEmail>supporttickets@rsjoomla.com</authorEmail>
+	<authorUrl>www.rsjoomla.com</authorUrl>
+	<version>1.2.0</version>
+	<description>RSSEO_SYSTEM_PLUGIN_DESC</description>
+	<files>
+		<filename plugin="rsseo">rsseo.php</filename>
+		<filename>index.html</filename>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsseo.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.plg_system_rsseo.sys.ini</language>
+	</languages>
+	
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="generator" type="radio" class="btn-group" default="0" label="RSSEO_REMOVE_GENERATOR_LINK" description="RSSEO_REMOVE_GENERATOR_LINK_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="spacer1" type="spacer" class="text" label="RSSEO_GOOGLE_SITEMAP_VERIFICATION" />
+				<field name="enable" type="radio" class="btn-group" default="0" label="RSSEO_ENABLE_GOOGLE_SITEMAP_VERIFICATION" description="RSSEO_ENABLE_GOOGLE_SITEMAP_VERIFICATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="type" type="radio" class="btn-group" default="google-site-verification" label="RSSEO_VERIFICATION_NAME" description="RSSEO_VERIFICATION_NAME">
+					<option value="google-site-verification">google-site-verification</option>
+					<option value="verify-v1">verify-v1</option>
+				</field>
+				<field name="content" type="text" default="" size="70" label="RSSEO_VERIFICATION_GOOGLE_CONTENT" description="RSSEO_VERIFICATION_GOOGLE_CONTENT_DESC" />
+				<field name="spacer2" type="spacer" class="text" label="RSSEO_YAHOO_SITEMAP_VERIFICATION" />
+				<field name="enabley" type="radio" class="btn-group" default="0" label="RSSEO_ENABLE_YAHOO_SITEMAP_VERIFICATION" description="RSSEO_ENABLE_YAHOO_SITEMAP_VERIFICATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="contenty" type="text" default="" size="70" label="RSSEO_VERIFICATION_YAHOO_CONTENT" description="RSSEO_VERIFICATION_YAHOO_CONTENT_DESC" />
+				<field name="spacer3" type="spacer" class="text" label="RSSEO_BING_SITEMAP_VERIFICATION" />
+				<field name="enableb" type="radio" class="btn-group" default="0" label="RSSEO_ENABLE_BING_SITEMAP_VERIFICATION" description="RSSEO_ENABLE_BING_SITEMAP_VERIFICATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="contentb" type="text" default="" size="70" label="RSSEO_VERIFICATION_BING_CONTENT" description="RSSEO_VERIFICATION_BING_CONTENT_DESC" />
+				<field name="spacer4" type="spacer" class="text" label="RSSEO_CANONICALIZATION" />
+				<field name="enablecan" type="radio" class="btn-group" default="0" label="RSSEO_ENABLE_CANONICALIZATION" description="RSSEO_ENABLE_CANONICALIZATION_DESC">
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+				<field name="domain" type="text" default="" size="30" label="RSSEO_DOMAIN_NAME" description="RSSEO_DOMAIN_NAME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+	
+</extension>

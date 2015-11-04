@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+	<name>com_ats</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<creationDate>2015-10-14</creationDate>
+	<copyright>Copyright (c)2011-2015 Nicholas K. Dionysopoulos</copyright>
+	<license>This component in released under the GNU/GPL v3 or later license</license>
+	<authorEmail>nicholas@akeebabackup.com</authorEmail>
+	<authorUrl>http://www.akeebabackup.com</authorUrl>
+	<version>2.0.1</version>
+	<description>A simple ticket support system</description>
+
+	<!-- Public front end files -->
+	<files folder="frontend">
+		<filename>ats.php</filename>
+		<filename>router.php</filename>
+
+		<folder>Controller</folder>
+		<folder>Dispatcher</folder>
+		<folder>Helper</folder>
+		<folder>Model</folder>
+		<folder>View</folder>
+		<folder>views</folder>
+	</files>
+
+	<!-- Front end translation files -->
+	<languages folder="language/frontend">
+		<language tag="en-GB">en-GB/en-GB.com_ats.ini</language>
+	</languages>
+
+	<!-- Media files -->
+	<media destination="com_ats" folder="media">
+		<folder>css</folder>
+		<folder>flags</folder>
+		<folder>groups</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+	</media>
+
+	<!-- Administrator back-end section -->
+	<administration>
+		<!-- Administration menu -->
+		<menu view="cpanel"
+			img="../media/com_ats/images/ats-16.png">COM_ATS</menu>
+
+		<!-- Back-end files -->
+		<files folder="backend">
+			<filename>access.xml</filename>
+			<filename>ats.php</filename>
+			<filename>config.xml</filename>
+			<filename>fof.xml</filename>
+			<filename>version.php</filename>
+
+			<folder>assets</folder>
+			<folder>Controller</folder>
+			<folder>CustomField</folder>
+			<folder>Dispatcher</folder>
+			<folder>Form</folder>
+			<folder>Helper</folder>
+			<folder>helpers</folder>
+			<folder>Model</folder>
+			<folder>models</folder>
+			<folder>sql</folder>
+			<folder>Toolbar</folder>
+			<folder>Utils</folder>
+			<folder>View</folder>
+		</files>
+
+		<!-- Back-end translation files -->
+		<languages folder="language/backend">
+			<language tag="en-GB">en-GB/en-GB.com_ats.ini</language>
+			<language tag="en-GB">en-GB/en-GB.com_ats.sys.ini</language>
+		</languages>
+	</administration>
+
+	<!-- Installation / uninstallation PHP scripts -->
+	<scriptfile>script.com_ats.php</scriptfile>
+</extension>

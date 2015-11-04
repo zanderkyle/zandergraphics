@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5" client="site" method="upgrade">
+	<name>Ultimate Twitter Sidebar Feed</name>
+	<author>Bill Backhez</author>
+	<creationDate>June 2013</creationDate>
+	<copyright>Copyright (C)2013 Ultimate Social Widgets</copyright>
+	<license>GNU General Public License version 2 or later</license>
+	<authorEmail>admin@ultimatesocialwidgets.com</authorEmail>
+	<authorUrl>www.ultimatesocialwidgets.com</authorUrl>
+	<version>2.0</version>
+	<description>Thanks for installing Ultimate Twitter Sidebar Feed.</description>
+	<files>
+		<filename module="mod_ultimatetwittersidebarfeed">mod_ultimatetwittersidebarfeed.php</filename>
+		<filename>index.html</filename>
+		<filename>mod_ultimatetwittersidebarfeed.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+			<field type="spacer" label="&lt;div style=&quot;color:#444; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#ccc;&quot;&gt;Settings For Individual Profile&lt;/div&gt;" />
+				<field
+					name="twitter_username"
+					type="text"
+					default="google"
+					label="Twitter Username"
+					description="Put your twitter username" />
+				<field
+					name="twitter_widget_id"
+					type="text"
+					default="346792666668871680"
+					label="Twitter Widget Id"
+					description="Put your twitter widget id" />
+			<field type="spacer" label="&lt;div style=&quot;color:#444; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#ccc;&quot;&gt;Dimensions&lt;/div&gt;" />
+				<field
+					name="width"
+					type="text"
+					default="250"
+					label="Width"
+					description="Width (value - integer)" />
+				<field
+					name="height"
+					type="text"
+					default="300"
+					label="Height"
+					description="Height (value - integer)" />
+			<field type="spacer" label="&lt;div style=&quot;color:#444; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#ccc;&quot;&gt;Appearance&lt;/div&gt;" />
+				<field 
+					name="links_color" 
+					type="color" 
+					default="#4aed05" 
+					label="Link color" 
+					description="" />
+				<field 
+					name="border_color" 
+					type="color" 
+					default="#cccccc" 
+					label="Border color" 
+					description="" />
+			<field type="spacer" label="&lt;div style=&quot;color:#444; font-size:12px; font-weight:bold; padding:3px; margin:0; text-align:center; background:#ccc;&quot;&gt;Preferences&lt;/div&gt;" />
+				
+				<field
+					name="widget_theme"
+					type="radio"
+					class="btn-group"
+					default="light"
+					label="Widget Theme"
+					description="Choose Widget Theme">
+					<option value="light">Light</option>
+					<option value="dark">Dark</option>
+				</field>
+				<field name="border" type="radio" class="btn-group" default="yes" label="Border" description="">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				<field name="scrollbar" type="radio" class="btn-group" default="no" label="Scrollbar" description="">
+					<option value="yes">Yes</option>
+					<option value="no">No</option>
+				</field>
+				
+			</fieldset>
+			<fieldset name="advanced">
+				<field
+					name="moduleclass_sfx"
+					type="text"
+					default=""
+					label="Module Class Suffix"
+					description="Module Class Suffix" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

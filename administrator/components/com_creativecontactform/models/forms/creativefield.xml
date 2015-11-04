@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset>
+		<!-- 1 --><field name="id" type="hidden"/>
+		<!-- 2 --><field name="name" type="textarea" label="COM_CREATIVECONTACTFORM_LABEL_NAME_LABEL" description="COM_CREATIVECONTACTFORM_LABEL_NAME_DESCRIPTION" size="40" class="inputbox" default="" required="required"/>
+		<!-- 3 --><field name="tooltip_text" type="text" label="COM_CREATIVECONTACTFORM_TOOLTIP_TEXT_LABEL" description="COM_CREATIVECONTACTFORM_TOOLTIP_TEXT_DESCRIPTION" size="40" class="inputbox" default="" />
+		<!-- 4 --><field name="id_form" type="sql" default="1" label="COM_CREATIVECONTACTFORM_FORM_LABEL" description="COM_CREATIVECONTACTFORM_TEMPLATE_DESCRIPTION" query="SELECT name, id FROM #__creative_forms WHERE published != '-2'" key_field="id" value_field="name" />
+		<!-- 5 --><field id="id_type" name="id_type" type="sql" label="COM_CREATIVECONTACTFORM_TYPE_LABEL" description="COM_CREATIVECONTACTFORM_TYPE_DESCRIPTION"  default="1" query="SELECT name, id FROM #__creative_field_types ORDER BY id" key_field="id" value_field="name" />
+
+		<!-- 6 --><field name="column_type"  type="list" class="btn-group" default="0" label="COM_CREATIVECONTACTFORM_COLUMN_TYPE_LABEL" description="COM_CREATIVECONTACTFORM_COLUMN_TYPE_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_COLUMN_TYPE_BOTH</option>
+			<option value="1">COM_CREATIVECONTACTFORM_COLUMN_TYPE_1</option>
+			<option value="2">COM_CREATIVECONTACTFORM_COLUMN_TYPE_2</option>
+		</field>
+		<!-- 7 --><field name="required"  type="radio" class="btn-group" default="0" label="COM_CREATIVECONTACTFORM_REQUIRED_LABEL" description="COM_CREATIVECONTACTFORM_REQUIRED_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>
+		<!-- 8 --><field id="published" name="published" type="list" label="JSTATUS" description="JFIELD_PUBLISHED_DESC" class="inputbox" size="1" default="1">
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+			<option value="2">JARCHIVED</option>
+			<option value="-2">JTRASHED</option>
+		</field>
+		
+		<!-- 9 --><field name="width" type="text" label="COM_CREATIVECONTACTFORM_FIELD_WIDTH_LABEL" description="COM_CREATIVECONTACTFORM_FIELD_WIDTH_DESCRIPTION" size="40" class="inputbox" default="" />
+
+		<!-- 10 --><field name="field_margin_top" label="COM_CREATIVECONTACTFORM_MARGIN_TOP_LABEL" description="COM_CREATIVECONTACTFORM_MARGIN_TOP_DESCRIPTION" type="text" default="" />
+		
+		<!-- 11 --><field name="ordering_field"  type="radio" class="btn-group" default="0" label="COM_CREATIVECONTACTFORM_ORDERING_LABEL" description="COM_CREATIVECONTACTFORM_ORDERING_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_ORDER_BY_CUSTOM</option>
+			<option value="1">COM_CREATIVECONTACTFORM_ORDER_BY_NAME</option>
+		</field>
+		<!-- 12 --><field name="show_parent_label"  type="radio" class="btn-group" default="1" label="COM_CREATIVECONTACTFORM_SHOW_PARENT_LABEL_LABEL" description="COM_CREATIVECONTACTFORM_SHOW_PARENT_LABEL_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>
+		<!-- 13 --><field name="select_default_text" type="text" label="COM_CREATIVECONTACTFORM_SELECT_DEFAULT_TEXT_LABEL" description="COM_CREATIVECONTACTFORM_SELECT_DEFAULT_TEXT_DESCRIPTION" size="40" class="inputbox" default="Select" />
+		<!-- 14 --><field name="select_no_match_text" type="text" label="COM_CREATIVECONTACTFORM_SELECT_NO_MATCH_LABEL" description="COM_CREATIVECONTACTFORM_SELECT_NO_MATCH_DESCRIPTION" size="40" class="inputbox" default="No results match" />
+		<!-- 15 --><field name="select_show_scroll_after" type="text" label="COM_CREATIVECONTACTFORM_SELECT_SHOW_SCROLL_AFTER_LABEL" description="COM_CREATIVECONTACTFORM_SELECT_SHOW_SCROLL_AFTER_DESCRIPTION" size="40" class="inputbox" default="10" />
+		<!-- 16 --><field name="select_show_search_after" type="text" label="COM_CREATIVECONTACTFORM_SELECT_SHOW_SEARCH_AFTER_LABEL" description="COM_CREATIVECONTACTFORM_SELECT_SHOW_SEARCH_AFTER_DESCRIPTION" size="40" class="inputbox" default="10" />
+		
+		<!-- 17 --><field name="upload_button_text" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_BUTTON_TEXT_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_BUTTON_TEXT_DESCRIPTION" size="40" class="inputbox" default="Select files..." />
+		<!-- 18 --><field name="upload_minfilesize" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_MINFILESIZE_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_MINFILESIZE_DESCRIPTION" size="40" class="inputbox" default="1" />
+		<!-- 19 --><field name="upload_maxfilesize" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_MAXFILESIZE_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_MAXFILESIZE_DESCRIPTION" size="40" class="inputbox" default="5" />
+		<!-- 20 --><field name="upload_acceptfiletypes" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_ACCEPTFLETYPES_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_ACCEPTFLETYPES_DESCRIPTION" size="40" class="inputbox" default="jpg|jpeg|png|gif|pdf|doc|docx|ppt|pptx|odt|avi|ogg|m4a|mov|mp3|mp4|mpg|wav|wmv|zip|rar|7z" />
+		<!-- 21 --><field name="upload_minfilesize_message" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_MINFILESIZE_MESSAGE_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_MINFILESIZE_MESSAGE_DESCRIPTION" size="40" class="inputbox" default="File is too small" />
+		<!-- 22 --><field name="upload_maxfilesize_message" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_MAXFILESIZE_MESSAGE_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_MAXFILESIZE_MESSAGE_DESCRIPTION" size="40" class="inputbox" default="File size exceeds the maximum allowed size (5 MB)" />
+		<!-- 23 --><field name="upload_acceptfiletypes_message" type="text" label="COM_CREATIVECONTACTFORM_UPLOAD_ACCEPTFLETYPES_MESSAGE_LABEL" description="COM_CREATIVECONTACTFORM_UPLOAD_ACCEPTFLETYPES_MESSAGE_DESCRIPTION" size="40" class="inputbox" default="Invalid file format" />
+		
+		<!-- 24 --><field name="captcha_wrong_message" type="text" label="COM_CREATIVECONTACTFORM_CAPTCHA_WRONG_MESSAGE_LABEL" description="COM_CREATIVECONTACTFORM_CAPTCHA_WRONG_MESSAGE_DESCRIPTION" size="40" class="inputbox" default="Security code is not correct" />
+
+		<!-- 25 --><field name="datepicker_date_format" type="list" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_DESCRIPTION" size="1" class="inputbox" default="1" >
+			<option value="mm/dd/yy">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_1</option>
+			<option value="yy-mm-dd">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_2</option>
+			<option value="dd/mm/yy">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_3</option>
+			<option value="d M, yy">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_4</option>
+			<option value="d MM, yy">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_5</option>
+			<option value="DD, d MM, yy">COM_CREATIVECONTACTFORM_DATEPICKER_DATE_FORMAT_6</option>
+		</field>
+
+		<!-- 26 --><field name="datepicker_animation" type="list" label="COM_CREATIVECONTACTFORM_DATEPICKER_ANIMATION_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_ANIMATION_DESCRIPTION" size="1" class="inputbox" default="1" >
+			<option value="show">Show (Default)</option>
+			<option value="slideDown">Slide Down</option>
+			<option value="fadeIn">FadeIn</option>
+			<option value="blind">Blind (UI Effect)</option>
+			<option value="bounce">Bounce (UI Effect)</option>
+			<option value="clip">Clip (UI Effect)</option>
+			<option value="drop">Drop (UI Effect)</option>
+			<option value="fold">Fold (UI Effect)</option>
+			<option value="slide">Slide (UI Effect)</option>
+		</field>
+
+		<!-- 27 --><field name="datepicker_style" type="list" label="COM_CREATIVECONTACTFORM_DATEPICKER_STYLE_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_STYLE_DESCRIPTION" size="1" class="inputbox" default="1" >
+			<option value="1">Style 1 (Grey)</option>
+			<option value="2">Style 2 (Black)</option>
+			<option value="3">Style 3 (Melon)</option>
+			<option value="4">Style 4 (Red)</option>
+			<option value="5">Style 5 (Lite Green)</option>
+			<option value="6">Style 6 (Dark Red)</option>
+			<option value="7">Style 7 (Lite Blue)</option>
+			<option value="8">Style 8 (Grey - Green buttons)</option>
+		</field>		
+		<!-- 28 --><field name="datepicker_icon_style" type="list" label="COM_CREATIVECONTACTFORM_DATEPICKER_ICON_STYLE_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_ICON_STYLE_DESCRIPTION" size="1" class="inputbox" default="1" >
+			<option value="1">Style 1 (Blue-Black)</option>
+			<option value="2">Style 2 (Blue-Black)</option>
+			<option value="3">Style 3 (Black)</option>
+			<option value="4">Style 4 (Black)</option>
+			<option value="5">Style 5 (Black)</option>
+			<option value="6">Style 6 (Black)</option>
+			<option value="7">Style 7 (Grey)</option>
+			<option value="8">Style 8 (Blue)</option>
+			<option value="9">Style 9 (Blue)</option>
+			<option value="10">Style 10 (Blue)</option>
+			<option value="11">Style 11 (Blue)</option>
+			<option value="12">Style 12 (Blue)</option>
+			<option value="13">Style 13 (Blue)</option>
+			<option value="14">Style 14 (Blue)</option>
+			<option value="15">Style 15 (Blue)</option>
+			<option value="16">Style 16 (Blue)</option>
+			<option value="17">Style 17 (Blue)</option>
+			<option value="18">Style 18 (Blue)</option>
+			<option value="19">Style 19 (Red)</option>
+			<option value="20">Style 20 (Red)</option>
+			<option value="21">Style 21 (Red)</option>
+			<option value="22">Style 22 (Red)</option>
+			<option value="23">Style 23 (Red)</option>
+			<option value="24">Style 24 (Red)</option>
+			<option value="25">Style 25 (Green)</option>
+			<option value="26">Style 26 (Green)</option>
+			<option value="27">Style 27 (Green)</option>
+			<option value="28">Style 28 (Orange)</option>
+			<option value="29">Style 29 (Orange)</option>
+			<option value="30">Style 30 (Orange)</option>
+		</field>
+
+		<!-- 29 --><field name="datepicker_show_icon"  type="radio" class="btn-group" default="1" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_SHOW_ICON_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_SHOW_ICON_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>		
+		<!-- 30 --><field name="datepicker_input_readonly"  type="radio" class="btn-group" default="1" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_ALLOW_INPUT_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_ALLOW_INPUT_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>
+		<!-- 31 --><field name="datepicker_changemonths"  type="radio" class="btn-group" default="0" label="COM_CREATIVECONTACTFORM_DATEPICKER_CHANGE_MONTHS_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_CHANGE_MONTHS_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>
+		<!-- 32 --><field name="datepicker_changeyears"  type="radio" class="btn-group" default="0" label="COM_CREATIVECONTACTFORM_DATEPICKER_CHANGE_YEARS_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_CHANGE_YEARS_DESCRIPTION">
+			<option value="0">COM_CREATIVECONTACTFORM_SNO</option>
+			<option value="1">COM_CREATIVECONTACTFORM_SYES</option>
+		</field>
+		<!-- 33 --><field name="datepicker_number_months" type="text" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_NUMBER_MONTHS_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_NUMBER_MONTHS_DESCRIPTION" size="40" class="inputbox" default="1" />
+		<!-- 34 --><field name="datepicker_mindate" type="text" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_MINDATE_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_MINDATE_DESCRIPTION" size="40" class="inputbox" default="" />		
+		<!-- 35 --><field name="datepicker_maxdate" type="text" label="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_MAXDATE_LABEL" description="COM_CREATIVECONTACTFORM_DATEPICKER_DATE_MAXDATE_DESCRIPTION" size="40" class="inputbox" default="" />
+
+
+		<!-- 36 --><field name="custom_html" label="COM_CREATIVECONTACTFORM_CUSTOM_HTML_LABEL" description="COM_CREATIVECONTACTFORM_CUSTOM_HTML_DESCRIPTION" type="editor" height="200" width="450" filter="safehtml" />
+
+		<!-- 37 --><field name="heading" label="COM_CREATIVECONTACTFORM_PARAGRAPH_LABEL" description="COM_CREATIVECONTACTFORM_PARAGRAPH_DESCRIPTION" type="textarea" height="200" width="450" filter="safehtml" />
+
+		<!-- 38 --><field name="google_maps" label="COM_CREATIVECONTACTFORM_GOOGLE_MAPS_LABEL" description="COM_CREATIVECONTACTFORM_GOOGLE_MAPS_DESCRIPTION" type="textarea" height="200" width="450" filter="safehtml" />
+		
+		<!-- 39 --><field name="recaptcha_site_key" label="COM_CREATIVECONTACTFORM_RECAPTCHA_SITE_KEY_LABEL" description="COM_CREATIVECONTACTFORM_RECAPTCHA_SITE_KEY_DESCRIPTION" type="text" />
+		<!-- 40 --><field name="recaptcha_security_key" label="COM_CREATIVECONTACTFORM_RECAPTCHA_SECURITY_KEY_LABEL" description="COM_CREATIVECONTACTFORM_RECAPTCHA_SECURITY_KEY_DESCRIPTION" type="text" />
+		<!-- 41 --><field name="recaptcha_wrong_message" label="COM_CREATIVECONTACTFORM_RECAPTCHA_WRONG_MESSAGE_LABEL" description="COM_CREATIVECONTACTFORM_RECAPTCHA_WRONG_MESSAGE_DESCRIPTION" type="text" default="Security code is not correct" />
+		<!-- 42 --><field name="recaptcha_theme"  type="radio" class="btn-group" default="light" label="COM_CREATIVECONTACTFORM_RECAPTCHA_THEME_LABEL" description="COM_CREATIVECONTACTFORM_RECAPTCHA_THEME_DESCRIPTION">
+			<option value="light">COM_CREATIVECONTACTFORM_RECAPTCHA_THEME_LIGHT</option>
+			<option value="dark">COM_CREATIVECONTACTFORM_RECAPTCHA_THEME_DARK</option>
+		</field>
+		<!-- 43 --><field name="recaptcha_type"  type="radio" class="btn-group" default="image" label="COM_CREATIVECONTACTFORM_RECAPTCHA_TYPE_LABEL" description="COM_CREATIVECONTACTFORM_RECAPTCHA_TYPE_DESCRIPTION">
+			<option value="image">COM_CREATIVECONTACTFORM_RECAPTCHA_TYPE_IMAGE</option>
+			<option value="audio">COM_CREATIVECONTACTFORM_RECAPTCHA_TYPE_AUDIO</option>
+		</field>
+
+		<!-- 44 --><field name="contact_data" label="COM_CREATIVECONTACTFORM_CONTACT_DATA_LABEL" description="COM_CREATIVECONTACTFORM_CONTACT_DATA_DESCRIPTION" type="textarea" height="200" width="450" filter="safehtml" />
+		<!-- 45 --><field name="contact_data_width" label="COM_CREATIVECONTACTFORM_CONTACT_DATA_WIDTH_LABEL" description="COM_CREATIVECONTACTFORM_CONTACT_DATA_WIDTH_DESCRIPTION" type="text" default="120" />
+		<!-- 46 --><field name="creative_popup" label="COM_CREATIVECONTACTFORM_CREATIVE_POPUP_LABEL" description="COM_CREATIVECONTACTFORM_CREATIVE_POPUP_DESCRIPTION" type="editor" height="200" width="450" filter="safehtml" />
+		<!-- 47 --><field name="creative_popup_embed" label="COM_CREATIVECONTACTFORM_CREATIVE_POPUP_EMBED_LABEL" description="COM_CREATIVECONTACTFORM_CREATIVE_POPUP_EMBED_DESCRIPTION" type="textarea" height="200" width="450" filter="safehtml" />
+
+
+
+
+	</fieldset>
+</form>

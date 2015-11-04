@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="2.5.0" method="upgrade">
+ 
+	<name>COM_JANTIVIRUS</name>
+	<creationDate>03 May 2015</creationDate>
+	<author>SiteGuarding.com</author>
+	<authorEmail>support@siteguarding.com</authorEmail>
+	<authorUrl>https://www.siteguarding.com</authorUrl>
+    <copyright>Copyright (C) 2014 Open Source Matters. All rights reserved.</copyright>
+    <license>GNU General Public License</license>
+	<version>4.0</version>
+	<description>COM_JANTIVIRUS_DESCRIPTION</description>
+ 
+	<scriptfile>script.php</scriptfile>
+
+
+ 	<files folder="site">
+		<filename>index.html</filename>
+		<filename>jantivirus.php</filename>
+	</files>
+
+	<media destination="com_jantivirus" folder="media">
+		<filename>index.html</filename>
+		<folder>css</folder>
+		<folder>js</folder>
+		<folder>images</folder>
+	</media>
+
+	<administration>
+		<!-- Administration Menu Section -->
+		<menu img="../media/com_jantivirus/images/antivirus-logo.png">COM_JANTIVIRUS_MENU</menu>
+		<files folder="admin">
+			<filename>index.html</filename>
+			<filename>config.xml</filename>
+			<filename>access.xml</filename>
+			<filename>jantivirus.php</filename>
+			<filename>controller.php</filename>
+			<folder>views</folder>
+			<folder>helpers</folder>
+			<folder>classes</folder>
+		</files>
+ 
+		<languages folder="admin">
+			<language tag="en-GB">language/en-GB/en-GB.com_jantivirus.ini</language>
+			<language tag="en-GB">language/en-GB/en-GB.com_jantivirus.sys.ini</language>
+		</languages>
+	</administration>
+ 
+	<!-- UPDATESERVER DEFINITION -->
+	<updateservers>
+		<server type="extension" priority="1" name="Antivirus Update Site">https://www.siteguarding.com/files/jantivirus-update.xml</server>
+	</updateservers>
+ 
+</extension>

@@ -1,0 +1,102 @@
+/**
+ * @package ats
+ * @copyright Copyright (c)2011-2014 Nicholas K. Dionysopoulos / AkeebaBackup.com
+ * @license GNU GPL v3 or later
+ */
+
+body { font-family: Calibri, Arial, Hevetica, sans-serif; font-size: 11pt; }
+
+h1.ats-ticket-view-sitename { font-size: 12pt; font-weight: normal; text-align: right; background: none; margin: 0 0 6pt 0; padding: 3pt; border: none; }
+h2.ats-ticket-view-title { font-size: 18pt; font-weight: bold; text-align: center; background: #e0e0e0; margin: 0 0 3pt 0; padding: 3pt; border-bottom: 1px solid black; border-top: 1px solid black; text-shadow: none; }
+span.ats-ticket-view-title-number { color: #333; text-shadow: white 0px 0px 5px; margin-right: 6pt; }
+h3.ats-ticket-view-postedin { font-size: 12pt; font-weight: normal; text-align: center; background: none; margin: 0 0 6pt 0; padding: 2pt; border: none; text-shadow: none; }
+
+div.ats-ticket-view-stats { background: #e0eae0; margin: 6pt 0; padding: 3pt; color: #030; border-radius: 6pt; }
+
+div.ats-newticket-pubnote { margin: 6pt 0; padding: 3pt; color: #333; border-radius: 6pt; }
+div.ats-newticket-pubnote-private { background: #e0efe0; }
+div.ats-newticket-pubnote-public { background: #efefe0; }
+
+div.ats-ticket-closed { background: #e0e0f0; margin: 6pt 0; padding: 3pt; color: #030; border-radius: 6pt; }
+
+div.ats-post { margin: 0 0 3pt 0; padding: 0; border: thin solid #999; border-radius: 6pt; }
+div.ats-post-header { background-color: #f0f0f0; border-radius: 6pt 6pt 0 0; padding: 2pt; border-bottom: thin solid #999; }
+
+div.ats-post-group-8 { background-color: white; border: medium solid #393; margin: 9pt 0; box-shadow: #90cc90 2pt 2pt 3pt; }
+div.ats-post-group-8 div.ats-post-header { background-color: #f0f9f0; }
+
+div.ats-post-group-0 { background-color: #fffafa; border: thin solid #933; margin: 6pt 0; }
+div.ats-post-group-0 div.ats-post-header { background-color: #f9f0f0; }
+
+.gravatar { margin-right: 3px; }
+
+div.ats-post-userinfo {
+	width: 120px;
+	float: right;
+	border-left: thin dashed #ccc;
+	z-index: 90;
+	margin-left: 0.5em;
+	padding-left: 5px;
+	background-color: inherit;
+	text-align: center;
+}
+
+div.ats-post-userinfo-avatar img {
+	float:none;
+	width: 64px;
+	height: 64px;
+	border: thin solid #333;
+	border-radius: 3px;
+	margin: 0 25px;
+	box-shadow: 1px 1px 3px #999;
+}
+
+div.ats-post-userinfo-username {
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #ccc;
+	word-wrap: break-word;
+}
+
+div.ats-post-userinfo-username, div.ats-post-userinfo-subscriptions, div.ats-post-userinfo-badge {
+	margin: 0.2em;	
+}
+
+div.ats-post-userinfo-badge img {
+	margin:0 0 0.5em;
+}
+
+div.ats-post-content-html {
+	margin: 0 0.5em;
+}
+
+div.ats-post-customfields{
+	margin: 0.3em 0.5em;
+	border-top: thin dashed #ccc;
+	padding-top: 5px;
+}
+
+div.ats-post-customfields h6{
+	margin: 0;
+}
+
+div.ats-post-customfields dd{
+	font-style: italic;
+}
+
+div.ats-post-content-signature {
+	margin: 0.3em 0.5em;
+	padding-top: 0.3em;
+	border-top: thin dotted #ccc;
+}
+
+div.ats-post-footer {
+	clear: both;
+}
+
+div.ats-post-edits {
+	margin: 0.5em;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 8pt;
+	color: #999;
+}

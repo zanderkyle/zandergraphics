@@ -1,0 +1,426 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- $Id: config.xml 19439 2010-11-10 15:42:23Z chdemko $ -->
+<config addfieldpath="/administrator/components/com_ats/models/elements">
+    <fieldset
+            name="permissions"
+            label="JCONFIG_PERMISSIONS_LABEL"
+            description="JCONFIG_PERMISSIONS_DESC"
+            >
+
+        <field
+                name="rules"
+                type="rules"
+                label="JCONFIG_PERMISSIONS_LABEL"
+                class="inputbox"
+                filter="rules"
+                validate="rules"
+                component="com_ats"
+                section="component" />
+    </fieldset>
+
+    <fieldset
+            name="updates"
+            label="COM_ATS_CONFIG_UPDATES_LABEL"
+            description="COM_ATS_CONFIG_UPDATES_DESC"
+            >
+        <field name="downloadid" type="text" default="" size="30"
+               label="COM_ATS_CONFIG_DOWNLOADID_LABEL"
+               description="COM_ATS_CONFIG_DOWNLOADID_DESC"/>
+
+        <field name="autoupdateCli" type="list" default="1"
+               label="CONFIG_AUTOUPDATE_SETTINGS_LABEL"
+               description="CONFIG_AUTOUPDATE_SETTINGS_DESC">
+            <option value="1">CONFIG_AUTOUPDATE_NOTIFY_UPDATE</option>
+            <option value="2">CONFIG_AUTOUPDATE_NOTIFY</option>
+            <option value="3">CONFIG_AUTOUPDATE_UPDATE</option>
+        </field>
+
+        <field name="notificationFreq" type="text" default="1"
+               label="CONFIG_NOTIFICATION_FREQ_LABEL"/>
+
+        <field name="notificationTime" type="list" default="day"
+               label="CONFIG_NOTIFICATION_TIME_LABEL">
+            <option value="min">CONFIG_NOTIFICATION_TIME_MIN</option>
+            <option value="hour">CONFIG_NOTIFICATION_TIME_HOUR</option>
+            <option value="day">CONFIG_NOTIFICATION_TIME_DAY</option>
+        </field>
+
+        <field name="notificationEmail" type="text" default=""
+               label="CONFIG_NOTIFICATION_EMAIL_LABEL"
+               description="CONFIG_NOTIFICATION_EMAIL_DESC"/>
+
+        <field name="stats_enabled" type="list" default="1" label="CONFIG_USAGESTATS_LABEL"
+               description="CONFIG_USAGESTATS_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+    </fieldset>
+
+    <fieldset
+            name="common"
+            label="COM_ATS_CONFIG_COMMON_LABEL"
+            description="COM_ATS_CONFIG_COMMON_DESC"
+            >
+        <field name="editor" type="list" default="bbcode"
+               label="COM_ATS_CONFIG_EDITOR_LABEL"
+               description="COM_ATS_CONFIG_EDITOR_DESC">
+            <option value="bbcode">COM_ATS_CONFIG_EDITOR_OPT_BBCODE</option>
+            <option value="wysiwyg">COM_ATS_CONFIG_EDITOR_OPT_WYSIWYG</option>
+        </field>
+
+        <field name="bbcodeuas" type="text"
+               default="; Android,iPad;,iPhone;,; Windows Phone OS,Windows Phone,; Windows CE,BlackBerry;,; Blazer,; BOLT/,/SymbianOS,(Symbian),Fennec/,GoBrowser/,Iris/,Maemo Browser,MIB/,Minimo/,NetFront/,Opera Mobi/,Opera Mini/,SEMC-Browser/,Skyfire/,TeaShark/,Teleca Q,uZardWeb/"
+               size="60"
+               label="COM_ATS_CONFIG_BBCODEUAS_LABEL"
+               description="COM_ATS_CONFIG_BBCODEUAS_DESC"/>
+
+        <field name="filtermethod" type="list" default="htmlpurifier"
+               label="COM_ATS_CONFIG_FILTERMETHOD_LABEL"
+               description="COM_ATS_CONFIG_FILTERMETHOD_DESC">
+            <option value="htmlpurifier">COM_ATS_CONFIG_FILTERMETHOD_OPT_HTMLPURIFIER</option>
+            <option value="joomla">COM_ATS_CONFIG_FILTERMETHOD_OPT_JOOMLA</option>
+            <option value="hackme">COM_ATS_CONFIG_FILTERMETHOD_OPT_HACKME</option>
+        </field>
+
+        <field name="htmlpurifier_include" type="list" default="1"
+               label="COM_ATS_CONFIG_HTMLPURIFIER_INCLUDE_LABEL"
+               description="COM_ATS_CONFIG_HTMLPURIFIER_INCLUDE_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="htmlpurifier_configstring" type="text"
+               default="p,b,a[href],i,u,strong,em,small,big,span[style],font[size],font[color],ul,ol,li,br,img[src],img[width],img[height],code,pre,blockquote"
+               size="60"
+               label="COM_ATS_CONFIG_HTMLPURIFIER_CONFIGSTRING_LABEL"
+               description="COM_ATS_CONFIG_HTMLPURIFIER_CONFIGSTRING_DESC"
+                />
+
+        <field name="transliteration" type="text"
+               default="α|a,β|v,γ|g,δ|d,ε|e,ζ|z,η|i,θ|th,ι|i,κ|k,λ|l,μ|m,ν|n,ξ|x,ο|o,π|p,ρ|r,σ|s,ς|s,τ|t,υ|y,φ|f,χ|ch,ψ|ps,ω|o,ά|a,έ|e,ή|i,ί|i,ό|o,ύ|y,ώ|o,ϊ|i,ϋ|y,ΐ|i,ΰ|y,à|a,á|a,â|a,ä|a,æ|ae,ã|a,å|a,ā|a,ç|c,ć|c,č|c,è|e,é|e,ê|e,ë|e,ē|e,ė|e,ę|e,î|i,ï|i,í|i,ī|i,į|i,ì|i,ł|i,ñ|n,ń|n,ô|o,ö|o,ò|o,ó|o,œ|oe,ø|o,ō|o,õ|o,ß|s,ś|s,š|s,û|u,ü|u,ù|u,ú|u,ū|u,ÿ|y,ž|z,ź|z,ż|z,а|a,б|b,в|v,г|g,д|d,е|e,ё|e,ж|zh,з|z,и|i,й|i,к|k,л|l,м|m,н|n,о|o,п|p,р|r,с|s,т|t,у|y,ф|f,х|kh,ц|ts,ч|ch,ш|sh,щ|sh,ы|y,э|e,ю|yu,я|ya"
+               size="60"
+               label="COM_ATS_CONFIG_TRANSLITERATION_LABEL"
+               description="COM_ATS_CONFIG_TRANSLITERATION_DESC"
+                />
+
+        <field name="ticketPriorities" type="radio" default="0"
+               label="COM_ATS_CONFIG_TICKET_PRIORITIES">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="assigned_noemail" type="radio" default="0"
+               label="COM_ATS_CONFIG_ASSIGNED_TICKETS_NO_EMAIL_LABEL"
+               description="COM_ATS_CONFIG_ASSIGNED_TICKETS_NO_EMAIL_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="customStatuses" type="textarea"
+               label="COM_ATS_CONFIG_CUSTOM_STATUSES_LABEL"
+               description="COM_ATS_CONFIG_CUSTOM_STATUSES_DESC"
+               cols="30"
+               rows="10"
+                />
+    </fieldset>
+
+    <fieldset
+            name="frontend"
+            label="COM_ATS_CONFIG_FRONTEND_LABEL"
+            description="COM_ATS_CONFIG_FRONTEND_DESC"
+            >
+
+        <field
+                name="editeableforxminutes"
+                type="text"
+                label="COM_ATS_CONFIG_EDITABLEFORXMINUTES_LABEL"
+                description="COM_ATS_CONFIG_EDITABLEFORXMINUTES_DESC"
+                default="15"
+                size="5"
+                />
+
+        <field name="attachments_private" type="radio" default="0"
+               label="COM_ATS_CONFIG_ATTACHMENTSPRIVATE_LABEL"
+               description="COM_ATS_CONFIG_ATTACHMENTSPRIVATE_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="nonewtickets" type="radio" default="0"
+               label="COM_ATS_CONFIG_NONEWTICKETS_LABEL"
+               description="COM_ATS_CONFIG_NONEWTICKETS_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="noreplies" type="radio" default="0"
+               label="COM_ATS_CONFIG_NOREPLIES_LABEL"
+               description="COM_ATS_CONFIG_NOREPLIES_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="showcredits" type="radio" default="0"
+               label="COM_ATS_CONFIG_SHOWCREDITS_LABEL"
+               description="COM_ATS_CONFIG_SHOWCREDITS_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="userfeedback" type="radio" default="0"
+               label="COM_ATS_CONFIG_USERFEEDBACK_LABEL"
+               description="COM_ATS_CONFIG_USERFEEDBACK_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="ajaxreplies" type="radio" default="1"
+               label="COM_ATS_CONFIG_AJAXREPLIES_LABEL"
+               description="COM_ATS_CONFIG_AJAXREPLIES_DESC">
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="instantreplies_daylimit" type="text" filter="integer" default="30"
+               label="COM_ATS_CONFIG_INSTANREPLIES_DAYLIMIT_LABEL"
+               description="COM_ATS_CONFIG_INSTANREPLIES_DAYLIMIT_DESC"
+                />
+
+        <field name="instantreplies_sitechrome" type="radio" default="1"
+               label="COM_ATS_CONFIG_INSTANREPLIES_SITECHROME_LABEL"
+               description="COM_ATS_CONFIG_INSTANREPLIES_SITECHROME_DESC"
+                >
+            <option value="0">JNO</option>
+            <option value="1">JYES</option>
+        </field>
+
+        <field name="usestrapper" type="list" default="3"
+               label="COM_ATS_CONFIG_FRONTEND_USESTRAPPER_LABEL"
+               description="COM_ATS_CONFIG_FRONTEND_USESTRAPPER_DESC">
+          <option value="0">COM_ATS_CONFIG_FRONTEND_USESTRAPPER_NONE</option>
+          <option value="1">COM_ATS_CONFIG_FRONTEND_USESTRAPPER_FRONTEND</option>
+          <option value="2">COM_ATS_CONFIG_FRONTEND_USESTRAPPER_BACKEND</option>
+          <option value="3">COM_ATS_CONFIG_FRONTEND_USESTRAPPER_BOTH</option>
+        </field >
+
+    </fieldset>
+
+    <fieldset
+            name="credits"
+            label="COM_ATS_CONFIG_CREDITS_LABEL"
+            description="COM_ATS_CONFIG_CREDITS_DESC"
+            >
+        <field name="refundonunpublishticket" type="radio" default="1"
+               label="COM_ATS_CONFIG_CREDITS_REFUNDUNPUBLISHTICKET_LABEL"
+               description="COM_ATS_CONFIG_CREDITS_REFUNDUNPUBLISHTICKET_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field name="refundondeleteticket" type="radio" default="1"
+               label="COM_ATS_CONFIG_CREDITS_REFUNDDELETETICKET_LABEL"
+               description="COM_ATS_CONFIG_CREDITS_REFUNDDELETETICKET_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="refundonunpublishpost" type="radio" default="1"
+               label="COM_ATS_CONFIG_CREDITS_REFUNDUNPUBLISHPOST_LABEL"
+               description="COM_ATS_CONFIG_CREDITS_REFUNDUNPUBLISHPOST_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+        <field name="refundondeletepost" type="radio" default="1"
+               label="COM_ATS_CONFIG_CREDITS_REFUNDDELETEPOST_LABEL"
+               description="COM_ATS_CONFIG_CREDITS_REFUNDDELETEPOST_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+    </fieldset>
+
+    <fieldset
+            name="automation"
+            label="COM_ATS_CONFIG_AUTOMATION_LABEL"
+            description="COM_ATS_CONFIG_AUTOMATION_DESC"
+            >
+
+        <field
+                name="maxattachmentage"
+                type="text"
+                label="COM_ATS_CONFIG_MAXATTACHMENTAGE_LABEL"
+                description="COM_ATS_CONFIG_MAXATTACHMENTAGE_DESC"
+                default="30"
+                size="5"
+                />
+
+        <field
+                name="maxinactiveticket"
+                type="text"
+                label="COM_ATS_CONFIG_MAXINACTIVETICKET_LABEL"
+                description="COM_ATS_CONFIG_MAXINACTIVETICKET_DESC"
+                default="30"
+                size="5"
+                />
+
+        <field
+                name="silentticketcloseage"
+                type="text"
+                label="COM_ATS_CONFIG_SILENTTICKETCLOSE_LABEL"
+                description="COM_ATS_CONFIG_SILENTTICKETCLOSE_DESC"
+                default="60"
+                size="5"
+                />
+
+        <field name="botusers" type="textarea" rows="5"
+               label="COM_ATS_CONFIG_BOTUSERS_LABEL" description="COM_ATS_CONFIG_BOTUSERS_DESC"
+                />
+
+        <field name="siteurl" type="hidden" default=""/>
+        <field name="sitepath" type="hidden" default=""
+               label=""/>
+
+    </fieldset>
+
+    <fieldset
+            name="emailgateway"
+            label="COM_ATS_CONFIG_EMAILGATEWAY_LABEL"
+            description="COM_ATS_CONFIG_EMAILGATEWAY_DESC"
+            >
+
+        <field name="replybyemail" type="radio" default="0"
+               label="COM_ATS_CONFIG_REPLYBYEMAIL_LABEL"
+               description="COM_ATS_CONFIG_REPLYBYEMAIL_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="emailadminonly" type="radio" default="0"
+               label="COM_ATS_CONFIG_EMAILADMINONLY_LABEL"
+               description="COM_ATS_CONFIG_EMAILADMINONLY_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="newbyemail" type="radio" default="0"
+               label="COM_ATS_CONFIG_NEWBYEMAIL_LABEL"
+               description="COM_ATS_CONFIG_NEWBYEMAIL_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="track_email_id" type="radio" default="0"
+               label="COM_ATS_CONFIG_TRACKEMAILID_LABEL"
+               description="COM_ATS_CONFIG_TRACKEMAILID_DESC">
+          <option value="0">JNo</option>
+          <option value="1">JYes</option>
+        </field>
+
+        <field
+                name="email_default_category"
+                type="atscats"
+                id="atscats"
+                label="COM_ATS_CONFIG_EMAIL_DEFAULT_CATEGORY_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_DEFAULT_CATEGORY_DESC"
+                default=""
+                />
+
+        <field name="gmail" type="radio" default="0"
+               label="COM_ATS_CONFIG_GMAIL_LABEL"
+               description="COM_ATS_CONFIG_GMAIL_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="mailboxtype" type="radio" default="imap"
+               label="COM_ATS_CONFIG_MAILBOXTYPE_LABEL"
+               description="COM_ATS_CONFIG_MAILBOXTYPE_DESC">
+            <option value="pop3">COM_ATS_CONFIG_MAILBOXTYPE_OPT_POP3</option>
+            <option value="imap">COM_ATS_CONFIG_MAILBOXTYPE_OPT_IMAP</option>
+        </field>
+
+        <field
+                name="email_server"
+                type="text"
+                label="COM_ATS_CONFIG_EMAIL_SERVER_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_SERVER_DESC"
+                default="imap.gmail.com"
+                size="40"
+                />
+
+        <field
+                name="email_port"
+                type="text"
+                label="COM_ATS_CONFIG_EMAIL_PORT_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_PORT_DESC"
+                default=""
+                size="5"
+                />
+
+        <field name="email_ssl" type="radio" default="0"
+               label="COM_ATS_CONFIG_EMAIL_SSL_LABEL"
+               description="COM_ATS_CONFIG_EMAIL_SSL_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field name="email_tls" type="radio" default="1"
+               label="COM_ATS_CONFIG_EMAIL_TLS_LABEL"
+               description="COM_ATS_CONFIG_EMAIL_TLS_DESC">
+            <option value="0">COM_ATS_CONFIG_EMAIL_TLS_OPT_NEVER</option>
+            <option value="1">COM_ATS_CONFIG_EMAIL_TLS_OPT_IFAVAILABLE</option>
+            <option value="1">COM_ATS_CONFIG_EMAIL_TLS_OPT_ALWAYS</option>
+        </field>
+
+        <field name="email_validate_certificate" type="radio" default="1"
+               label="COM_ATS_CONFIG_EMAIL_VALIDATE_CERTIFICATE_LABEL"
+               description="COM_ATS_CONFIG_EMAIL_VALIDATE_CERTIFICATE_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field
+                name="email_username"
+                type="text"
+                label="COM_ATS_CONFIG_EMAIL_USERNAME_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_USERNAME_DESC"
+                default=""
+                size="30"
+                />
+
+        <field
+                name="email_password"
+                type="password"
+                label="COM_ATS_CONFIG_EMAIL_PASSWORD_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_PASSWORD_DESC"
+                default=""
+                size="20"
+                />
+
+        <field
+                name="email_folder"
+                type="text"
+                label="COM_ATS_CONFIG_EMAIL_FOLDER_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_FOLDER_DESC"
+                default="INBOX"
+                size="20"
+                />
+
+        <field name="email_delete" type="radio" default="1"
+               label="COM_ATS_CONFIG_EMAIL_DELETE_LABEL"
+               description="COM_ATS_CONFIG_EMAIL_DELETE_DESC">
+            <option value="0">JNo</option>
+            <option value="1">JYes</option>
+        </field>
+
+        <field
+                name="email_checkevery"
+                type="text"
+                label="COM_ATS_CONFIG_EMAIL_CHECKEVERY_LABEL"
+                description="COM_ATS_CONFIG_EMAIL_CHECKEVERY_DESC"
+                default="5"
+                size="5"
+                />
+
+        <field name="email_lastcheck" type="hidden" default="0" label=""/>
+    </fieldset>
+</config>

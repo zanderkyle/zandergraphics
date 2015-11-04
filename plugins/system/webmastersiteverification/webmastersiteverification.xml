@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5.0" group="system" method="upgrade">
+	<name>Webmaster Site Verification</name>
+	<author>bybe.net</author>
+	<authorEmail>support@bybe.net</authorEmail>
+	<authorUrl>http://www.bybe.net/</authorUrl>
+	<creationDate>05 March 2013</creationDate>
+	<copyright>(C)2015 bybe.net All rights reserved.</copyright>
+	<license>GNU/GPL - http://www.gnu.org/licenses/gpl-2.0.html</license>
+	<version>2.3</version>
+	<description>PLG_WEBMASTERSITEVERIFICATION_XML_DESC</description>
+	<files>
+		<filename plugin="webmastersiteverification">webmastersiteverification.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_webmastersiteverification.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_webmastersiteverification.sys.ini</language>
+	</languages>
+	<config>
+	<fields name="params">
+		<fieldset name="basic">
+			<field name="googleid" type="text" default="" size="32" label="Google ID" description="DESC_GOOGLE" />
+			<field name="bingid" type="text" default="" size="32" label="Bing ID" description="DESC_BING" />
+			<field name="wotid" type="text" default="" size="32" label="WOT ID" description="DESC_WOT" />
+			<field name="alexaid" type="text" default="" size="32" label="Alexa ID" description="DESC_ALEXA" />
+			<field name="nortonid" type="text" default="" size="32" label="Norton ID" description="DESC_NORTON" />
+			<field name="yandexid" type="text" default="" size="32" label="Yandex ID" description="DESC_YANDEX" />
+			<field name="pinterestid" type="text" default="" size="32" label="Pinterest ID" description="DESC_PINTEREST" />
+			<field name="majesticid" type="text" default="" size="32" label="Majestic ID" description="DESC_MAJESTIC" />
+			<field name="avgid" type="text" default="" size="32" label="AVG ID" description="DESC_AVG" />
+			<field name="flippaid" type="text" default="" size="32" label="Flippa ID" description="DESC_FLIPPA" />
+			<field name="globalsignid" type="text" default="" size="32" label="GlobalSign ID" description="DESC_GLOBALSIGN" />
+			<field name="bitlyid" type="text" default="" size="32" label="Bitly ID" description="DESC_BITLY" />
+		</fieldset>
+		<fieldset name="advanced" label="Custom Meta Names">
+			<field name="name1" type="text" size="32" label="Verification Meta Name 1" description="DESC_NAME1" />
+			<field name="content1" type="text" size="32" label="Verification Meta ID 1" description="DESC_VALUE1" />
+			<field name="name2" type="text" size="32" label="Verification Meta Name 2" description="DESC_NAME2" />
+			<field name="content2" type="text" size="32" label="Verification Meta ID 2" description="DESC_VALUE2" />
+			<field name="name3" type="text" size="32" label="Verification Meta Name 3" description="DESC_NAME3" />
+			<field name="content3" type="text" size="32" label="Verification Meta ID 3" description="DESC_VALUE3" />
+			<field name="name4" type="text" size="32" label="Verification Meta Name 4" description="DESC_NAME4" />
+			<field name="content4" type="text" size="32" label="Verification Meta ID 4" description="DESC_VALUE4" />
+			<field name="name5" type="text" size="32" label="Verification Meta Name 5" description="DESC_NAME5" />
+			<field name="content5" type="text" size="32" label="Verification Meta ID 5" description="DESC_VALUE5" />
+			<field name="name6" type="text" size="32" label="Verification Meta Name 6" description="DESC_NAME6" />
+			<field name="content6" type="text" size="32" label="Verification Meta ID 6" description="DESC_VALUE6" />
+			<field name="name7" type="text" size="32" label="Verification Meta Name 7" description="DESC_NAME7" />
+			<field name="content7" type="text" size="32" label="Verification Meta ID 7" description="DESC_VALUE7" />
+			<field name="name8" type="text" size="32" label="Verification Meta Name 8" description="DESC_NAME8" />
+			<field name="content8" type="text" size="32" label="Verification Meta ID 8" description="DESC_VALUE8" />
+			<field name="name9" type="text" size="32" label="Verification Meta Name 9" description="DESC_NAME9" />
+			<field name="content9" type="text" size="32" label="Verification Meta ID 9" description="DESC_VALUE9" />
+		</fieldset>
+		<fieldset name="adnetworks" label="Ad Networks">
+			<field name="admitadid" type="text" default="" size="32" label="Admitad ID" description="DESC_ADMITAD" />
+			<field name="eroid" type="text" default="" size="32" label="Ero Advertising ID" description="DESC_ERO" />
+			<field name="inmobiid" type="text" default="" size="32" label="InMobi ID" description="DESC_INMOBI" />
+			<field name="plugrushid" type="text" default="" size="32" label="PlugRush ID" description="PLUGRUSH" />			
+		</fieldset>
+	</fields>
+	</config>
+</extension>

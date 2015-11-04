@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="2.5" type="plugin" group="ats" method="upgrade">
+	<name>PLG_ATS_GRAVATAR</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<authorEmail>nicholas@dionysopoulos.me</authorEmail>
+	<authorUrl>http://www.akeebabackup.com</authorUrl>
+	<copyright>Copyright (c)2011-2015 Nicholas K. Dionysopoulos</copyright>
+	<license>GNU General Public License version 3, or later</license>
+	<creationDate>November 2012</creationDate>
+	<version>1.0</version>
+	<description>PLG_ATS_GRAVATAR_XML_DESCRIPTION</description>
+
+	<files>
+		<filename plugin="gravatar">gravatar.php</filename>
+	</files>
+
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_ats_gravatar.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_ats_gravatar.sys.ini</language>
+	</languages>
+</extension>

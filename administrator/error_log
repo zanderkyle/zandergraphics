@@ -1,0 +1,5 @@
+[26-Oct-2015 02:34:07 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/kgonyea/public_html/stage/administrator/components/com_jantivirus/controller.php on line 136
+[27-Oct-2015 21:23:56 America/Chicago] PHP Warning:  Creating default object from empty value in /home/kgonyea/public_html/stage/libraries/joomla/updater/adapters/extension.php on line 61
+[27-Oct-2015 21:29:47 America/Chicago] PHP Warning:  array_merge(): Argument #1 is not an array in /home/kgonyea/public_html/stage/administrator/components/com_phocafont/models/phocafontfonts.php on line 709
+[27-Oct-2015 21:29:47 America/Chicago] PHP Warning:  Invalid argument supplied for foreach() in /home/kgonyea/public_html/stage/administrator/components/com_phocafont/models/phocafontfonts.php on line 751
+[04-Nov-2015 02:27:55 America/Chicago] PHP Warning:  Creating default object from empty value in /home/kgonyea/public_html/stage/libraries/joomla/updater/adapters/extension.php on line 61

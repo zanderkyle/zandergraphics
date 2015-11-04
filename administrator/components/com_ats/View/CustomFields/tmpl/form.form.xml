@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+
+    <fieldset name="basic">
+        <field
+            name="title"
+            type="Text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_TITLE"
+            hint="COM_ATS_CUSTOMFIELDS_FIELD_TITLE"
+            description="COM_ATS_CUSTOMFIELDS_HELP_TITLE"
+            required="true"
+            />
+
+        <field
+            name="slug"
+            type="Text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_SLUG"
+            hint="COM_ATS_CUSTOMFIELDS_FIELD_SLUG"
+            description="COM_ATS_CUSTOMFIELDS_HELP_SLUG"
+            required="true"
+            />
+
+
+        <field
+            name="enabled"
+            type="Published"
+            label="JPUBLISHED"
+            />
+
+        <field
+            name="show"
+            type="GenericList"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_SHOW"
+            description="COM_ATS_CUSTOMFIELDS_HELP_SHOW"
+            >
+            <option value="all">COM_ATS_CUSTOMFIELDS_FIELD_SHOW_ALL</option>
+            <option value="category">COM_ATS_CUSTOMFIELDS_FIELD_SHOW_CATEGORY</option>
+        </field>
+
+        <!--
+          Please note that the "cats" field is a computed one, is not present inside the table, we automatically populate
+          it fetching the data from the database
+
+        <field
+            name="cats"
+            type="GenericList"
+            multiple="multiple"
+            size="7"
+            source_class="Akeeba\TicketSystem\Admin\Helper\Select"
+            source_method="getCategoriesOptions"
+            source_key="value"
+            source_value="text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_CATEGORY"
+            description="COM_ATS_CUSTOMFIELDS_HELP_CATEGORY"
+            />
+            -->
+
+        <field
+          name="cats"
+          type="CustomfieldCats"
+          multiple="multiple"
+          size="7"
+          label="COM_ATS_CUSTOMFIELDS_FIELD_CATEGORY"
+          description="COM_ATS_CUSTOMFIELDS_HELP_CATEGORY"
+          />
+
+        <field
+            name="type"
+            type="GenericList"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_TYPE"
+            description="COM_ATS_CUSTOMFIELDS_HELP_TYPE"
+            source_class="Akeeba\TicketSystem\Admin\Helper\Select" source_method="getFieldTypes"
+            />
+
+        <field
+            name="options"
+            type="TextArea"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_OPTIONS"
+            description="COM_ATS_CUSTOMFIELDS_HELP_OPTIONS"
+            class="input-xxlarge"
+            cols="50"
+            rows="7"
+            />
+
+        <field
+            name="default"
+            type="Text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_DEFAULT"
+            hint="COM_ATS_CUSTOMFIELDS_FIELD_DEFAULT"
+            description="COM_ATS_CUSTOMFIELDS_HELP_DEFAULT"
+            required="true"
+            />
+
+        <field
+            name="allow_empty"
+            type="BooleanToggle"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_ALLOW_EMPTY"
+            description="COM_ATS_CUSTOMFIELDS_HELP_ALLOW_EMPTY"
+            required="true"
+            />
+
+        <field
+            name="valid_label"
+            type="Text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_VALID_LABEL"
+            hint="COM_ATS_CUSTOMFIELDS_FIELD_VALID_LABEL"
+            description="COM_ATS_CUSTOMFIELDS_HELP_VALID_LABEL"
+            />
+
+        <field
+            name="invalid_label"
+            type="Text"
+            label="COM_ATS_CUSTOMFIELDS_FIELD_INVALID_LABEL"
+            hint="COM_ATS_CUSTOMFIELDS_FIELD_INVALID_LABEL"
+            description="COM_ATS_CUSTOMFIELDS_HELP_INVALID_LABEL"
+            />
+    </fieldset>
+</form>

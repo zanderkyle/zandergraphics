@@ -1,0 +1,267 @@
+/* Front page module background colors */
+
+.front1-1, .front1-2, .front1-3, .front1-4 {
+	background-color: #1f4368;
+} 
+
+.front2-1, .front2-2, .front2-3, .front2-4 {
+	background-color: #fff;
+}
+
+.front3-1, .front3-2, .front3-3, .front3-4 {
+	background-color: #1f4368;
+} 
+
+.front4-1, .front4-2, .front4-3, .front4-4 {
+	background-color: #fff;
+}
+
+.bottom1-1, .bottom1-2, .bottom1-3, .bottom1-4 {
+	background-color: #1f4368;
+} 
+
+.bottom2-1, .bottom2-2, .bottom2-3, .bottom2-4 {
+	background-color: #fff;
+}
+
+.bottom3-1, .bottom3-2, .bottom3-3, .bottom3-4 {
+	background-color: #1f4368;
+}
+
+.bottom4-1, .bottom4-2, .bottom4-3, .bottom4-4 {
+	background-color: #fff;
+}
+
+/* Main content background color */
+
+.main-content {
+	background-color: #1f4368;
+}
+
+/* Footer background color */
+
+.footer {
+	background-color: #1f4368;
+}
+
+/* Header and logo size */
+
+.header .brand img {
+	max-width: 600px;
+}
+
+@media (max-width: 700px) {
+	.header .brand img {
+		max-width: 100%;
+	}
+}
+
+/* Header logo position */
+
+.header .brand {
+	text-align: left;
+} 
+
+
+
+input[type="search"] {
+	font-size: 11px;
+}
+
+
+#copyright {
+	color: #fff;
+}
+
+#copyright-top {
+	color: #fff;
+}
+
+
+
+#mod-container {
+	margin: 10px 5px 10px 5px;
+	padding: 20px;
+	background-color: #fff;
+	border: 1px solid #000;
+	height: 200px;
+	overflow: auto;
+}
+
+
+/* Front page image and positioning */
+
+.front-display {
+	background-image: url(../images/zg-back.jpg);
+	background-repeat:repeat-x;
+	background-size:cover;
+	background-position:left top;
+}
+
+/* Front page styles */
+
+#front1, #front2, #front3, #front4, #bottom1, #bottom2, #bottom3, #bottom4, .footer1, #copyright, #copyright-top, .header {
+	width:85%;
+	margin: 0 auto;
+}
+
+#inside-padding {
+	padding: 0px 10px 0px 10px;
+}
+
+#front-main {
+	width: 50%;
+	min-height:300px;
+	margin-top:5px;
+	margin-right:8%;
+	float: right;
+	background-color:rgba(255, 255, 255, .5);
+	opacity:.75;
+	border: 2px solid #fff;
+}
+
+/* Module widths auto adjust by position count */
+
+.front1-1 .frontbox, .front2-1 .frontbox, .front3-1 .frontbox, .front4-1 .frontbox {
+	width:100%;
+	margin: 0 auto;
+}
+
+.front1-2 .frontbox, .front2-2 .frontbox, .front3-2 .frontbox, .front4-2 .frontbox {
+	width:50%;
+	margin: 0 auto;
+	float: left;
+}
+
+.front1-3 .frontbox, .front2-3 .frontbox, .front3-3 .frontbox, .front4-3 .frontbox {
+	width:33.3%;
+	margin: 0 auto;
+	float: left;
+} 
+
+.front1-4 .frontbox, .front2-4 .frontbox, .front3-4 .frontbox, .front4-4 .frontbox {
+	width:25%;
+	margin: 0 auto;
+	float: left;
+}
+
+
+
+body.site {
+    padding: 0px;
+} 
+
+.container-fluid {
+	padding: 0px;
+}
+
+
+
+.header {
+    margin-bottom: 0px;
+	padding-top: 10px;
+	border: none;
+}
+
+
+
+
+
+.navigation {
+	background-color: #1f4368;
+	height: 20px;
+	overflow: auto;
+    //padding: 5px 0;
+    border-top: 8px solid #fff;
+    border-bottom: 1px solid rgba(0,0,0,0.075);
+    margin-bottom: 10px;
+} 
+
+.navbar {
+	width:85%;
+	margin: 0 auto;
+} 
+
+.navbar .nav > .active > a, .navbar .nav > .active > a:hover, .navbar .nav > .active > a:focus {
+    color: #fff;
+    text-decoration: none;
+    background-color: transparent;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+}
+
+.navbar .nav > li > a {
+    text-shadow: none;
+}
+
+.nav-pills > li > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+	height: 100%;
+}
+
+.navbar .nav > li > a {
+    float: none;
+    padding: 5px 10px 10px 3px;
+    color: #555;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+
+input.search-query {
+    padding: 0px 5px 0px 5px;
+    margin-bottom: 0;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.header-search {
+	float: right;
+}
+
+
+.main-content {
+	padding: 0px 0px 0px 5px;
+	margin: 0px;
+}
+
+.main-content .row-fluid {
+	width:85%;
+	margin: 0 auto;
+	padding: 5px;
+}
+
+.main-content .row-fluid #content {
+	background-color: #fff;
+	padding: 20px;
+}
+
+.row-fluid [class*="span"] {
+    display: block;
+    float: left;
+    margin-left: 1%;
+}
+
+.row-fluid .span3 {
+    width: 24%;
+}
+
+.well {
+    min-height: 20px;
+    padding: 19px;
+    margin-bottom: 10px;
+    background-color: #f5f5f5;
+    border: 1px solid #e3e3e3;
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    -moz-box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,0.05);
+}

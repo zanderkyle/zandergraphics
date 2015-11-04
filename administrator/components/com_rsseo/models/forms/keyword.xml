@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<field name="id" type="hidden" label="JGLOBAL_FIELD_ID_LABEL" description="JGLOBAL_FIELD_ID_DESC" size="10" default="0" readonly="true" />
+	<field name="keyword" type="text" class="input-xxlarge" label="COM_RSSEO_KEYWORDS_KEYWORD" description="COM_RSSEO_KEYWORDS_KEYWORD_DESC" required="true" size="70" />
+	<field name="importance" type="list" class="inputbox" label="COM_RSSEO_KEYWORDS_IMPORTANCE" description="COM_RSSEO_KEYWORDS_IMPORTANCE_DESC" size="1" default="relevant">
+		<option value="low">COM_RSSEO_KEYWORD_IMPORTANCE_LOW</option>
+		<option value="relevant">COM_RSSEO_KEYWORD_IMPORTANCE_RELEVANT</option>
+		<option value="important">COM_RSSEO_KEYWORD_IMPORTANCE_IMPORTANT</option>
+		<option value="critical">COM_RSSEO_KEYWORD_IMPORTANCE_CRITICAL</option>
+	</field>
+	<field name="bold" type="radio" class="btn-group" default="0" label="COM_RSSEO_KEYWORD_BOLD" description="COM_RSSEO_KEYWORD_BOLD_DESC">
+		<option value="0">JNO</option>
+		<option value="1">COM_RSSEO_KEYWORD_BOLD_STRONG</option>
+		<option value="2">COM_RSSEO_KEYWORD_BOLD_B</option>
+	</field>
+	<field name="underline" type="radio" class="btn-group" default="0" label="COM_RSSEO_KEYWORD_UNDERLINE" description="COM_RSSEO_KEYWORD_UNDERLINE_DESC">
+		<option value="0">JNO</option>
+		<option value="1">JYES</option>
+	</field>
+	<field name="limit" type="text" class="input-small" label="COM_RSSEO_KEYWORD_LIMIT" description="COM_RSSEO_KEYWORD_LIMIT_DESC" size="10" />
+	<field name="attributes" type="text" class="input-xxlarge" label="COM_RSSEO_KEYWORD_ATTRIBUTES" description="COM_RSSEO_KEYWORD_ATTRIBUTES_DESC" size="70" />
+	<field name="link" type="text" class="input-xxlarge" label="COM_RSSEO_KEYWORD_LINK" description="COM_RSSEO_KEYWORD_LINK_DESC" size="70" />
+	
+	<field name="position" type="hidden" filter="unset" />
+	<field name="lastposition" type="hidden" filter="unset" />
+	<field name="date" type="hidden" filter="unset" />
+</form>

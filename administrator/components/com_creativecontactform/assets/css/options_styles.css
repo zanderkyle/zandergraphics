@@ -1,0 +1,318 @@
+/**
+ * Joomla! component Creative Contact Form
+ *
+ * @version $Id: 2012-04-05 14:30:25 svn $
+ * @author creative-solutions.net
+ * @package Creative Contact Form
+ * @subpackage com_creativecontactform
+ * @license GNU/GPL
+ *
+ */
+.options_wrapper {
+	width: 435px;
+	display: block;
+	box-shadow: inset 0 0 12px 0 rgba(201, 201, 201, 0.5);
+	border: 1px solid #D6D6D6;
+	border-radius: 6px;
+	position: relative;
+	padding-bottom: 12px;
+	background-color: rgb(253, 253, 253);
+	margin: 0 0 15px 0;
+	
+	-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+.options_wrapper:hover {
+	box-shadow: inset 0 0 16px 2px rgba(255, 219, 186, 0.9);
+	background-color: #ffffe5;
+	border: 1px solid rgb(235, 207, 159);
+	border-top: 1px solid #D6D6D6;
+}
+
+
+.menus_header
+{
+	height: 20px;
+	background-image: url("../images/alt_menu_mainitem_bg.gif");
+	position: relative;
+}
+
+.menus_header .load_countries_data {
+	position: absolute;
+	right: 27px;
+	top: 1px;
+	border: 0;
+	cursor: pointer;
+}
+.menus_header .load_countries_data:hover {
+	right: 26px;
+	top: 0px;
+}
+
+.menus_header #new_menu_img
+{
+	position: absolute;
+	right: 8px;
+	top: 2px;
+	border: 0;
+	cursor: pointer;
+}
+.menus_header #new_menu_img:hover
+{
+	right: 7px;
+	top: 1px;
+}
+.menus_header .new_submenu_img
+{
+	position: absolute;
+	right: 8px;
+	top: 2px;
+	border: 0;
+	cursor: pointer;
+}
+.menus_header .new_submenu_img:hover
+{
+	right: 6px;
+	top: 1px;
+}
+.menu_tree ul
+{
+	list-style: none outside none;
+	margin: 13px 0 0 0;
+	padding: 0;
+	font-size: 11px;
+}
+.menu_tree ul li
+{
+	margin: 0 7px 4px 7px;
+	padding: 3px 150px 2px 0;
+	position: relative;
+	box-shadow: 2px 1px 4px #344e01;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	border: 1px solid #98a4a8;
+	background-color: #fffffd !important;
+}
+
+.menu_tree ul li .edit
+{
+	position: absolute;
+	top: 1px;
+	right: 45px;
+	cursor: pointer;
+	
+	width: 16px;
+	height: 16px;
+	background: transparent url("../images/edit.gif") left top no-repeat;
+}
+.menu_tree ul li .edit:hover
+{
+	top: 0px;
+	right: 44px;
+}
+
+.menu_tree ul li .hide
+{
+	display: block !important;
+	position: absolute;
+	top: 2px;
+	right: 24px;
+	cursor: pointer;
+	
+	width: 18px;
+	height: 18px;
+	background: transparent url("../images/button_hide.gif") left top no-repeat;
+}
+.menu_tree ul li .hide:hover
+{
+	top: 1px;
+	right: 23px;
+}
+
+.menu_tree ul li .show
+{
+	display: block !important;
+	position: absolute;
+	top: 0px;
+	right: 24px;
+	cursor: pointer;
+	width: 18px;
+	height: 18px;
+	background: transparent url("../images/editaccess.gif") -3px 0px no-repeat;
+}
+.menu_tree ul li .show:hover
+{
+	top: -1px;
+	right: 23px;
+}
+
+.menu_tree ul li .delete
+{
+	position: absolute;
+	top: 1px;
+	right: 6px;
+	cursor: pointer;
+	width: 16px;
+	height: 16px;
+	background: transparent url("../images/recycler.gif") left top no-repeat;
+}
+.menu_tree ul li .delete:hover
+{
+	top: 0px;
+	right: 5px;
+}
+
+.menu_tree ul li .menu_moove
+{
+	position: absolute;
+	top: 2px;
+	right: 66px;
+	cursor: pointer;
+	cursor: move;
+	width: 16px;
+	height: 16px;
+	background: transparent url("../images/drag.gif") left top no-repeat;
+}
+.menu_tree ul li .menu_moove:hover
+{
+	top: 1px;
+	border: 1px solid #bbbbbb;
+	right: 65px;
+}
+
+.menu_tree ul li .def
+{
+	position: absolute;
+	top: 1px;
+	right: 83px;
+	cursor: pointer;
+	width: 13px;
+	height: 14px;
+	background-color: #777;
+	border: 1px solid #ebc3c3;
+}
+.menu_tree ul li .def:hover
+{
+	top: 0px;
+	right: 82px;
+	background-color: #444;
+	border: 1px solid red;
+	
+}
+.menu_tree ul li .set_def
+{
+	position: absolute;
+	top: 3px;
+	right: 84px;
+	cursor: pointer;
+	width: 12px;
+	height: 13px;
+}
+
+.menu_tree ul li .set_def:hover
+{
+	top: 2px;
+	right: 83px;
+}
+
+
+
+.menu_tree ul .depth
+{
+	background-image: url("../images/plus.gif");
+	background-repeat: no-repeat;
+	background-position: 8px 3px;
+}
+.menu_tree ul .depth_opened
+{
+	background-image: url("../images/minus.gif");
+	background-repeat: no-repeat;
+	background-position: 8px 3px;
+}
+.menu_tree ul .text
+{
+	background-image: url("../images/pages.gif");
+	background-repeat: no-repeat;
+	background-position: 9px 3px;
+}
+
+.menu_tree ul li .option_item
+{
+	display: block;
+	text-decoration: none;
+	width: auto;
+	padding: 0 0 0 29px;
+	color: #505D6D;
+	
+		-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+.menu_tree ul li
+{
+		-webkit-transition:  background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-moz-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	-o-transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+	transition: background linear 0.2s, background-color linear 0.2s, box-shadow linear 0.2s, border linear 0.2s;
+}
+.menu_tree ul li:hover
+{
+	background-color: #D7DBE2 !important;
+}
+.menu_tree ul li:hover .option_item
+{
+	color: #000000;
+}
+.menu_tree ul .selected
+{
+	background-color: #D7DBE2;
+	border: 1px solid #7c7c6e;
+}
+.menu_tree ul .selected a
+{
+	color: #000000;
+	font-weight: bold;
+}
+#shadow
+{
+	top:0;
+	left:0;
+	position: absolute;
+	z-index: 130;
+	background-color: black;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	display: none;
+}
+
+#edit_menu_data {
+	position: relative;
+}
+#ajax_loader {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background: rgba(255,255,255,0.5) url("../images/ajax-loader.gif") center center no-repeat;
+	z-index: 100;
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

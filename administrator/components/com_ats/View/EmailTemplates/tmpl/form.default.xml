@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form
+        type="browse"
+        show_header="1"
+        show_filters="1"
+        show_pagination="1"
+        norows_placeholder="COM_ATS_COMMON_NORECORDS"
+        >
+    <headerset>
+        <header name="ats_emailtemplate_id" type="rowselect" tdwidth="30" />
+
+        <header name="key" type="Searchable" label="COM_ATS_EMAILTEMPLATES_FIELD_KEY_LBL" tdwidth="130" />
+
+        <header name="subject" type="Searchable" sortable="true" label="COM_ATS_EMAILTEMPLATES_FIELD_SUBJECT_LBL"/>
+
+        <header name="enabled" type="Published" sortable="true" tdwidth="8%" />
+
+        <header name="language" type="Language" sortable="true" tdwidth="20%" />
+    </headerset>
+
+    <fieldset name="items">
+        <field name="ats_emailtemplate_id" type="selectrow"/>
+
+        <field name="key" type="text"
+            show_link="true"
+            url="index.php?option=com_ats&amp;view=EmailTemplate&amp;id=[ITEM:ID]"
+        />
+
+        <field name="subject" type="text"
+            show_link="true"
+            url="index.php?option=com_ats&amp;view=EmailTemplate&amp;id=[ITEM:ID]"
+        />
+
+        <field name="enabled" type="published"/>
+
+        <field name="language" type="language"/>
+    </fieldset>
+</form>

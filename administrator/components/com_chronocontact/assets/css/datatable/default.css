@@ -1,0 +1,58 @@
+table.gcore_table_list {
+	width: 100%;
+	border-spacing: 1px;
+	background-color: #e7e7e7;
+	color: #666;
+}
+table.gcore_table_list td,
+table.gcore_table_list th { padding: 4px; }
+table.gcore_table_list thead th {
+	text-align: center;
+	background: #f0f0f0;
+	color: #666;
+	border-bottom: 1px solid #999;
+	/*border-left: 1px solid #fff;*/
+	font-weight: bold;
+}
+table.gcore_table_list thead a:hover { text-decoration: none; }
+table.gcore_table_list thead th img { vertical-align: middle; }
+table.gcore_table_list tbody th { font-weight: bold; }
+table.gcore_table_list tbody tr			{ background-color: #fff;  text-align: left; }
+table.gcore_table_list tbody tr.row1 	{ background: #f9f9f9; border-top: 1px solid #fff; }
+table.gcore_table_list tbody tr.row0:hover td,
+table.gcore_table_list tbody tr.row1:hover td  { background-color: #ffd ; }
+table.gcore_table_list tbody tr td 	   { height: 25px; background: #fff; border: 1px solid #fff; text-align: center; vertical-align:middle;}
+table.gcore_table_list tbody tr.row1 td { background: #f9f9f9; border-top: 1px solid #FFF; }
+table.gcore_table_list tfoot tr { text-align: center;  color: #333; }
+table.gcore_table_list tfoot td,
+table.gcore_table_list tfoot th { background-color: #f3f3f3; border-top: 1px solid #999; text-align: center; }
+table.gcore_table_list td.order 		{ text-align: center; white-space: nowrap; }
+table.gcore_table_list td.order span { float: left; display: block; width: 20px; text-align: center; }
+table.gcore_table_list .pagination { display:table; padding:0;  margin:0 auto;	 }
+.pagination div.limit {
+	float: left;
+	height: 22px;
+	line-height: 22px;
+	margin: 0 10px;
+}
+.button{background: none !important; border: 0 none !important;}
+#search_form{padding:25px 0px 25px 2px;}
+th.title{text-align: left !important;}
+.sub-title{display:block; line-height:10px; font-size:0.9em;}
+
+.gcore-datatable-paginator a{padding:0px 7px 0px 7px;}
+.gcore-datatable-paginator a:hover{background-color:#dde !important; text-decoration:underline !important;}
+.gcore-datatable-box-right {padding:5px 5px 5px 20px; float:right;}
+.gcore-datatable-box-left {padding:5px 20px 5px 5px; float:left;}
+.gcore-datatable-box-right input[type=submit], .gcore-datatable-box-left input[type=submit]{border: 0 none !important; padding: 0 10px; margin: 0 10px;}
+
+.depth-1 {padding-left: 15px !important;}
+.depth-2 {padding-left: 30px !important;}
+.depth-3 {padding-left: 45px !important;}
+.depth-4 {padding-left: 60px !important;}
+.depth-5 {padding-left: 75px !important;}
+.depth-6 {padding-left: 90px !important;}
+.depth-7 {padding-left: 105px !important;}
+.depth-8 {padding-left: 120px !important;}
+.depth-9 {padding-left: 135px !important;}
+.depth-10 {padding-left: 150px !important;}

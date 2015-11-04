@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema>
+    <!-- Metadata -->
+    <meta>
+        <!-- Supported driver types -->
+        <drivers>
+            <driver>mysql</driver>
+            <driver>mysqli</driver>
+            <driver>pdomysql</driver>
+        </drivers>
+    </meta>
+
+    <!-- SQL commands to run on installation and update -->
+    <sql>
+        <action table="#__ats_attempts" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_attempts` (
+  `ats_attempt_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ats_category_id` int(11) NOT NULL,
+  `title` varchar(255) NOT NULL,
+  `ats_ticket_id` int(11) NOT NULL,
+  `ticket_clicks` int(11) NOT NULL,
+  `docimport_clicks` int(11) NOT NULL,
+  `created_on` datetime NOT NULL,
+  `modified_on` datetime NOT NULL,
+  PRIMARY KEY (`ats_attempt_id`)
+)DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_tickets` (
+  `ats_ticket_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `catid` bigint(20) NOT NULL,
+  `status` ENUM('O','P','C','1','2','3','4','5','6','7','8','9') NOT NULL DEFAULT 'O',
+  `rating` TINYINT NOT NULL DEFAULT '0',
+  `ats_bucket_id` bigint(20) NULL DEFAULT NULL,
+  `title` varchar(1024) NOT NULL,
+  `alias` varchar(255) NOT NULL DEFAULT '',
+  `public` tinyint(3) NOT NULL DEFAULT '1',
+  `priority` TINYINT NOT NULL,
+  `origin` varchar(10) NOT NULL DEFAULT 'web',
+  `assigned_to` BIGINT(20) NOT NULL DEFAULT '0',
+  `timespent` FLOAT NOT NULL DEFAULT 0,
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  `params` TEXT NULL DEFAULT NULL,
+  PRIMARY KEY (`ats_ticket_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_posts" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_posts` (
+  `ats_post_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ats_attachment_id` VARCHAR(512) NOT NULL DEFAULT '0',
+  `ats_ticket_id` bigint(20) NOT NULL,
+  `content` longtext NOT NULL,
+  `content_html` longtext NOT NULL,
+  `origin` VARCHAR(20) DEFAULT "web",
+  `timespent` FLOAT NOT NULL DEFAULT 0,
+  `email_uid` VARCHAR(255) NULL,
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ats_post_id`),
+  KEY `ats_posts_email_uid` (`email_uid`),
+  FULLTEXT KEY `content_html` (`content_html`)
+) DEFAULT CHARSET=utf8 ENGINE=MyISAM;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_attachments" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_attachments` (
+  `ats_attachment_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `ats_post_id` INT(11) NOT NULL,
+  `original_filename` varchar(1024) NOT NULL,
+  `mangled_filename` varchar(1024) NOT NULL,
+  `mime_type` varchar(255) NOT NULL DEFAULT 'application/octet-stream',
+  `origin` VARCHAR(20) DEFAULT "web",
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(4) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ats_attachment_id`),
+  KEY `ats_post_id` (`ats_post_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_managernotes" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_managernotes` (
+  `ats_managernote_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ats_ticket_id` bigint(20) unsigned NOT NULL,
+  `note` text NOT NULL,
+  `note_html` LONGTEXT,
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ats_managernote_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_cannedreplies" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_cannedreplies` (
+  `ats_cannedreply_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `reply` text NOT NULL,
+
+  `ordering` bigint(20) unsigned NOT NULL,
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ats_cannedreply_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_emailtemplates" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_emailtemplates` (
+  `ats_emailtemplate_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `key` varchar(255) NOT NULL DEFAULT 'manager',
+  `language` varchar(10) NOT NULL DEFAULT '*',
+  `subject` varchar(255) NOT NULL,
+  `template` text NOT NULL,
+  `enabled` TINYINT(3) NOT NULL DEFAULT 1,
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ats_emailtemplate_id`),
+  UNIQUE KEY `ats_emailtemplate_keylang` (`key`,`language`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_emailtemplates" canfail="0">
+            <condition type="equals" operator="not" value="1"><![CDATA[
+SELECT COUNT(*) FROM `#__ats_emailtemplates` WHERE `ats_emailtemplate_id` = 1;
+            ]]></condition>
+            <query><![CDATA[
+REPLACE INTO `#__ats_emailtemplates` (`ats_emailtemplate_id`, `key`, `language`, `subject`, `template`, `enabled`, `created_on`, `created_by`, `modified_on`, `modified_by`)
+VALUES
+	(8,'owner-private-old','en-GB','Reply to your private ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new message was posted in your <em><strong>private</strong></em> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" by [POSTER_NAME] ([POSTER_USERNAME]):</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you submitted the ticket #[ID] in the \"[CATNAME]\" category on <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(9,'mailgateway-invaliduser','en-GB','Sorry, you do not seem to be a user of our site','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello,</p>\r\n<p>You tried sending us an email to an email address used by our users to submit support tickets. Unfortunately, you are not a user of our site yet. As a result your email was automatically deleted and you shall not receive any reply.</p>\r\n<p>If you are a user of our site, please make sure that you are sending the email from the email address associated with your user account. There is no way to allow you to use multiple email addresses per user account or otherwise authenticate you.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(3,'manager-public-old','en-GB','Reply to public ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new message was posted in the <strong>public</strong> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" by [POSTER_NAME] ([POSTER_USERNAME]):</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you are a manager of the \"[CATNAME]\" category in <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(4,'manager-private-old','en-GB','Reply to private ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new message was posted in the <em><strong>private</strong></em> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" by [POSTER_NAME] ([POSTER_USERNAME]):</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you are a manager of the \"[CATNAME]\" category in <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(7,'owner-public-old','en-GB','Reply to your public ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new message was posted in your <strong>public</strong> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" by [POSTER_NAME] ([POSTER_USERNAME]):</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you submitted the ticket #[ID] in the \"[CATNAME]\" category on <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(1,'manager-public-new','en-GB','New public ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new <strong>public</strong> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" has been created by [POSTER_NAME] ([POSTER_USERNAME]) with the following contents:</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you are a manager of the \"[CATNAME]\" category in <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(2,'manager-private-new','en-GB','New private ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new <em><strong>private</strong></em> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" has been created by [POSTER_NAME] ([POSTER_USERNAME]) with the following contents:</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you are a manager of the \"[CATNAME]\" category in <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(5,'owner-public-new','en-GB','Your new public ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>You have submitted a new <strong>public</strong> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" with the following contents:</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you submitted the ticket #[ID] in the \"[CATNAME]\" category on <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(6,'owner-private-new','en-GB','Your new private ticket #[ID] [TITLE] [[CATNAME]]','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [USER_NAME],</p>\r\n<p>You have submitted a new <strong>private</strong> ticket #<strong>[ID]</strong> &mdash; \"<em>[TITLE]</em>\" with the following contents:</p>\r\n<hr />\r\n<div style=\"background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;\">[TEXT]</div>\r\n<span style=\"font-size: small;\">[ATTACHMENT]</span><hr />\r\n<p><a href=\"[URL]\" style=\"font-weight: bold;\">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style=\"font-size: x-small; color: #999;\">You are receiving this email message because you submitted the ticket #[ID] in the \"[CATNAME]\" category on <em>[SITENAME]</em>.</p>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(10,'mailgateway-noaccess','en-GB','You are not allowed to create a ticket','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>You tried sending us an email to an email address used by our users to submit support tickets. Unfortunately, you are not allowed to post new tickets by email.</p>\r\n<p>If you believe you are receiving this message in error, please visit our site for further information. Please do not reply to this email. It is sent from the same address which generated this error notice. If you try replying to it you will receive the same automated reply.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(11,'mailgateway-nonewtickets','en-GB','New ticket creation is temporarily suspended','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>We have temporarily suspended the new tickets creation feature on our site. Please visit our site for more information.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(12,'mailgateway-nonewreplies','en-GB','Reply to tickets is temporarily suspended','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>We have temporarily suspended the ticket reply feature on our site. Please visit our site for more information.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(13,'mailgateway-newticketfailed','en-GB','New ticket creation failed','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>Oops! Something went wrong trying to create your new ticket. It\'s probably not your fault. Please visit our site and try posting your ticket there.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(14,'mailgateway-newpostfailed','en-GB','New post creation failed','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>Oops! Something went wrong trying to create your post. It\'s probably not your fault. Please visit our site and try posting your ticket or ticket reply there.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(15,'mailgateway-newticketdisabled','en-GB','New ticket creation by email is not allowed','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>We do not accept the creation of new tickets via email. Please visit our site and submit your ticket there.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(16,'mailgateway-newreplydisabled','en-GB','Reply by email is not allowed','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>We do not accept replies to tickets via email. Please visit our site and submit your ticket there.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(17,'mailgateway-noreplyline','en-GB','Your ticket reply is missing some necessary information','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>You seem to be trying to reply to a ticket, but we are not sure which ticket is that. You have to include the \"Please reply above this line\" line in your email and place your reply text above it. Alternatively, make sure your email application or your webmail client retain custom email headers. If your system administrator asks you which header you want to retain in your reply, it\'s the X-ATS-ticketid header.</p>\r\n<p>You can try replying by email again, making sure the reply line is present in your email and not altered in any way. Alternatively you can always visit our site and submit your ticket reply there.</p>\r\n<p>We sincerely apologise for the inconvenience.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(18,'mailgateway-nocredits-ticket','en-GB','You do not have enough credits to post a new ticket','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>You tried creating a new ticket but you do not have enough credits. Your ticket has <em>not</em> been created. Creating a new ticket requires [CREDITS_REQUIRED] credits. You have [CREDITS_LEFT] credit(s) in your account.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+	(19,'mailgateway-nocredits-post','en-GB','You do not have enough credits to post a reply','<div style=\"background-color: #e0e0e0; padding: 10px 20px;\">\r\n<div style=\"background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;\">\r\n<p>Hello [NAME],</p>\r\n<p>You tried replying to a ticket but you do not have enough credits. Your reply has <em>not</em> been registered. Replying to the ticket requires [CREDITS_REQUIRED] credits. You have [CREDITS_LEFT] credit(s) in your account.</p>\r\n<hr />\r\n<p><a href=\"[SITEURL]\" style=\"font-weight: bold;\">Visit \"[SITENAME]\"</a></p>\r\n</div>\r\n</div>\r\n<p style=\"text-align: right; font-size: 7pt; color: #ccc;\">Powered by <a href=\"https://www.akeebabackup.com/products/ats.html\" style=\"color: #ccf; text-decoration: none;\">Akeeba Ticket System</a></p>',1,'0000-00-00 00:00:00',0,'0000-00-00 00:00:00',0),
+  (20, 'manager-assignedticket', 'en-GB', 'New assigned ticket: #[ID] [TITLE] ([CATNAME])', '<div style="background-color: #e0e0e0; padding: 10px 20px;">\r\n<div style="background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new ticket #<strong>[ID]</strong> — "<em>[TITLE]</em>" has been assigned to you.</p>\r\n<hr />\r\n<div style="background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;">[TEXT]</div>\r\n<span style="font-size: small;">[ATTACHMENT]</span><hr />\r\n<p><a href="[URL]" style="font-weight: bold;">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style="font-size: x-small; color: #999;">You are receiving this email message because you are a manager of the "[CATNAME]" category in <em>[SITENAME]</em>.</p>\r\n<p style="text-align: right; font-size: 7pt; color: #ccc;">Powered by <a href="https://www.akeebabackup.com/products/ats.html" style="color: #ccf; text-decoration: none;">Akeeba Ticket System</a></p>', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
+            ]]></query>
+        </action>
+
+        <action table="#__ats_credittransactions" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_credittransactions` (
+  `ats_credittransaction_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` bigint(20) NOT NULL DEFAULT '0',
+  `transaction_date` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `type` varchar(70) NOT NULL DEFAULT 'ats',
+  `unique_id` varchar(180) NOT NULL DEFAULT '',
+  `value` int(11) NOT NULL DEFAULT '10',
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ats_credittransaction_id`),
+  KEY `#__ats_creditstransactions_userid` (`user_id`),
+  KEY `#__ats_creditstransactions_foreignids` (`type`,`unique_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_creditconsumptions" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_creditconsumptions` (
+  `ats_creditconsumption_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `ats_credittransaction_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL,
+  `value` int(11) NOT NULL DEFAULT '0',
+  `type` enum('ticket','post') NOT NULL DEFAULT 'ticket',
+  `ats_ticket_id` bigint(20) NOT NULL,
+  `ats_post_id` bigint(20) NOT NULL,
+  PRIMARY KEY (`ats_creditconsumption_id`),
+  KEY `#__ats_creditconsumptions_transaction` (`ats_credittransaction_id`),
+  KEY `#__ats_creditconsumptions_userid` (`user_id`),
+  KEY `#__ats_creditconsumptions_ticketpost` (`type`,`ats_ticket_id`,`ats_post_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_offlineschedules" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_offlineschedules` (
+  `ats_offlineschedule_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` VARCHAR(255) NOT NULL,
+  `timestart` TIME NOT NULL DEFAULT '00:00:00',
+  `timeend` TIME NOT NULL DEFAULT '00:00:00',
+  `weekdays` VARCHAR(255) NOT NULL DEFAULT '*',
+  `days` VARCHAR(255) NOT NULL DEFAULT '*',
+  `months` VARCHAR(255) NOT NULL DEFAULT '*',
+  `years` VARCHAR(255) NOT NULL DEFAULT '*',
+  `notickets` TINYINT(3) NOT NULL DEFAULT '1',
+  `noreplies` TINYINT(3) NOT NULL DEFAULT '1',
+
+  `ordering` bigint(20) unsigned NOT NULL,
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `locked_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `locked_by` int(11) NOT NULL DEFAULT '0',
+  PRIMARY KEY (`ats_offlineschedule_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_customfields" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_customfields` (
+  `ats_customfield_id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `title` varchar(255) NOT NULL DEFAULT '',
+  `slug` varchar(255) NOT NULL DEFAULT '',
+  `show` ENUM( 'all', 'category' ) NOT NULL DEFAULT 'all',
+  `type` varchar(100) NOT NULL DEFAULT 'text',
+  `options` mediumtext,
+  `default` varchar(255) DEFAULT '',
+  `allow_empty` tinyint(3) NOT NULL DEFAULT '0',
+  `valid_label` varchar(255) DEFAULT '',
+  `invalid_label` varchar(255) DEFAULT '',
+  `params` mediumtext,
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  `ordering` bigint(20) unsigned NOT NULL DEFAULT '0',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  PRIMARY KEY (`ats_customfield_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_customfields_cats" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_customfields_cats` (
+  `ats_customfield_id` int(11) NOT NULL,
+  `catid` int(11) NOT NULL,
+  PRIMARY KEY (`ats_customfield_id`,`catid`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_buckets" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_buckets` (
+  `ats_bucket_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `status` ENUM( 'O', 'P', 'C', '1', '2', '3', '4', '5', '6', '7', '8', '9' ) NOT NULL DEFAULT 'O',
+  `title` varchar(1024) NOT NULL,
+  `created_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_by` bigint(20) NOT NULL DEFAULT '0',
+  `modified_on` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `modified_by` bigint(20) NOT NULL DEFAULT '0',
+  `enabled` tinyint(3) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`ats_bucket_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_usertags" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_usertags` (
+  `ats_usertag_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `descr` varchar(255) NOT NULL,
+  `ordering` tinyint(4) NOT NULL,
+  `enabled` tinyint(4) NOT NULL,
+  PRIMARY KEY (`ats_usertag_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_autoreplies" canfail="0">
+            <condition type="missing" value="" />
+            <query><![CDATA[
+CREATE TABLE `#__ats_autoreplies` (
+  `ats_autoreply_id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) NOT NULL,
+  `reply` text NOT NULL,
+  `ordering` tinyint(4) NOT NULL,
+  `enabled` tinyint(1) NOT NULL,
+  `run_after_manager` tinyint(1) NOT NULL,
+  `num_posts` int(11) NOT NULL,
+  `min_after` int(11) NOT NULL,
+  `attachment` tinyint(4) NOT NULL,
+  `keywords_title` text NOT NULL,
+  `keywords_text` text NOT NULL,
+  `params` text NOT NULL,
+  PRIMARY KEY (`ats_autoreply_id`)
+) DEFAULT CHARSET=utf8;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_managernotes" canfail="1">
+            <condition type="missing" value="note_html" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_managernotes` ADD COLUMN `note_html` LONGTEXT AFTER `note`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_posts" canfail="1">
+            <condition type="missing" value="origin" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_posts` ADD COLUMN `origin` VARCHAR(20) DEFAULT "web" AFTER `content_html`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_attachments" canfail="1">
+            <condition type="missing" value="origin" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_attachments` ADD COLUMN `origin` VARCHAR(20) DEFAULT "web" AFTER `mime_type`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_posts" canfail="1">
+            <condition type="missing" value="email_uid" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_posts` ADD COLUMN `email_uid` VARCHAR(255) NULL AFTER `origin`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_posts" canfail="1">
+            <condition type="true" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_posts` ADD KEY `ats_posts_email_uid` (`email_uid`);
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="timespent" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD COLUMN `timespent` FLOAT NOT NULL DEFAULT 0 AFTER `origin`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_posts" canfail="1">
+            <condition type="missing" value="timespent" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_posts` ADD COLUMN `timespent` FLOAT NOT NULL DEFAULT 0 AFTER `origin`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="assigned_to" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD COLUMN `assigned_to` BIGINT(20) NOT NULL DEFAULT '0' AFTER `origin`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="params" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD `params` TEXT NULL DEFAULT NULL;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="ats_bucket_id" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD COLUMN `ats_bucket_id` bigint(20) NULL DEFAULT NULL AFTER `status`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="priority" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD `priority` TINYINT NOT NULL AFTER `public`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="true" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` CHANGE `status` `status` ENUM( 'O', 'P', 'C', '1', '2', '3', '4', '5', '6', '7', '8', '9' ) NOT NULL DEFAULT 'O';
+            ]]></query>
+        </action>
+
+        <action table="#__ats_tickets" canfail="1">
+            <condition type="missing" value="rating" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_tickets` ADD `rating` TINYINT NOT NULL DEFAULT '0' AFTER `status`;
+            ]]></query>
+        </action>
+
+        <action table="#__ats_emailtemplates" canfail="1">
+            <condition type="equals" operator="not" value="1"><![CDATA[
+SELECT COUNT(*) FROM `#__ats_emailtemplates` WHERE `key` = "manager-assignedticket";
+            ]]></condition>
+            <query><![CDATA[
+INSERT INTO `#__ats_emailtemplates` (`ats_emailtemplate_id`, `key`, `language`, `subject`, `template`, `enabled`, `created_on`, `created_by`, `modified_on`, `modified_by`) VALUES
+(NULL, 'manager-assignedticket', 'en-GB', 'New assigned ticket: #[ID] [TITLE] ([CATNAME])', '<div style="background-color: #e0e0e0; padding: 10px 20px;">\r\n<div style="background-color: #f9f9f9; border-radius: 10px; padding: 5px 10px;">\r\n<p>Hello [USER_NAME],</p>\r\n<p>A new ticket #<strong>[ID]</strong> — "<em>[TITLE]</em>" has been assigned to you.</p>\r\n<hr />\r\n<div style="background-color: #fff; margin: 5px 10px; padding: 3px 6px; border-radius: 5px; border: thin solid gray;">[TEXT]</div>\r\n<span style="font-size: small;">[ATTACHMENT]</span><hr />\r\n<p><a href="[URL]" style="font-weight: bold;">View and reply on [SITENAME]</a></p>\r\n</div>\r\n</div>\r\n<p style="font-size: x-small; color: #999;">You are receiving this email message because you are a manager of the "[CATNAME]" category in <em>[SITENAME]</em>.</p>\r\n<p style="text-align: right; font-size: 7pt; color: #ccc;">Powered by <a href="https://www.akeebabackup.com/products/ats.html" style="color: #ccf; text-decoration: none;">Akeeba Ticket System</a></p>', 1, '0000-00-00 00:00:00', 0, '0000-00-00 00:00:00', 0);
+            ]]></query>
+        </action>
+
+        <action table="#__ats_attachments" canfail="1">
+            <condition type="missing" value="ats_post_id" />
+            <query><![CDATA[
+ALTER TABLE `#__ats_posts` CHANGE `ats_attachment_id` `ats_attachment_id` VARCHAR( 512 ) NOT NULL DEFAULT '0';
+            ]]></query>
+            <query><![CDATA[
+ALTER TABLE `#__ats_attachments` ADD `ats_post_id` INT NOT NULL AFTER `ats_attachment_id` ,
+ADD INDEX ( `ats_post_id` ) ;
+            ]]></query>
+            <query><![CDATA[
+UPDATE `#__ats_attachments` as attach, `#__ats_posts` as posts
+SET attach.ats_post_id = posts.ats_post_id
+WHERE attach.ats_post_id = 0
+  AND attach.ats_attachment_id = posts.ats_attachment_id
+            ]]></query>
+        </action>
+    </sql>
+</schema>

@@ -1,0 +1,237 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade" version="3.1.0">
+    <name>RSContact</name>
+    <author>RSJoomla!</author>
+    <creationDate>January 2015</creationDate>
+    <copyright>Copyright (C) 2015</copyright>
+    <license>GNU General Public License version 2 or later</license>
+    <authorEmail>supporttickets@rsjoomla.com</authorEmail>
+    <authorUrl>www.rsjoomla.com</authorUrl>
+    <version>1.1.4</version>
+    <description>MOD_RSCONTACT_DESC</description>
+	<scriptfile>script.rscontact.php</scriptfile>
+	<files>
+		<filename module="mod_rscontact">mod_rscontact.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+	</files>
+	<media destination="mod_rscontact" folder="media">
+			<folder>css</folder>
+			<folder>images</folder>
+			<folder>js</folder>
+		<filename>index.html</filename>
+	</media>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rscontact.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_rscontact.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="fields" label="MOD_RSCONTACT_FIELD_OPTIONS" description="MOD_RSCONTACT_FIELD_OPTIONS_DESC">
+				<field type="spacer" name="stdspacer" label="MOD_RSCONTACT_STANDARD_FIELDS"/>
+				<field name="salut" class="btn-group" type="radio" label="MOD_RSCONTACT_SALUTATION" default="1" description="MOD_RSCONTACT_SALUTATION_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="name" class="btn-group" type="radio" label="MOD_RSCONTACT_NAME" default="1" description="MOD_RSCONTACT_NAME_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="name_type" class="inputbox" type="list" label="MOD_RSCONTACT_NAME_TYPE" default="1" description="MOD_RSCONTACT_NAME_TYPE_DESC">
+					<option value="0">MOD_RSCONTACT_NAME_TYPE1</option>
+					<option value="1">MOD_RSCONTACT_NAME_TYPE2</option>
+				</field>
+				<field name="addr_1" class="btn-group" type="radio" label="MOD_RSCONTACT_ADDRESS_1" default="1" description="MOD_RSCONTACT_ADDRESS_1">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="addr_2" class="btn-group" type="radio" label="MOD_RSCONTACT_ADDRESS_2" default="1" description="MOD_RSCONTACT_ADDRESS_2">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="city" class="btn-group" type="radio" label="MOD_RSCONTACT_CITY" default="1" description="MOD_RSCONTACT_CITY_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="state" class="btn-group" type="radio" label="MOD_RSCONTACT_STATES" default="1" description="MOD_RSCONTACT_STATE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="zip" class="btn-group" type="radio" label="MOD_RSCONTACT_ZIP" default="1" description="MOD_RSCONTACT_ZIP_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="h_phone" class="btn-group" type="radio" label="MOD_RSCONTACT_HOME_PHONE" default="1" description="MOD_RSCONTACT_HOME_PHONE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="m_phone" class="btn-group" type="radio" label="MOD_RSCONTACT_MOBILE_PHONE" default="1" description="MOD_RSCONTACT_MOBILE_PHONE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="w_phone" class="btn-group" type="radio" label="MOD_RSCONTACT_WORK_PHONE" default="1" description="MOD_RSCONTACT_WORK_PHONE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="comp" class="btn-group" type="radio" label="MOD_RSCONTACT_COMPANY" default="1" description="MOD_RSCONTACT_COMPANY_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="web" class="btn-group" type="radio" label="MOD_RSCONTACT_WEBSITE" default="1" description="MOD_RSCONTACT_WEBSITE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="subj" class="btn-group" type="radio" label="MOD_RSCONTACT_SUBJECT" default="1" description="MOD_RSCONTACT_SUBJECT_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="subj_type" class="inputbox" type="list" label="MOD_RSCONTACT_SUBJECT_TYPE" default="1" description="MOD_RSCONTACT_SUBJECT_TYPE_DESC">
+					<option value="input">MOD_RSCONTACT_TEXTBOX</option>
+					<option value="textarea">MOD_RSCONTACT_TEXTAREA</option>
+					<option value="select">MOD_RSCONTACT_DROPBOX</option>
+					<option value="radio">MOD_RSCONTACT_RADIO</option>
+					<option value="checkbox">MOD_RSCONTACT_CHECKBOX</option>
+				</field>
+				<field name="subject_input" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_SUBJECT_INPUT" description="MOD_RSCONTACT_SUBJECT_INPUT_DESC" rows="5" cols="35" />
+				<field name="msg" class="btn-group" type="radio" label="MOD_RSCONTACT_MESSAGE" default="1" description="MOD_RSCONTACT_MESSAGE_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="msg_len" type="text" size="5" default="1000" label="MOD_RSCONTACT_MESSAGE_LENGTH" description="MOD_RSCONTACT_MESSAGE_LENGTH_DESC" />
+				<field type="spacer" name="captchaspacer" label="MOD_RSCONTACT_SPAM_PROTECTION"/>
+				<field name="captcha" class="btn-group" type="radio" label="MOD_RSCONTACT_CAPTCHA" default="0" description="MOD_RSCONTACT_CAPTCHA_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field type="spacer" name="cfspacer" label="MOD_RSCONTACT_CUSTOM_FIELDS"/>
+				<field name="cf1" class="btn-group" type="radio" label="MOD_RSCONTACT_CUSTOM_FIELD1" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD1_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="cf1_name" type="text" label="MOD_RSCONTACT_CUSTOM_FIELD1_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD1_NAME_DESC" default="Custom Field 1" />
+				<field name="cf1_type" class="inputbox" type="list" label="MOD_RSCONTACT_CUSTOM_FIELD1_TYPE" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD_TYPE_DESC">
+					<option value="input">MOD_RSCONTACT_TEXTBOX</option>
+					<option value="textarea">MOD_RSCONTACT_TEXTAREA</option>
+					<option value="select">MOD_RSCONTACT_DROPBOX</option>
+					<option value="radio">MOD_RSCONTACT_RADIO</option>
+					<option value="checkbox">MOD_RSCONTACT_CHECKBOX</option>
+				</field>
+				<field name="cf1_inp" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_DESC" rows="5" cols="35" />
+				<field name="cf2" class="btn-group" type="radio" label="MOD_RSCONTACT_CUSTOM_FIELD2" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD2_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="cf2_name" type="text" label="MOD_RSCONTACT_CUSTOM_FIELD2_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD2_NAME_DESC" default="Custom Field 2" />
+				<field name="cf2_type" class="inputbox" type="list" label="MOD_RSCONTACT_CUSTOM_FIELD2_TYPE" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD_TYPE_DESC">
+					<option value="input">MOD_RSCONTACT_TEXTBOX</option>
+					<option value="textarea">MOD_RSCONTACT_TEXTAREA</option>
+					<option value="select">MOD_RSCONTACT_DROPBOX</option>
+					<option value="radio">MOD_RSCONTACT_RADIO</option>
+					<option value="checkbox">MOD_RSCONTACT_CHECKBOX</option>
+				</field>
+				<field name="cf2_inp" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_DESC" rows="5" cols="35" />
+				<field name="cf3" class="btn-group" type="radio" label="MOD_RSCONTACT_CUSTOM_FIELD3" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD3_DESC">
+					<option value="2">MOD_RSCONTACT_REQUIRED</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="cf3_name" type="text" label="MOD_RSCONTACT_CUSTOM_FIELD3_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD3_NAME_DESC" default="Custom Field 3" />
+				<field name="cf3_type" class="inputbox" type="list" label="MOD_RSCONTACT_CUSTOM_FIELD3_TYPE" default="1" description="MOD_RSCONTACT_CUSTOM_FIELD_TYPE_DESC">
+					<option value="input">MOD_RSCONTACT_TEXTBOX</option>
+					<option value="textarea">MOD_RSCONTACT_TEXTAREA</option>
+					<option value="select">MOD_RSCONTACT_DROPBOX</option>
+					<option value="radio">MOD_RSCONTACT_RADIO</option>
+					<option value="checkbox">MOD_RSCONTACT_CHECKBOX</option>
+				</field>
+				<field name="cf3_inp" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_NAME" description="MOD_RSCONTACT_CUSTOM_FIELD_INPUT_DESC" rows="5" cols="35" />
+				<field name="send_copy" class="btn-group" type="radio" label="MOD_RSCONTACT_SEND_COPY" default="1" description="MOD_RSCONTACT_SEND_COPY_DESC">
+					<option value="2">MOD_RSCONTACT_USER_DECIDE</option>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="form_options" label="MOD_RSCONTACT_FORM_OPTIONS" description="MOD_RSCONTACT_FORM_OPTIONS_DESC">
+				<field name="form_pre" type="editor" rows="4" default="" filter="raw" label="MOD_RSCONTACT_FORM_BEFORE_TEXT" description="MOD_RSCONTACT_FORM_BEFORE_TEXT_DESC" />
+				<field name="form_post" type="editor" rows="4" default="" filter="raw" label="MOD_RSCONTACT_FORM_AFTER_TEXT" description="MOD_RSCONTACT_FORM_AFTER_TEXT_DESC"/>
+				<field name="css" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_CUSTOM_CSS" description="MOD_RSCONTACT_CUSTOM_CSS_DESC" rows="5" cols="35" />
+				<field name="js" type="textarea" default="" filter="raw" label="MOD_RSCONTACT_CUSTOM_JS" description="MOD_RSCONTACT_CUSTOM_JS_DESC" rows="5" cols="35" />
+				<field name="req_marker" type="text" size="30" default="*" label="MOD_RSCONTACT_REQUIRED_FIELD_MARKER" description="MOD_RSCONTACT_REQUIRED_FIELD_MARKER_DESC" />
+				<field name="label" class="btn-group" type="radio" label="MOD_RSCONTACT_LABEL_POS" default="1" description="MOD_RSCONTACT_LABEL_POS_DESC">
+						<option value="1">MOD_RSCONTACT_LABEL_INSIDE</option>
+						<option value="0">MOD_RSCONTACT_LABEL_OUTSIDE</option>
+				</field>
+				<field name="form_h" class="btn-group" type="radio" label="MOD_RSCONTACT_FORM_HORIZONTAL" default="0" description="MOD_RSCONTACT_FORM_HORIZONTAL_DESC">
+						<option value="1">MOD_RSCONTACT_FORM_HORIZONTAL_SHOW</option>
+						<option value="0">MOD_RSCONTACT_FORM_HORIZONTAL_NOT_SHOW</option>
+				</field>
+				<field name="auto_width" class="btn-group" type="radio" label="MOD_RSCONTACT_AUTO_WIDTH" default="1" description="MOD_RSCONTACT_AUTO_WIDTH_DESC">
+						<option value="1">MOD_RSCONTACT_AUTO_WIDTH_FIELDS</option>
+						<option value="0">MOD_RSCONTACT_AUTO_WIDTH_TEMPLATE</option>
+				</field>
+				<field name="thank_you" type="editor" rows="4" default="" filter="raw" label="MOD_RSCONTACT_THANK_YOU" description="MOD_RSCONTACT_THANK_YOU_DESC" />
+			</fieldset>
+			<fieldset name="email_options" label="MOD_RSCONTACT_EMAIL_OPTIONS" description="MOD_RSCONTACT_EMAIL_OPTIONS_DESC">
+				<field type="spacer" name="myspacer_email" label="MOD_RSCONTACT_ADMIN_EMAIL_EXP" />
+				<field name="mail_to" type="text" size="40" default="" label="MOD_RSCONTACT_ADMIN_EMAIL" description="MOD_RSCONTACT_ADMIN_EMAIL_DESC" />
+				<field name="mail_cc" type="text" size="40" default="" label="MOD_RSCONTACT_CC_EMAIL" description="MOD_RSCONTACT_CC_EMAIL_DESC" />
+				<field name="mail_bcc" type="text" size="40" default="" label="MOD_RSCONTACT_BCC_EMAIL" description="MOD_RSCONTACT_BCC_EMAIL_DESC" />
+				<field name="email_subj" type="text" size="40" default="You have a new contact request from {your-website}!" label="MOD_RSCONTACT_EMAIL_SUBJECT" description="MOD_RSCONTACT_EMAIL_SUBJECT_DESC" />
+				<field name="mail_msg" type="editor" rows="15" cols="35" filter="raw" label="MOD_RSCONTACT_EMAIL_BODY" description="MOD_RSCONTACT_EMAIL_BODY_DESC" 
+				default="&lt;p&gt; From: {salut-form} {first-name} {last-name} {fullname} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Subject: {subject} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Email: {email} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Home Phone: {home-phone} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Mobile Phone: {mobile-phone} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Work Phone: {work-phone} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Address: {address-1} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Address 2: {address-2} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						City: {city} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						State: {state} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Zip/Postal Code: {zip} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Company: {company} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Website: {website} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Message: {message} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						{cf1} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						{cf2} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						{cf3} &lt;/p&gt;&#13;&#10;&lt;hr / &gt;&#13;&#10;&lt;p&gt;
+						Username: {username} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						User Id: {user-id} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						User Email: {user-email} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Date: {date} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						Date-Time: {date-time} &lt;/p&gt;&#13;&#10;&lt;p&gt;
+						IP: {ip} &lt;/p&gt;&#13;&#10;" 
+				/>
+				<field type="spacer" name="mailspacer" label="MOD_RSCONTACT_MAIL_PLACEHOLDERS"/>
+				<field name="reply_to" class="btn-group" type="radio" label="MOD_RSCONTACT_REPLY_TO" default="1" description="MOD_RSCONTACT_REPLY_TO_DESC">
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+				</field>
+				<field name="reply_email" type="text" size="40" default="" label="MOD_RSCONTACT_REPLY_EMAIL" description="MOD_RSCONTACT_REPLY_EMAIL_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="jquery" class="btn-group" type="radio" label="MOD_RSCONTACT_LOAD_JQUERY" default="1" description="MOD_RSCONTACT_LOAD_JQUERY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="moduleclass_sfx" type="textarea" rows="3" label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

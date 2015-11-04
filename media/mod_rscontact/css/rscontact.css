@@ -1,0 +1,30 @@
+/**
+* @package RSContact!
+* @copyright (C) 2015 www.rsjoomla.com
+* @license GPL, http://www.gnu.org/licenses/gpl-3.0.html
+*/
+
+.mod-rscontact_msg {
+	color: green; 
+	font-weight: bold;
+}
+
+.mod-rscontact-pre-text, .mod-rscontact-post-text {
+	margin: 9px 0;
+}
+	
+.mod-rscontact-error {
+	color: #b94a48;
+}
+
+.mod-rscontact-loader {
+	display: none;
+	width: 30px;
+	height: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.mod-rscontact-width-auto {
+	width: auto;
+}

@@ -39,8 +39,26 @@ else
 JHtml::_('bootstrap.framework');
 $doc->addScript($this->baseurl . '/templates/' . $this->template . '/js/template.js');
 
+
+JHtml::_('jquery.framework');
+
+$doc->addScriptDeclaration('
+	(function ($) {
+
+	 	$(document).ready(function(){
+			$("#front-main").css({ height: $(window).innerHeight() -250 });
+			  $(window).resize(function(){
+			    $("#front-main").css({ height: $(window).innerHeight() -250 });
+			  });
+	 	});
+
+	})(jQuery);
+	
+');
+
 // Add Stylesheets
 $doc->addStyleSheet($this->baseurl . '/templates/' . $this->template . '/css/template.css');
+$doc->addStyleSheet('templates/'.$this->template.'/css/custom.css');
 
 // Load optional RTL Bootstrap CSS
 JHtml::_('bootstrap.loadCss', false, $this->direction);
@@ -119,6 +137,12 @@ else
 	<!--[if lt IE 9]>
 		<script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
+		
+		<script type="text/javaScript">
+		window.addEvent("domready", function() {
+		    alert("Embedded block of JS here");
+		});
+		</script>
 </head>
 
 <body class="site <?php echo $option
@@ -129,10 +153,9 @@ else
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
-
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front-display">
 			<!-- Header -->
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -142,26 +165,194 @@ else
 							<?php echo '<div class="site-description">' . htmlspecialchars($this->params->get('sitedescription')) . '</div>'; ?>
 						<?php endif; ?>
 					</a>
-					<div class="header-search pull-right">
-						<jdoc:include type="modules" name="position-0" style="none" />
-					</div>
+					
 				</div>
 			</header>
+		
 			<?php if ($this->countModules('position-1')) : ?>
 				<nav class="navigation" role="navigation">
-					<div class="navbar pull-left">
-						<a class="btn btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-					</div>
-					<div class="nav-collapse">
+					<div class="navbar">
 						<jdoc:include type="modules" name="position-1" style="none" />
+						<div class="header-search">
+							<jdoc:include type="modules" name="position-0" style="none" />
+						</div>
 					</div>
+					
 				</nav>
 			<?php endif; ?>
-			<jdoc:include type="modules" name="banner" style="xhtml" />
+			
+			<div id="front-main">
+				<div id="front-main-content">
+					<jdoc:include type="modules" name="front-main" style="xhtml" />
+				</div>
+			</div>
+			
+			
+		</div>	
+		
+		<?php 
+		
+		$botpos = array('1','2','3','4');
+		
+		foreach ($botpos as $p) {
+			
+			$mod1 = "front" . $p . "a";
+			$mod2 = "front" . $p . "b";
+			$mod3 = "front" . $p . "c";
+			$mod4 = "front" . $p . "d";
+			
+			if ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3) && $this->countModules($mod4)) : 
+				$modcount[$p] = 4;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3)) : 
+				$modcount[$p] = 3;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2)) : 
+				$modcount[$p] = 2;
+			elseif ($this->countModules($mod1)) : 
+				$modcount[$p] = 1;
+			endif;
+		}
+		
+		 ?> 
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front1-<?= $modcount[1] ?>">
+			<div id="front1">
+				<?php if ($this->countModules('front1a')) { ?>
+					<div id="front1a" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front1a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front1b')) { ?>
+					<div id="front1b" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front1b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front1c')) { ?>
+					<div id="front1c" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front1c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front1d')) { ?>
+					<div id="front1d" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front1d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>	
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front2-<?= $modcount[2] ?>">
+			<div id="front2">
+				<?php if ($this->countModules('front2a')) { ?>
+					<div id="front2a" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front2a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front2b')) { ?>
+					<div id="front2b" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front2b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front2c')) { ?>
+					<div id="front2c" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front2c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front2d')) { ?>
+					<div id="front2d" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front2d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front3-<?= $modcount[3] ?>">
+			<div id="front3">
+				<?php if ($this->countModules('front3a')) { ?>
+					<div id="front3a" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front3a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front3b')) { ?>
+					<div id="front3b" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front3b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front3c')) { ?>
+					<div id="front3c" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front3c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front3d')) { ?>
+					<div id="front3d" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front3d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front4-<?= $modcount[4] ?>">
+			<div id="front4">
+				<?php if ($this->countModules('front4a')) { ?>
+					<div id="front4a" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front4a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front4b')) { ?>
+					<div id="front4b" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front4b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front4c')) { ?>
+					<div id="front4c" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front4c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('front4d')) { ?>
+					<div id="front4d" class="frontbox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="front4d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		
+		<?php
+		$app = JFactory::getApplication();
+		$menu = $app->getMenu();
+		if ($menu->getActive() != $menu->getDefault()) { ?>
+
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> main-content">
+			
 			<div class="row-fluid">
 				<?php if ($this->countModules('position-8')) : ?>
 					<!-- Begin Sidebar -->
@@ -189,12 +380,220 @@ else
 				<?php endif; ?>
 			</div>
 		</div>
+		<?php } ?>
+		
+		<?php 
+		
+		$pos = array('1','2','3','4');
+		
+		foreach ($pos as $p) {
+			
+			$mod1 = "bottom" . $p . "a";
+			$mod2 = "bottom" . $p . "b";
+			$mod3 = "bottom" . $p . "c";
+			$mod4 = "bottom" . $p . "d";
+			
+			if ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3) && $this->countModules($mod4)) : 
+				$modcount[$p] = 4;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3)) : 
+				$modcount[$p] = 3;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2)) : 
+				$modcount[$p] = 2;
+			elseif ($this->countModules($mod1)) : 
+				$modcount[$p] = 1;
+			endif;
+		}
+		
+		 ?>
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> bottom1-<?= $modcount[1] ?>">
+			<div id="bottom1">
+				<?php if ($this->countModules('bottom1a')) { ?>
+					<div id="bottom1a" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom1a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom1b')) { ?>
+					<div id="bottom1b" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom1b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom1c')) { ?>
+					<div id="bottom1c" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom1c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom1d')) { ?>
+					<div id="bottom1d" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom1d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>	
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> bottom2-<?= $modcount[2] ?>">
+			<div id="bottom2">
+				<?php if ($this->countModules('bottom2a')) { ?>
+					<div id="bottom2a" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom2a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom2b')) { ?>
+					<div id="bottom2b" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom2b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom2c')) { ?>
+					<div id="bottom2c" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom2c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom2d')) { ?>
+					<div id="bottom2d" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom2d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> bottom3-<?= $modcount[3] ?>">
+			<div id="bottom3">
+				<?php if ($this->countModules('bottom3a')) { ?>
+					<div id="bottom3a" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom3a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom3b')) { ?>
+					<div id="bottom3b" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom3b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom3c')) { ?>
+					<div id="bottom3c" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom3c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom3d')) { ?>
+					<div id="bottom3d" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom3d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+		
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> bottom4-<?= $modcount ?>">
+			<div id="bottom4">
+				<?php if ($this->countModules('bottom4a')) { ?>
+					<div id="bottom4a" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom4a" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom4b')) { ?>
+					<div id="bottom4b" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom4b" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom4c')) { ?>
+					<div id="bottom4c" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom4c" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+				<?php if ($this->countModules('bottom4d')) { ?>
+					<div id="bottom4d" class="bottombox">
+						<div id="mod-container">
+							<jdoc:include type="modules" name="bottom4d" style="none" />
+						</div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
 	</div>
 	<!-- Footer -->
+	<?php 
+	
+	if ($this->countModules('footer1a') && $this->countModules('footer1b') && $this->countModules('footer1c') && $this->countModules('footer1d')) : 
+		$modcount = 4;
+	elseif ($this->countModules('footer1a') && $this->countModules('footer1b') && $this->countModules('footer1c')) : 
+		$modcount = 3;
+	elseif ($this->countModules('footer1a') && $this->countModules('footer1b')) : 
+		$modcount = 2;
+	elseif ($this->countModules('footer1a')) : 
+		$modcount = 1;
+	endif;
+	
+	?>
 	<footer class="footer" role="contentinfo">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
-			<hr />
-			<jdoc:include type="modules" name="footer" style="none" />
+		<div id="footer-1" class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+			<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> footer1 ?>">
+				<div id="footer">
+					<?php if ($this->countModules('footer1a')) { ?>
+						<div id="footer1a" class="footerbox">
+							<div id="mod-container">
+								<jdoc:include type="modules" name="footer1a" style="none" />
+							</div>
+						</div>
+					<?php } ?>
+					<?php if ($this->countModules('footer1b')) { ?>
+						<div id="footer1b" class="footerbox">
+							<div id="mod-container">
+								<jdoc:include type="modules" name="footer1b" style="none" />
+							</div>
+						</div>
+					<?php } ?>
+					<?php if ($this->countModules('footer1c')) { ?>
+						<div id="footer1c" class="footerbox">
+							<div id="mod-container">
+								<jdoc:include type="modules" name="footer1c" style="none" />
+							</div>
+						</div>
+					<?php } ?>
+					<?php if ($this->countModules('footer1d')) { ?>
+						<div id="footer1d" class="footerbox">
+							<div id="mod-container">
+								<jdoc:include type="modules" name="footer1d" style="none" />
+							</div>
+						</div>
+					<?php } ?>
+				</div>
+			</div>
+		</div>
+		<div id="copyright-top" class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+			<div id="inside-padding">
+				<jdoc:include type="modules" name="copyright-top" style="none" />
+			</div>
+		</div>
+		<div id="copyright" class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+			<div id="inside-padding">
 			<p class="pull-right">
 				<a href="#top" id="back-top">
 					<?php echo JText::_('TPL_PROTOSTAR_BACKTOTOP'); ?>
@@ -204,7 +603,10 @@ else
 				&copy; <?php echo date('Y'); ?> <?php echo $sitename; ?>
 			</p>
 		</div>
+		</div>
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>
 </html>
+
+

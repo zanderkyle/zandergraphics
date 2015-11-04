@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="2.5.0" method="upgrade" client="site">
+	<name>Akeeba Ticket System - Credits info</name>
+	<author>Nicholas K. Dionysopoulos</author>
+	<creationDate>June 2013</creationDate>
+	<copyright>Copyright (C) 2011-2014 Nicholas K. Dionysopoulos / AkeebaBackup.com</copyright>
+	<license>GNU GPLv3 - http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>nicholas@akeebabackup.com</authorEmail>
+	<authorUrl>www.akeebabackup.com</authorUrl>
+	<version>1.0</version>
+	<description>MOD_ATSCREDITS_DESCRIPTION</description>
+	<files>
+		<file module="mod_atscredits">mod_atscredits.php</file>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.mod_atscredits.ini</language>
+	</languages>
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field name="moduleclass_sfx" type="text" default="" label="MOD_ATSCREDITS_SUFFIX_LABEL" description="MOD_ATSCREDITS_SUFFIX_DESC" />
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="cache" type="list" default="1" label="MOD_ATSCREDITS_CACHING_LABEL" description="MOD_ATSCREDITS_CACHING_DESC">
+					<option value="1">MOD_ATSCREDITS_CACHING_OPT_GLOBAL</option>
+					<option value="0">MOD_ATSCREDITS_CACHING_OPT_NONE</option>
+				</field>
+				<field name="cache_time" type="text" default="900" label="MOD_ATSCREDITS_CACHETIME_LABEL" description="MOD_ATSCREDITS_CACHETIME_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="plugin" version="1.6.0" group="content" method="upgrade">
+	<name>ChronoConnectivity5</name>
+	<author>ChronoEngine.com</author>
+	<creationDate>08.Dec.2013</creationDate>
+	<copyright>(C) ChronoEngine.com</copyright>
+	<license>GPLv2</license>
+	<authorEmail>webmaster@chronoengine.com</authorEmail>
+	<authorUrl>www.chronoengine.com</authorUrl>
+	<version>V5.0</version>
+	<description><![CDATA[
+	This plugin requires the ChronoConnectivity V5 component.
+	You just need to put the name of the connection you want to show between : {chronoconnectivity5}&{/chronoconnectivity5}, Example: {chronoconnectivity5}my_connection{/chronoconnectivity5}
+	]]></description>
+	<files>
+		<filename plugin="chronoconnectivity5">chronoconnectivity5.php</filename>
+	</files>
+</extension>

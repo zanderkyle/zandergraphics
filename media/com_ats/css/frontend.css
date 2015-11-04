@@ -1,0 +1,324 @@
+/* @override
+	http://dev17.local.web/media/com_ats/css/frontend.css?33043c304f97fec0bb154f84999abf4f
+*/
+
+/**
+ * @package		ats
+ * @copyright	Copyright (c)2011-2014 Nicholas K. Dionysopoulos / AkeebaBackup.com
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html> or later
+ */
+
+/**
+ * Common
+ */
+div.ats-clear {
+	clear: both;
+}
+
+.akeeba-bootstrap.ui-dialog{
+    background-color: #FFF;
+}
+
+/**
+ * Categories view
+ */
+div.ats-category-levelpad {
+	float: left;
+	margin-right: 2px;
+}
+
+div.ats-category-quickbuttons {
+	text-align: right;
+}
+
+div.ats-category-quickbuttons a {
+	margin-bottom: 2px !important;
+}
+
+/*
+ * Custom bbCode editor styling
+ */
+#markItUpBbcode .canned a,
+#markItUpBbcodemn .canned a {
+	background-image: url(../images/ats-16.png);
+}
+
+#markItUpBbcode .bucket a,
+#markItUpBbcodemn .bucket a {
+	background-image: url(../images/bucket.png);
+}
+
+#markItUpBbcode textarea,
+#markItUpBbcodemn textarea {
+	width: 94%;
+	background-image: none;
+}
+
+div.markItUp {
+	background-color: transparent;
+	border: none;
+}
+
+div.markItUpContainer {
+	border: none;
+	background-image: none;
+	background-color: white;
+}
+
+/*
+ * InstantReply Lightbox
+ */
+#ats-instantreply-lightbox-wrapper {
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+}
+
+#ats-instantreply-lightbox-shader {
+	float: left;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 10000;
+	background-color: rgba(0,0,0,0.8);
+}
+
+#ats-instantreply-lightbox-innerbox {
+	width: 1024px;
+	height: 75%;
+	margin: 6.25% auto;
+	background-color: white;
+	border-radius: 10px;
+	padding: 10px;
+}
+
+#ats-instantreply-lightbox-iframe {
+	width: 100%;
+	height: 90%;
+	border: none;
+}
+
+#ats-instantreply-lightbox-close {
+	float: right;
+	cursor: pointer;
+}
+
+/**
+ * Module overlay
+ */
+#ats-replyarea-overlay {
+	width: 94%;
+	height: 520px;
+	background-color: rgba(255, 255, 255, 0.90);
+	float: left;
+	position: absolute;
+	margin-top: 50px;
+	z-index: 10000;
+	border: thick solid #333;
+	padding: 10px;
+	border-radius: 10px;
+	box-shadow: 2px 2px 6px #99C;
+}
+
+/**
+ * Posts view
+ */
+#atsTab li {
+	list-style: none;
+}
+
+.gravatar { margin-right: 3px; }
+
+div.ats-post {
+	border: thin solid #ccc;
+	background: white;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0.3em;
+}
+
+div.ats-post-header {
+	border-bottom: thin solid #ccc;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0.5em;
+	padding: 2px;
+	font-size: 8pt;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+	background-color: #f0f0f0;
+}
+
+div.ats-post-header a {
+	color: black !important;
+	text-decoration: none;
+	background-color: none !important;
+}
+
+div.ats-post-header a:hover {
+	background: none !important;
+}
+
+div.ats-post-userinfo {
+	width: 120px;
+	float: right;
+	border-left: thin dashed #ccc;
+	z-index: 90;
+	margin-left: 0.5em;
+	padding-left: 5px;
+	background-color: white;
+	text-align: center;
+}
+
+div.ats-post-userinfo-avatar img {
+	float:none;
+	width: 64px;
+	height: 64px;
+	border: thin solid #333;
+	border-radius: 3px;
+	margin: 0 25px;
+	box-shadow: 1px 1px 3px #999;
+}
+
+div.ats-post-userinfo-username {
+	font-weight: bold;
+	text-shadow: 1px 1px 1px #ccc;
+	word-wrap: break-word;
+}
+
+div.ats-post-userinfo-username, div.ats-post-userinfo-subscriptions, div.ats-post-userinfo-badge {
+	margin: 0.2em;
+}
+
+div.ats-post-userinfo-badge img {
+	margin:0 0 0.5em;
+}
+
+div.ats-post-content-html {
+	margin: 0 0.5em;
+}
+
+div.ats-post-customfields{
+	margin: 0.3em 0.5em;
+	border-top: thin dashed #ccc;
+	padding-top: 5px;
+}
+
+div.ats-post-customfields h6{
+	margin: 0;
+}
+
+div.ats-post-customfields dd{
+	font-style: italic;
+}
+
+div.ats-post-content-signature {
+	margin: 0.3em 0.5em;
+	padding-top: 0.3em;
+	border-top: thin dotted #ccc;
+}
+
+div.ats-post-footer {
+	clear: both;
+}
+
+div.ats-post-edits {
+	margin: 0.5em;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 8pt;
+	color: #999;
+}
+
+div.ats-post-status-unpublished {
+	border: thin solid #900;
+	background: #fffcfc;
+}
+
+div.ats-post-status-unpublished div.ats-post-header {
+	background: #fcc;
+}
+
+span.ats-post-header-unpublished {
+	padding-left: 3em;
+	color: #ff0;
+	text-shadow: 1px 1px 2px #000;
+	font-weight: bold;
+}
+
+
+div.ats-post-status-unpublished div.ats-post-userinfo {
+	background: #fffcfc;
+}
+
+div.ats-post-attachments {
+	margin: 0.3em 0.5em;
+}
+
+span.ats-post-attachments-head {
+	display: block;
+	font-weight: bold;
+}
+
+div.ats-post-buttons {
+	border-top: #ccc;
+	padding: 5px 3px;
+}
+
+form#ats_moveticket_form {
+	margin: 0;
+}
+
+.ats-ticket-replyarea-attachment {
+	clear: both;
+}
+
+span.ats-canned-reply-button {
+    /**
+	float: left;
+	clear: left;
+	**/
+	margin: 5px 0 0.5em 5px;
+}
+
+.akeeba-bootstrap .form-horizontal .control-label.large{
+	padding-top:0;
+	margin-right:5px;
+	width:320px;
+}
+
+/**
+ * InstantReply Styling
+ */
+#ats-replyarea-overlay {
+	width: 710px;
+	height: 380px;
+	background-color: rgba(255, 255, 255, 0.90);
+	float: left;
+	position: absolute;
+	margin-top: 20px;
+	z-index: 10000;
+	border: thick solid #333;
+	padding: 10px;
+	border-radius: 15px;
+	box-shadow: 2px 2px 6px #99C;
+}
+
+.ats-cannedreply-raw {
+	margin: 5px;
+	padding: 5px;
+	border: thin solid #333;
+	background-color: #f0f0f0;
+	display: none;
+}
+
+#ats-ticket-display div.current {
+	max-width: 100%;
+}
+
+#atsPreviewArea{margin:10px 0 25px}

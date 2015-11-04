@@ -1,0 +1,274 @@
+/**
+ * @package		ats
+ * @copyright	Copyright (c)2011-2014 Nicholas K. Dionysopoulos / AkeebaBackup.com
+ * @license		GNU GPLv3 <http://www.gnu.org/licenses/gpl.html> or later
+ */
+
+/**
+ * Toolbar icons
+ */
+.icon-48-ats {
+	background: transparent url(../images/ats-48.png) no-repeat !important;
+}
+
+.container_16 .icon-48-ats {
+	padding-right: 20px;
+	background: transparent url(../images/ats-16.png) 5px right no-repeat !important;
+}
+
+/**
+ * Common items
+ */
+div.ats-clear { clear: both; }
+
+/**
+ * Control Panel
+ */
+
+#akticketschart {
+	height: 300px;
+}
+
+/*
+ * Custom bbCode editor styling
+ */
+#markItUpBbcode .canned a,
+#markItUpBbcodecr .canned a,
+#markItUpBbcodemn .canned a {
+	background-image: url(../images/ats-16.png);
+}
+
+#markItUpBbcode textarea,
+#markItUpBbcodecr textarea,
+#markItUpBbcodemn textarea {
+	width: 94%;
+	background-image: none;
+}
+
+div.markItUp {
+	background-color: transparent;
+	border: none;
+}
+
+div.markItUpContainer {
+	border: none;
+	background-image: none;
+	background-color: white;
+}
+
+/**
+ * Tickets view
+ */
+.gravatar { margin-right: 3px; }
+
+.ats-ticket-status-O { color: red; font-weight: bold; }
+.ats-ticket-status-P { color: orange; }
+.ats-ticket-status-C { color: green; }
+
+.public .jgrid span.publish { background-image: url(../images/public.png) }
+.public .jgrid span.unpublish { background-image: url(../images/private.png) }
+
+.select-status { text-align: left; }
+
+/**
+ * Ticket editor
+ */
+#ats-ticket-toprow fieldset {
+	float: left;
+	width: 48%;
+	margin: 0.3%;
+}
+
+table.ats-infotable {
+	width: 100%;
+	border: 0;
+}
+
+table.ats-infotable td.ats-infotable-label {
+	font-weight: bold;
+	background: rgba(0,0,0,0.1);
+	width: 30%;
+}
+
+table.ats-infotable select {
+	margin: 0;
+}
+
+.ats-infotable-ticketnumber {
+	background: rgba(0,0,0,0.05);
+	font-weight: bold;
+	font-size: 130%;
+	color: navy;
+	text-align: center;
+	padding: 4px;
+}
+
+input.ats-title {
+	width: 90%;
+	font-weight: bold;
+	font-size: 110%;
+}
+
+input.ats-slug {
+	width: 90%;
+	background: rgba(0,200,0,0.2) !important;
+	font-size: 70%;
+}
+
+/**
+ * Threaded post view
+ */
+
+div.ats-post {
+	border: thin solid #ccc;
+	background: white;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0.3em;
+}
+
+div.ats-post-header {
+	border-bottom: thin solid #ccc;
+	border-radius: 5px 5px 0 0;
+	margin-bottom: 0.5em;
+	padding: 2px;
+	font-size: 8pt;
+	font-weight: bold;
+	color: black;
+	text-align: left;
+	background-color: #f0f0f0;
+}
+
+div.ats-post-header a {
+	color: black !important;
+	text-decoration: none;
+	background-color: none !important;
+}
+
+div.ats-post-header a:hover {
+	background: none !important;
+}
+
+div.ats-post-userinfo {
+	width: 120px;
+	float: right;
+	border-left: thin dashed #ccc;
+	z-index: 90;
+	margin-left: 0.5em;
+	padding-left: 5px;
+	background-color: white;
+	text-align: center;
+}
+
+div.ats-post-userinfo-avatar img {
+	float:none;
+	width: 64px;
+	height: 64px;
+	border: thin solid #333;
+	border-radius: 3px;
+	margin: 0 25px;
+	box-shadow: 1px 1px 3px #999;
+}
+
+div.ats-post-userinfo-username {
+	font-weight: bold;
+	margin: 0.2em;
+	text-shadow: 1px 1px 1px #ccc;
+}
+
+div.ats-post-content-html {
+	margin: 0 0.5em;
+}
+
+div.ats-post-content-signature {
+	margin: 0.3em 0.5em;
+	padding-top: 0.3em;
+	border-top: thin dotted #ccc;
+}
+
+div.ats-post-footer {
+	clear: both;
+}
+
+div.ats-post-edits {
+	margin: 0.5em;
+	font-weight: normal;
+	font-style: italic;
+	font-size: 8pt;
+	color: #999;
+}
+
+div.ats-post-status-unpublished {
+	border: thin solid #900;
+	background: #fffcfc;
+}
+
+div.ats-post-status-unpublished div.ats-post-header {
+	background: #fcc;
+}
+
+span.ats-post-header-unpublished {
+	padding-left: 3em;
+	color: #ff0;
+	text-shadow: 1px 1px 2px #000;
+	font-weight: bold;
+}
+
+
+div.ats-post-status-unpublished div.ats-post-userinfo {
+	background: #fffcfc;
+}
+
+div.ats-post-attachments {
+	margin: 0.3em 0.5em;
+}
+
+span.ats-post-attachments-head {
+	display: block;
+	font-weight: bold;
+}
+
+div.ats-post-buttons {
+	border-top: #ccc;
+	padding: 5px 3px;
+}
+
+div.ats-ticket-pagination select,
+div.ats-ticket-pagination input,
+div.ats-ticket-pagination label { float: none !important; }
+
+h3.ats-ticket-reply-header { margin: 0.5em 0; font-size: 130%; color: #333; }
+
+div.ats-ticket-replyarea { margin: 1em 0; }
+div.ats-ticket-replyarea textarea { float: none; }
+div.ats-ticket-replyarea textarea:focus { background-color: inherit !important; }
+
+div.ats-ticket-replyarea-postbutton { margin: 1em; }
+
+/** User display **/
+.fof-usersfield-avatar {
+    padding-right: 6pt;
+}
+
+.fof-usersfield-username {
+    font-weight: bold;
+}
+
+.fof-usersfield-id {
+    padding-left: 6pt;
+    font-size: smaller;
+    font-style: italic;
+}
+
+.fof-usersfield-id:before {
+    content: "["
+}
+
+.fof-usersfield-id:after {
+    content: "]"
+}
+
+.fof-usersfield-name {
+    display: block;
+}
+
+#atsPreviewArea{margin:10px 0 25px}

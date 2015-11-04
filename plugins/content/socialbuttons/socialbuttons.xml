@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" version="2.5" group="content" method="upgrade">
+	<name>Content - Social Buttons</name>
+	<author>Elite Developers</author>
+	<creationDate>June 2013</creationDate>
+	<copyright>Copyright (C) 2013 Elite Developers. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE.txt</license>
+	<authorEmail>admin@elitewebdev.com</authorEmail>
+	<authorUrl>www.elitewebdev.com</authorUrl>
+	<version>3.3.0</version>
+	<description><![CDATA[ <div style="color:#FFFFFF; background:#3A87AD; border:1px solid #B0DFFF; padding:10px;margin:10px; border-radius: 4px;">
+		<div><a href="http://www.elitewebdev.com/extra/joomla/social-buttons" target="_blank" style="color:#FFFFFF;"><h2>Social Buttons</h2> <img src="http://www.elitewebdev.com/files/joomla/images/socialbuttons.png" alt="Social Buttons" width="110" height="79" /></a><br /><br /></div>
+		- Access Plugin: Extensions >> Plugin Manager >> Social Buttons<br /> 
+		- Configure parameters as you like<br />
+		- Publish/Enable<br />
+		- Save.<br /><br />
+		( Need Help ? Report a bug ? Request a new feature ? : <a href="http://www.elitewebdev.com/contact-us" target="_blank" style="color:#FFFFFF;">Click Here - Contact Us</a> )
+		</div> ]]>
+	</description>
+	<files>
+		<filename plugin="socialbuttons">socialbuttons.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<folder>fields</folder>
+        <folder>language</folder>
+	</files>
+ 	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_content_socialbuttons.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_content_socialbuttons.sys.ini</language> 
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/plugins/content/socialbuttons/fields">
+		    <fieldset name="basic">
+				<field name="@bloc_top_a" type="a_bloc" start="1" label="Social Buttons"/>
+					<field name="@slide_css_a" type="a_slide" param="adsalg" value="css" />
+						<field name="acss" type="text" default="float:left;" label="CSS Style" description="Enter a custom CSS Style"/>
+					<field name="@slide_css_b" type="a_slide" />	
+					<field name="position" type="radio" class="btn-group" default="above" label="PLG_SOCIALBUTTONS_POSITION" description="PLG_SOCIALBUTTONS_POSITION_DESC">
+						<option value="above">PLG_SOCIALBUTTONS_ABOVE</option>
+						<option value="below">PLG_SOCIALBUTTONS_BELOW</option>
+					</field>
+					<field name="align" type="radio" class="btn-group" default="left" label="PLG_SOCIALBUTTONS_ALIGN" description="PLG_SOCIALBUTTONS_ALIGN_DESC">
+						<option value="left">PLG_SOCIALBUTTONS_LEFT</option>
+						<option value="right">PLG_SOCIALBUTTONS_RIGHT</option>
+					</field>
+					<field name="show" type="list" multiple="true" default="none" label="Exclude Views" description="Select where to exclude Ad Units, use CTRL for multiple select">
+						<option value="frontpage">Front Page</option>
+						<option value="featured">Featured</option>
+						<option value="category">Category</option>
+						<option value="categories">Categories</option>
+						<option value="archive">Archive</option>	
+						<option value="search">Search</option>
+						<option value="other">Other than Com_Content</option>
+						<option value="none">None</option>
+					</field>				
+					<field name="exclude_cat" type="category" extension="com_content" multiple="true" size="10" default="" label="PLG_SOCIALBUTTONS_EXCLUDE_CATEGORIE" description="PLG_SOCIALBUTTONS_EXCLUDE_CATEGORIE_DESC" >
+					</field>
+					<field name="exclude_art" type="text" default="" label="PLG_SOCIALBUTTONS_EXCLUDE_ARTICLE_ID" description="PLG_SOCIALBUTTONS_EXCLUDE_ARTICLE_ID_DESC" />
+					
+				<field name="@bloc_top_b" type="a_bloc" end="1" />
+				<field name="@bloc_fb_a" type="a_bloc" start="1" label="Facebook. (Will show on a live site not in localhost)"/>
+
+					<field name="facebook" type="radio" class="btn-group" default="1" label="PLG_SOCIALBUTTONS_FB_SHOW_BUTTON_LIKE" description="PLG_SOCIALBUTTONS_FB_SHOW_BUTTON_LIKE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="@slide_fb_a" type="a_slide" param="facebook" value="1" />
+						<field name="facebook_action" type="radio" class="btn-group" default="like" label="PLG_SOCIALBUTTONS_FB_ACTION" description="PLG_SOCIALBUTTONS_FB_ACTION_DESC">
+							<option value="like">PLG_SOCIALBUTTONS_FB_LIKE</option>
+							<option value="recommend">PLG_SOCIALBUTTONS_FB_RECOMMEND</option>
+						</field>
+						
+						<field name="facebook_color" type="radio" class="btn-group" default="light" label="PLG_SOCIALBUTTONS_FB_COLOR" description="PLG_SOCIALBUTTONS_FB_COLOR_DESC">
+							<option value="light">PLG_SOCIALBUTTONS_FB_LIGHT</option>
+							<option value="dark">PLG_SOCIALBUTTONS_FB_DARK</option>
+						</field>
+						
+						<field name="facebook_font" type="list" default="arial" label="PLG_SOCIALBUTTONS_FB_FONT" description="PLG_SOCIALBUTTONS_FB_FONT_DESC">
+							<option value="arial">arial</option>
+							<option value="lucida+grande">lucida grande</option>
+							<option value="segoe+ui">segoe ui</option>
+							<option value="tahoma">tahoma</option>
+							<option value="trebuchet+ms">trebuchet ms</option>
+							<option value="verdana">verdana</option>
+						</field>
+						
+						<field name="facebook_language" type="list" default="en_US" label="PLG_SOCIALBUTTONS_FB_LANGUAGE" description="PLG_SOCIALBUTTONS_FB_LANGUAGE_DESC">
+							<option value="af_ZA">Afrikaans</option>
+							<option value="ar_AR">Arabic</option>
+							<option value="ay_BO">Aymara</option>
+							<option value="az_AZ">Azeri</option>
+							<option value="be_BY">Belarusian</option>
+							<option value="bg_BG">Bulgarian</option>
+							<option value="bn_IN">Bengali</option>
+							<option value="bs_BA">Bosnian</option>
+							<option value="ca_ES">Catalan</option>
+							<option value="ck_US">Cherokee</option>
+							<option value="cs_CZ">Czech</option>
+							<option value="cy_GB">Welsh</option>
+							<option value="da_DK">Danish</option>
+							<option value="de_DE">German</option>
+							<option value="el_GR">Greek</option>
+							<option value="en_GB">English (UK)</option>
+							<option value="en_PI">English (Pirate)</option>
+							<option value="en_UD">English (Upside Down)</option>
+							<option value="en_US">English [US]</option>
+							<option value="eo_EO">Esperanto</option>
+							<option value="es_CL">Spanish (Chile)</option>
+							<option value="es_CO">Spanish (Colombia)</option>
+							<option value="es_ES">Spanish (Spain)</option>
+							<option value="es_LA">Spanish</option>
+							<option value="es_MX">Spanish (Mexico)</option>
+							<option value="es_VE">Spanish (Mexico)</option>
+							<option value="et_EE">Estonian</option>
+							<option value="eu_ES">Basque</option>
+							<option value="fa_IR">Persian</option>
+							<option value="fb_LT">Leet Speak</option>
+							<option value="fi_FI">Finnish</option>
+							<option value="fo_FO">Faroese</option>
+							<option value="fr_CA">French (Canada)</option>
+							<option value="fr_FR">French (France)</option>
+							<option value="ga_IE">Irish</option>
+							<option value="gl_ES">Galician</option>
+							<option value="gn_PY">Guarani</option>
+							<option value="gu_IN">Gujarati</option>
+							<option value="he_IL">Hebrew</option>
+							<option value="hi_IN">Hindi</option>
+							<option value="hr_HR">Croatian</option>
+							<option value="hu_HU">Hungarian</option>
+							<option value="hy_AM">Armenian</option>
+							<option value="id_ID">Indonesian</option>
+							<option value="is_IS">Icelandic</option>
+							<option value="it_IT">Italian</option>
+							<option value="ja_JP">Japanese</option>
+							<option value="jv_ID">Javanese</option>
+							<option value="ka_GE">Georgian</option>
+							<option value="kk_KZ">Kazakh</option>
+							<option value="km_KH">Khmer</option>
+							<option value="kn_IN">Kannada</option>
+							<option value="ko_KR">Korean</option>
+							<option value="ku_TR">Kurdish</option>
+							<option value="la_VA">Latin</option>
+							<option value="li_NL">Limburgish</option>
+							<option value="lt_LT">Lithuanian</option>
+							<option value="lv_LV">Latvian</option>
+							<option value="mg_MG">Malagasy</option>
+							<option value="mk_MK">Macedonian</option>
+							<option value="ml_IN">Malayalam</option>
+							<option value="mn_MN">Mongolian</option>
+							<option value="mr_IN">Marathi</option>
+							<option value="ms_MY">Malay</option>
+							<option value="mt_MT">Maltese</option>
+							<option value="nb_NO">Norwegian (bokmal)</option>
+							<option value="ne_NP">Nepali</option>
+							<option value="nl_BE">Dutch (Belgie)</option>
+							<option value="nl_NL">Dutch</option>
+							<option value="nn_NO">Norwegian (nynorsk)</option>
+							<option value="pa_IN">Punjabi</option>
+							<option value="pl_PL">Polish</option>
+							<option value="ps_AF">Pashto</option>
+							<option value="pt_BR">Portuguese (Brazil)</option>
+							<option value="pt_PT">Portuguese (Portugal)</option>
+							<option value="qu_PE">Quechua</option>
+							<option value="rm_CH">Romansh</option>
+							<option value="ro_RO">Romanian</option>
+							<option value="ru_RU">Russian</option>
+							<option value="sa_IN">Sanskrit</option>
+							<option value="se_NO">Northern Sami</option>
+							<option value="sk_SK">Slovak</option>
+							<option value="sl_YES">Slovenian</option>
+							<option value="so_SO">Somali</option>
+							<option value="sq_AL">Albanian</option>
+							<option value="sr_RS">Serbian</option>
+							<option value="sv_SE">Swedish</option>
+							<option value="sw_KE">Swahili</option>
+							<option value="sy_SY">Syriac</option>
+							<option value="ta_IN">Tamil</option>
+							<option value="te_IN">Telugu</option>
+							<option value="tg_TJ">Tajik</option>
+							<option value="th_TH">Thai</option>
+							<option value="tl_PH">Filipino</option>
+							<option value="tl_ST">Klingon</option>
+							<option value="tr_TR">Turkish</option>
+							<option value="tt_RU">Tatar</option>
+							<option value="uk_UA">Ukrainian</option>
+							<option value="ur_PK">Urdu</option>
+							<option value="uz_UZ">Uzbek</option>
+							<option value="vi_VN">Vietnamese</option>
+							<option value="xh_ZA">Xhosa</option>
+							<option value="yi_DE">Yiddish</option>
+							<option value="zh_CN">Simplified Chinese (China)</option>
+							<option value="zh_HK">Traditional Chinese (Hong Kong)</option>
+							<option value="zh_TW">Traditional Chinese (Taiwan)</option>
+							<option value="zu_ZA">Zulu</option>
+						</field>
+						<field name="facebook_width" type="text" default="80" label="PLG_SOCIALBUTTONS_FB_WIDTH" description="PLG_SOCIALBUTTONS_FB_WIDTH_DESC" />
+					<field name="@slide_fb_b" type="a_slide" />
+				<field name="@bloc_fb_b" type="a_bloc" end="1" />
+				<field name="@bloc_twit_a" type="a_bloc" start="1" label="Twitter"/>
+					<field name="twitter" type="radio" default="1" class="btn-group" label="PLG_SOCIALBUTTONS_TWT_SHOW_BUTTON_TWITTER" description="PLG_SOCIALBUTTONS_TWT_SHOW_BUTTON_TWITTER_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="@slide_tw_a" type="a_slide" param="twitter" value="1" />
+						<field name="twitter_width" type="text" default="90" label="PLG_SOCIALBUTTONS_TW_WIDTH" description="PLG_SOCIALBUTTONS_TW_WIDTH_DESC" />
+					<field name="@slide_tw_b" type="a_slide" />
+				<field name="@bloc_twit_b" type="a_bloc" end="1"/>
+				<field name="@bloc_gopl_a" type="a_bloc" start="1" label="GooglePlus"/>
+					<field name="google" type="radio" default="1" class="btn-group" label="PLG_SOCIALBUTTONS_G1_SHOW_BUTTON_GOOGLE" description="PLG_SOCIALBUTTONS_G1_SHOW_BUTTON_GOOGLE_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+					</field>
+					<field name="@slide_gp_a" type="a_slide" param="google" value="1" />
+						<field name="googleplus_width" type="text" default="70" label="PLG_SOCIALBUTTONS_G1_WIDTH" description="PLG_SOCIALBUTTONS_G1_WIDTH_DESC" />
+					<field name="@slide_gp_b" type="a_slide" />
+				<field name="@bloc_gopl_b" type="a_bloc" end="1" />
+				<field name="@bloc_lnki_a" type="a_bloc" start="1" label="LinkedIn"/>
+						<field name="linkedin" type="radio" default="1" class="btn-group" label="PLG_SOCIALBUTTONS_LKN_SHOW_BUTTON_LINKEDIN" description="PLG_SOCIALBUTTONS_LKN_SHOW_BUTTON_LINKEDIN_DESC">
+						<option value="0">JNO</option>
+						<option value="1">JYES</option>
+						</field>
+					<field name="@slide_li_a" type="a_slide" param="linkedin" value="1" />						
+						<field name="linkedin_width" type="text" default="95" label="PLG_SOCIALBUTTONS_LI_WIDTH" description="PLG_SOCIALBUTTONS_LI_WIDTH_DESC" />
+					<field name="@slide_li_b" type="a_slide" />
+				<field name="@bloc_lnki_b" type="a_bloc" end="1" />
+			</fieldset>
+		</fields>
+	</config>
+	<updateservers>
+		<server type="extension" priority="1" name="Social Buttons Plug-in Update Server">http://www.elitewebdev.com/files/joomla/extensions/social_buttons/1/xmls/updateplg.xml</server>
+	</updateservers>
+</extension>

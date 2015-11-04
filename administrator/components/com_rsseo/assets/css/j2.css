@@ -1,0 +1,177 @@
+.icon-32-rsseo {
+	background-image: url(../images/rsseo_logo_32.png);
+}
+
+.icon-48-rsseo {
+	background-image: url(../images/rsseo_logo_48.png);
+}
+
+.icon-32-compete {
+	background-image:url(../images/compete.png);
+}
+
+.icon-history {
+	background-image: url("../images/history.png");
+    display: inline-block;
+    height: 16px;
+    width: 16px;
+}
+
+#filter-bar button {
+	margin-top: 0px !important;
+	height: 17px;
+}
+
+.element-invisible {
+	display: none;
+}
+
+.pull-right {
+	float: right;
+	margin-left: 5px;
+}
+
+.pull-left {
+	float: left;
+}
+
+#filter-bar {
+	display: block;
+	float:left;
+	width: 100%;
+}
+
+.rsb_btns {
+	display: inline-block;
+	float: left;
+	margin-left: 5px;
+}
+
+.icon-search {
+	background: url("../images/find.png") no-repeat scroll 0 0 transparent;
+	display: block;
+    height: 12px;
+    width: 12px;
+}
+
+.icon-remove {
+	background: url("../images/remove.png") no-repeat scroll 0 0 transparent;
+	display: block;
+    height: 12px;
+    width: 12px;
+}
+
+.badge {
+	font-size: 10.998px;
+	font-weight: bold;
+	line-height: 14px;
+	color: #fff;
+	vertical-align: baseline;
+	white-space: nowrap;
+	text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+	background-color: #999;
+	padding: 1px 9px 2px;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	border-radius: 9px;
+}
+
+.badge-important {
+	background-color: #b94a48;
+}
+
+.badge-success {
+	background-color: #468847;
+}
+
+.badge-info {
+	background-color: #3A87AD;
+}
+
+.row-fluid .span5 {
+	width: 50%;
+	float: left;
+}
+
+.row-fluid .span7 {
+	width: 50%;
+	float: left;
+}
+
+.rsj-box .table th, .rsj-box .table td {
+    border-top: 1px solid #DDDDDD;
+    line-height: 18px;
+    padding: 8px;
+    text-align: left;
+    vertical-align: top;
+}
+
+
+.rsj-box table {
+	max-width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.rsj-box .table {
+	width: 100%;
+	margin-bottom: 18px;
+}
+
+.rsj-box .table th {
+	font-weight: bold;
+}
+
+.rsj-box .table thead th {
+	vertical-align: bottom;
+}
+
+.rsj-box .table thead:first-child tr:first-child th,
+.rsj-box .table thead:first-child tr:first-child td {
+	border-top: 0;
+}
+
+.rsj-box .table tbody + tbody {
+	border-top: 2px solid #ddd;
+}
+
+.rsj-box .table-striped tbody tr:nth-child(odd) td,
+.rsj-box .table-striped tbody tr:nth-child(odd) th {
+	background-color: #f9f9f9;
+}
+
+.sitemapbutton {
+	background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #CCCCCC;
+    margin-top: 4px;
+    padding: 5px;
+    text-decoration: none !important;
+}
+
+.rsnofloat {
+	float: none !important;
+}
+
+#rsroot {
+	float: left;
+    margin-right: 5px;
+    margin-top: 6px;
+}
+
+.ga_no_account {
+	width: 99% !important;
+}
+
+#rsstart_img, #rsend_img {
+	vertical-align: middle;
+}
+
+.btn-toolbar {
+	margin-bottom: 5px;
+}
+
+#rss_results {
+	margin-left: 140px;
+	margin-top: -5px;
+}
