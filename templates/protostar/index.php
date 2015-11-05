@@ -50,7 +50,11 @@ $doc->addScriptDeclaration('
 			  $(window).resize(function(){
 			    $("#front-main").css({ height: $(window).innerHeight() -250 });
 			  });
+		     
+		     
 	 	});
+		
+		
 
 	})(jQuery);
 	
@@ -153,9 +157,11 @@ else
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
+<?php $app = JFactory::getApplication();
+	  $menu = $app->getMenu(); ?>
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> front-display">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> <?php echo ($menu->getActive() == $menu->getDefault()) ? 'front-display' : 'inside-display'; ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -181,20 +187,29 @@ else
 				</nav>
 			<?php endif; ?>
 			
+			<?php $app = JFactory::getApplication();
+			$menu = $app->getMenu();
+			if ($menu->getActive() == $menu->getDefault()) { ?>
+			
 			<div id="front-main">
 				<div id="front-main-content">
 					<jdoc:include type="modules" name="front-main" style="xhtml" />
 				</div>
 			</div>
 			
+			<?php } ?>
 			
 		</div>	
 		
 		<?php 
 		
-		$botpos = array('1','2','3','4');
+		$app = JFactory::getApplication();
+		$menu = $app->getMenu();
+		if ($menu->getActive() == $menu->getDefault()) { 
 		
-		foreach ($botpos as $p) {
+		$pos = array('1','2','3','4');
+		
+		foreach ($pos as $p) {
 			
 			$mod1 = "front" . $p . "a";
 			$mod2 = "front" . $p . "b";
@@ -345,6 +360,7 @@ else
 				<?php } ?>
 			</div>
 		</div>
+		<?php } ?>
 		
 		<?php
 		$app = JFactory::getApplication();
@@ -384,9 +400,9 @@ else
 		
 		<?php 
 		
-		$pos = array('1','2','3','4');
+		$botpos = array('1','2','3','4');
 		
-		foreach ($pos as $p) {
+		foreach ($botpos as $p) {
 			
 			$mod1 = "bottom" . $p . "a";
 			$mod2 = "bottom" . $p . "b";

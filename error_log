@@ -32,3 +32,22 @@
 [31-Oct-2015 00:51:39 America/Chicago] PHP Parse error:  syntax error, unexpected '$' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 52
 [04-Nov-2015 13:49:27 America/Chicago] PHP Fatal error:  Call to undefined method JApplicationSite::getActive() in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 369
 [04-Nov-2015 13:49:30 America/Chicago] PHP Fatal error:  Call to undefined method JApplicationSite::getActive() in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 369
+[04-Nov-2015 20:23:40 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 160
+[04-Nov-2015 20:24:41 America/Chicago] PHP Parse error:  syntax error, unexpected '}', expecting ',' or ';' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 160
+[04-Nov-2015 20:26:06 America/Chicago] PHP Parse error:  syntax error, unexpected '?' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 160
+[04-Nov-2015 20:34:28 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 196
+[04-Nov-2015 20:34:34 America/Chicago] PHP Parse error:  syntax error, unexpected '}' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 196
+[04-Nov-2015 20:35:02 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 190
+[04-Nov-2015 20:35:05 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 190
+[04-Nov-2015 20:35:33 America/Chicago] PHP Parse error:  syntax error, unexpected '<' in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 190
+[04-Nov-2015 21:00:21 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 58
+[04-Nov-2015 21:00:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 58
+[04-Nov-2015 21:00:50 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 58
+[04-Nov-2015 21:00:55 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 56
+[04-Nov-2015 21:00:57 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 56
+[04-Nov-2015 21:01:31 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 56
+[04-Nov-2015 21:02:00 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 54
+[04-Nov-2015 21:02:06 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 54
+[04-Nov-2015 21:02:26 America/Chicago] PHP Parse error:  syntax error, unexpected 'ul' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 54
+[04-Nov-2015 21:02:29 America/Chicago] PHP Parse error:  syntax error, unexpected 'dropdown' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 54
+[04-Nov-2015 21:02:44 America/Chicago] PHP Parse error:  syntax error, unexpected 'dropdown' (T_STRING) in /home/kgonyea/public_html/stage/templates/protostar/index.php on line 54

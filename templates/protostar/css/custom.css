@@ -93,15 +93,50 @@ input[type="search"] {
 
 .front-display {
 	background-image: url(../images/zg-back.jpg);
+	max-height:800px;
 	background-repeat:repeat-x;
 	background-size:cover;
 	background-position:left top;
 }
 
+@media (min-width: 1700px) {
+	.front-display {
+		background-image: url(../images/zg-back-large.jpg);
+	}
+}
+
+
+.inside-display {
+	background-image: url(../images/zg-inside-back.jpg);
+	max-height:300px;
+	background-repeat:repeat-x;
+	background-size:cover;
+	background-position:left top;
+}
+
+
+
+.nav-child {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      z-index: 9999;
+      display: block; // none by default, but block on "open" of the menu
+      //float: left;
+      min-width: 160px;
+      padding: 5px 0;
+      margin: 2px 0 0; // override default ul
+      list-style: none;
+      background-color: #fff;
+   } 
+
+
+
 /* Front page styles */
 
 #front1, #front2, #front3, #front4, #bottom1, #bottom2, #bottom3, #bottom4, .footer1, #copyright, #copyright-top, .header {
 	width:85%;
+	max-width:1700px;
 	margin: 0 auto;
 }
 
@@ -111,10 +146,11 @@ input[type="search"] {
 
 #front-main {
 	width: 50%;
-	min-height:300px;
+	max-height:600px;
+	max-width:1000px;
 	margin-top:5px;
-	margin-right:8%;
-	float: right;
+	margin-left:40%;
+	float: left;
 	background-color:rgba(255, 255, 255, .5);
 	opacity:.75;
 	border: 2px solid #fff;
@@ -179,6 +215,7 @@ body.site {
 
 .navbar {
 	width:85%;
+	max-width:1700px;
 	margin: 0 auto;
 } 
 
@@ -233,6 +270,7 @@ input.search-query {
 
 .main-content .row-fluid {
 	width:85%;
+	max-width:1700px;
 	margin: 0 auto;
 	padding: 5px;
 }
