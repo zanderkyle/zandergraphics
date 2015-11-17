@@ -152,11 +152,11 @@ else
 	. ($params->get('fluidContainer') ? ' fluid' : '');
 	echo ($this->direction == 'rtl' ? ' rtl' : '');
 ?>">
-<?php $app = JFactory::getApplication();
-	  $menu = $app->getMenu(); ?>
+<?php $current_url = JURI::current();
+			$base_url = JURI::base(); ?>
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> <?php echo ($menu->getActive() == $menu->getDefault()) ? 'front-display' : 'inside-display'; ?>">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> <?php echo ($base_url == $current_url) ? 'front-display' : 'inside-display'; ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -183,8 +183,7 @@ else
 			<?php endif; ?>
 			
 			<?php 
-			$current_url = JURI::current();
-			$base_url = JURI::base();
+			
 			//var_dump($test); echo '<br>'; var_dump($test2);
 			if ($base_url == $current_url) { 
 				
