@@ -3,7 +3,7 @@
  * Item Model
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -149,7 +149,7 @@ class ReReplacerModelItem extends JModelAdmin
 	public function getItem($pk = null, $getform = 0)
 	{
 		// Initialise variables.
-		$pk = (!empty($pk)) ? $pk : (int) $this->getState($this->getName() . '.id');
+		$pk    = (!empty($pk)) ? $pk : (int) $this->getState($this->getName() . '.id');
 		$table = $this->getTable();
 
 		if ($pk > 0)
@@ -168,9 +168,9 @@ class ReReplacerModelItem extends JModelAdmin
 
 		// Convert to the JObject before adding other data.
 		$properties = $table->getProperties(1);
-		$item = JArrayHelper::toObject($properties, 'JObject');
+		$item       = JArrayHelper::toObject($properties, 'JObject');
 
-		$isini = ((substr($item->params, 0, 1) != '{') && (substr($item->params, -1, 1) != '}'));
+		$isini  = ((substr($item->params, 0, 1) != '{') && (substr($item->params, -1, 1) != '}'));
 		$params = $this->parameters->getParams($item->params, JPATH_ADMINISTRATOR . '/components/com_rereplacer/item_params.xml');
 		foreach ($params as $key => $val)
 		{
@@ -195,7 +195,7 @@ class ReReplacerModelItem extends JModelAdmin
 		if ($getform)
 		{
 			$xmlfile = JPATH_ADMINISTRATOR . '/components/com_rereplacer/item_params.xml';
-			$params = new JForm('jform', array('control' => 'jform'));
+			$params  = new JForm('jform', array('control' => 'jform'));
 			$params->loadFile($xmlfile, 1, '//config');
 			$params->bind($item);
 			$item->form = $params;
@@ -252,7 +252,7 @@ class ReReplacerModelItem extends JModelAdmin
 	{
 		// Initialise variables.
 		$user = JFactory::getUser();
-		$db = $this->getDbo();
+		$db   = $this->getDbo();
 
 		// Sanitize the ids.
 		$pks = ( array ) $pks;
@@ -363,9 +363,9 @@ class ReReplacerModelItem extends JModelAdmin
 		$item = $this->getItem($id);
 
 		unset($item->_errors);
-		$item->id = 0;
+		$item->id        = 0;
 		$item->published = 0;
-		$item->name = JText::sprintf('NN_COPY_OF', $item->name);
+		$item->name      = JText::sprintf('NN_COPY_OF', $item->name);
 
 		$item = $this->validate(null, (array) $item);
 

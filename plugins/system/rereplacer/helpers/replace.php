@@ -3,7 +3,7 @@
  * Plugin Helper File: Replace
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -154,7 +154,7 @@ class PlgSystemReReplacerHelperReplace
 
 	private function replaceRegEx(&$string)
 	{
-		$string = str_replace(chr(194) . chr(160), ' ', $string);
+		$string       = str_replace(chr(194) . chr(160), ' ', $string);
 		$string_array = $this->helpers->get('protect')->stringToProtectedArray($string, $this->item);
 
 		$this->helpers->get('clean')->cleanString($this->item->search);
@@ -175,7 +175,7 @@ class PlgSystemReReplacerHelperReplace
 	{
 		$string_array = $this->helpers->get('protect')->stringToProtectedArray($string, $this->item);
 
-		$search_array = $this->item->treat_as_list ? explode(',', $this->item->search) : array($this->item->search);
+		$search_array  = $this->item->treat_as_list ? explode(',', $this->item->search) : array($this->item->search);
 		$replace_array = $this->item->treat_as_list ? explode(',', $this->item->replace) : array($this->item->replace);
 		$replace_count = count($replace_array);
 
@@ -290,8 +290,9 @@ class PlgSystemReReplacerHelperReplace
 			$replace_c = str_replace(array('\#', '[[counter]]'), ++$this->counter[$counter_name], $replace);
 
 			// Replace with offset
-			preg_match_all($this->item->search, $string, $matches, PREG_OFFSET_CAPTURE);
-			$substring = substr($string, $matches['0'][$i]['1']);
+			preg_match($this->item->search, $string, $matches, PREG_OFFSET_CAPTURE);
+
+			$substring          = substr($string, $matches['0']['1']);
 			$substring_replaced = preg_replace($search, $replace_c, $substring, 1);
 
 			$string = str_replace($substring, $substring_replaced, $string);
@@ -323,7 +324,7 @@ class PlgSystemReReplacerHelperReplace
 		// Remove any leftover protection tags
 		if (strpos($string, '{noreplace}') !== false)
 		{
-			$item = null;
+			$item         = null;
 			$string_array = $this->helpers->get('protect')->stringToProtectedArray($string, $item, 1);
 			$this->replaceInArray($string_array, '#\{noreplace\}#', '');
 			$this->replaceInArray($string_array, '#\{/noreplace\}#', '');

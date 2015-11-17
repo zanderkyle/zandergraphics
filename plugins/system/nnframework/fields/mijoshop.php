@@ -3,7 +3,7 @@
  * Element: MijoShop
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -48,7 +48,8 @@ class JFormFieldNN_MijoShop extends NNFormGroupField
 			->join('INNER', '#__mijoshop_category_to_store AS cts ON c.category_id = cts.category_id')
 			->where('c.status = 1')
 			->where('cd.language_id = ' . $this->language_id)
-			->where('cts.store_id = ' . $this->store_id);
+			->where('cts.store_id = ' . $this->store_id)
+			->group('c.category_id');
 		$this->db->setQuery($query);
 		$total = $this->db->loadResult();
 
@@ -57,14 +58,8 @@ class JFormFieldNN_MijoShop extends NNFormGroupField
 			return -1;
 		}
 
-		$query->clear()
+		$query->clear('select')
 			->select('c.category_id AS id, c.parent_id, cd.name AS title, c.status AS published')
-			->from('#__mijoshop_category AS c')
-			->join('INNER', '#__mijoshop_category_description AS cd ON c.category_id = cd.category_id')
-			->join('INNER', '#__mijoshop_category_to_store AS cts ON c.category_id = cts.category_id')
-			->where('c.status = 1')
-			->where('cd.language_id = ' . $this->language_id)
-			->where('cts.store_id = ' . $this->store_id)
 			->order('c.sort_order, cd.name');
 		$this->db->setQuery($query);
 		$items = $this->db->loadObjectList();
@@ -75,16 +70,26 @@ class JFormFieldNN_MijoShop extends NNFormGroupField
 	function getProducts()
 	{
 		$query = $this->db->getQuery(true)
-			->select('p.product_id as id, pd.name, p.model as model, cd.name AS cat, p.status AS published')
+			->select('COUNT(*)')
 			->from('#__mijoshop_product AS p')
 			->join('INNER', '#__mijoshop_product_description AS pd ON p.product_id = pd.product_id')
-			->join('INNER', '#__mijoshop_product_to_store AS pts ON p.product_id = pts.product_id')
+			->join('INNER', '#__mijoshop_product_to_store AS pts ON p.product_id = pts.product_id')->where('p.status = 1')
+			->where('p.date_available <= NOW()')
+			->where('pd.language_id = ' . $this->language_id)
+			->group('p.product_id');
+		$this->db->setQuery($query);
+		$total = $this->db->loadResult();
+
+		if ($total > $this->max_list_count)
+		{
+			return -1;
+		}
+
+		$query->clear('select')
+			->select('p.product_id as id, pd.name, p.model as model, cd.name AS cat, p.status AS published')
 			->join('LEFT', '#__mijoshop_product_to_category AS ptc ON p.product_id = ptc.product_id')
 			->join('LEFT', '#__mijoshop_category_description AS cd ON ptc.category_id = cd.category_id')
 			->join('LEFT', '#__mijoshop_category_to_store AS cts ON ptc.category_id = cts.category_id')
-			->where('p.status = 1')
-			->where('p.date_available <= NOW()')
-			->where('pd.language_id = ' . $this->language_id)
 			->where('cts.store_id = ' . $this->store_id)
 			->where('cd.language_id = ' . $this->language_id)
 			->where('cts.store_id = ' . $this->store_id)

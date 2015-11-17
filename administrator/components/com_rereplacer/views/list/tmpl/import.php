@@ -3,7 +3,7 @@
  * List View Template: Import
  *
  * @package         Content Templater
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -16,8 +16,8 @@ defined('_JEXEC') or die;
 JHtml::stylesheet('nnframework/style.min.css', false, true);
 ?>
 <form onsubmit="return submitform();"
-	action="<?php echo JRoute::_('index.php?option=com_rereplacer&view=list'); ?>" method="post"
-	enctype="multipart/form-data" name="import-form" id="import-form">
+      action="<?php echo JRoute::_('index.php?option=com_rereplacer&view=list'); ?>" method="post"
+      enctype="multipart/form-data" name="import-form" id="import-form">
 	<fieldset class="form-horizontal">
 		<legend><?php echo JText::_('NN_IMPORT_ITEMS'); ?></legend>
 		<div class="control-group">

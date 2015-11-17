@@ -3,7 +3,7 @@
  * Item Table
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -37,7 +37,7 @@ class ReReplacerTableItem extends JTable
 	 */
 	public function check()
 	{
-		$this->name = trim($this->name);
+		$this->name   = trim($this->name);
 		$this->search = trim($this->search);
 
 		// Check for valid name

@@ -3,7 +3,7 @@
  * Plugin Helper File: Helpers
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -47,7 +47,7 @@ class PlgSystemReReplacerHelpers
 		}
 
 		require_once __DIR__ . '/' . $name . '.php';
-		$class = rtrim(__CLASS__, 's') . ucfirst($name);
+		$class                = rtrim(__CLASS__, 's') . ucfirst($name);
 		$this->helpers[$name] = new $class;
 
 		return $this->helpers[$name];

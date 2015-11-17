@@ -2,8 +2,8 @@
 <replacements>
 	<name>Example XML file for ReReplacer</name>
 	<description>This is an example file to show you how to build up an xml file with multiple replacements for ReReplacer.</description>
-	<version>6.1.1</version>
-	<creationDate>September 2015</creationDate>
+	<version>6.1.2</version>
+	<creationDate>November 2015</creationDate>
 	<author>NoNumber (Peter van Westen)</author>
 	<authorEmail>peter@nonumber.nl</authorEmail>
 	<authorUrl>https://www.nonumber.nl</authorUrl>
@@ -16,8 +16,10 @@
 			<replace>replace1,replace2,replace3</replace>
 		</item>
 		<item>
-			<search>replace something with <strong>HTML</strong></search>
-			<replace>with <u>something</u> else</replace>
+			<!-- Wrap text with html tags in <![CDATA[ and ]]>
+			-->
+			<search><![CDATA[xmlreplace something with <strong>HTML</strong>]]></search>
+			<replace><![CDATA[with <u>something</u> else]]></replace>
 		</item>
 		<item>
 			<search>Some replacement</search>

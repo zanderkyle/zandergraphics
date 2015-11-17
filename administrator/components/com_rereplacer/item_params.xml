@@ -13,11 +13,13 @@
 		<field name="@toggler_search_regex_a" type="nn_toggler" param="regex" value="1" />
 		<field name="@block_search_regex" type="note" class="alert alert-notice" description="RR_REGULAR_EXPRESSIONS_ON_DESC" />
 		<field name="@toggler_search_regex_b" type="nn_toggler" />
-		<field name="search" type="nn_textareaplus" class="span12" height="120" texttype="regex" default="" label="RR_SEARCH" description="RR_SEARCH_DESC" />
+		<field name="search" type="nn_textareaplus" class="span12" height="120" resize="500" texttype="regex" default="" label="RR_SEARCH"
+			   description="RR_SEARCH_DESC" />
 	</fieldset>
 
 	<fieldset name="replace">
-		<field name="replace" type="nn_textareaplus" class="span12" height="120" texttype="regex" default="" label="RR_REPLACE" description="RR_REPLACE_DESC" />
+		<field name="replace" type="nn_textareaplus" class="span12" height="120" resize="500" texttype="regex" default="" label="RR_REPLACE"
+			   description="RR_REPLACE_DESC" />
 	</fieldset>
 
 	<fieldset name="xml">
@@ -85,7 +87,8 @@
 		<field name="@block_areas_enable_in_admin" type="note" class="alert alert-notice" description="RR_ENABLE_IN_ADMIN_ARE_YOU_SURE" />
 		<field name="@toggler_areas_enable_in_admin_b" type="nn_toggler" />
 
-		<field name="enable_in_edit_forms" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_EDIT_FORMS" description="RR_ENABLE_IN_EDIT_FORMS_DESC">
+		<field name="enable_in_edit_forms" type="radio" class="btn-group" default="0" label="RR_ENABLE_IN_EDIT_FORMS"
+			   description="RR_ENABLE_IN_EDIT_FORMS_DESC">
 			<option value="0">JNO</option>
 			<option value="1">JYES</option>
 		</field>
@@ -93,13 +96,17 @@
 		<field name="@block_enable_in_edit_forms" type="note" class="alert alert-danger" description="RR_ENABLE_IN_EDIT_FORMS_ARE_YOU_SURE" />
 		<field name="@toggler_enable_in_edit_forms_b" type="nn_toggler" />
 
-		<field name="@notice_between_start" type="nn_plaintext" label="RR_ONLY_BETWEEN_START" description="RR_ONLY_BETWEEN_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
-		<field name="@notice_between_end" type="nn_plaintext" label="RR_ONLY_BETWEEN_END" description="RR_ONLY_BETWEEN_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_between_start" type="nn_plaintext" label="RR_ONLY_BETWEEN_START" description="RR_ONLY_BETWEEN_DESC"
+			   default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_between_end" type="nn_plaintext" label="RR_ONLY_BETWEEN_END" description="RR_ONLY_BETWEEN_DESC"
+			   default="NN_ONLY_AVAILABLE_IN_PRO" />
 	</fieldset>
 
 	<fieldset name="tags">
-		<field name="@notice_enable_tags" type="nn_plaintext" label="RR_ENABLE_IN_TAGS" description="RR_ENABLE_IN_TAGS_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
-		<field name="@notice_limit_tagselect" type="nn_plaintext" label="RR_LIMIT_TO_TAG_SELECTION" description="RR_LIMIT_TO_TAG_SELECTION_DESC" default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_enable_tags" type="nn_plaintext" label="RR_ENABLE_IN_TAGS" description="RR_ENABLE_IN_TAGS_DESC"
+			   default="NN_ONLY_AVAILABLE_IN_PRO" />
+		<field name="@notice_limit_tagselect" type="nn_plaintext" label="RR_LIMIT_TO_TAG_SELECTION" description="RR_LIMIT_TO_TAG_SELECTION_DESC"
+			   default="NN_ONLY_AVAILABLE_IN_PRO" />
 	</fieldset>
 
 	<fieldset name="assignments">

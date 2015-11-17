@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Text
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -569,32 +569,39 @@ class NNText
 
 		// Replace weird whitespace characters like (Â) with spaces
 		//$string = str_replace(array(chr(160), chr(194)), ' ', $string);
-		$string = mb_ereg_replace('\xC2\xA0', ' ', $string);
-		$string = mb_ereg_replace('\xE2\x80\xA8', ' ', $string); // ascii only
+		$string = self::regexReplace('\xC2\xA0', ' ', $string);
+		$string = self::regexReplace('\xE2\x80\xA8', ' ', $string); // ascii only
 
 		// Replace double byte whitespaces by single byte (East Asian languages)
-		$string = mb_ereg_replace('\xE3\x80\x80', ' ', $string);
+		$string = self::regexReplace('\xE3\x80\x80', ' ', $string);
 
 		// Remove any '-' from the string as they will be used as concatenator.
 		// Would be great to let the spaces in but only Firefox is friendly with this
 		$string = str_replace('-', ' ', $string);
 
 		// Replace forbidden characters by whitespaces
-		$string = mb_ereg_replace('[,:\#\$\*"@+=;&\.%\(\)\[\]\{\}\/\'\\\\|]', "\x20", $string);
+		$string = self::regexReplace('[,:\#\$\*"@+=;&\.%\(\)\[\]\{\}\/\'\\\\|]', "\x20", $string);
 
 		// Delete all characters that should not take up any space, like: ?
-		$string = mb_ereg_replace('[\?\!¿¡]', '', $string);
+		$string = self::regexReplace('[\?\!¿¡]', '', $string);
 
 		// Trim white spaces at beginning and end of alias and make lowercase
 		$string = trim($string);
 
 		// Remove any duplicate whitespace and replace whitespaces by hyphens
-		$string = mb_ereg_replace('\x20+', '-', $string);
+		$string = self::regexReplace('\x20+', '-', $string);
 
 		// Remove leading and trailing hyphens
 		$string = trim($string, '-');
 
 		return $string;
+	}
+
+	public static function regexReplace($pattern, $replacement, $string)
+	{
+		return function_exists('mb_ereg_replace')
+			? mb_ereg_replace($pattern, $replacement, $string)
+			: preg_replace('#' . $pattern . '#', $replacement, $string);
 	}
 
 	/**

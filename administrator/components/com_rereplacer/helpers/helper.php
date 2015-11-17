@@ -3,7 +3,7 @@
  * Helper
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -37,8 +37,8 @@ class ReReplacerHelper
 	 */
 	public static function getActions()
 	{
-		$user = JFactory::getUser();
-		$result = new JObject;
+		$user      = JFactory::getUser();
+		$result    = new JObject;
 		$assetName = 'com_rereplacer';
 
 		$actions = array(

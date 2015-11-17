@@ -3,7 +3,7 @@
  * List Model
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -94,7 +94,7 @@ class ReReplacerModelList extends JModelList
 	 */
 	protected function getListQuery()
 	{
-		$db = $this->getDbo();
+		$db    = $this->getDbo();
 		$query = $db->getQuery(true)
 			// Select the required fields from the table.
 			->select(
@@ -206,7 +206,7 @@ class ReReplacerModelList extends JModelList
 
 		foreach ($items as $i => $item)
 		{
-			$isini = ((substr($item->params, 0, 1) != '{') && (substr($item->params, -1, 1) != '}'));
+			$isini  = ((substr($item->params, 0, 1) != '{') && (substr($item->params, -1, 1) != '}'));
 			$params = $this->parameters->getParams($item->params, JPATH_ADMINISTRATOR . '/components/com_rereplacer/item_params.xml');
 			foreach ($params as $key => $val)
 			{
@@ -282,13 +282,13 @@ class ReReplacerModelList extends JModelList
 				if ($data_item)
 				{
 					$data_item_keyvals = explode('<RR_KEY>', $data_item);
-					$item = array();
+					$item              = array();
 					foreach ($data_item_keyvals as $data_item_keyval)
 					{
 						$data_item_keyval = trim(str_replace('<RR_END>', '', $data_item_keyval));
 						if ($data_item_keyval)
 						{
-							$data_item_keyval = explode('<RR_VAL>', $data_item_keyval);
+							$data_item_keyval             = explode('<RR_VAL>', $data_item_keyval);
 							$item[$data_item_keyval['0']] = (isset($data_item_keyval['1'])) ? $data_item_keyval['1'] : '';
 						}
 					}
@@ -335,7 +335,7 @@ class ReReplacerModelList extends JModelList
 	 */
 	function export($ids)
 	{
-		$db = $this->getDbo();
+		$db    = $this->getDbo();
 		$query = $db->getQuery(true)
 			->select('r.name')
 			->select('r.description')

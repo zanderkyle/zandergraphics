@@ -1,0 +1,230 @@
+.lnee.newslist {
+	position: relative;
+}
+
+	.lnee .extension-message {
+		width: 100%;
+		z-index: 100;
+		position: absolute;
+		bottom: 0;
+	}
+	
+	.lnee li .extension-message {
+		width: inherit;
+		bottom: auto;
+	}
+	
+	.lnee .extension-message dl {
+		border: 1px solid #EED3D7;
+		border-radius: 4px;
+		background-color: #F2DEDE;
+		margin-bottom: 0;
+	}
+	
+	.lnee .extension-message.error dl {
+		border: 1px solid #EED3D7;
+		background-color: #F2DEDE;
+		color: #B94A48;
+	}
+	
+	.lnee .extension-message.warning dl {
+		border: 1px solid #FBEED5;
+		background-color: #FCF8E3;
+		color: #C09853;
+	}
+	
+	.lnee .extension-message dt {
+		border-bottom: 1px solid #EED3D7;
+		padding-left: 5px;
+	}
+	
+	.lnee .extension-message dd {
+		word-wrap: break-word;
+		margin-bottom: 3px;
+    	margin-top: 3px;
+    	margin-left: 5px;
+	}
+				
+	.lnee ul.latestnews-items {
+		list-style: none;
+	    position: relative;
+	    margin: 0;
+	    padding: 0;
+	    overflow: hidden;
+	    text-align: center;
+	    
+	    /* remove extra gaps between inline blocks */
+	    font-size: 0;
+	    letter-spacing: -1px; /* only for Safari */
+	}
+	
+	.lnee ul.latestnews-items.altered {
+		text-align: inherit;
+	}
+	
+	.lnee ul.latestnews-items li {
+		list-style: none; /* To avoid possible template overrides */
+	    padding: 0; /* To avoid possible template overrides */
+	    background-image: none !important; /* To avoid possible template overrides */
+		
+		letter-spacing: normal;		
+		line-height: inherit;
+	    vertical-align: top;	    
+		display: inline-block;	    
+	    margin-bottom: 5px;
+	}
+	
+		.lnee .news {
+			overflow: hidden;
+		}
+		
+			.lnee .innernews {
+				overflow: hidden;
+			}
+		
+			.lnee .even {
+				border-bottom: none; /* to override k2 style */
+				background: none; /* to override k2 style */
+				padding: 0; /* to override k2 style */
+			}
+			
+			.lnee .odd {
+				border-bottom: none; /* to override k2 style */
+				background: none; /* to override k2 style */
+				padding: 0; /* to override k2 style */
+			}
+			
+				.lnee .newshead {}
+		
+						.lnee .newshead .calendar .position1, 
+						.lnee .newshead .calendar .position2, 
+						.lnee .newshead .calendar .position3, 
+						.lnee .newshead .calendar .position4, 
+						.lnee .newshead .calendar .position5 {
+							display: block;
+						}	
+	
+					.lnee .newshead .picture,
+					.lnee .newshead .nopicture {
+		    			overflow: hidden;
+						text-align: center;
+					}
+					
+					.lnee .newshead .picture a,
+					.lnee .newshead .nopicture a {
+						text-decoration: none;
+						display: inline-block;
+						height: 100%;
+	    				width: 100%;
+	    				cursor: hand;
+					}
+					
+					.lnee .newshead .picture a:hover,
+					.lnee .newshead .nopicture a:hover {
+						text-decoration: none;
+					}
+		
+					.lnee .newshead .picture img {
+						max-width: 100%;
+						max-height: 100%;
+					}
+					
+					.lnee .newshead .picture .defaultpicture {}
+		
+					.lnee .newshead .nopicture span {
+						display: inline-block;
+					}
+	
+				.lnee .newsinfooverhead {}
+				
+				.lnee .newsinfo {
+					-webkit-box-sizing: border-box;
+					-moz-box-sizing: border-box;
+					box-sizing: border-box;
+				}
+
+					.lnee .newstitle {
+						margin: 0;
+						word-wrap: break-word;
+					}
+					
+					.lnee .newsintro {}
+					
+					.lnee .newsextra {}
+					
+						.lnee .newsextra [class^="SYWicon-"], 
+						.lnee .newsextra [class*=" SYWicon-"] {
+						    font-size: 1em;
+						    padding-right: 3px;
+						}
+					
+						.lnee .newsextra .delimiter {
+							/*padding: 0 3px;*/
+						}
+				
+					.lnee .newstitle,
+					.lnee .head_left .newstitle {
+						text-align: left;
+					}
+					
+					.lnee .newsintro,
+					.lnee .head_left .newsintro {
+						text-align: left;
+					}
+					
+					.lnee .newsextra,
+					.lnee .head_left .newsextra {
+						text-align: left;
+					}
+					
+					.lnee .link,
+					.lnee .head_left .link {
+						text-align: left;
+					}
+					
+					.lnee .catlink,
+					.lnee .head_left .catlink {
+						text-align: left;
+					}
+					
+					.lnee .head_right .newstitle {
+						text-align: right;
+					}
+					
+					.lnee .head_right .newsintro {
+						text-align: right;
+					}
+					
+					.lnee .head_right .newsextra {
+						text-align: right;
+					}
+					
+					.lnee .head_right .link {
+						text-align: right;
+					}
+					
+					.lnee .head_right .catlink {
+						text-align: right;
+					}
+					
+					.lnee p.link {
+						margin-top: 5px;
+					}
+	
+.lnee .onecatlink {
+	margin-bottom: 5px;
+}	
+
+.lnee .clearfix {
+	float: none;
+	clear: both;
+}
+	
+.lnee p + p {
+	text-indent: 0 !important;
+}
+
+.lnee p {
+	margin: 0;
+    padding: 0;
+}

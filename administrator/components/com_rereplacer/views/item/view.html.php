@@ -3,7 +3,7 @@
  * Item View
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -35,9 +35,9 @@ class ReReplacerViewItem extends JViewLegacy
 		require_once JPATH_PLUGINS . '/system/nnframework/helpers/parameters.php';
 		$this->parameters = NNParameters::getInstance();
 
-		$this->form = $this->get('Form');
-		$this->item = $this->_models['item']->getItem(null, 1);
-		$this->state = $this->get('State');
+		$this->form   = $this->get('Form');
+		$this->item   = $this->_models['item']->getItem(null, 1);
+		$this->state  = $this->get('State');
 		$this->config = $this->parameters->getComponentParams('rereplacer', $this->state->params);
 
 		// Check for errors.

@@ -24,7 +24,7 @@ class AdmintoolsControllerCpanel extends F0FController
 		$cpanelModel = $this->getModel('Cpanel', 'AdmintoolsModel');
 
 		// We only allow specific tasks. If none matches, assume the user meant the "browse" task
-		if (!in_array($task, array('login', 'updategeoip', 'updateinfo', 'fastcheck', 'selfblocked', 'unblockme')))
+		if (!in_array($task, array('login', 'updategeoip', 'updateinfo', 'fastcheck', 'selfblocked', 'unblockme', 'applydlid')))
 		{
 			$task = 'browse';
 		}
@@ -190,4 +190,55 @@ ENDRESULT;
 
 		$this->setRedirect('index.php?option=com_admintools', JText::_('COM_ADMINTOOLS_CPANEL_IP_UNBLOCKED'));
 	}
+
+    /**
+     * Applies the Download ID when the user is prompted about it in the Control Panel
+     */
+    public function applydlid()
+    {
+        // CSRF prevention
+        if ($this->csrfProtection)
+        {
+            $this->_csrfProtection();
+        }
+
+        $msg     = JText::_('COM_AKEEBA_CPANEL_ERR_INVALIDDOWNLOADID');
+        $msgType = 'error';
+        $dlid    = $this->input->getString('dlid', '');
+
+        // If the Download ID seems legit let's apply it
+        if (preg_match('/^([0-9]{1,}:)?[0-9a-f]{32}$/i', $dlid))
+        {
+            $msg     = null;
+            $msgType = null;
+
+            JLoader::import('joomla.application.component.helper');
+            $params = JComponentHelper::getParams('com_admintools');
+            $params->set('downloadid', $dlid);
+
+            $db = JFactory::getDbo();
+
+            $sql = $db->getQuery(true)
+                    ->update($db->qn('#__extensions'))
+                    ->set($db->qn('params') . ' = ' . $db->q($params->toString('JSON')))
+                    ->where($db->qn('element') . " = " . $db->q('com_admintools'));
+            $db->setQuery($sql)->execute();
+        }
+
+        // Redirect back to the control panel
+        $url       = '';
+        $returnurl = $this->input->get('returnurl', '', 'base64');
+
+        if (!empty($returnurl))
+        {
+            $url = base64_decode($returnurl);
+        }
+
+        if (empty($url))
+        {
+            $url = JUri::base() . 'index.php?option=com_admintools';
+        }
+
+        $this->setRedirect($url, $msg, $msgType);
+    }
 }

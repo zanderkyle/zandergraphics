@@ -1,4 +1,12 @@
 <?php die() ?>
+Admin Tools 3.6.5
+================================================================================
++ Inform the user if he needs to supply the Download ID
+# [HIGH] Wrong display rendering of file diffs
+# [MEDIUM] The administrator URL parameter wasn't saved by the Quick Setup Wizard
+# [LOW] The Quick Setup Wizard button was shown in the Core edition by accident
+# [LOW] Some .htaccess Maker options were not compatible with the *!!OLD, INSECURE, DO NOT USE!!* Apache 1.3 version family
+
 Admin Tools 3.6.4
 ================================================================================
 ~ This version is compatible with Joomla! 3.0 to 3.4, inclusive

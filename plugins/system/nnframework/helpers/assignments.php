@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Assignments
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -160,8 +160,10 @@ class NNFrameworkAssignmentsHelper
 		$this->request->view   = JFactory::getApplication()->input->get('view');
 		$this->request->task   = JFactory::getApplication()->input->get('task');
 		$this->request->layout = JFactory::getApplication()->input->get('layout', '', 'string');
-		$this->request->id     = JFactory::getApplication()->input->getInt('id', 0);
 		$this->request->Itemid = JFactory::getApplication()->input->getInt('Itemid', 0);
+
+		$id = JFactory::getApplication()->input->get('id', array(0), 'array');
+		$this->request->id = (int) $id['0'];
 
 		switch ($this->request->option)
 		{
@@ -194,8 +196,7 @@ class NNFrameworkAssignmentsHelper
 		if (!$this->request->id)
 		{
 			$cid = JFactory::getApplication()->input->get('cid', array(0), 'array');
-			JArrayHelper::toInteger($cid);
-			$this->request->id = $cid['0'];
+			$this->request->id = (int) $cid['0'];
 		}
 
 		// if no id is found, check if menuitem exists to get view and id

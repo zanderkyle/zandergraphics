@@ -1,0 +1,98 @@
+<?php
+/**
+ * @copyright	Copyright (C) 2011 Simplify Your Web, Inc. All rights reserved.
+ * @license		GNU General Public License version 3 or later; see LICENSE.txt
+ */
+
+// no direct access
+defined('_JEXEC') or die ;
+
+jimport('joomla.form.formfield');
+
+class JFormFieldImageLink extends JFormField {
+		
+	public $type = 'ImageLink';
+
+	/**
+	 * Method to get the field options.
+	 */
+	protected function getLabel() {
+		
+		$html = '';
+		
+		$version = new JVersion();
+		$jversion = explode('.', $version->getShortVersion());
+		
+		$title = trim($this->element['title']);
+		$image_src = $this->element['imagesrc']; // path ex: ../modules/mod_latestnews/images/icon.png
+		$link = $this->element['link'];
+		
+		if (intval($jversion[0]) > 2) {
+			$html .= '<div style="clear: both;">';
+		} else {
+			$html .= '<div style="overflow: hidden; margin: 5px 0">';
+			$html .= '<label style="margin: 0">';
+		}
+		
+		$html .= '<a href="'.$link.'" target="_blank" title="'.JText::_($title).'">';
+		if ($image_src) {
+			$html .= '<img src="'.JURI::root().$image_src.'" alt="'.JText::_($title).'">';
+		} else {
+			$html .= JText::_($title);
+		}
+		$html .= '</a>';
+		
+		if (intval($jversion[0]) > 2) {
+			$html .= '</div>';
+		} else {
+			$html .= '</label>';
+		}
+		
+		return $html;
+	}
+
+	/**
+	 * Method to get the field input markup.
+	 */
+	protected function getInput() {
+		
+		$version = new JVersion();
+		$jversion = explode('.', $version->getShortVersion());
+		
+		$title = trim($this->element['title']);
+		$image_src = $this->element['imagesrc'];
+		$text = trim($this->element['text']);
+		$link = $this->element['link'];
+		
+		$titleintext = false;
+		if ($this->element['titleintext']) {
+			$titleintext = ($this->element['titleintext'] === 'true');
+		}
+		
+		if (intval($jversion[0]) > 2 || ($image_src && intval($jversion[0]) < 3)) {
+			$html = '<div style="padding-top: 5px; overflow: inherit">';
+		} else {
+			$html = '<div>';
+		}
+			
+		if ($titleintext) {
+			$html .= '<strong>'.JText::_($title).'</strong>: ';
+		}
+				
+		if ($text) {
+			$html .= JText::sprintf($text, $link);
+		}
+		
+		if (intval($jversion[0]) > 2) {
+			// J3+
+		} else {
+			$html .= '</div>';
+		}
+		
+		$html .= '</div>';
+
+		return $html;
+	}
+
+}
+?>

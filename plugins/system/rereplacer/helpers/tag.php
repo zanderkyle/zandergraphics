@@ -3,7 +3,7 @@
  * Plugin Helper File:Tag
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -23,7 +23,7 @@ class PlgSystemReReplacerHelperTag
 		}
 
 		$start = '<!-- START: RR_' . strtoupper($area_type) . ' -->';
-		$end = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
+		$end   = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
 
 		$string = $start . $string . $end;
 
@@ -59,7 +59,7 @@ class PlgSystemReReplacerHelperTag
 		$this->tagAreaByType($string, $area_type);
 
 		$start = '<!-- START: RR_' . strtoupper($area_type) . ' -->';
-		$end = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
+		$end   = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
 
 		$matches = explode($start, $string);
 		array_shift($matches);
@@ -90,7 +90,7 @@ class PlgSystemReReplacerHelperTag
 
 		$start = '<!-- START: RR_COMPONENT -->';
 
-		if (JFactory::getDocument()->getType() == 'feed')
+		if (NNFrameworkFunctions::isFeed())
 		{
 			$this->tagByTagType($string, 'item', 'component');
 		}
@@ -155,7 +155,7 @@ class PlgSystemReReplacerHelperTag
 		}
 
 		$start = '<!-- START: RR_' . strtoupper($area_type) . ' -->';
-		$end = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
+		$end   = '<!-- END: RR_' . strtoupper($area_type) . ' -->';
 
 		$string = preg_replace('#(<' . $tag . '(\s[^>]*)?>)#s', '\1' . $start, $string);
 		$string = str_replace('</' . $tag . '>', $end . '</' . $tag . '>', $string);

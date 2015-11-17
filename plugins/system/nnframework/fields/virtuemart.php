@@ -3,7 +3,7 @@
  * Element: VirtueMart
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -50,6 +50,7 @@ class JFormFieldNN_VirtueMart extends NNFormGroupField
 			->join('', '#__virtuemart_categories AS c using (virtuemart_category_id)')
 			->join('LEFT', '#__virtuemart_category_categories AS cc ON l.virtuemart_category_id = cc.category_child_id')
 			->where('c.published > -1')
+			->group('c.virtuemart_category_id')
 			->order('c.ordering, l.category_name');
 		$this->db->setQuery($query);
 		$items = $this->db->loadObjectList();
@@ -71,14 +72,13 @@ class JFormFieldNN_VirtueMart extends NNFormGroupField
 			return -1;
 		}
 
-		$query->clear()
+		$query->clear('select')
 			->select('p.virtuemart_product_id as id, l.product_name AS name, p.product_sku as sku, cl.category_name AS cat, p.published')
-			->from('#__virtuemart_products AS p')
 			->join('LEFT', '#__virtuemart_products_' . $this->getActiveLanguage() . ' AS l ON l.virtuemart_product_id = p.virtuemart_product_id')
 			->join('LEFT', '#__virtuemart_product_categories AS x ON x.virtuemart_product_id = p.virtuemart_product_id')
 			->join('LEFT', '#__virtuemart_categories AS c ON c.virtuemart_category_id = x.virtuemart_category_id')
 			->join('LEFT', '#__virtuemart_categories_' . $this->getActiveLanguage() . ' AS cl ON cl.virtuemart_category_id = c.virtuemart_category_id')
-			->where('p.published > -1')
+			->group('p.virtuemart_product_id')
 			->order('l.product_name, p.product_sku');
 		$this->db->setQuery($query);
 		$list = $this->db->loadObjectList();

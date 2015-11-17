@@ -3,7 +3,7 @@
  * Element: K2
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -98,6 +98,7 @@ class JFormFieldNN_K2 extends NNFormGroupField
 		$query->clear('select')
 			->select('i.id, i.title as name, c.' . $cat_title_field . ' as cat, i.' . $state_field . ' as published')
 			->join('LEFT', '#__k2_categories AS c ON c.id = i.catid')
+			->group('i.id')
 			->order('i.title, i.ordering, i.id');
 		$this->db->setQuery($query);
 		$list = $this->db->loadObjectList();

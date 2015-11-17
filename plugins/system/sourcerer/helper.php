@@ -3,7 +3,7 @@
  * Plugin Helper File
  *
  * @package         Sourcerer
- * @version         5.1.1
+ * @version         5.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -50,15 +50,15 @@ class PlgSystemSourcererHelper
 		$inside_tag                     = NNTags::getRegexInsideTag();
 
 		$this->src_params->regex = '#('
-			. '(?<start_pre>' . $breaks_start . ')'
-			. $tag_start . preg_quote($this->src_params->syntax_word, '#') . $spaces . '(?<data>' . $inside_tag . ')' . $tag_end
-			. '(?<start_post>' . $breaks_end . ')'
+			. '(?P<start_pre>' . $breaks_start . ')'
+			. $tag_start . preg_quote($this->src_params->syntax_word, '#') . $spaces . '(?P<data>' . $inside_tag . ')' . $tag_end
+			. '(?P<start_post>' . $breaks_end . ')'
 
-			. '(?<content>.*?)'
+			. '(?P<content>.*?)'
 
-			. '(?<end_pre>' . $breaks_start . ')'
+			. '(?P<end_pre>' . $breaks_start . ')'
 			. $tag_start . '\/' . preg_quote($this->src_params->syntax_word, '#') . $tag_end
-			. '(?<end_post>' . $breaks_end . ')'
+			. '(?P<end_post>' . $breaks_end . ')'
 			. ')#s';
 
 		$this->src_params->tags_syntax = array(array('<', '>'), array('\[\[', '\]\]'));
@@ -324,7 +324,7 @@ class PlgSystemSourcererHelper
 				'end_post'   => $match['end_post'],
 			));
 
-			$array[$i] = $tags['start_pre'] . $tags['start_post'] . $content . $tags['end_pre'] . $tags['end_post'];
+			$array[$i] = implode('', $tags);;
 		}
 
 		$string = implode('', $array);

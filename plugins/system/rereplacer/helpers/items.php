@@ -3,7 +3,7 @@
  * Plugin Helper File: Items
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -40,7 +40,7 @@ class PlgSystemReReplacerHelperItems
 			return $this->items[$area];
 		}
 
-		$db = JFactory::getDbo();
+		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select('r.*')
 			->from('#__rereplacer AS r')
@@ -104,19 +104,32 @@ class PlgSystemReReplacerHelperItems
 			return false;
 		}
 
+		$this->prepareString($item->search);
 		$this->prepareReplaceString($item->replace);
 
 			return $item;
 	}
 
-	// fix usage of non-protected {source} tags
+	private function prepareString(&$string)
+	{
+		if (!is_string($string))
+		{
+			$string = '';
+
+			return;
+		}
+	}
+
 	private function prepareReplaceString(&$string)
 	{
-		if (!$this->sourcerer_tag)
+		$this->prepareString($string);
+
+		if (!$this->sourcerer_tag || $string == '')
 		{
 			return;
 		}
 
+		// fix usage of non-protected {source} tags
 		$string = str_replace('{' . $this->sourcerer_tag . '}', '{' . $this->sourcerer_tag . ' 0}', $string);
 	}
 

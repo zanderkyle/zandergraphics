@@ -3,7 +3,7 @@
  * Element: HikaShop
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -65,12 +65,24 @@ class JFormFieldNN_HikaShop extends NNFormGroupField
 	function getProducts()
 	{
 		$query = $this->db->getQuery(true)
-			->select('p.product_id as id, p.product_name AS name, c.category_name AS cat, p.product_published AS published')
+			->select('COUNT(*)')
 			->from('#__hikashop_product AS p')
+			->where('p.product_published = 1')
+			->where('p.product_type = ' . $this->db->quote('main'));
+		$this->db->setQuery($query);
+		$total = $this->db->loadResult();
+
+		if ($total > $this->max_list_count)
+		{
+			return -1;
+		}
+
+		$query->clear('select')
+			->select('p.product_id as id, p.product_name AS name, p.product_published AS published')
 			->join('LEFT', '#__hikashop_product_category AS x ON x.product_id = p.product_id')
-			->join('LEFT', '#__hikashop_category AS c ON c.category_id = x.category_id')
-			->where('p.product_published > -1')
-			->order('p.product_name, p.product_id');
+			->join('INNER', '#__hikashop_category AS c ON c.category_id = x.category_id')
+			->group('p.product_id')
+			->order('p.product_id');
 		$this->db->setQuery($query);
 		$list = $this->db->loadObjectList();
 

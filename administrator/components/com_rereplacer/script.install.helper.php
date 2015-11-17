@@ -62,6 +62,7 @@ class Com_ReReplacerInstallerScriptHelper
 		}
 
 		$this->updateUpdateSites();
+		$this->removeNoNumberCache();
 
 		if ($this->onAfterInstall() === false)
 		{
@@ -543,7 +544,7 @@ class Com_ReReplacerInstallerScriptHelper
 		$query = $this->db->getQuery(true)
 			->select('update_site_id')
 			->from('#__update_sites')
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://download.nonumber.nl%'))
+			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'))
 			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('%e=' . $this->alias . '%'))
 			->where($this->db->qn('name') . ' NOT LIKE ' . $this->db->q('NoNumber%'));
 		$this->db->setQuery($query, 0, 1);
@@ -592,17 +593,22 @@ class Com_ReReplacerInstallerScriptHelper
 		$query->clear()
 			->update('#__update_sites')
 			->set($this->db->qn('extra_query') . ' = ' . $this->db->q(''))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://download.nonumber.nl%'));
+			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'));
 		$this->db->setQuery($query);
 		$this->db->execute();
 
 		$query->clear()
 			->update('#__update_sites')
 			->set($this->db->qn('extra_query') . ' = ' . $this->db->q('k=' . $params->key))
-			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://download.nonumber.nl%'))
+			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('http://cdn.download.nonumber.nl%'))
 			->where($this->db->qn('location') . ' LIKE ' . $this->db->q('%&pro=1%'));
 		$this->db->setQuery($query);
 		$this->db->execute();
+	}
+
+	private function removeNoNumberCache()
+	{
+		$this->deleteFolders(array(JPATH_ADMINISTRATOR . '/cache/nonumber'));
 	}
 
 	private function removeGlobalLanguageFiles()

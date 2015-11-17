@@ -3,7 +3,7 @@
  * Install script
  *
  * @package         Sourcerer
- * @version         5.1.1
+ * @version         5.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl

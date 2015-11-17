@@ -3,7 +3,7 @@
  * Plugin Helper File
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -58,13 +58,13 @@ class PlgSystemReReplacerHelper
 		if (
 			isset(JFactory::getDocument()->items)
 			&& (
-				JFactory::getDocument()->getType() == 'feed'
+				NNFrameworkFunctions::isFeed()
 				|| JFactory::getApplication()->input->get('option') == 'com_acymailing'
 			)
 		)
 		{
 			$context = 'feed';
-			$items = JFactory::getDocument()->items;
+			$items   = JFactory::getDocument()->items;
 			foreach ($items as $item)
 			{
 				$this->onContentPrepare($item, $context);

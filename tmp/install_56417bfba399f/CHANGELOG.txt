@@ -1,0 +1,618 @@
+/**
+ * Changelog
+ *
+ * @package         Sliders
+ *
+ * @author          Peter van Westen <peter@nonumber.nl>
+ * @link            https://www.nonumber.nl
+ * @copyright       Copyright © 2015 NoNumber All Rights Reserved
+ * @license         http://www.gnu.org/licenses/gpl-2.0.html GNU/GPL
+ */
+
+/**
+ * + Added
+ * ! Removed
+ * ^ Changed
+ * # Fixed
+ */
+
+03-Nov-2015 : v5.1.4
+ ^ Added compatibility for setups that do not have mbstring enabled (but still less stable)
+ # Fixed issue with regular expressions not working on some php versions (5.6.14)
+ # Fixed issue with tags not getting interpreted
+
+23-Oct-2015 : v5.1.3
+ # Fixed issue with false feed check
+
+22-Oct-2015 : v5.1.2
+ ^ Improved handling of surrounding html div tags
+ # Fixed issue with jumpy sliding effect on Safari when using Bootstrap 3
+
+09-Oct-2015 : v5.1.1
+ # Fixed issue with PHP notice about undefined property tag_character_start
+
+02-Oct-2015 : v5.1.0
+ + Added ability to change the surrounding tag syntax characters
+ + Added ability to open/close a single slider set via the public openAllSliders/closeAllSliders functions
+ + Added translations: ja-JP
+ ^ Improved handling of surrounding html tags
+ # Fixed issue with hash in links being added to internal Joomla getURI result
+ # Fixed issue with missing alias field in editor button popup
+ # Fixed issue with nested sliderlinks not working
+ # Fixed issue with slider contents not showing when template is loading Bootstrap 3 files
+ # Fixed issue with some special characters being replaced with ? sign
+ # Fixed issue with title-active/title-inactive not working correctly on nested sliders
+
+28-Aug-2015 : v5.0.7
+ # [PRO] Fixed issue with scrolling to slider having incorrect offsets
+ # [PRO] Fixed issue with scrolling when scrolling is switched off
+
+20-Aug-2015 : v5.0.6
+ # [PRO] Improved scrolling behaviour when clicking on open slider
+ # [PRO] Improved scrolling behaviour when page is already scrolling
+
+09-Aug-2015 : v5.0.5
+ # Fixed issue with php error about call to a member function get() on a non-object on some components
+
+08-Aug-2015 : v5.0.4
+ # [FREE] Fixed issue with slider links and hash links not working
+
+07-Aug-2015 : v5.0.3
+ # Fixed issue with uninstallation getting into a loop
+ # Fixed issue with upgrading not working
+
+31-Jul-2015 : v5.0.2
+ # Fixed issues with tabs of nested anchors via url hash not opening
+
+30-Jul-2015 : v5.0.1
+ # Fixed issues on uninstallation
+
+29-Jul-2015 : v5.0.0
+ + Added active class on slider links
+ + Added advanced editor button popup wizard to create the Sliders syntax
+ + Added css to hide navigation on print page
+ + Added option to set script initialisation delay
+ + Improved handling of hash links
+ ! [J2.5] Removed Joomla 2.5 support
+ ^ Made minimum requirement Joomla version 3.4.1
+ ^ Recoded the installer
+ ^ Updated translations: es-ES
+ # Fixed invalid usage of the rel attribute
+ # Fixed issue with duplicate spaces being removed from the titles
+ # Fixed issue with sliders with cyrillic characters not always working
+ # Fixed issue with some special characters in title messing up ids
+ # [PRO] Fixed issue with html getting messed up when using access restriction on nested sliders
+
+09-May-2015 : v4.1.3
+ + Added translations: pl-PL, sr-YU
+ ^ [J3] Improved handling of selected text in editor when clicking on editor button
+ ^ [J3] Improved updating and installing the component
+ # [J3] Fixed issue with double quotes at end of hash links
+ # [J3] Fixed issue with links with hashes to sliders not working
+ # [J3] Fixed issue with sliderlinks via title not always working
+ # [J3][FREE] Fixed issue with error about undefined property disable_components
+
+06-Mar-2015 : v4.1.2
+ # [J3] Fixed issue with url hashes not getting added on some browsers
+
+06-Mar-2015 : v4.1.1
+ ^ [J3] Improved rendering speed on pages with large contents
+ # [J3] Fixed issue with javascript error regarding history.replaceState on IE9 and older
+ # [J3][PRO] Fixed issue with access restriction not working with access levels / usergroups with spaces
+ # [J3][PRO] Fixed issue with html structure breaking when access restriction blocks all sliders in a set
+
+26-Feb-2015 : v4.1.0
+ ^ Updated translations: uk-UA
+ # [PRO] Fixed issue with components select list only saving one value
+ # [J3] Fixed issue with activating sliders via url by name or number not working (only alias)
+ # [J3] Fixed issue with back button in browser going through url hashes
+ # [J3] Fixed usage of name instead of id attribute on anchor tags
+ # [J3][PRO] Fixed issue with javascript errors when using cookie option
+
+14-Jan-2015 : v4.0.9
+ + [J3][PRO] Added option to remove/keep plugin syntax on disabled components
+ ^ Updated translations: et-EE, fr-FR, id-ID, lt-LT, sv-SE
+ # [PRO] Fixed issue with disable on components option not working
+
+08-Jan-2015 : v4.0.8
+ + Added option to enable iframe reloading (off by default)
+ ! Removed compatibility for php versions under 5.3.13
+ ! [J3] Removed compatibility for Joomla 3 versions under 3.3.0
+ # Fixed issue with Free version being able to be installed over the Pro version
+ # [J3] Fixed issue with scrolling to tab when going to hash url directly when scrolling is switched off
+
+26-Nov-2014 : v4.0.7
+ # [J3] Changed the way the transitions are added which should fix all the cross-browser compatibility issues with the javascript since v4.0.0
+
+24-Nov-2014 : v4.0.6
+ # [J3] Fixed issue with css issues on IE10+
+
+21-Nov-2014 : v4.0.5
+ # Fixed issue with error about nnFile on installation on some setups
+ # Fixed issue with javascript error about createStyleSheet on IE
+ # Fixed issue with javascript error about insertRule on Firefox some setups
+
+12-Nov-2014 : v4.0.4
+ # [J3] Fixed issue with sliders not opening on IE9 again (grrrrrr!)
+
+10-Nov-2014 : v4.0.3
+ # [J3] Fixed issue with slider not closing when clicking on open slider
+
+10-Nov-2014 : v4.0.2
+ # [PRO] Fixed issues with duplicate rows in update_sites table
+ # [J3] Fixed issue with sliders not opening on IE9 (grrr!)
+
+28-Oct-2014 : v4.0.1
+ # [J2][FREE] Fixed issue with javascript error about nn_sliders_urlscroll
+
+25-Oct-2014 : v4.0.0
+ + Added handling of normal links to tabs to not reload the page
+ + [J3] Added ability to set a separate title-active and title-inactive
+ + [J3] Added opening of parent tabs and sliders when using an url hash to a nested text anchor
+ + [J3][PRO] Added ability to set an access restriction on sliders with the access= or usergroup= attribute
+ ^ [J3] Refactored code
+ ^ [J3][PRO] Improved handling of url hashes and opening of parent tabs and sliders
+ # Fixed issue with plugin not being run over introtext/fulltext on onContentPrepare event
+ # Fixed issue with plugin not working on jDownloads frontend view
+ # [J2][PRO] Fixed issue with page not scrolling when using url hashes
+ # [J3] Fixed issue with active by url/cookie not working when using caching
+ # [J3] Fixed issue with closeAllSliders function not working correctly
+ # [J3] Fixed issue with heading title not being placed in html for SEO purposes
+ # [J3] Fixed issue with icon class not working correctly on nested sliders
+
+22-Sep-2014 : v3.5.7
+ ^ Improved handling of Google Maps
+ # Fixed issue with php warning about Unknown modifier '.' in protect.php
+ # [J3][PRO] Fixed issue with special characters causing javascript issues when using cookies
+
+20-Aug-2014 : v3.5.6
+ # Fixed issue with tags being converted in com_myjspace edit forms
+ # [J2] Fixed issue with errors after upgrade to Joomla 3
+
+27-Jul-2014 : v3.5.5
+ # Fixed backwards compatibility with old syntax alias: (instead of alias=)
+
+19-Jul-2014 : v3.5.4
+ # Fixed issue with NoNumber Framework not getting installed
+ # Fixed issue with manifest cache (version and update info) not being updated
+
+18-Jul-2014 : v3.5.3
+ # Fixed issue with fatal error when the NoNumber Framework is not installed
+
+16-Jul-2014 : v3.5.2
+ # Fixed issue with alias not being overrideable
+ # Fixed issue with first slide not working when title only contains an image
+
+26-Jun-2014 : v3.5.1
+ # Fixed issue with custom editor button text not working
+ # Fixed issue with enable in frontend editor button option not working
+
+25-Jun-2014 : v3.5.0
+ ! [J3] Removed compatibility for Joomla 3 versions under 3.2.2
+ ^ Refactored code
+ ^ Updated translations: pl-PL, pt-BR
+ # [PRO] Fixed issue with error about in_array
+ # [J2] Fixed issue with errors after upgrade to Joomla 3
+ # [J3] Fixed issue with sliders not opening on url hash
+ # [J3] Fixed issue with tags not being handled in search results
+
+21-May-2014 : v3.4.5
+ ^ Updated translations: et-EE, id-ID, nl-NL, sv-SE
+ # [PRO] Fixed issue with sliders with special characters not working in hover mode
+
+15-Apr-2014 : v3.4.4
+ ^ [J3] Improved scrolling to named anchor links within tabs and opening parent sliders
+ # Fixed issue with html structure issues when tags are directly inside html 5 elements
+
+11-Apr-2014 : v3.4.3
+ + Added translations: id-ID
+ ^ Updated translations: fr-FR
+ # [J3] Fixed issue with multiple active sliders when using url option
+
+14-Mar-2014 : v3.4.2
+ ^ Updated translations: sl-SI
+ # [J3] Changed span element to anchor to be W3C compliant
+
+26-Feb-2014 : v3.4.1
+ # [J2] Changed id of script div to have unique id to be W3C compliant
+ # [J2] Fixed issue with cookies not working properly
+
+18-Feb-2014 : v3.4.0
+ + [J3][PRO] Added ability to set scroll offset
+ ^ Changed way the url hash ids are created (no longer prepended with numbers)
+ ^ Cleaned up some code (syntax)
+ # Fixed issue with $ chars in titles
+ # [J2] Fixed issue with NN_PROTECTED tags being left in content
+
+21-Jan-2014 : v3.3.6
+ ^ Updated translations: nl-NL
+ # Fixed issue with some missing language strings in some occasions
+ # [J2][PRO] Fixed issue with not being able to click (touch) to toggle when using hover mode
+ # [J3] Fixed issue with main classname being added to first slide
+ # [J3] Fixed issue with overlapping content when wider than slider content area
+ # [J3] Fixed some styling issues
+
+27-Dec-2013 : v3.3.5
+ + Added translations: hr-HR
+ + [J3] Added icon class that adds plus/minus icons
+ + [J3] Added openAllSliders and closeAllSliders javascript functions for custom use
+ ^ Improved some code in NoNumber Framework which improves page load speed
+ ^ [J3] Changed focus style
+ ^ [J3] Updated translations: ca-ES, cs-CZ
+ # Fixed installation error about duplicate entry on some MySQL 5.6 setups
+ # [J3] Fixed issue with floating elements in content overlapping the margin/border
+
+07-Nov-2013 : v3.3.4
+ # Fixed issue with tags in Sourcerer code being converted
+ # Fixed issue with tags in some text and textarea fields being converted
+
+21-Oct-2013 : v3.3.3
+ ! Removed some redundant css
+ # Fixed issue with javascript errors causing Sliders to stop functioning
+
+16-Oct-2013 : v3.3.2
+ # [FREE] Fixed issue with update failing due to false message about using old version from before Free/Pro
+
+15-Oct-2013 : v3.3.1
+ # [FREE] Fixed issue with javascript errors causing Sliders to stop functioning
+
+15-Oct-2013 : v3.3.0
+ + Added translations: bg-BG, et-EE, sv-SE
+ + [PRO] Added option to disable on selection of components
+ ^ Changed javascript minification to use Google Closure
+ ^ Sets focus on slider title when activating slider via sliderlink or url
+ ^ Updated translations: ca-ES, da-DK, el-GR, es-ES, fa-IR, fr-FR, it-IT, pt-PT, ro-RO, ru-RU, uk-UA, zh-TW
+ # Fixed issue with opening tags not being converted on some setups
+ # Fixed issue with tags not being handled when site has invalid html structure
+ # Fixed issue with tags sometimes appearing in title tags and title attributes
+ # [J3][PRO] Fixed issue with cookies not working
+
+08-Aug-2013 : v3.2.0
+ ! [J2] Removed compatibility for Joomla 2.5 versions lower than 2.5.10
+ ! [J3.0] Removed compatibility for Joomla 3 versions lower than 3.1.0
+ ^ [J2] Converted images in (editor) buttons to font icons
+ ^ [J2] Improved minification of js files
+ # Improved the way the urls on the links are created (full url + hash)
+ # [J2] Fixed issue with outline setting having effect when Old School styling is not selected
+ # [J3] Fixed issue with editor button not getting styled correctly on TinyMCE
+
+11-Jun-2013 : v3.1.4
+ ^ Improved minification of js files
+ ^ Updated translations: de-DE, pl-PL
+
+15-May-2013 : v3.1.3
+ # Fixed issue with tags not being 'unprotected'
+
+15-May-2013 : v3.1.2
+ # Fixed issue with sliderlinks not working in article when slider set is in a module
+ # Fixed issue with sliders being converted in some admin forms when plugin is enabled for admin side
+ # [J2] Fixed issue with a document.write script conflicting with other scripts, like modals
+ # [J3] Fixed issue with links inside the slider titles messing up layout
+ # [J3] Fixed issue with remembering active slider by cookies not working
+
+22-Apr-2013 : v3.1.1
+ # Fixed issue with installation manifest details not updating
+ # Fixed issue with update manager not seeing latest version (caused by manifest)
+ # [J3][FREE] Fixed issue with error about undefined property slide_speed
+
+18-Apr-2013 : v3.1.0
+ + Added ability to enable the plugin in the administrator side (no guarentees on effects)
+ + [J3] Added slide speed setting
+ ^ Improved code
+ # Fixed issue with dollar signs in the slider titles
+ # Fixed issue with heading tags in the slider titles messing up the html structure
+
+28-Mar-2013 : v3.0.7
+ + Added classes and rel attribute to the Slider Links
+ ^ Changed messaging on installation on unsupported Joomla versions
+ ^ Cleaned up some code (syntax)
+ ^ Updated translations: fr-FR
+ # Fixed issue with spaces arround classes/attributes in tag causing it to fail
+
+13-Mar-2013 : v3.0.6
+ + [J2] Added bottom margin to slide sets
+ # [J3] Fixed typo in override paths in comment in css files
+
+04-Mar-2013 : v3.0.5
+ # [J3] Fixed issue with Tabs not working when bootstrap css is not loaded when using old style
+
+28-Feb-2013 : v3.0.4
+ ^ Updated translations: zh-TW
+ # [J3] Fixed issue with Sliders not working when bootstrap css is not loaded
+ # [J3] Fixed issue with browser scrolling to anchor when scrolling by url is off
+
+24-Feb-2013 : v3.0.3
+ + Added classes primary (same as blue) and error (same as warning)
+ + [J3] Added styling for better cross-template compatibility
+ ^ Improved less/css markup
+ ^ Updated translations: nl-NL, sl-SI
+
+09-Feb-2013 : v3.0.2
+ # [FREE] Fixed issue with php warnings about undifined properties use_cookies and set_cookies
+ # [J3] Fixed issue with errors in javascript on pages where Sliders is not used
+
+08-Feb-2013 : v3.0.1
+ # [FREE] Fixed issue with errors in javascript
+
+08-Feb-2013 : v3.0.0
+ + [J2] Added classes info, success warning and danger
+ + [J2] Added classes orange and red
+ + [J2] Added less files for generating css files
+ + [J2] Added new styling based on Bootstrap (moved old styling to old.css)
+ + [J3] Added Joomla 3 support
+ ! [J1.5] Removed Joomla 1.5 support
+ ! [J2] Removed rounded and radius styling options
+ ! [J2] Removed some redundant css styles being applied in output
+ ^ Changed default syntax from {slide=...} to {slider ...}
+ ^ Renamed extension from Slider to Sliders
+ ^ Updated translations: lt-LT, pt-BR, th-TH
+ ^ [J2] Canged location of certain options
+ ^ [J2] Changed default slide and fade speeds to 250 (=faster)
+ ^ [J2] Minified css and js files
+ # [J2] Fixed issue with colons in titles being replaced by [[e]]
+
+02-Jan-2013 : v2.2.2
+ # Fixed issue with language file not loading
+
+29-Dec-2012 : v2.2.1
+ ! [J2] Removed versioned media files option
+ # [J2] Fixed error about XML setup file on first install
+
+22-Dec-2012 : v2.2.0
+ ^ [J2] Cleaned up code
+ ^ [J2] Moved media files to Joomla media folder
+ # [J2] Fixed issue with errors with Phoca PDF
+
+21-Sep-2012 : v2.1.5
+ # Fixed issue with slides not working when title contains a comma
+ # Fixed issue with tags being handled in edit for of jcal, jevent and some others
+
+06-Sep-2012 : v2.1.4
+ ^ Adds hash to url when mode is hover too
+ # Fixed issue with handling of dollar signs in the titles
+
+20-Jul-2012 : v2.1.3
+ # Fixed issue with certain titles returning empty (since v2.1.1)
+
+19-Jul-2012 : v2.1.1
+ ! Removed ability to install on Joomla 1.6 and 1.7
+ ! Removed ability to install on setups with php 5.2 or lower
+ ^ Cleaned a lot of code
+ ^ Updated translations: es-ES, nl-NL
+ # Fixed issue with tags being interpreted inside the Josetta form
+ # [PRO] Fixed issue with page jumping to top in hover mode
+
+01-May-2012 : v2.1.0
+ ^ Increased page load speed by changing how xml files are loaded
+
+26-Apr-2012 : v2.0.5
+ + Added translations: fa-IR
+ # Fixed issue with javascript error on IE7
+
+17-Apr-2012 : v2.0.4
+ + Added translations: zh-TW
+ ^ Improved protecting of edit forms to only protect fields (so tags work outside form fields)
+ ^ Updated translations: da-DK
+
+13-Apr-2012 : v2.0.3
+ # Fixed issue with scripts not getting loaded if tags are only used outside content are
+
+12-Apr-2012 : v2.0.2
+ # Fixed issue with multiple same titled slides on same page not working
+
+10-Apr-2012 : v2.0.1
+ # SECURITY FIX: Fixed URL injection vulnerability in NoNumber Framework
+
+07-Apr-2012 : v2.0.0
+ + Added ability to set the alias in the tag via |alias:... (used for urls)
+ + Added translations: ar-AA, ar-SA
+ ^ Changed layout of settings
+ ^ Changed some language strings
+ ^ Cleaned up code syntax
+ ^ Improved handling of other plugin style tags inside the {slide} tag
+ ^ Now available as Pro and Free version
+ ^ Updated translations: de-DE
+ # Fixed issue with dollar signs not appearing in output
+ # Fixed issue with mootools being loaded on pages even when not necessary
+
+05-Mar-2012 : v1.8.6
+ ^ Cleaned up code syntax
+ ^ Updated translations: pt-BR, pt-PT
+ # [J1.5] Fixed issue with image-only tab titles
+
+26-Jan-2012 : v1.8.5
+ + Added translations: pl-PL
+ # Fixed issue with Slide links not working with slides with special characters
+ # Fixed issue with image-only tab titles (thanks to Justin Niebuhr)
+ # Fixed issue with installer not removing the folder/zip from the tmp
+ # Fixed issue with links not working correctly on all setups due to not using JRoute
+ # [J1.7+] Fixed issue with errors on pdf pages
+
+09-Jan-2012 : v1.8.4
+ # Fixed issue with line-height of the slide titles being jumpy on some templates
+
+16-Dec-2011 : v1.8.3
+ ^ Cleaned up more code
+ ^ Updated translations: de-DE, ru-RU
+ # Fixed issue with html entities in title converting to url hash
+ # Fixed issue with invalid w3c html markup (ref attribute in div element)
+
+18-Nov-2011 : v1.8.2
+ + Added option to overrule mode by adding click or hover in tag
+ ^ Updated translations: sl-SI
+ # Fixed issue with hash fragment still being added to url when option is switched off
+
+09-Nov-2011 : v1.8.1
+ + Added option to overrule the default code the editor button inserts
+ ^ Improved cleanup of scripts/styles when there are no tabs on the page
+ # Fixed issue with hash fragment links not working in all urls with variables
+ # Fixed issue with typo in css file (.grey instead of .mystyle)
+
+06-Nov-2011 : v1.8.0
+ + Added active slide as hash fragments to url (and option to switch this off)
+ + Added translations: th-TH
+ ^ Cleaned code syntax (no longer guaranteed support for php 5.2.x and lower)
+ ^ Improved cleanup of scripts/styles when there are no slides on the page
+ ^ Improved matching of titles with special characters via url
+ # Fixed issue with tags being handled in some edit forms
+
+17-Oct-2011 : v1.7.1
+ # Fixed issue with w3c validator giving false negatives on html output
+ # Fixed security issue in NoNumber Framework plugin
+
+08-Oct-2011 : v1.7.0
+ + Added ability to set slides up to change on mouse hover instead of click
+ ^ Cleaned up some code (like no more use of DS)
+ ^ Improved installer
+ ^ Moved translation language files to main package (no more language packs)
+ # Fixed issue with tags being handled in editor button popup
+ # Fixed issue with the slidelink tag not working outside the area where the slides are
+
+16-Sep-2011 : v1.6.0
+ ^ Changed NoNumber Elements plugin to NoNumber Framework
+ ^ Changed way MooTools version is detected
+ ^ Improved handling of surrounding whitespace
+ ^ Improved initial display before script is loaded/executed
+ ^ Moved common language strings to NoNumber Framework files
+ # Fixed issue with class names showing in print view
+ # Fixed issue with invalid characters in element ids (not passing w3c validation)
+ # Fixed issue with javascript files breaking when using js/css compression
+
+29-Jul-2011 : v1.5.2
+ # Fixed issue with surrounding html tags potentially breaking html structure
+
+21-Jul-2011 : v1.5.1
+ + Added option to not use outlines
+ + Added option to use versioned scripts and stylesheets
+ ^ Improved handling of styling on tags
+ ^ Improved handling of tags in feeds
+ # Fixed issue with error on servers that don't have mbstring functions enabled
+ # Fixed issue with some content not being rendered correctly in inactive slides
+
+05-Jul-2011 : v1.5.0
+ + Added cookie support for remembering active tabs
+ ^ Changed layout of options
+ ^ Changed use of elements
+ ^ Improved handling of print and pdf pages
+ # Fixed issue with JEventHandler error on some setups
+ # Fixed issue with images and other html in titles
+ # Fixed issue with inactive content showing shortly before page is loaded
+
+06-Jun-2011 : v1.4.2
+ # Fixed issue with slides using custom ending tag no longer working (since v1.4.1)
+ # Fixed version number
+
+06-Jun-2011 : v1.4.1
+ + Added option to define the tag type used for the titles
+ + Added option to overrule the window sliding per slide
+ ^ Added better handling of tags when closing tag is not found
+ # Fixed issue with file inclusion not working on some Joomla 1.5 setups
+
+23-May-2011 : v1.4.0
+ + Added more comments to css file
+ + Joomla 1.7 compatible!
+ ! Removed force mootools 1.2 option
+ ^ Changed way the mootools version is detected
+ # Fixed issue with setting active item via number / set in url not working correctly
+
+30-Mar-2011 : v1.3.2
+ + Added option to activate slide via url using the number of the slide
+ # Fixed issue plugin being executed on raw format pages
+ # Fixed issue with bottom border line sometimes disappearing
+ # Fixed issue with problems when html has multiple body tags
+ # Fixed issue with slides being handled on print page
+ # Fixed some styling issues
+
+28-Feb-2011 : v1.3.1
+ ^ Changed language files to be J1.6 ready
+ # Fixed issue with html tags in title messing up code
+ # Fixed issue with leading/trailing spaces/enters on tags creating unwanted whitespace
+ # Fixed issue with second tab not opening correctly when first slide is a link
+
+18-Feb-2011 : v1.3.0
+ + Added name of slide to url status when hovering over slide label
+ + Added option to switch off scrolling to slide on url (and option to overrule by adding a + after the slide)
+ + Added possibility to link slides to other pages
+ # Fixed issue with tags being interpreted in frontend editor fields with very large contents
+
+11-Feb-2011 : v1.2.0
+ + Added ability to nest slides
+ + Added extra class to style content for before script is loaded or fails
+ + Added scrolling to slide on url (and option to not scroll by adding a - after the slide)
+ ^ Besides {slide=, now {slides= will also work as tag
+ ^ Changed extension icon / logo
+ # Fixed issue with leading/trailing spaces in the tab titles
+ # Fixed issues with tab matching when using tab number
+ # Fixed issues with tab matching with special characters
+ # Fixed some issues with loading problems on IE
+
+13-Dec-2010 : v1.1.1
+ # Fixed issue with conflicting characters in language file
+
+10-Dec-2010 : v1.1.0
+ + Added option to not force load MooTools 1.2 ready script
+ + Added option to not load core MooTools script
+ + Added option to set line color in settings
+ + Added option to set rounded border radius in settings
+ # Cleaned up some code
+ # Fixed issue with elements showing outside content area on IE7
+ # Fixed issue with javascript errors on IE7
+ # Fixed issues with document being called to early
+ # Fixed some issues with loading of language strings
+
+03-Dec-2010 : v1.0.3
+ # Fixed issue with elements showing outside content area on IE
+ # Fixed issue with setting active slides via url not working with all Cyrillic characters
+ # Fixed issue with slider speed setting not working (and causing php notice)
+ # Fixed issue with slides not working on IE8
+ # Fixed some file encoding stuff
+
+26-Nov-2010 : v1.0.2
+ # Fixed issue with slides not working in IE
+
+25-Nov-2010 : v1.0.1
+ ^ Changed script to make active state of slide bar change after slide
+ # Fixed language string of ROUNDED_CORNERS
+
+25-Nov-2010 : v1.0.0
+ + Added checks to see if NoNumber Elements plugin is installed/enabled
+ + Added classes to content to enable styling per slide
+ + Added option to scroll to top of slide(s) when opened
+ + Added option to set rounded corners on/off
+ + Added scrolling on slide links {tablink=...}
+ ^ Changed default slide effect speed
+ ^ Changed stylesheet a bit
+ ^ Fixed and updated all language strings
+ # Fixed issue with fade effect not working for MooTools 1.2
+ # Fixed issue with tags being handled in edit fields
+ # Fixed issues with fade effect when switching between slides very fast
+
+16-Nov-2010 : v0.3.0
+ # Fixed extension causing pages to break on some setups
+ # Fixed issue with not working in some forms (where they should)
+
+15-Nov-2010 : v0.2.3
+ + Added fade effect and option to set speed of it
+ # Fixed issue with tabs not being handled outside component area
+ # Fixed some css styling issues
+
+12-Nov-2010 : v0.2.2
+ + Added option for indenting both title and content
+ + Added option to make slide active by number in url (slide=2)
+ # Fixed issue with active slides when using Cyrillic titles
+ # Fixed issue with extra styles not working when using indentation
+ # Fixed issue with multiple classes in tag
+
+11-Nov-2010 : v0.2.1
+ # Fixed issue with editor buttons messing up html with some editors
+ # Fixed issue with some tags being handled in editor field
+
+09-Nov-2010 : v0.2.0
+ + Added option to select tag delimiter '=' or space
+ + Added option to set indenting of slide title or content (or none)
+ ^ Made sliding effect a little smoother
+ # Fixed issue with 'closed' option not working
+ # Fixed issue with script not working with MooTools 1.2
+
+08-Nov-2010 : v0.1.0
+ + First beta release

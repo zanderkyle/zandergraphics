@@ -3,7 +3,7 @@
  * Plugin Helper File: Protect
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -138,7 +138,7 @@ class PlgSystemReReplacerHelperProtect
 		foreach ($array as $key => $string)
 		{
 			// is string already protected?
-			$protect = fmod($key, 2);
+			$protect    = fmod($key, 2);
 			$item_array = $this->protectStringToArray($string, $protect);
 
 			$new_array = array_merge($new_array, $item_array);
@@ -177,7 +177,7 @@ class PlgSystemReReplacerHelperProtect
 
 		for ($i = 1; $i < $count; $i++)
 		{
-			$substr = $string_array[$i];
+			$substr        = $string_array[$i];
 			$protect_count = 1;
 
 			// Add the next string if not enough protector ends are found

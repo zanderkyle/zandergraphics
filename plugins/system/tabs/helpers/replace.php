@@ -3,7 +3,7 @@
  * Plugin Helper File: Replace
  *
  * @package         Tabs
- * @version         5.1.3
+ * @version         5.1.4
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -42,23 +42,23 @@ class PlgSystemTabsHelperReplace
 		$this->params->tag_close = trim($this->params->tag_close);
 
 		$this->params->regex = '#'
-			. '(?<pre>' . $breaks_start . ')'
-			. $tag_start . '(?<tag>'
-			. $this->params->tag_open . 's?' . '(?<setid>' . $sub_id . ')' . $delimiter . '(?<data>' . $inside_tag . ')'
+			. '(?P<pre>' . $breaks_start . ')'
+			. $tag_start . '(?P<tag>'
+			. $this->params->tag_open . 's?' . '(?P<setid>' . $sub_id . ')' . $delimiter . '(?P<data>' . $inside_tag . ')'
 			. '|/' . $this->params->tag_close . $sub_id
 			. ')' . $tag_end
-			. '(?<post>' . $breaks_end . ')'
+			. '(?P<post>' . $breaks_end . ')'
 			. '#s';
 
 		$this->params->regex_end = '#'
-			. '(?<pre>' . $breaks_start . ')'
+			. '(?P<pre>' . $breaks_start . ')'
 			. $tag_start . '/' . $this->params->tag_close . $sub_id . $tag_end
-			. '(?<post>' . $breaks_end . ')'
+			. '(?P<post>' . $breaks_end . ')'
 			. '#s';
 
 		$this->params->regex_link = '#'
-			. $tag_start . $this->params->tag_link . $sub_id . $delimiter . '(?<id>' . $inside_tag . ')' . $tag_end
-			. '(?<text>.*?)'
+			. $tag_start . $this->params->tag_link . $sub_id . $delimiter . '(?P<id>' . $inside_tag . ')' . $tag_end
+			. '(?P<text>.*?)'
 			. $tag_start . '/' . $this->params->tag_link . $tag_end
 			. '#s';
 
@@ -635,7 +635,7 @@ class PlgSystemTabsHelperReplace
 	private function replaceAnchorLinks(&$string)
 	{
 		if (!preg_match_all(
-			'#(?<link><a\s[^>]*href="(?<url>([^"]*)?)\#(?<id>[^"]*)"[^>]*>)(?<text>.*?)</a>#si',
+			'#(?P<link><a\s[^>]*href="(?P<url>([^"]*)?)\#(?P<id>[^"]*)"[^>]*>)(?P<text>.*?)</a>#si',
 			$string,
 			$matches,
 			PREG_SET_ORDER
@@ -651,7 +651,7 @@ class PlgSystemTabsHelperReplace
 	private function replaceUrlLinks(&$string)
 	{
 		if (!preg_match_all(
-			'#(?<link><a\s[^>]*href="(?<url>[^"]*)(?:\?|&(?:amp;)?)tab=(?<id>[^"\#&]*)(?:\#[^"]*)?"[^>]*>)(?<text>.*?)</a>#si',
+			'#(?P<link><a\s[^>]*href="(?P<url>[^"]*)(?:\?|&(?:amp;)?)tab=(?P<id>[^"\#&]*)(?:\#[^"]*)?"[^>]*>)(?P<text>.*?)</a>#si',
 			$string,
 			$matches,
 			PREG_SET_ORDER

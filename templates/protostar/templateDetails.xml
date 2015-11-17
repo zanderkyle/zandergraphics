@@ -42,6 +42,11 @@
 		<position>position-12</position>
 		<position>position-13</position>
 		<position>position-14</position>
+		<position>display1a</position>
+		<position>display1b</position>
+		<position>display1c</position>
+		<position>display1d</position>
+		<position>display2</position>
 		<position>front1a</position>
 		<position>front1b</position>
 		<position>front1c</position>
@@ -79,6 +84,7 @@
 		<position>footer1c</position>
 		<position>footer1d</position>
 		<position>copyright-top</position>
+		<position>social-slider</position>
 		<position>footer</position>
 	</positions>
 	<languages folder="language">

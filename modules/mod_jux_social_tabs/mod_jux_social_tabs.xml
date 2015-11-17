@@ -1,0 +1,1024 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<extension type="module" version="3.0.0" client="site" method="upgrade">
+	<name>JUX Social Tabs</name>
+	<creattionDate>04 Oct 2013</creattionDate>
+	<author>JoomlaUX</author>
+	<copyright>Copyright (C) 2012 - 2014 by JoomlaUX. All rights reserved.
+	</copyright>
+	<authorEmail>admin@joomlaux.com</authorEmail>
+	<authorUrl>http://www.joomlaux.com</authorUrl>
+	<license>http://www.gnu.org/licenses/gpl.html GNU/GPL</license>
+	<version>1.1.4</version>
+	<description>
+            <![CDATA[
+		<div class='js_desc'>
+			<h3 style='color: #008000;'>JUX Social Tabs</h3>
+			<a href='http://joomlaux.com' target='_blank'><img src='http://www.joomlaux.com/images/digitalstore/preview/jux-social-tabs.png'></a>
+			<p style='text-align:justify;'>
+				<strong>Jux Social Tabs</strong> is a module which combines 16 social networks profiles and unlimited feeds display into slick slide out or static tab with directly real time update on your site. 
+			</p>
+			<p style='text-align:justify;'>
+				JUX Social Tab includes 16 famous social network such as Facebook, Twitter, Google plus, Pinterest, etc. For each social channel you can limit the number of posts to display.
+			</p>
+			<br clear='both' />
+			<p style='clear:both'><span style='color: #ff6600;'><strong>Highlight feature:</strong></strong></p>
+			<ul class='list-style'>
+                            <li>Support Joomla 2.5 and 3.x</li>
+                            <li>Beautiful Design </li>
+                            <li>Real-time updates from all social pages</li>
+                            <li>Space-saving: sliding tabs allow you to “hide” social tabs and click to open them</li>
+			</ul>
+			<p><span style='color: #008000;'><strong>Links:</strong></span></p>
+			<ul class='list-style'>
+				<li><a target='_blank' href='http://docs.joomlaux.com/extensions/jux_social_tabs/'>User Guide</a></li>
+				<li><a target='_blank' href='http://extensions.joomla.org/extension/social-web/social-display/jux-social-tabs'>Support us by Review on JED!</a></li>
+				<li><a target='_blank' href='http://joomlaux.com/forum'>Forums</a></li>
+			</ul>
+			<p>Copyright 2013 - 2014 <a target='_blank' href='http://www.joomlaux.com/' title='Visit JoomlaUX.com!'>JoomlaUX.com</a>.</p>
+		</div>
+
+		<style type='text/css'>
+			.js_desc{
+				text-align: left;
+			}
+			.js_desc h3{
+				margin: 20px 0px 10px 0px;
+			}
+			.js_desc img{
+				width:40%;
+				margin:5px 5px 5px 0px;
+			}
+			.js_desc p,.js_desc li{
+				list-style: none outside none;
+				padding: 5px 5px 5px 0px;
+			}
+
+			.js_desc ul.list-style li{
+				background:url(http://www.joomlaux.com/images/icons/tick.png) 0px 6px no-repeat;
+				padding-left:30px;
+				line-height:15px;
+			}
+		</style>
+		 ]]>
+        </description>
+	<files>
+		<filename module="mod_jux_social_tabs">mod_jux_social_tabs.php</filename>
+		<filename>helper.php</filename>
+		<filename>index.html</filename>
+		<filename>facebook.php</filename>
+		<filename>twitter.php</filename>
+		<filename>twitter_licence_key.ini</filename>
+		<folder>tmpl</folder>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>language</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB.mod_jux_social_tabs.ini</language>
+		<language tag="en-GB">language/en-GB.mod_jux_social_tabs.sys.ini</language>
+	</languages>
+	<!-- <updateservers>
+      <server type="extension" priority="1" name="JUX Social Tabs">http://www.joomlaux.com/updates/extensions/mod_jux_social_tabs_update.xml</server>
+  	</updateservers> -->
+
+	<config>
+		<fields name="params">
+			<fieldset name="basic" label="MOD_MEDIA_TABS_LABEL">
+				<!-- <field name="update_infor"
+                type="juxupdate"
+                class="alert alert-warning"
+                close="true"
+                download_url="http://www.joomlaux.com/download.html"
+                >
+            	</field> -->
+            	
+				<field name="mod_method" type="juxradio" class="btn-group"
+					default="slide" label="MOD_SOCIAL_MEDIA_DISPLAY_TYPE_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_DISPLAY_TYPE_DESC">
+					<option value="slide"
+						sub_fields="mod_location,mod_autoClose,mod_loadOpen,mod_position">MOD_SOCIAL_MEDIA_DISPLAY_TYPE_SLIDING_TABS</option>
+					<option value="static">MOD_SOCIAL_MEDIA_DISPLAY_TYPE_STATIC_TABS
+					</option>
+				</field>
+				<field name="mod_position" type="list" default="fixed"
+					label="MOD_SOCIAL_MEDIA_TABS_FLOATING_MODULE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FLOATING_MODULE_DESC">
+					<option value="fixed">MOD_SOCIAL_MEDIA_TABS_FLOATING_MODULE_YES
+					</option>
+					<option value="absolute">MOD_SOCIAL_MEDIA_TABS_FLOATING_MODULE_NO
+					</option>
+				</field>
+				<field name="mod_location" type="list" default="top"
+					label="MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_LABEL" description="MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_DESC">
+					<option value="top-right">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_TOP_RIGHT
+					</option>
+					<option value="top-left">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_TOP_LEFT
+					</option>
+					<option value="middle-right">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_MIDDLE_RIGHT
+					</option>
+					<option value="middle-left">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_MIDDLE_LEFT
+					</option>
+					<option value="bottom-right">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_BOOTTOM_RIGHT
+					</option>
+					<option value="bottom-left">MOD_SOCIAL_MEDIA_TABS_DISPLAY_LOCATION_BOOTTOM_LEFT
+					</option>
+				</field>
+				<field name="mod_autoClose" type="radio" default="1" class="btn-group"
+					label="MOD_SOCIAL_MEDIA_TABS_CLOSE_TABS_BY_LABEL" description="MOD_SOCIAL_MEDIA_TABS_CLOSE_TABS_BY_DESC">
+					<option value="1">MOD_SOCIAL_MEDIA_TABS_CLOSE_TABS_BY_CLICK_ANYWHERE
+					</option>
+					<option value="0">MOD_SOCIAL_MEDIA_TABS_CLOSE_TABS_BY_CLICK_ON_TAB
+					</option>
+				</field>
+				<field name="mod_loadOpen" type="radio" class="btn-group"
+					default="1" label="MOD_SOCIAL_MEDIA_TABS_FIRST_LOAD_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FIRST_LOAD_DESC">
+					<option value="1">MOD_SOCIAL_MEDIA_TABS_FIRST_LOAD_YES</option>
+					<option value="0">MOD_SOCIAL_MEDIA_TABS_FIRST_LOAD_NO</option>
+				</field>
+				<field name="mod_tabFirstIndex" type="list" default="0"
+					label="MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_DESC">
+					<option value="facebook">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB1</option>
+					<option value="twitter">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB2</option>
+					<option value="google">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB3</option>
+					<option value="pinterest">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB4</option>
+					<option value="linkedin">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB5</option>
+					<option value="fblike">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB6</option>
+					<option value="fbrec">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB7</option>
+					<option value="stumbleupon">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB8</option>
+					<option value="tumblr">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB9</option>
+					<option value="youtube">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB10</option>
+					<option value="vimeo">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB11</option>
+					<option value="instagram">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB12</option>
+					<option value="rss">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB13</option>
+					<option value="flickr">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB14</option>
+					<option value="delicious">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB15</option>
+					<option value="digg">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB16</option>
+					<option value="lastfm">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB17</option>
+					<option value="dribbble">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB18</option>
+					<option value="deviantart">MOD_SOCIAL_MEDIA_TABS_TAB_INDEX_TAB19</option>
+				</field>
+				<field type="juxspacer" hr="true" />
+
+				<field name="mod_width" type="text" default="310" class="validate-numeric"
+					label="MOD_SOCIAL_MEDIA_TABS_WIDTH_LABEL" description="MOD_SOCIAL_MEDIA_TABS_WIDTH_DESC" />
+				<field name="mod_height" type="text" default="500"
+					class="validate-numeric" label="MOD_SOCIAL_MEDIA_TABS_HEIGHT_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_HEIGHT_DESC" />
+				<field name="mod_offset" type="text" default="20"
+					class="validate-numeric" label="MOD_SOCIAL_MEDIA_TABS_OFFSET_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_OFFSET_DESC" />
+				<field type="juxspacer" hr="true" />
+				<field name="mod_requestTime" type="text" default="8"
+					class="validate-numeric" label="MOD_SOCIAL_MEDIA_TABS_TIME_REQUEST_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TIME_REQUEST_DESC" />
+				<field name="mod_displayDirection" type="list" default="down"
+					label="MOD_SOCIAL_MEDIA_TABS_DISPLAY_DERECTION_LABEL" description="MOD_SOCIAL_MEDIA_TABS_DISPLAY_DERECTION_DESC">
+					<option value="up">MOD_SOCIAL_MEDIA_TABS_DISPLAY_DERECTION_UP
+					</option>
+					<option value="down">MOD_SOCIAL_MEDIA_TABS_DISPLAY_DERECTION_DOWN
+					</option>
+				</field>
+				<field name="enable_jquery" type="radio" default="0" class="btn-group"
+					label="MOD_JUX_SOCIAL_MEDIA_TABS_LABEL_JQUERY" description="MOD_JUX_SOCIAL_MEDIA_TABS_DESC_JQUERY">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="enable_noconflict" type="radio" default="0"
+					class="btn-group" label="MOD_JUX_SOCIAL_MEDIA_TABS_LABEL_NOCONFLICT"
+					description="MOD_JUX_SOCIAL_MEDIA_TABS_DESC_NOCONFLICT">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+			</fieldset>
+			<fieldset name="social_media_tabs" label="MOD_SOCIAL_MEDIA_TABS_LABEL"
+				addfieldpath="/modules/mod_jux_social_tabs/elements">
+				<field name="mod_showFacebook" type="juxradio" class="btn-group"
+					default="1" linked_element="facebook"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_DESC">
+					<option value="1" onclick="showDefaultTabIndex('facebook');"
+						sub_fields="mod_facebookOrder,mod_facebookID,mod_facebookTitle,mod_facebookFollow,mod_facebookRSSType,mod_facebookLimit,mod_facebookSpacer">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('facebook');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_facebookID" type="text" default="JoomlaUX"
+					label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_FACEBOOK_DESC" />
+				<field name="mod_facebookTitle" type="text" default="Facebook"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_facebookFollow" type="text" default="Find us on Facebook"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<!-- <field name="mod_facebookRSSType" type="radio" default="content"
+					class="btn-group" label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RSSTYPE_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RSSTYPE_DESC">
+					<option value="contentSnippet">MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RSSTYPE_BRIEF
+					</option>
+					<option value="content">MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RSSTYPE_FULL_POST
+					</option>
+				</field> -->
+				<field name="mod_facebookLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_facebookOrder" type="list" default="1"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_facebookSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showFacebookLikebox" type="juxradio" class="btn-group"
+					default="0" linked_element="fblike"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_LIKEBOX_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_LIKEBOX_DESC">
+					<option value="1" onclick="showDefaultTabIndex('fblike');"
+						sub_fields="mod_FacebookLikeboxID,mod_facebookLikeboxHeader,mod_fblikeSpacer,mod_FacebookLikeboxOder,mod_facebookLikeboxStream,mod_facebookLikeboxLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('fblike');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_FacebookLikeboxID" type="text" default="JoomlaUX"
+					label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_LIKEBOX_ID_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_LIKEBOX_ID_DESC" />
+				<field name="mod_facebookLikeboxStream" type="radio" class="btn-group"
+					default="0" label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_LIKENOX_STREAM_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_LIKENOX_STREAM_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_facebookLikeboxHeader" type="radio" class="btn-group"
+					default="1" label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_LIKENOX_HEADER_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_LIKENOX_HEADER_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_facebookLikeboxLimit" type="text" default="36"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_FacebookLikeboxOder" type="list" default="2"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_fblikeSpacer" type="juxspacer" hr="true" />
+				<!-- <field name="mod_showFacebookRecommentdation" type="juxradio"
+					class="btn-group" default="0" linked_element="fbrec"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_RECOMMENTDATION_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SHOW_FACEBOOK_RECOMENTDATION_DESC">
+					<option value="1" onclick="showDefaultTabIndex('fbrec');"
+						sub_fields="mod_FacebookRecimmentdationID,mod_fbrecSpacer,mod_FacebookRecommentdationOder,mod_facebookRecommentdationHeader">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('fbrec');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_FacebookRecimmentdationID" type="text"
+					default="http://www.joomlaux.com" label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RECOMMENTDATION_ID_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RECOMMENTDATION_ID_DESC" />
+				<field name="mod_facebookRecommentdationHeader" type="radio"
+					class="btn-group" default="1"
+					label="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RECOMMENTDATION_HEADER_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_FACEBOOK_RECOMMENTDATION_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_FacebookRecommentdationOder" type="list"
+					default="3" label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_fbrecSpacer" type="juxspacer" hr="true" /> -->
+				<field name="mod_showTwitter" linked_element="twitter" type="juxradio"
+					class="btn-group" default="1"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_TWITTER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_TWITTER_DESC">
+					<option value="1" onclick="showDefaultTabIndex('twitter');"
+						sub_fields="mod_twitterID,mod_twitterSpacer,mod_twitterOrder,mod_twitterThumb,mod_twitterTitle,mod_twitterFollow,mod_twitterLimit,mod_twitterReplies,mod_twitterRetweets,mod_twitter_consumer_key,mod_twitter_consumer_secret,mod_twitter_oauth_access_token,mod_twitter_oauth_access_token_secret">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('twitter');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_twitterID" type="text" default="JoomlaUX"
+					label="MOD_SOCIAL_MEDIA_TABS_TWITTER_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TWITTER_ID_DESC" />
+
+				<field name="mod_twitter_consumer_key" type="text" default="hPkDyU61DcHjw7Jr6QPzdA"
+					label="MOD_SOCIAL_MEDIA_TABS_TWITTER_CONSUMER_KEY_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_CONSUMER_KEY_DESC" />
+
+				<field name="mod_twitter_consumer_secret" type="text" default ="Ap8sTVoYhJbQmvIVMYE8QaliXKU0Asy26kaIi6Jzw"
+					label="MOD_SOCIAL_MEDIA_TABS_TWITTER_CONSUMER_SECRET_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_CONSUMER_SECRET_DESC" />
+
+				<field name="mod_twitter_oauth_access_token" type="text" default ="796390322-DCqtvJZRKQGI72UEZstrD1KS9Tz6MAvRC1ZAKTYp"
+					label="MOD_SOCIAL_MEDIA_TABS_TWITTER_OAUTH_ACCESS_TOKEN_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_OAUTH_ACCESS_TOKEN_DESC" />
+
+				<field name="mod_twitter_oauth_access_token_secret" type="text" default = "T5CDS6mfEi2gL0NVlY2qx6A2PjAiHOTWqKMcUxKQ"
+					label="MOD_SOCIAL_MEDIA_TABS_TWITTER_OAUTH_ACCESS_TOKEN_SECRET_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_OAUTH_ACCESS_TOKEN_SECRET_DESC" />
+				<field name="mod_twitterTitle" type="text" default="Latest Tweets"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_twitterFollow" type="text" default="Follow on Twitter"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_twitterThumb" type="radio" class="btn-group"
+					default="1" label="MOD_SOCIAL_MEDIA_TABS_SHOW_THUMBNAIL_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_THUMBNAIL_SOCIAL_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_twitterRetweets" type="radio" class="btn-group"
+					default="0" label="MOD_SOCIAL_MEDIA_TABS_TWITTER_RETWEETS_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_RETWEETS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_twitterReplies" type="radio" class="btn-group"
+					default="0" label="MOD_SOCIAL_MEDIA_TABS_TWITTER_REPLIES_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_TWITTER_REPLIES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field name="mod_twitterLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_twitterOrder" type="list" default="4"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_twitterSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showGooglePlus" type="juxradio" class="btn-group"
+					default="1" linked_element="google"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_GOOGLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_GOOGLE_DESC">
+					<option value="1" onclick="showDefaultTabIndex('google');"
+						sub_fields="mod_googlePlusID,mod_requires,mod_googleSpacer,mod_googlePlusAPI,mod_googlePlusOrder,mod_googlePlusLimit,mod_googlePlusFollow,mod_googlePlusTitle">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('google');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_googlePlusID" type="text" default="100117785890515204442"
+					label="MOD_SOCIAL_MEDIA_TABS_GOOGLE_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_GOOGLE_ID_DESC" />
+				<field name="mod_googlePlusAPI" type="text"
+					default="AIzaSyDYCJIQG9HLV5CkSMJcYVaE-6fnDKVWGXk" label="MOD_SOCIAL_MEDIA_TABS_GOOGLE_API_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_GOOGLE_API_DESC" />
+				<field name="mod_requires" type="juxspacer"
+					label="MOD_SOCIAL_MEDIA_TABS_GOOGLE_REQUIRES_LABEL" description="" />
+				<field name="mod_googlePlusTitle" type="text" default="Google+"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_googlePlusFollow" type="text" default="Add to Circles"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_googlePlusLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_googlePlusOrder" type="list" default="5"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_googleSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showPinterest" type="juxradio" class="btn-group"
+					default="1" linked_element="pinterest"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_PINTEREST_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_PHINTEREST_DESC">
+					<option value="1" onclick="showDefaultTabIndex('pinterest');"
+						sub_fields="mod_pinterestID,mod_pinterestSpacer,mod_pinterestOder,mod_pinterestLimit,mod_pinterestFollow,mod_pinterestTitle">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('pinterest');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_pinterestID" type="text" default="joomlaux"
+					label="MOD_SOCIAL_MEDIA_TABS_PINTEREST_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_PINTERREST_DESC" />
+				<field name="mod_pinterestTitle" type="text" default="Pinterest"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_pinterestFollow" type="text" default="Find us on Pinterest"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_pinterestLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_pinterestOder" type="list" default="6"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_pinterestSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showRSS" type="juxradio" class="btn-group"
+					default="1" linked_element="rss" label="MOD_SOCIAL_MEDIA_TABS_SHOW_RSS_LABEL"
+					description="MOD_SOCIAL_MEDIA_SHOW_RSS_DESC">
+					<option value="1" onclick="showDefaultTabIndex('rss');"
+						sub_fields="mod_RSSID,mod_rssSpacer,mod_RSSOder,mod_RSSTitle,mod_RSSFollow,mod_RSSLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('rss');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_RSSID" type="text"
+					default="http://www.joomlaux.com/resources/blog.feed" label="MOD_SOCIAL_MEDIA_TABS_RSS_ID_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_ID_RSS_DESC" />
+				<field name="mod_RSSTitle" type="text" default="Subscribe to our RSS"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_RSSFollow" type="text" default="Subscribe"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_RSSLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_RSSOder" type="list" default="7"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_rssSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showYoutube" type="juxradio" class="btn-group"
+					default="0" linked_element="youtube"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_YOUTUBE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_YOUTUBE_DESC">
+					<option value="1" onclick="showDefaultTabIndex('youtube');"
+						sub_fields="mod_YoutubeChannel,mod_youtubeSpacer,mod_YoutubeOder,mod_YoutubeTitle,mod_YoutubeSubscribe,mod_YoutubeLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('youtube');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_YoutubeChannel" type="text" default = "UCCwi2Bn5047jT5e9IeZd--Q"
+					label="MOD_SOCIAL_MEDIA_TABS_YOUTUBE_CHANNEL_LABEL" description="MOD_SOCIAL_MEDIA_TABS_YOUTUBE_CHANNEL_DESC" />
+				<field name="mod_YoutubeUserID" type="text" default = "nootheme"
+					label="MOD_SOCIAL_MEDIA_TABS_YOUTUBE_USERID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_YOUTUBE_USERID_DESC" />	
+				<field name="mod_YoutubeTitle" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_YoutubeSubscribe" type="radio" class="btn-group"
+					default="1" label="MOD_SOCIAL_MEDIA_TABS_SUBSCRIBE_BUTTOM_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SUBSCRIBE_BUTTOM_DESC">
+					<option value="1">JSHOW</option>
+					<option value="0">JHIDE</option>
+				</field>
+				<field name="mod_YoutubeLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_YoutubeOder" type="list" default="8"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_youtubeSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showLinkedIn" type="juxradio" class="btn-group"
+					default="0" linked_element="linkedin"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_LINKEDIN_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_LINKEDIN_DESC">
+					<option value="1" onclick="showDefaultTabIndex('linkedin');"
+						sub_fields="mod_LinkedInID,mod_LinkedInOder,mod_linkedinSpacer">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('linkedin');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_LinkedInID" type="text" default = "sitecontrol-internet-solutions"
+					label="MOD_SOCIAL_MEDIA_TABS_LINKEDIN_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LINKEDIN_ID_DESC" />
+				<field name="mod_LinkedInOder" type="list" default="9"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_linkedinSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showInstagram" type="juxradio" class="btn-group"
+					default="0" linked_element="instagram"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_INSTAGRAM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_INSTAGRAM_DESC">
+					<option value="1" onclick="showDefaultTabIndex('instagram');"
+						sub_fields="mod_InstagramID,mod_instagramSpacer,mod_InstagramOder,mod_redirect,mod_InstagramClientID,mod_InstagramRedirectURI,mod_InstagramAccessToken,mod_InstagramTitle,mod_InstagramLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('instagram');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_InstagramID" type="text" default=""
+					label="MOD_SOCIAL_MEDIA_TABS_INSTAGRAM_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_INSTAGRAM_DESC" />
+				<field name="mod_InstagramClientID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_CLIENT_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_CLIENT_ID_DESC" />
+				<field name="mod_InstagramRedirectURI" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_INSTAGRAMREDIRECT_URL_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_INSTAGRAMREDIRECT_URL_DESC" />
+				<field name="mod_InstagramAccessToken" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_TOKEN_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TOKEN_DESC" />
+				<field name="mod_redirect" type="juxspacer"
+					label="MOD_SOCIAL_MEDIA_TABS_GOOGLE_REDIRECT_LABEL" description="" />
+				<field name="mod_InstagramTitle" type="text" default="Instagram"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_InstagramLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_InstagramOder" type="list" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_instagramSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showVimeo" type="juxradio" class="btn-group"
+					default="0" linked_element="vimeo" label="MOD_SOCIAL_MEDIA_TABS_SHOW_VIMEO_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SHOW_VIMEO_DESC">
+					<option value="1" onclick="showDefaultTabIndex('vimeo');"
+						sub_fields="mod_VimeoID,mod_vimeoSpacer,mod_VimeoOder,mod_VimeoTitle,mod_VimeoFollow,mod_VimeoLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('vimeo');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_VimeoID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_VIMEO_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_VIMEO_DESC" />
+				<field name="mod_VimeoTitle" type="text" default="Vimeo"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_VimeoFollow" type="text" default="Subscribe"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_VimeoLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_VimeoOder" type="list" default="11"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_vimeoSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showFlickr" type="juxradio" class="btn-group"
+					default="0" linked_element="flickr"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_FLICKR_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_FLICKR_DESC">
+					<option value="1" onclick="showDefaultTabIndex('flickr');"
+						sub_fields="mod_flickrSpacer,mod_FlickrID,mod_FlickrOder,mod_FlickrLimit,mod_FlickrTitle">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('flickr');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_FlickrID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_FLICKR_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_FLICKR_DESC" />
+				<field name="mod_FlickrTitle" type="text" default="Flickr"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_FlickrLimit" type="text" default="20"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_FlickrOder" type="list" default="12"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_flickrSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showStumbleupon" type="juxradio" class="btn-group"
+					default="0" linked_element="stumbleupon"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_STUMBLEUPON_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_STUMBLEUPON_DESC">
+					<option value="1" onclick="showDefaultTabIndex('stumbleupon');"
+						sub_fields="mod_StumbleUponID,mod_stumbleuponSpacer,mod_StumbleUponOder,mod_StumbleuponTitle,mod_StumbleuponFollow,mod_StumbleuponLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('stumbleupon');" value="0">
+						JHIDE
+		    </option>
+				</field>
+				<field name="mod_StumbleUponID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_STUMBLEUPON_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_STUMBLEUPON_DESC" />
+				<field name="mod_StumbleuponTitle" type="text" default="Stumbleupon"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_StumbleuponFollow" type="text" default="Follow"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_StumbleuponLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_StumbleUponOder" type="list" default="13"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_stumbleuponSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showTumblr" type="juxradio" class="btn-group"
+					default="0" linked_element="tumblr"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_TUMBLR_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_TUMBLR_DESC">
+					<option value="1" onclick="showDefaultTabIndex('tumblr');"
+						sub_fields="mod_TumblrID,mod_TumblrOder,mod_tumblrSpacer,mod_TumblrLimit,mod_TumblrFollow,mod_TumblrID,mod_TumblrTitle">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('tumblr');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_TumblrID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_TUMBLR_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_TUMBLR_DESC" />
+				<field name="mod_TumblrTitle" type="text" default="Tumblr"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_TumblrFollow" type="text" default="Follow"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_TumblrLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_TumblrOder" type="list" default="14"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_tumblrSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showDelicious" type="juxradio" class="btn-group"
+					default="0" linked_element="delicious"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_DELICIOUS_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_DELICIOUS_DESC">
+					<option value="1" onclick="showDefaultTabIndex('delicious');"
+						sub_fields="mod_DeliciousID,mod_deliciousSpacer,mod_DeliciousOder,mod_DeliciousTitle,mod_DeliciousFollow,mod_DeliciousLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('delicious');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_DeliciousID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_DELICIOUS_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_DELICIOUS_DESC" />
+				<field name="mod_DeliciousTitle" type="text" default="Delicious"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_DeliciousFollow" type="text" default="Follow on Delicious"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_DeliciousLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_DeliciousOder" type="list" default="15"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_deliciousSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showDigg" type="juxradio" class="btn-group"
+					default="0" linked_element="digg" label="MOD_SOCIAL_MEDIA_TABS_SHOW_DIGG_LABEL"
+					description="MOD_SOCIAL_MEDIA_TABS_SHOW_DIGG_DESC">
+					<option value="1" onclick="showDefaultTabIndex('digg');"
+						sub_fields="mod_DiggID,mod_DiggOder,mod_DiggTitle,mod_DiggLimit,mod_diggSpacer">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('digg');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_DiggID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_DIGG_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_DIGG_ID_DESC" />
+				<field name="mod_DiggTitle" type="text" default="Latest Diggs"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_DiggLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_DiggOder" type="list" default="16"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_diggSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showLastfm" type="juxradio" class="btn-group"
+					default="0" linked_element="lastfm"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_LASTFM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_LASTFM_DESC">
+					<option value="1" onclick="showDefaultTabIndex('lastfm');"
+						sub_fields="mod_LastfmID,mod_lastfmSpacer,mod_LastfmOder,mod_LastfmTitle,mod_LastfmLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('lastfm');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_LastfmID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_LASTFM_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_LASTFM_DESC" />
+				<field name="mod_LastfmTitle" type="text" default="Last.fm"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_LastfmLimit" type="text" default="20"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_LastfmOder" type="list" default="17"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_lastfmSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showDribbble" type="juxradio" class="btn-group"
+					default="0" linked_element="dribbble"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_DRIBBBLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_DRIBBBLE_DESC">
+					<option value="1" onclick="showDefaultTabIndex('dribbble');"
+						sub_fields="mod_DribbbleID,mod_dribbbleSpacer,mod_DribbbleOder,mod_DribbbleLimit,mod_DribbbleFollow,mod_DribbbleTitle">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('dribbble');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_DribbbleID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_DRIBBBLE_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_DRIBBBLE_DESC" />
+				<field name="mod_DribbbleTitle" type="text" default="Dribbble"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_DribbbleFollow" type="text" default="Follow on Dribbble"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_DribbbleLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_DribbbleOder" type="list" default="18"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+				<field name="mod_dribbbleSpacer" type="juxspacer" hr="true" />
+				<field name="mod_showDeviantART" type="juxradio" class="btn-group"
+					default="0" linked_element="deviantart"
+					label="MOD_SOCIAL_MEDIA_TABS_SHOW_DEVIANTART_LABEL" description="MOD_SOCIAL_MEDIA_TABS_SHOW_DEVIANTART_DESC">
+					<option value="1" onclick="showDefaultTabIndex('deviantart');"
+						sub_fields="mod_DeviantARTID,mod_DeviantARTOder,mod_DeviantARTTitle,mod_DeviantARTFollow,mod_DeviantARTLimit">JSHOW
+		    </option>
+					<option onclick="hideDefaultTabIndex('deviantart');" value="0">JHIDE
+					</option>
+				</field>
+				<field name="mod_DeviantARTID" type="text"
+					label="MOD_SOCIAL_MEDIA_TABS_DEVIANTARTI_ID_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ID_DEVIANTART_DESC" />
+				<field name="mod_DeviantARTTitle" type="text" default="deviantART"
+					label="MOD_SOCIAL_MEDIA_TABS_TITLE_LABEL" description="MOD_SOCIAL_MEDIA_TABS_TITLE_DESC" />
+				<field name="mod_DeviantARTFollow" type="text" default="Follow"
+					label="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_LABEL" description="MOD_SOCIAL_MEDIA_TABS_FOLLOW_BUTTOM_DESC" />
+				<field name="mod_DeviantARTLimit" type="text" default="10"
+					label="MOD_SOCIAL_MEDIA_TABS_LIMIT_LABEL" description="MOD_SOCIAL_MEDIA_TABS_LIMIT_DESC" />
+				<field name="mod_DeviantARTOder" type="list" default="19"
+					label="MOD_SOCIAL_MEDIA_TABS_ODER_LABEL" description="MOD_SOCIAL_MEDIA_TABS_ODER_SOCIAL_DESC">
+					<option value="1">J1</option>
+					<option value="2">J2</option>
+					<option value="3">J3</option>
+					<option value="4">J4</option>
+					<option value="5">J5</option>
+					<option value="6">J6</option>
+					<option value="7">J7</option>
+					<option value="8">J8</option>
+					<option value="9">J9</option>
+					<option value="10">J10</option>
+					<option value="11">J11</option>
+					<option value="12">J12</option>
+					<option value="13">J13</option>
+					<option value="14">J14</option>
+					<option value="15">J15</option>
+					<option value="16">J16</option>
+					<option value="17">J17</option>
+					<option value="18">J18</option>
+					<option value="19">J19</option>
+				</field>
+			</fieldset>
+			<fieldset name="advanced">
+				<field name="moduleclass_sfx" type="textarea" rows="3"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL" description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+			</fieldset>
+		</fields>
+	</config>
+</extension>

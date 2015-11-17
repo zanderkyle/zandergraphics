@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Tags
  *
  * @package         NoNumber Framework
- * @version         15.10.20382
+ * @version         15.11.2151
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -114,7 +114,7 @@ class NNTags
 
 	public static function getRegexSurroundingTagPre($elements = array('p', 'span'))
 	{
-		return '(?:<(?:' . implode('|', $elements) . ')(?: [^>]*)?>\s*(?:(?:</span>|<br ?/?>)\s*)*){0,3}';
+		return '(?:<(?:' . implode('|', $elements) . ')(?: [^>]*)?>\s*(?:<br ?/?>\s*)*){0,3}';
 	}
 
 	public static function getRegexSurroundingTagPost($elements = array('p', 'span'))
@@ -165,15 +165,25 @@ class NNTags
 		{
 			$string = str_replace($match['0'], $match['2'], $string);
 		}
-		// Remove nested paragraphs
-		while (preg_match('#(<p(?: [^>]*)?>)(\s*' . $breaks . ')(<p(?: [^>]*)?>)#s', $string, $match))
-		{
-			$p_tags = $match['1'] . $match['3'];
-			NNText::combinePTags($p_tags);
 
-			$string = str_replace($match['0'], $p_tags . $match['2'], $string);
+		// Remove paragraphs around block elements
+		$block_elements = array(
+				'p', 'div',
+				'table', 'tr', 'td', 'thead', 'tfoot',
+				'h[1-6]'
+		);
+		$block_elements = '(' . implode('|', $block_elements) . ')';
+		while (preg_match('#(<p(?: [^>]*)?>)(\s*' . $breaks . ')(<' . $block_elements . '(?: [^>]*)?>)#s', $string, $match))
+		{
+			if($match['4'] == 'p')
+			{
+				$match['3'] = $match['1'] . $match['3'];
+				NNText::combinePTags($match['3']);
+			}
+
+			$string = str_replace($match['0'], $match['2'] . $match['3'], $string);
 		}
-		while (preg_match('#</p>(\s*' . $breaks . '</p>)#s', $string, $match))
+		while (preg_match('#(</' . $block_elements . '>\s*' . $breaks . ')</p>#s', $string, $match))
 		{
 			$string = str_replace($match['0'], $match['1'], $string);
 		}
@@ -263,7 +273,7 @@ class NNTags
 
 		if (!empty($start_tag)
 			&& preg_match(
-				'#^(?<pre>.*?)(?<tag>' . $tag_start . 'div(?: .*?)?' . $tag_end . ')(?<post>.*)$#s',
+				'#^(?P<pre>.*?)(?P<tag>' . $tag_start . 'div(?: .*?)?' . $tag_end . ')(?P<post>.*)$#s',
 				$start_tag,
 				$match
 			)
@@ -274,7 +284,7 @@ class NNTags
 
 		if (!empty($end_tag)
 			&& preg_match(
-				'#^(?<pre>.*?)(?<tag>' . $tag_start . '/div' . $tag_end . ')(?<post>.*)$#s',
+				'#^(?P<pre>.*?)(?P<tag>' . $tag_start . '/div' . $tag_end . ')(?P<post>.*)$#s',
 				$end_tag,
 				$match
 			)

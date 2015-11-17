@@ -3,7 +3,7 @@
  * List Controller
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -34,9 +34,9 @@ class ReReplacerControllerList extends JControllerAdmin
 		JSession::checkToken() or jexit(JText::_('JINVALID_TOKEN'));
 
 		// Initialise variables.
-		$ids = JFactory::getApplication()->input->get('cid', array(), 'array');
-		$name = JFactory::getApplication()->input->getString('name');
-		$search = JFactory::getApplication()->input->getString('search');
+		$ids     = JFactory::getApplication()->input->get('cid', array(), 'array');
+		$name    = JFactory::getApplication()->input->getString('name');
+		$search  = JFactory::getApplication()->input->getString('search');
 		$replace = JFactory::getApplication()->input->getString('replace');
 
 		if (empty($ids))
@@ -87,7 +87,7 @@ class ReReplacerControllerList extends JControllerAdmin
 			if (isset($file['name']))
 			{
 				// Get the model.
-				$model = $this->getModel('List');
+				$model      = $this->getModel('List');
 				$model_item = $this->getModel('Item');
 				$model->import($model_item);
 			}
@@ -127,7 +127,7 @@ class ReReplacerControllerList extends JControllerAdmin
 		$ids = JFactory::getApplication()->input->get('cid', array(), 'array');
 
 		// Get the model.
-		$model = $this->getModel('List');
+		$model      = $this->getModel('List');
 		$model_item = $this->getModel('Item');
 
 		$model->copy($ids, $model_item);
@@ -142,7 +142,7 @@ class ReReplacerControllerList extends JControllerAdmin
 	 */
 	public function saveOrderAjax()
 	{
-		$pks = $this->input->post->get('cid', array(), 'array');
+		$pks   = $this->input->post->get('cid', array(), 'array');
 		$order = $this->input->post->get('order', array(), 'array');
 
 		// Sanitize the input

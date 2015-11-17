@@ -158,11 +158,29 @@ $db = JFactory::getDBO();
 	</div>
 <?php endif; ?>
 
-<?php if ($this->needsdlid && $this->isPro): ?>
-	<div class="alert alert-error">
-		<a class="close" data-dismiss="alert" href="#">×</a>
-		<?php echo JText::sprintf('ATOOLS_LBL_CP_NEEDSDLID', 'https://www.akeebabackup.com/instructions/1436-admin-tools-download-id.html'); ?>
-	</div>
+<?php if($this->needsdlid): ?>
+    <div class="alert alert-success">
+        <h3>
+            <?php echo JText::_('COM_ADMINTOOLS_CPANEL_MSG_MUSTENTERDLID') ?>
+        </h3>
+        <p>
+            <?php echo JText::sprintf('COM_ADMINTOOLS_LBL_CPANEL_NEEDSDLID','https://www.akeebabackup.com/instructions/1436-admin-tools-download-id.html'); ?>
+        </p>
+        <form name="dlidform" action="index.php" method="post" class="form-inline">
+            <input type="hidden" name="option" value="com_admintools" />
+            <input type="hidden" name="view" value="cpanel" />
+            <input type="hidden" name="task" value="applydlid" />
+            <input type="hidden" name="<?php echo JFactory::getSession()->getFormToken()?>" value="1" />
+    <span>
+        <?php echo JText::_('COM_ADMINTOOLS_CPANEL_MSG_PASTEDLID') ?>
+    </span>
+            <input type="text" name="dlid" placeholder="<?php echo JText::_('ATOOLS_LBL_CONFIG_DOWNLOADID')?>" class="input-xlarge">
+            <button type="submit" class="btn btn-success">
+                <span class="icon icon-checkbox"></span>
+                <?php echo JText::_('COM_ADMINTOOLS_CPANEL_MSG_APPLYDLID') ?>
+            </button>
+        </form>
+    </div>
 <?php endif; ?>
 
 <div id="updateNotice"></div>
@@ -251,6 +269,7 @@ $db = JFactory::getDBO();
 
 <h2><?php echo JText::_('ATOOLS_LBL_CP_SECURITY') ?></h2>
 
+	<?php if (ADMINTOOLS_PRO): ?>
 	<div style="float:<?php echo ($lang->isRTL()) ? 'right' : 'left'; ?>;">
 		<div class="icon">
 			<a href="index.php?option=<?php echo $option ?>&view=quickstart">
@@ -263,6 +282,7 @@ $db = JFactory::getDBO();
 			</a>
 		</div>
 	</div>
+	<?php endif; ?>
 
 <?php if ($this->htMakerSupported): ?>
 	<div style="float:<?php echo ($lang->isRTL()) ? 'right' : 'left'; ?>;">
@@ -624,6 +644,7 @@ if($this->statsIframe)
 	{
 		$(document).ready(function ()
 		{
+            <?php if (!$this->needsdlid): ?>
 			$.ajax('index.php?option=com_admintools&view=cpanel&task=updateinfo&tmpl=component', {
 				success: function (msg, textStatus, jqXHR)
 				{
@@ -637,6 +658,7 @@ if($this->statsIframe)
 					}
 				}
 			});
+            <?php endif; ?>
 
 			$.ajax('index.php?option=com_admintools&view=cpanel&task=fastcheck&tmpl=component', {
 				success: function (msg, textStatus, jqXHR)

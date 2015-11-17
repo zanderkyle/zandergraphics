@@ -142,11 +142,6 @@ else
 		<script src="<?php echo JUri::root(true); ?>/media/jui/js/html5.js"></script>
 	<![endif]-->
 		
-		<script type="text/javaScript">
-		window.addEvent("domready", function() {
-		    alert("Embedded block of JS here");
-		});
-		</script>
 </head>
 
 <body class="site <?php echo $option
@@ -187,13 +182,71 @@ else
 				</nav>
 			<?php endif; ?>
 			
-			<?php $app = JFactory::getApplication();
-			$menu = $app->getMenu();
-			if ($menu->getActive() == $menu->getDefault()) { ?>
+			<?php 
+			$current_url = JURI::current();
+			$base_url = JURI::base();
+			//var_dump($test); echo '<br>'; var_dump($test2);
+			if ($base_url == $current_url) { 
+				
+			$mod1 = "display1a";
+			$mod2 = "display1b";
+			$mod3 = "display1c";
+			$mod4 = "display1d";
+			
+			if ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3) && $this->countModules($mod4)) : 
+				$modcount[1] = 4;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2) && $this->countModules($mod3)) : 
+				$modcount[1] = 3;
+			elseif ($this->countModules($mod1) && $this->countModules($mod2)) : 
+				$modcount[1] = 2;
+			elseif ($this->countModules($mod1)) : 
+				$modcount[1] = 1;
+			endif;	
+				
+			?>
 			
 			<div id="front-main">
-				<div id="front-main-content">
-					<jdoc:include type="modules" name="front-main" style="xhtml" />
+				<div id="display-main-content">
+					<jdoc:include type="modules" name="display-main" style="xhtml" />
+				</div>
+				<div class="display1-<?= $modcount[1] ?>">
+					<div id="display">
+						<?php if ($this->countModules('display1a')) { ?>
+							<div id="display1a" class="displaybox">
+								<div id="mod-container">
+									<jdoc:include type="modules" name="display1a" style="none" />
+								</div>
+							</div>
+						<?php } ?>
+						<?php if ($this->countModules('display1b')) { ?>
+							<div id="display1b" class="displaybox">
+								<div id="mod-container">
+									<jdoc:include type="modules" name="display1b" style="none" />
+								</div>
+							</div>
+						<?php } ?>
+						<?php if ($this->countModules('display1c')) { ?>
+							<div id="display1c" class="displaybox">
+								<div id="mod-container">
+									<jdoc:include type="modules" name="display1c" style="none" />
+								</div>
+							</div>
+						<?php } ?>
+						<?php if ($this->countModules('display1d')) { ?>
+							<div id="display1d" class="displaybox">
+								<div id="mod-container">
+									<jdoc:include type="modules" name="display1d" style="none" />
+								</div>
+							</div>
+						<?php } ?>
+						<?php if ($this->countModules('display2')) { ?>
+							<div id="display2" class="displaybox">
+								<div id="mod-container">
+									<jdoc:include type="modules" name="display2" style="none" />
+								</div>
+							</div>
+						<?php } ?>
+					</div>
 				</div>
 			</div>
 			
@@ -203,9 +256,7 @@ else
 		
 		<?php 
 		
-		$app = JFactory::getApplication();
-		$menu = $app->getMenu();
-		if ($menu->getActive() == $menu->getDefault()) { 
+		if ($base_url == $current_url) { 
 		
 		$pos = array('1','2','3','4');
 		
@@ -363,9 +414,8 @@ else
 		<?php } ?>
 		
 		<?php
-		$app = JFactory::getApplication();
-		$menu = $app->getMenu();
-		if ($menu->getActive() != $menu->getDefault()) { ?>
+		
+		if ($base_url != $current_url) { ?>
 
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> main-content">
 			
@@ -569,7 +619,7 @@ else
 	
 	?>
 	<footer class="footer" role="contentinfo">
-		<div id="footer-1" class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?>">
+		<div id="footer-1" class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> footer1-<?= $modcount ?>">
 			<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> footer1 ?>">
 				<div id="footer">
 					<?php if ($this->countModules('footer1a')) { ?>
@@ -620,6 +670,7 @@ else
 			</p>
 		</div>
 		</div>
+		<jdoc:include type="modules" name="social-slider" style="none" />
 	</footer>
 	<jdoc:include type="modules" name="debug" style="none" />
 </body>

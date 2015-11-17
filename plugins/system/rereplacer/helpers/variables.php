@@ -3,7 +3,7 @@
  * Plugin Helper File: Variables
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -149,7 +149,7 @@ class PlgSystemReReplacerHelperVariables
 		}
 
 		$replace = rand((int) $range['1'], (int) $range['2']);
-		$string = NNText::strReplaceOnce($match['0'], $replace, $string);
+		$string  = NNText::strReplaceOnce($match['0'], $replace, $string);
 	}
 
 	private function replaceVariableMatchEscape(&$string, $match)
@@ -241,7 +241,7 @@ class PlgSystemReReplacerHelperVariables
 			return;
 		}
 
-		$db = JFactory::getDbo();
+		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select('c.*')
 			->from('#__' . $this->helpers->getParams()->contact_table . ' as c')
@@ -251,7 +251,7 @@ class PlgSystemReReplacerHelperVariables
 
 		if (!$this->contact)
 		{
-			$this->contact = new stdClass;
+			$this->contact    = new stdClass;
 			$this->contact->x = '';
 
 			return;
@@ -267,7 +267,7 @@ class PlgSystemReReplacerHelperVariables
 			return;
 		}
 
-		$db = JFactory::getDbo();
+		$db    = JFactory::getDbo();
 		$query = $db->getQuery(true)
 			->select('p.profile_key, p.profile_value')
 			->from('#__user_profiles as p')
@@ -275,7 +275,7 @@ class PlgSystemReReplacerHelperVariables
 		$db->setQuery($query);
 		$rows = $db->loadObjectList();
 
-		$profile = new stdClass;
+		$profile    = new stdClass;
 		$profile->x = '';
 		foreach ($rows as $row)
 		{

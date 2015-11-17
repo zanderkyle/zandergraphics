@@ -3,7 +3,7 @@
  * Item View Template: Edit
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -18,8 +18,8 @@ JHtml::_('behavior.formvalidator');
 JHtml::_('formbehavior.chosen', 'select');
 require_once JPATH_PLUGINS . '/system/nnframework/helpers/functions.php';
 
-$user = JFactory::getUser();
-$db = JFactory::getDbo();
+$user  = JFactory::getUser();
+$db    = JFactory::getDbo();
 $query = $db->getQuery(true)
 	->select('c.misc')
 	->from('#__' . $this->config->contact_table . ' as c')
@@ -32,7 +32,7 @@ NNFrameworkFunctions::addScriptVersion(JUri::root(true) . '/media/nnframework/js
 ?>
 
 <form action="<?php echo JRoute::_('index.php?option=com_rereplacer&id=' . ( int ) $this->item->id); ?>" method="post"
-	name="adminForm" id="item-form" class="form-validate form-horizontal">
+      name="adminForm" id="item-form" class="form-validate form-horizontal">
 	<div class="row-fluid">
 		<div class="span10">
 			<ul class="nav nav-tabs">
@@ -66,157 +66,157 @@ NNFrameworkFunctions::addScriptVersion(JUri::root(true) . '/media/nnframework/js
 					<legend><?php echo JText::_('RR_DYNAMIC_TAGS'); ?></legend>
 					<?php
 					$yes = '<span class="icon-save"></span> ' . JText::_('JYES');
-					$no = '<span class="icon-cancel"></span> ' . JText::_('JNO');
+					$no  = '<span class="icon-cancel"></span> ' . JText::_('JNO');
 					?>
 					<p><?php echo JText::_('RR_DYNAMIC_TAGS_DESC'); ?></p>
 
 					<table class="table table-striped">
 						<thead>
-							<tr>
-								<th><?php echo JText::_('RR_SYNTAX'); ?></th>
-								<th class="left">
-									<span><?php echo JText::_('JGLOBAL_DESCRIPTION'); ?></span></th>
-								<th class="left">
-									<span><?php echo JText::_('RR_INPUT_EXAMPLE'); ?></span></th>
-								<th class="left">
-									<span><?php echo JText::_('RR_OUTPUT_EXAMPLE'); ?></span></th>
-								<th>
-									<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_NORMAL'); ?>"><?php echo JText::_('NN_NORMAL'); ?></span>
-								</th>
-								<th>
-									<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_REGEX'); ?>"><?php echo JText::_('RR_REGEX'); ?></span>
-								</th>
-								<th>
-									<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_SEARCH'); ?>"><?php echo JText::_('RR_SEARCH'); ?></span>
-								</th>
-								<th>
-									<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_REPLACE'); ?>"><?php echo JText::_('RR_REPLACE'); ?></span>
-								</th>
-							</tr>
+						<tr>
+							<th><?php echo JText::_('RR_SYNTAX'); ?></th>
+							<th class="left">
+								<span><?php echo JText::_('JGLOBAL_DESCRIPTION'); ?></span></th>
+							<th class="left">
+								<span><?php echo JText::_('RR_INPUT_EXAMPLE'); ?></span></th>
+							<th class="left">
+								<span><?php echo JText::_('RR_OUTPUT_EXAMPLE'); ?></span></th>
+							<th>
+								<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_NORMAL'); ?>"><?php echo JText::_('NN_NORMAL'); ?></span>
+							</th>
+							<th>
+								<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_REGEX'); ?>"><?php echo JText::_('RR_REGEX'); ?></span>
+							</th>
+							<th>
+								<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_SEARCH'); ?>"><?php echo JText::_('RR_SEARCH'); ?></span>
+							</th>
+							<th>
+								<span rel="tooltip" title="<?php echo JText::_('RR_USE_IN_REPLACE'); ?>"><?php echo JText::_('RR_REPLACE'); ?></span>
+							</th>
+						</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td style="font-family:monospace">[[comma]]</td>
-								<td><?php echo JText::_('RR_USE_INSTEAD_OF_A_COMMA'); ?></td>
-								<td style="font-family:monospace">[[comma]]</td>
-								<td style="font-family:monospace">,</td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[space]]</td>
-								<td><?php echo JText::_('RR_USE_FOR_LEADING_OR_TRAILING_SPACES'); ?></td>
-								<td style="font-family:monospace">[[space]]</td>
-								<td></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[user:id]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_ID'); ?></td>
-								<td style="font-family:monospace">[[user:id]]</td>
-								<td><?php echo $user->id; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[user:username]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_USERNAME'); ?></td>
-								<td style="font-family:monospace">[[user:username]]</td>
-								<td><?php echo $user->username; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[user:name]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_NAME'); ?></td>
-								<td style="font-family:monospace">[[user:name]]</td>
-								<td><?php echo $user->name; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[user:&#8230;]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_OTHER'); ?></td>
-								<td style="font-family:monospace">[[user:misc]]</td>
-								<td><?php echo isset($contact->misc) ? $contact->misc : ''; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[date:&#8230;]]</td>
-								<td><?php echo JText::sprintf('RR_DYNAMIC_TAG_DATE', '<a rel="{handler: \'iframe\', size:{x:window.getSize().x-100, y: window.getSize().y-100}}" href="http://www.php.net/manual/function.strftime.php" class="modal">', '</a>'); ?></td>
-								<td nowrap="nowrap" style="font-family:monospace">[[date:%A, %d %B
-									%Y]]
-								</td>
-								<td><?php echo strftime('%A, %d %B %Y'); ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[random:&#8230;-&#8230;]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_RANDOM'); ?></td>
-								<td style="font-family:monospace">[[random:0-100]]</td>
-								<td><?php echo rand(0, 100); ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[counter]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_COUNTER'); ?></td>
-								<td style="font-family:monospace">[[counter]]</td>
-								<td>1</td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[escape]]&#8230;[[/escape]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_ESCAPE'); ?></td>
-								<td style="font-family:monospace">[[escape]]\1[[/escape]]</td>
-								<td><?php echo addslashes(JText::_('RR_ITS_A_STRING')); ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[uppercase]]&#8230;[[/uppercase]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_UPPERCASE'); ?></td>
-								<td style="font-family:monospace">[[uppercase]]\1[[/uppercase]]</td>
-								<td><?php echo strtoupper(JText::_('RR_ITS_A_STRING')); ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
-							<tr>
-								<td style="font-family:monospace">[[lowercase]]&#8230;[[/lowercase]]</td>
-								<td><?php echo JText::_('RR_DYNAMIC_TAG_LOWERCASE'); ?></td>
-								<td style="font-family:monospace">[[lowercase]]\1[[/lowercase]]</td>
-								<td><?php echo strtolower(JText::_('RR_ITS_A_STRING')); ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-								<td align="center"><?php echo $no; ?></td>
-								<td align="center"><?php echo $yes; ?></td>
-							</tr>
+						<tr>
+							<td style="font-family:monospace">[[comma]]</td>
+							<td><?php echo JText::_('RR_USE_INSTEAD_OF_A_COMMA'); ?></td>
+							<td style="font-family:monospace">[[comma]]</td>
+							<td style="font-family:monospace">,</td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[space]]</td>
+							<td><?php echo JText::_('RR_USE_FOR_LEADING_OR_TRAILING_SPACES'); ?></td>
+							<td style="font-family:monospace">[[space]]</td>
+							<td></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[user:id]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_ID'); ?></td>
+							<td style="font-family:monospace">[[user:id]]</td>
+							<td><?php echo $user->id; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[user:username]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_USERNAME'); ?></td>
+							<td style="font-family:monospace">[[user:username]]</td>
+							<td><?php echo $user->username; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[user:name]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_NAME'); ?></td>
+							<td style="font-family:monospace">[[user:name]]</td>
+							<td><?php echo $user->name; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[user:&#8230;]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_USER_OTHER'); ?></td>
+							<td style="font-family:monospace">[[user:misc]]</td>
+							<td><?php echo isset($contact->misc) ? $contact->misc : ''; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[date:&#8230;]]</td>
+							<td><?php echo JText::sprintf('RR_DYNAMIC_TAG_DATE', '<a rel="{handler: \'iframe\', size:{x:window.getSize().x-100, y: window.getSize().y-100}}" href="http://www.php.net/manual/function.strftime.php" class="modal">', '</a>'); ?></td>
+							<td nowrap="nowrap" style="font-family:monospace">[[date:%A, %d %B
+								%Y]]
+							</td>
+							<td><?php echo strftime('%A, %d %B %Y'); ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[random:&#8230;-&#8230;]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_RANDOM'); ?></td>
+							<td style="font-family:monospace">[[random:0-100]]</td>
+							<td><?php echo rand(0, 100); ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[counter]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_COUNTER'); ?></td>
+							<td style="font-family:monospace">[[counter]]</td>
+							<td>1</td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[escape]]&#8230;[[/escape]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_ESCAPE'); ?></td>
+							<td style="font-family:monospace">[[escape]]\1[[/escape]]</td>
+							<td><?php echo addslashes(JText::_('RR_ITS_A_STRING')); ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[uppercase]]&#8230;[[/uppercase]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_UPPERCASE'); ?></td>
+							<td style="font-family:monospace">[[uppercase]]\1[[/uppercase]]</td>
+							<td><?php echo strtoupper(JText::_('RR_ITS_A_STRING')); ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
+						<tr>
+							<td style="font-family:monospace">[[lowercase]]&#8230;[[/lowercase]]</td>
+							<td><?php echo JText::_('RR_DYNAMIC_TAG_LOWERCASE'); ?></td>
+							<td style="font-family:monospace">[[lowercase]]\1[[/lowercase]]</td>
+							<td><?php echo strtolower(JText::_('RR_ITS_A_STRING')); ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+							<td align="center"><?php echo $no; ?></td>
+							<td align="center"><?php echo $yes; ?></td>
+						</tr>
 						</tbody>
 					</table>
 

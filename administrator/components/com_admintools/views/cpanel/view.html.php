@@ -14,7 +14,14 @@ JLoader::import('joomla.application.component.view');
 
 class AdmintoolsViewCpanel extends F0FViewHtml
 {
-	protected function onBrowse($tpl = null)
+    /**
+     * Do I have to ask the user to provide a Download ID?
+     *
+     * @var   bool
+     */
+    public $needsdlid = false;
+
+    protected function onBrowse($tpl = null)
 	{
 		// Is this the Professional release?
 		JLoader::import('joomla.filesystem.file');
@@ -108,6 +115,8 @@ class AdmintoolsViewCpanel extends F0FViewHtml
 		// Post-installation messages information
 		$this->hasPostInstallationMessages = $model->hasPostInstallMessages();
 		$this->extension_id = $model->getState('extension_id', 0, 'int');
+
+        $this->needsdlid = $model->needsDownloadID();
 
 		return true;
 	}

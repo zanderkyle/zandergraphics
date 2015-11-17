@@ -1,0 +1,1117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>MOD_LATESTNEWSENHANCED</name>
+	<author>Olivier Buisard</author>
+	<creationDate>2015-10-15</creationDate>
+	<copyright>Copyright (C) 2011 Simplify Your Web. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later</license>
+	<authorEmail>olivier.buisard@simplifyyourweb.com</authorEmail>
+	<authorUrl>www.simplifyyourweb.com</authorUrl>
+	<version>2.0.0</version>
+	<description>MOD_LATESTNEWSENHANCED_XML_DESCRIPTION</description>
+	<scriptfile>installer.php</scriptfile>
+	<files>
+		<filename module="mod_latestnewsenhanced">mod_latestnewsenhanced.php</filename>
+		<filename>index.html</filename>
+		<filename>license.txt</filename>
+		<filename>stylemaster.css.php</filename>
+		<filename>stylemaster.js.php</filename>
+		<filename>animationmaster.js.php</filename>
+		<folder>animations</folder>
+		<folder>fields</folder>
+		<folder>helpers</folder>
+		<folder>images</folder>
+		<folder>js</folder>
+		<folder>styles</folder>
+		<folder>tmpl</folder>
+	</files>
+	<languages>
+		<language tag="en-GB">language/en-GB/en-GB.mod_latestnewsenhanced.ini</language>
+		<language tag="en-GB">language/en-GB/en-GB.mod_latestnewsenhanced.sys.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_latestnewsenhanced.ini</language>
+		<language tag="fr-FR">language/fr-FR/fr-FR.mod_latestnewsenhanced.sys.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_latestnewsenhanced.ini</language>
+		<language tag="de-DE">language/de-DE/de-DE.mod_latestnewsenhanced.sys.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_latestnewsenhanced.ini</language>
+		<language tag="es-ES">language/es-ES/es-ES.mod_latestnewsenhanced.sys.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.mod_latestnewsenhanced.ini</language>
+		<language tag="sl-SI">language/sl-SI/sl-SI.mod_latestnewsenhanced.sys.ini</language>
+	</languages>
+	<config>
+		<fields name="params" addfieldpath="/modules/mod_latestnewsenhanced/fields">
+			
+			<fieldset name="basic" label="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_FIELDSET_LABEL" addfieldpath="/libraries/syw/fields">
+				
+				<field type="sywlibtest" minversion="1.2.4" downloadlink="http://www.simplifyyourweb.com/index.php/downloads/category/23-libraries" />
+			
+				<field type="extensionlink" linktype="onlinedoc" link="http://www.simplifyyourweb.com/documentation/latest-news" />
+				<field type="extensionlink" linktype="forum" link="http://www.simplifyyourweb.com/index.php/forum/16-latest-news-enhanced" /> 
+				<field type="extensionlink" linktype="demo" link="http://demo3.simplifyyourweb.com/latest-news-enhanced" />
+				<field type="extensionlink" linktype="review" link="http://extensions.joomla.org/extensions/extension/news-display/articles-display/latest-news-enhanced" />
+				<field type="extensionlink" linktype="donate" link="http://www.simplifyyourweb.com/index.php/downloads" />			
+				<field type="extensionlink" linktype="upgrade" link="http://www.simplifyyourweb.com/index.php/downloads/category/18-latest-news-enhanced-extended" />
+			</fieldset>
+			
+			<fieldset name="basic_custom" label="MOD_LATESTNEWSENHANCEDEXTENDED_SELECTION_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_SELECTION_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">
+							
+				<field name="datasource" type="datasourceselect" default="articles"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DATASOURCE_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DATASOURCE_DESC">	
+					<option value="articles">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ARTICLES</option>
+				</field>
+				 
+				<field name="related" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RELATEDARTICLES_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_RELATEDARTICLES_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+
+<!-- 				<field type="spacer" name="module_spacer" hr="true" /> -->
+				
+				<field name="catid" type="category" extension="com_content" multiple="true" size="5" default="all" showon="datasource:articles" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATEGORY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATEGORY_DESC">
+					<option value="auto">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AUTO</option>
+					<option value="all">JOPTION_ALL_CATEGORIES</option>
+				</field>
+				
+				<field name="k2catid" type="k2category" multiple="true" size="5" default="all" showon="datasource:k2" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_K2CATEGORY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_K2CATEGORY_DESC">
+					<option value="auto">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AUTO</option>
+					<option value="all">JOPTION_ALL_CATEGORIES</option>
+				</field>
+							
+				<field name="includesubcategories" type="list" default="no" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INCLUDESUBCATEGORIES_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INCLUDESUBCATEGORIES_DESC">					
+					<option value="no">JNO</option>
+					<option value="onelevel">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ONELEVEL</option>
+					<option value="all">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALLLEVELS</option>
+				</field>
+				
+				<field name="tags" type="tags" multiple="true" size="5" default="" showon="datasource:articles" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TAGS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TAGS_DESC">
+					<option value="all">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALLTAGS</option>
+				</field>
+							
+				<field name="k2tags" type="k2tags" multiple="true" size="5" default="" showon="datasource:k2" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_K2TAGS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_K2TAGS_DESC">
+					<option value="all">JALL</option>
+				</field>	
+				
+				<field name="ex" type="text" default="" filter="string" translateHint="false" hint="20,34,47" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_EXCLUDE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_EXCLUDE_DESC" />
+					
+				<field name="in" type="text" default="" filter="string" translateHint="false" hint="20,34,47"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INCLUDE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INCLUDE_DESC" />					
+					
+				<field name="keys" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_METAKEYS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_METAKEYS_DESC" />
+					
+				<field name="show_f" type="list" default=""
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FEATURED_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FEATURED_DESC">
+					<option value="0">JHIDE</option>
+					<option value="">JSHOW</option>
+					<option value="2">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHOWFIRST</option>
+					<option value="1">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ONLYSHOWFEATURED</option>
+				</field>	
+					
+				<field name="cat_order" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATORDER_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATORDER_DESC">	
+					<option value="">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>				
+					<option value="o_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ORDERASC</option>
+					<option value="o_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ORDERDESC</option>
+				</field>					
+							
+				<field name="order" type="list" default="p_dsc" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ORDERING_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ORDERING_DESC">
+					<option value="o_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ORDERDESC</option>
+					<option value="o_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ORDERASC</option>
+					<option value="c_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CREATEDDESC</option>
+					<option value="c_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CREATEDASC</option>
+					<option value="m_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MODIFIEDDESC</option>
+					<option value="m_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MODIFIEDASC</option>
+					<option value="p_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PUBLISHEDDESC</option>
+					<option value="p_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PUBLISHEDASC</option>
+					<option value="f_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FINISHINGDESC</option>
+					<option value="f_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FINISHINGASC</option>
+					<option value="mc_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TOUCHEDDESC</option>
+					<option value="mc_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TOUCHEDASC</option>					
+					<option value="random">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_RANDOM</option>
+					<option value="hit">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_HIT</option>
+					<option value="title_dsc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TITLEDESC</option>
+					<option value="title_asc">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TITLEASC</option>
+			  	</field>
+			  	
+				<field name="count" type="sywverbosetext" default="" filter="string" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COUNT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COUNT_DESC" />
+					
+				<field name="startat" type="sywverbosetext" default="1" filter="integer" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STARTAT_DESC" />
+				
+				<field name="user_id" type="list" default="all" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORS_DESC">
+					<option value="all">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ANYONE</option>
+					<option value="by_me">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BYME</option>
+					<option value="not_me">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NOTBYME</option>
+			  	</field>						
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_DATE_LABEL" />
+								
+				<field name="post_d" type="list" default="published" 
+		           	label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSTDATE_LABEL" 
+		           	description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSTDATE_DESC">
+					<option value="created">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CREATED</option>
+					<option value="published">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PUBLISHED</option>
+					<option value="modified">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MODIFIED</option>
+					<option value="finished">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FINISHED</option>
+					<option value="fin_pen">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FINISHEDWITHPENDING</option>
+					<option value="pending">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PENDING</option>
+				</field>
+				
+				<field name="when_no_date" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WHENNODATE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WHENNODATE_DESC">
+					<option value="0">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DONOTSHOW</option>
+					<option value="1">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHOWBEFORE</option>
+					<option value="2">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHOWAFTER</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_DATERANGE_LABEL" />	
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_ONLYAVAILABLEINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_DATERANGE_LABEL" />
+			
+			</fieldset>		
+					
+			<fieldset name="configuration" label="MOD_LATESTNEWSENHANCEDEXTENDED_CONFIGURATION_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_CONFIGURATION_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">		
+					
+				<field name="layout" type="modulelayout"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_CONFIGURATION_FIELDSET_LABEL"
+					description="JFIELD_ALT_MODULE_LAYOUT_DESC" />
+								
+				<field name="nodatamessage" type="text" default="" filter="string" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NODATAMESSAGE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NODATAMESSAGE_DESC" />					
+								
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_ALLITEMS_LABEL" />
+				
+				<field name="align" type="radio" default="v" class="btn-group"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ALIGNMENT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ALIGNMENT_DESC">
+					<option value="v">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_VERTICAL</option>
+					<option value="h">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_HORIZONTAL</option>
+				</field>
+				
+				<field name="items_w" type="sywverbosetext" default="" filter="string" size="4" unit="px" icon="SYWicon-swap-horiz" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMS_WIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMS_WIDTH_DESC" />				
+								
+				<field name="items_h" type="sywverbosetext" default="" filter="string" size="4" unit="px" icon="SYWicon-swap-vert" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMS_HEIGHT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMS_HEIGHT_DESC" />	
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_STYLEDOWNGRADE_LABEL" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_ONLYAVAILABLEINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_STYLEDOWNGRADE_LABEL" />
+					
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_INDIVIDUALITEMS_LABEL" />					
+				
+				<field name="item_w" type="sywverbosetext" default="100" filter="integer" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEM_WIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEM_WIDTH_DESC" />
+					
+				<field name="item_w_u" type="radio" default="%" class="btn-group"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEM_WIDTH_UNIT_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEM_WIDTH_UNIT_DESC">
+					<option value="px">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PIXELS</option>
+					<option value="%">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PERCENTAGE</option>
+				</field>
+				
+				<field name="min_item_w" type="sywverbosetext" default="" size="4" unit="px" icon="SYWicon-swap-horiz" showon="item_w_u:%" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MIN_ITEM_WIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MIN_ITEM_WIDTH_DESC" />
+					
+				<field name="overall_style" type="list" default="original" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_DESC">
+					<option value="original">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_OVERALL_ORIGINAL_LABEL</option>
+					<option value="fullwidth" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_OVERALL_FULLWIDTH_LABEL</option>
+					<option value="fullwidthoverlap" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_OVERALL_FULLWIDTHOVERLAP_LABEL</option>
+				</field>
+					
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_LABEL" />
+								
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_HEAD_LABEL" />
+				
+				<field name="head_type" type="list" default="none" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEADTYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEADTYPE_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="image">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_IMAGE</option>
+					<option value="imageintro" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_IMAGEINTRO</option>
+					<option value="imagefull" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_IMAGEFULL</option>
+					<option value="allimagesasc" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALLIMAGESASC</option>
+					<option value="allimagesdesc" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALLIMAGESDESC</option>
+					<option value="calendar">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CALENDAR</option>
+					<option value="author" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AUTHOR</option>
+				</field>				
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_MESSAGE_IMAGESELECTION" style="info" showon="datasource:k2" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEADTYPE_LABEL" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_MESSAGE_HEADCALENDARSECTION" style="info" showon="head_type:calendar" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_MESSAGE_HEADIMAGESECTION" style="info" showon="head_type:image,imageintro,imagefull,allimagesasc,allimagesdesc,author" />
+				
+				<field name="author_type" type="authorselect" default="contact" showon="head_type:author"  
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORTYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORTYPE_DESC">
+					<option value="contact">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CONTACT</option>
+				</field>
+				
+				<field name="head_w" type="sywverbosetext" default="64" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" showon="head_type:image,imageintro,imagefull,allimagesasc,allimagesdesc,calendar,author" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEAD_WIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEAD_WIDTH_DESC" />
+					
+				<field name="head_h" type="sywverbosetext" default="64" filter="integer" size="4" unit="px" icon="SYWicon-swap-vert" showon="head_type:image,imageintro,imagefull,allimagesasc,allimagesdesc,calendar,author" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEAD_HEIGHT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HEAD_HEIGHT_DESC" />
+					
+				<field name="maintain_height" type="radio" default="0" class="btn-group" showon="head_type:image,imageintro,imagefull,allimagesasc,allimagesdesc,author" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MAINTAINHEIGHT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MAINTAINHEIGHT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+					
+				<field name="keep_image_space" type="radio" default="1" class="btn-group" showon="head_type:image,imageintro,imagefull,allimagesasc,allimagesdesc,calendar,author" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_KEEPSPACE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_KEEPSPACE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_BODY_FIELDSET_LABEL" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_MESSAGE_BODYSECTION" style="info" />
+								
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_LINKING_LABEL" />
+				
+				<field name="what_to_link" type="radio" default="" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WHATTOLINK_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WHATTOLINK_DESC">
+					<option value="">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NOTHING</option>
+					<option value="title">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TITLE</option>
+					<option value="label">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_READMORELABEL</option>
+					<option value="both">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BOTH</option>
+				</field>
+				
+				<field name="link_to" type="list" default="article" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LINKTONEWS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LINKTONEWS_DESC">
+					<option value="article">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ARTICLE</option>
+					<option value="modal">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ARTICLEMODAL</option>
+ 					<option value="urla" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_URLA</option>
+ 					<option value="urlb" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_URLB</option>
+ 					<option value="urlc" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_URLC</option>
+				</field>
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LINKTONEWS_LABEL" />
+				
+				<field name="popup_x" type="sywverbosetext" default="600" filter="integer" size="4" unit="px" icon="SYWicon-swap-horiz" showon="link_to:modal" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POPUPX_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POPUPX_DESC" />
+					
+				<field name="popup_y" type="sywverbosetext" default="500" filter="integer" size="4" unit="px" icon="SYWicon-swap-vert" showon="link_to:modal" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POPUPY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POPUPY_DESC" />
+				
+				<field name="follow" type="radio" default="1" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FOLLOW_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FOLLOW_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_READMORE_LABEL" />
+						
+				<field name="link" type="text" default="" filter="string" hint="MOD_LATESTNEWSENHANCEDEXTENDED_READMORE_HINT"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LINK_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LINK_DESC" />	
+					
+				<field name="append_link" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_APPENDLINK_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_APPENDLINK_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+					
+				<field name="readmore_type" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMORETYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMORETYPE_DESC">
+					<option value="">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DEFAULTBUTTON</option>
+					<option value="btn-primary">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PRIMARYBUTTON</option>
+					<option value="btn-info">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_INFOBUTTON</option>
+					<option value="btn-inverse">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_INVERSEBUTTON</option>
+					<option value="btn-link">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_LINK</option>
+				</field>
+				
+				<field name="readmore_size" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMORESIZE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMORESIZE_DESC">
+					<option value="">JDEFAULT</option>
+					<option value="small">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SMALL</option>
+					<option value="mini">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MINI</option>
+				</field>
+				
+				<field name="readmore_align" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMOREALIGN_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_READMOREALIGN_DESC">
+					<option value="">JDEFAULT</option>
+					<option value="left">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_LEFT</option>
+					<option value="right">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_RIGHT</option>
+					<option value="center">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CENTER</option>
+					<option value="btn-block">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FULLWIDTH</option>
+				</field>		
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_CATEGORIES_LABEL" />
+									
+				<field name="show_cat" type="list" default="0" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWCATEGORY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWCATEGORY_DESC">
+					<option value="2">JSHOW</option>
+					<option value="1">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHOWANDLINK</option>
+					<option value="0">JHIDE</option>
+				</field>
+								
+				<field name="cat_link" type="text" default="" filter="string"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATLINK_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CATLINK_DESC" />
+					
+				<field name="consol_cat" type="radio" default="1" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CONSOLIDATECATEGORY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CONSOLIDATECATEGORY_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+			</fieldset>
+			
+<!-- 			<fieldset name="style" label="MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_FIELDSET_DESC" addfieldpath="/libraries/syw/fields"> -->
+				
+				
+<!-- 			</fieldset> -->
+			
+			<fieldset name="image" label="MOD_LATESTNEWSENHANCEDEXTENDED_IMAGE_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_IMAGE_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">					
+						  
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ALLOWURLFOPENTEST_LABEL" style="warning" />
+				<field type="phpsettingtest" setting="allow_url_fopen" />
+														
+				<field name="default_pic" type="media" default=""
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PICTURE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PICTURE_DESC" />
+					
+				<field name="imagebgcolor" type="sywcolorpicker" default="" transparency="true" icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEBGCOLOR_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEBGCOLOR_DESC" />
+				
+				<field name="border_w" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BORDERWIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BORDERWIDTH_DESC" />
+				
+				<field name="border_c_pic" type="sywcolorpicker" default="#FFFFFF" icon="SYWicon-border-color" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PICBORDERCOLOR_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PICBORDERCOLOR_DESC" />
+				
+				<field name="sh_w_pic" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWWIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PICSHADOWWIDTH_DESC" />	
+					
+				<field name="sh_type" type="list" default="s" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWTYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWTYPE_DESC">					
+					<option value="s">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHADOW_SIMPLE</option>
+					<option value="v" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHADOW_V</option>
+					<option value="vl" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHADOW_VLEFT</option>
+					<option value="vr" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SHADOW_VRIGHT</option>
+				</field>
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWTYPE_LABEL" />
+				
+				<field name="hover_effect" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HOVEREFFECT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_HOVEREFFECT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+					
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_GDTEST_LABEL" style="warning" />
+				<field type="gdtest" />
+				
+				<field name="crop_pic" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CROPPICTURE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CROPPICTURE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="filter" type="list" default="none" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEFILTER_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEFILTER_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="grayscale">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_GRAYSCALE</option>
+					<option value="sketch">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SKETCH</option>
+					<option value="negate">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NEGATE</option>
+					<option value="emboss">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMBOSS</option>
+					<option value="edgedetect">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EDGEDETECT</option>
+				</field>
+				
+				<field name="quality_jpg" type="sywverbosetext" default="100" filter="integer" size="8" maxlength="3" min="0" max="100" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEQUALITYJPG_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEQUALITYJPG_DESC" />
+					
+				<field name="quality_png" type="sywverbosetext" default="0" filter="integer" size="8" maxlength="1" min="0" max="9" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEQUALITYPNG_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_IMAGEQUALITYPNG_DESC" />
+			</fieldset>
+			
+			<fieldset name="calendar" label="MOD_LATESTNEWSENHANCEDEXTENDED_CALENDAR_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_CALENDAR_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">				
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_CONTENT_LABEL" />
+				
+				<field name="pos_1" type="list" default="w" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION1_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION1_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="e">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMPTY</option>
+					<option value="w">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAY</option>
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAY</option>
+					<option value="m">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTH</option>
+					<option value="y">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEAR</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TIME</option>
+				</field>
+				<field name="pos_2" type="list" default="d" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION2_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION2_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="e">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMPTY</option>
+					<option value="w">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAY</option>
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAY</option>
+					<option value="m">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTH</option>
+					<option value="y">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEAR</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TIME</option>
+				</field>
+				<field name="pos_3" type="list" default="m" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION3_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION3_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="e">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMPTY</option>
+					<option value="w">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAY</option>
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAY</option>
+					<option value="m">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTH</option>
+					<option value="y">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEAR</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TIME</option>
+				</field>
+				<field name="pos_4" type="list" default="y" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION4_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION4_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="e">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMPTY</option>
+					<option value="w">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAY</option>
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAY</option>
+					<option value="m">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTH</option>
+					<option value="y">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEAR</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TIME</option>
+				</field>
+				<field name="pos_5" type="list" default="t" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION5_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITION5_DESC">
+					<option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option>
+					<option value="e">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_EMPTY</option>
+					<option value="w">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAY</option>
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAY</option>
+					<option value="m">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTH</option>
+					<option value="y">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_YEAR</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TIME</option>
+				</field>
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_FORMAT_LABEL" />
+				
+				<field name="fmt_w" type="radio" default="D" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WEEKDAYFORMAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WEEKDAYFORMAT_DESC">
+					<option value="l">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAYFORMAT_L</option>
+					<option value="D">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WEEKDAYFORMAT_D</option>
+				</field>
+				<field name="fmt_m" type="radio" default="M" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MONTHFORMAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MONTHFORMAT_DESC">
+					<option value="F">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTHFORMAT_F</option>
+					<option value="M">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MONTHFORMAT_M</option>
+				</field>
+				<field name="fmt_d" type="radio" default="d" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DAYFORMAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DAYFORMAT_DESC">
+					<option value="d">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAYFORMAT_D</option>
+					<option value="j">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DAYFORMAT_J</option>
+				</field>
+					
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_CALENDARTIMEFORMATINFO" style="info" />				
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_LABEL" />				
+				
+				<field name="cal_style" type="list" default="original" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_DESC">
+					<option value="original">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_CALENDAR_ORIGINAL_LABEL</option>
+					<option value="simplesided" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_CALENDAR_SIMPLESIDED_LABEL</option>
+					<option value="complexsided" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_CALENDAR_COMPLEXSIDED_LABEL</option>
+					<option value="rainbow" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_STYLE_CALENDAR_RAINBOW_LABEL</option>
+				</field>
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLE_LABEL" />
+								
+				<field name="cal_bg" type="media" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALENDARBACKGROUND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALENDARBACKGROUND_DESC" />
+				
+				<field name="border_w_cal" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-outer" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALBORDERWIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALBORDERWIDTH_DESC" />
+					
+				<field name="border_r" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-border-style" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BORDERRADIUS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BORDERRADIUS_DESC" />	
+					
+				<field name="border_c_cal" type="sywcolorpicker" default="#000000" icon="SYWicon-border-color" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALBORDERCOLOR_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CALBORDERCOLOR_DESC" />
+				
+				<field name="sh_w" type="sywverbosetext" default="0" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-layers" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWWIDTH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHADOWWIDTH_DESC" />	
+					
+				<field name="fontcalendar" type="sywfontpicker" default=""
+                    label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTCALENDAR_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTCALENDAR_DESC" />
+					
+				<field name="f_r" type="sywverbosetext" default="14" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-format-size" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTSIZEREFERENCE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTSIZEREFERENCE_DESC" />
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_CALENDARTOPCOLORS_LABEL" />
+				
+				<field name="c2" type="sywcolorpicker" default="#494949" icon="SYWicon-format-color-text" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR2_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR2_DESC" />	
+				<field name="bgc21" type="sywcolorpicker" default="" transparency="true"  icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR21_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR21_DESC" />	
+				<field name="bgc22" type="sywcolorpicker" default="" transparency="true"  icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR22_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR22_DESC" />
+						
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_CALENDARCOLORS_LABEL" />					
+					
+				<field name="c1" type="sywcolorpicker" default="#3D3D3D" icon="SYWicon-format-color-text" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR1_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR1_DESC" />
+				<field name="bgc11" type="sywcolorpicker" default="" transparency="true" icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR11_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR11_DESC" />	
+				<field name="bgc12" type="sywcolorpicker" default="" transparency="true"  icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR12_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR12_DESC" />
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_CALENDARBOTTOMCOLORS_LABEL" />
+				
+				<field name="c3" type="sywcolorpicker" default="#494949" icon="SYWicon-format-color-text" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR3_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_COLOR3_DESC" />	
+				<field name="bgc31" type="sywcolorpicker" default="" transparency="true" icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR31_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR31_DESC" />	
+				<field name="bgc32" type="sywcolorpicker" default="" transparency="true"  icon="SYWicon-format-color-fill" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR32_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_BGCOLOR32_DESC" />
+				
+			</fieldset>	
+			
+			<fieldset name="body" label="MOD_LATESTNEWSENHANCEDEXTENDED_BODY_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_BODY_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">
+						
+				<field name="f_r_body" type="sywverbosetext" default="14" filter="integer" size="4" maxlength="2" unit="px" icon="SYWicon-format-size" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTSIZEREFERENCEBODY_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FONTSIZEREFERENCEBODY_DESC" />
+						
+				<field name="text_align" type="list" default="r" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TEXTALIGNMENT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TEXTALIGNMENT_DESC">
+					<option value="l">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALIGNLEFT</option>
+					<option value="r">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALIGNRIGHT</option>
+					<option value="lr">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALTERNATELR</option>
+					<option value="rl">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALTERNATERL</option>
+					<option value="t">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALIGNTOP</option>
+					<option value="b">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALIGNBOTTOM</option>
+					<option value="tb">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALTERNATETB</option>
+					<option value="bt">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALTERNATEBT</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_TITLE_LABEL" />
+				
+				<field name="letter_count_title" type="sywverbosetext" default="" filter="string" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LETTERCOUNTTITLE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LETTERCOUNTTITLE_DESC" />
+					
+				<field name="force_one_line" type="radio" default="0" class="btn-group"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FORCEONELINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_FORCEONELINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>	
+				
+				<field name="title_tag" type="list" default="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TITLETAG_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TITLETAG_DESC">
+					<option value="1">h1</option>									
+					<option value="2">h2</option>				
+					<option value="3">h3</option>				
+					<option value="4">h4</option>				
+					<option value="5">h5</option>				
+					<option value="6">h6</option>
+				</field>
+				
+				<field name="title_before_head" type="radio" default="0" class="btn-group"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TITLEBEFOREHEAD_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TITLEBEFOREHEAD_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>		
+						
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_TEXT_LABEL" />
+				
+				<field name="text" type="radio" default="intro" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TEXT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TEXT_DESC">
+					<option value="intro">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_INTROTEXT</option>
+					<option value="meta">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_METADESC</option>
+				</field>
+								
+				<field name="l_count" type="sywverbosetext" default="" filter="string" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LETTERCOUNT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LETTERCOUNT_DESC" />
+						
+				<field name="strip_tags" type="radio" default="1" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STRIPTAGS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STRIPTAGS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field name="keep_tags" type="text" default="" filter="raw" hint="MOD_LATESTNEWSENHANCEDEXTENDED_EXAMPLE_KEEPTAGS_LABEL" showon="strip_tags:1" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_KEEPTAGS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_KEEPTAGS_DESC" />
+
+				<field name="wrap" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WRAPTEXT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_WRAPTEXT_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATIONBLOCK_LABEL" />	
+				
+				<field name="ad_place" type="list" default="1" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORPLACE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_AUTHORPLACE_DESC">
+					<option value="0">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BEFORETITLE</option>
+					<option value="1">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AFTERTITLE</option>
+					<option value="3">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BEFORETEXT</option>
+					<option value="2">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AFTERTEXT</option>
+				</field>
+				
+				<field name="separator" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SEPARATOR_LABEL"
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SEPARATOR_DESC" />	
+					
+				<field name="iconscolor" type="sywcolorpicker" default="#000000" icon="SYWicon-format-color-text" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ICONSCOLOR_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ICONSCOLOR_DESC" />
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />
+				
+				<field name="show_icons_1" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_1" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />	
+				<field name="info_1" type="detailselect" default="none"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+				</field>
+				<field name="new_line_1" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>						
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />
+				
+				<field name="show_icons_2" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_2" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />
+				<field name="info_2" type="detailselect" default="none"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+				</field>
+				<field name="new_line_2" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>					
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />
+				
+				<field name="show_icons_3" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_3" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />
+				<field name="info_3" type="detailselect" default="none"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+				</field>
+				<field name="new_line_3" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>					
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />
+				
+				<field name="show_icons_4" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_4" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />
+				<field name="info_4" type="detailselect" default="none"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+				</field>	
+				<field name="new_line_4" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>				
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />
+				
+				<field name="show_icons_5" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>
+				<field name="prepend_5" type="text" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />
+				<field name="info_5" type="detailselect" default="none"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+					<option value="none">JNONE</option>
+				</field>	
+				<field name="new_line_5" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>	
+				</field>		
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREFIELDSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_INFORMATION_LABEL" />		
+				
+				<!-- Not ready for primetime yet (almost there in J!3.4)
+				<field name="list_infos" type="repeatable" icon="list" label="Test Repeat" description="tada!" select="Add more info" maximum="5" default="{'show_icons':['0'],'prepend':[''],'info':['none'],'new_line':['0']}">
+					<fields name="params">
+						<fieldset hidden="true" name="list_infos_modal" repeat="true">
+						
+							<field name="show_icons" type="radio" 
+								label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_LABEL" 
+								description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWICONS_DESC">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>	
+							</field>
+							<field name="prepend" type="text" 
+								label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_LABEL" 
+								description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREPEND_DESC" />
+							<field name="info" type="detailselect" 
+								label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_LABEL" 
+								description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_INFO_DESC">
+								<option value="none">JNONE</option>
+							</field>
+							<field name="new_line" type="radio" 
+								label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_LABEL" 
+								description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEWLINE_DESC">
+								<option value="1">JYES</option>
+								<option value="0">JNO</option>	
+							</field>
+						
+						</fieldset>
+					</fields>
+				</field>
+				 -->
+				 
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_SPECIFICS_LABEL" /> 
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_AUTHOR_LABEL" />
+				<field name="show_a" type="list" default="user" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWAUTHOR_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWAUTHOR_DESC">
+					<!-- <option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option> -->
+					<option value="full">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_FULL</option>
+					<option value="alias">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ALIAS</option>
+					<option value="user">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_USER</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_DATE_LABEL" />
+				
+				<field name="show_d" type="list" default="date" 
+		           	label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWDATE_LABEL" 
+		           	description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWDATE_DESC">
+					<!-- <option value="none">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_NONE</option> -->
+					<option value="date">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DATE</option>
+					<option value="ago">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AGO</option>
+					<option value="agomhd">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AGOMHD</option>
+					<option value="agohm">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AGOHM</option>
+				</field>
+				
+				<field name="d_format" type="sywverbosetext" default="d F Y" filter="raw" translateHint="false" hint="d F Y" help="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_DATEFORMATINFO" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DATEFORMAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_DATEFORMAT_DESC" />
+					
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_TIME_LABEL" />
+				
+				<field name="t_format" type="sywverbosetext" default="H:i" filter="raw" translateHint="false" hint="H:i" help="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_DATEFORMATINFO" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TIMEFORMAT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_TIMEFORMAT_DESC" />
+
+ 				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_SHARING_LABEL" /> 				
+ 				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_ONLYAVAILABLEINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_SHARING_LABEL" />
+				
+			</fieldset>
+			
+			<fieldset name="animate" label="MOD_LATESTNEWSENHANCEDEXTENDED_ANIMATE_FIELDSET_LABEL" description="MOD_LATESTNEWSENHANCEDEXTENDED_ANIMATE_FIELDSET_DESC" addfieldpath="/libraries/syw/fields">
+											
+				<field name="visible_items" type="sywverbosetext" default="1" filter="integer" size="4" icon="SYWicon-visibility" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMSPERSLIDE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ITEMSPERSLIDE_DESC" />
+
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_ANIMATION_LABEL" />
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_ONLYAVAILABLEINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_ANIMATION_LABEL" />
+				                
+                <field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_PAGINATION_LABEL" />
+				
+				<field name="pagination" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATION_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATION_DESC">
+					<option value="">JNONE</option>
+					<option value="pn">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PREVNEXT</option>
+					<option value="p">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PAGER</option>
+					<option value="s">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_DOTS</option>
+					<option value="ppn">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PREVPAGERNEXT</option>
+					<option value="psn">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_PREVDOTSNEXT</option>
+				</field>
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_PARAMETERS_LABEL" />
+                
+                <field name="pagination_pos" type="list" default="below"
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITIONPAGINATION_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITIONPAGINATION_DESC">
+                    <option value="below">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_BELOWITEMS</option>
+                    <option value="above">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_ABOVEITEMS</option>
+                    <option value="around">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_AROUNDITEMS</option>
+                    <option value="title" disabled="true">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_WITHTITLE</option>
+                </field>
+                
+                <field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_MOREOPTIONSINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_POSITIONPAGINATION_LABEL" />
+                 
+                <field name="pagination_align" type="radio" default="center" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ALIGNPAGINATION_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_ALIGNPAGINATION_DESC">
+                    <option value="left">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_LEFT</option>
+                    <option value="center">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_CENTER</option>
+                    <option value="right">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_RIGHT</option>
+                </field>
+                
+                <field name="pagination_style" type="radio" default="" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSTYLE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSTYLE_DESC">
+                    <option value="">JDEFAULT</option>
+                    <option value="pagination">Bootstrap</option>
+                </field>
+                
+                <field name="pagination_size" type="list" default="" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSIZE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSIZE_DESC">
+					<option value="">JDEFAULT</option>
+					<option value="small">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SMALL</option>
+					<option value="mini">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_MINI</option>
+					<option value="specific">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_SPECIFIC</option>
+				</field>
+                
+                <field name="pagination_specific_size" type="sywverbosetext" default="1" filter="float" size="4" unit="em" icon="SYWicon-format-size" showon="pagination_size:specific" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSPECIFICSIZE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONSPECIFICSIZE_DESC" />
+					
+				<field name="pagination_offset" type="sywverbosetext" default="0" filter="integer" size="4" unit="px" icon="SYWicon-settings-ethernet" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONOFFSET_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PAGINATIONOFFSET_DESC" />
+				
+				<field name="prev_type" type="radio" default="" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREVTYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_PREVTYPE_DESC">
+					<option value="">&lt;</option>
+					<option value="prev">JPREV</option>
+					<option value="label">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_LABEL</option>
+				</field>				
+				
+				<field name="label_prev" type="text" default="" filter="raw" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LABELPREV_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LABELPREV_DESC" />
+					
+				<field name="next_type" type="radio" default="" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEXTTYPE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NEXTTYPE_DESC">
+					<option value="">&gt;</option>
+					<option value="next">JNEXT</option>
+					<option value="label">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_LABEL</option>
+				</field>					
+				
+				<field name="label_next" type="text" default="" filter="raw" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LABELNEXT_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_LABELNEXT_DESC" />	
+					
+				<field name="num_links" type="sywverbosetext" default="5" filter="integer" size="4" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NUMLINKS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_NUMLINKS_DESC" />
+
+				<field type="message" text="MOD_LATESTNEWSENHANCED_MESSAGE_ONLYAVAILABLEINCOMMERCIALVERSION" style="warning" label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_MODULETITLE_LABEL" />
+
+			</fieldset>				
+			<fieldset name="advanced" addfieldpath="/libraries/syw/fields">
+				
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_JQUERYVERSIONREQUIRED" style="info" />
+                
+				<field name="show_errors" type="radio" default="0" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWERRORS_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_SHOWERRORS_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_CACHE_LABEL" />
+				
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_PICTURES_LABEL" />
+								
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_CLEARCACHE" style="info" />
+					
+				<field name="clear_cache" type="radio" default="1" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CLEARCACHE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CLEARCACHE_DESC">
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+								
+				<field name="thumb_path" type="list" default="default" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_THUMBPATH_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_THUMBPATH_DESC">
+					<option value="default">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_TEMPFOLDER</option>
+					<option value="images">MOD_LATESTNEWSENHANCEDEXTENDED_VALUE_IMAGESDIRECTORY</option>
+				</field>
+								
+				<field type="subtitle" title="MOD_LATESTNEWSENHANCEDEXTENDED_STYLESHEETS_LABEL" />	
+				
+				<field name="style_overrides" type="textarea" cols="40" rows="3" default="" filter="raw" 
+	            	label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLEOVERRIDES_LABEL" 
+	            	description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_STYLEOVERRIDES_DESC" />
+	            	
+	            <field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_EXAMPLE_EXTRACSS" style="example" />
+							
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_INFO_CLEARCSSCACHE" style="info" />
+				<field type="message" text="MOD_LATESTNEWSENHANCEDEXTENDED_WARNING_CONDITIONSCSSCACHE_LABEL" style="warning" />
+				<field type="phpextensiontest" extension="curl" />
+				<field type="phpsettingtest" setting="allow_url_fopen" />
+				
+				<field name="clear_css_cache" type="radio" default="1" class="btn-group" 
+					label="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CLEARCSSCACHE_LABEL" 
+					description="MOD_LATESTNEWSENHANCEDEXTENDED_FIELD_CLEARCSSCACHE_DESC">
+					<option value="1">JYES</option>
+                    <option value="0">JNO</option>
+				</field>				
+				
+				<field type="title" title="MOD_LATESTNEWSENHANCEDEXTENDED_MODULE_LABEL" />
+					
+				<field name="moduleclass_sfx" type="text" default="" filter="string"
+					label="COM_MODULES_FIELD_MODULECLASS_SFX_LABEL"
+					description="COM_MODULES_FIELD_MODULECLASS_SFX_DESC" />
+					
+				<field name="cache" type="list" default="1" 
+					label="COM_MODULES_FIELD_CACHING_LABEL" 
+					description="COM_MODULES_FIELD_CACHING_DESC">
+					<option value="1">JGLOBAL_USE_GLOBAL</option>
+					<option value="0">COM_MODULES_FIELD_VALUE_NOCACHING</option>
+				</field>
+				
+				<field name="cache_time" type="sywverbosetext" default="900" filter="integer" size="4" unit="ms" icon="SYWicon-timer" 
+					label="COM_MODULES_FIELD_CACHE_TIME_LABEL" 
+					description="COM_MODULES_FIELD_CACHE_TIME_DESC" />
+					
+				<field name="cachemode" type="hidden" default="itemid">
+					<option value="itemid"></option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+   <updateservers>
+		<server type="extension" priority="1" name="Latest News Enhanced auto updater">http://www.barejoomlatemplates.com/autoupdates/latestnewsenhanced/latestnewsenhanced-update.xml</server>
+	</updateservers>
+</extension>

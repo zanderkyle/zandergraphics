@@ -3,7 +3,7 @@
  * List View
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -36,12 +36,12 @@ class ReReplacerViewList extends JViewLegacy
 		require_once JPATH_PLUGINS . '/system/nnframework/helpers/parameters.php';
 		$this->parameters = NNParameters::getInstance();
 
-		$this->enabled = ReReplacerHelper::isEnabled();
-		$this->list = $this->get('Items');
-		$this->pagination = $this->get('Pagination');
-		$this->state = $this->get('State');
-		$this->config = $this->parameters->getComponentParams('rereplacer');
-		$this->filterForm = $this->get('FilterForm');
+		$this->enabled       = ReReplacerHelper::isEnabled();
+		$this->list          = $this->get('Items');
+		$this->pagination    = $this->get('Pagination');
+		$this->state         = $this->get('State');
+		$this->config        = $this->parameters->getComponentParams('rereplacer');
+		$this->filterForm    = $this->get('FilterForm');
 		$this->activeFilters = $this->get('ActiveFilters');
 
 		// Check for errors.

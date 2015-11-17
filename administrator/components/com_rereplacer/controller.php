@@ -3,7 +3,7 @@
  * Controller
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -33,9 +33,9 @@ class ReReplacerController extends JControllerLegacy
 		// Load the submenu.
 		ReReplacerHelper::addSubmenu(JFactory::getApplication()->input->get('view', 'list'));
 
-		$view = JFactory::getApplication()->input->get('view', 'list');
+		$view   = JFactory::getApplication()->input->get('view', 'list');
 		$layout = JFactory::getApplication()->input->get('layout', 'default');
-		$id = JFactory::getApplication()->input->getInt('id');
+		$id     = JFactory::getApplication()->input->getInt('id');
 
 		// redirect to list if view is invalid
 		if ($view != 'list' && $view != 'item')

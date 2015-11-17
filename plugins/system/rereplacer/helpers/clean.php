@@ -3,7 +3,7 @@
  * Plugin Helper File: Clean
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -54,7 +54,7 @@ class PlgSystemReReplacerHelperClean
 		// Remove any leftover protection tags
 		if (strpos($string, '{noreplace}') !== false)
 		{
-			$item = null;
+			$item         = null;
 			$string_array = $this->helpers->get('protect')->stringToProtectedArray($string, $item, 1);
 			$this->helpers->get('replace')->replaceInArray($string_array, '#\{noreplace\}#', '');
 			$this->helpers->get('replace')->replaceInArray($string_array, '#\{/noreplace\}#', '');

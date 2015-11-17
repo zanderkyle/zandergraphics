@@ -114,20 +114,24 @@ class AdmintoolsModelCpanels extends F0FModel
 		}
 	}
 
+    /**
+     * Does the user need to enter a Download ID in the component's Options page?
+     *
+     * @return bool
+     */
 	public function needsDownloadID()
 	{
-		JLoader::import('joomla.application.component.helper');
-
 		// Do I need a Download ID?
-		$ret = false;
+		$ret   = false;
 		$isPro = ADMINTOOLS_PRO;
+
 		if (!$isPro)
 		{
-			$ret = true;
+			$ret = false;
 		}
 		else
 		{
-			$ret = false;
+            JLoader::import('joomla.application.component.helper');
 			$params = JComponentHelper::getParams('com_admintools');
 			$dlid = $params->get('downloadid', '');
 

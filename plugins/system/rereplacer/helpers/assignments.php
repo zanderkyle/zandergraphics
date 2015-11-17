@@ -3,7 +3,7 @@
  * Plugin Helper File: Assignments
  *
  * @package         ReReplacer
- * @version         6.1.1
+ * @version         6.1.2
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -24,7 +24,7 @@ class PlgSystemReReplacerHelperAssignments
 
 	public function itemPass($item, $article = 0)
 	{
-		$ass = $this->assignments->getAssignmentsFromParams($item);
+		$ass  = $this->assignments->getAssignmentsFromParams($item);
 		$pass = $this->assignments->passAll($ass, $item->match_method, $article);
 
 		if (!$pass && $item->other_doreplace)
@@ -32,7 +32,7 @@ class PlgSystemReReplacerHelperAssignments
 			$item->replace = $item->other_replace;
 			// replace \n with newline
 			$item->replace = preg_replace('#(?<!\\\)\\\n#', "\n", $item->other_replace);
-			$pass = 1;
+			$pass          = 1;
 		}
 
 		return $pass ? $item : 0;
