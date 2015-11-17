@@ -156,7 +156,7 @@ else
 			$base_url = JURI::base(); ?>
 	<!-- Body -->
 	<div class="body">
-		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> <?php echo ($base_url == $current_url) ? 'front-display' : 'inside-display'; ?>">
+		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> <?php echo ($base_url == $current_url || $current_url == $base_url.'index.php') ? 'front-display' : 'inside-display'; ?>">
 			<!-- Header -->
 			<header class="header" role="banner">
 				<div class="header-inner clearfix">
@@ -183,9 +183,10 @@ else
 			<?php endif; ?>
 			
 			<?php 
-			
+			//$test = $base_url.'index.php';
+			//$test2 = $current_url;
 			//var_dump($test); echo '<br>'; var_dump($test2);
-			if ($base_url == $current_url) { 
+			if ($base_url == $current_url || $current_url == $base_url.'index.php') {  
 				
 			$mod1 = "display1a";
 			$mod2 = "display1b";
@@ -255,7 +256,7 @@ else
 		
 		<?php 
 		
-		if ($base_url == $current_url) { 
+		if ($base_url == $current_url || $current_url == $base_url.'index.php') { 
 		
 		$pos = array('1','2','3','4');
 		
@@ -414,7 +415,7 @@ else
 		
 		<?php
 		
-		if ($base_url != $current_url) { ?>
+		if ($base_url != $current_url && $current_url != $base_url.'index.php') { ?>
 
 		<div class="container<?php echo ($params->get('fluidContainer') ? '-fluid' : ''); ?> main-content">
 			
@@ -559,7 +560,7 @@ else
 							<jdoc:include type="modules" name="bottom3c" style="none" />
 						</div>
 					</div>
-				<?php } ?>
+				<?php } ?> 
 				<?php if ($this->countModules('bottom3d')) { ?>
 					<div id="bottom3d" class="bottombox">
 						<div id="mod-container">
