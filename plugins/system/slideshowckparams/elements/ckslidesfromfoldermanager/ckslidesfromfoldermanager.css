@@ -1,0 +1,206 @@
+/**
+ * @copyright	Copyright (C) 2013 Cedric KEIFLIN alias ced1870
+ * http://www.joomlack.fr
+ * @license		GNU/GPL
+ * */
+
+.imgdragck {
+    margin: 3px 0 !important;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    border: #ccc 1px solid;
+    min-height: 70px;
+    clear: both;
+    list-style: none;
+}
+.imgdragck img {
+    margin: 5px;
+}
+
+.imgdragck input, .imgdragck select {
+    clear: both;
+    float: none;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    padding: 5px;
+}
+
+.imgdragckcontainer {
+    border-left: 1px solid #ccc;
+    float: left;
+    width: 88%;
+    padding-left: 2%;
+    position: relative;
+}
+
+.imgdragckhandle {
+    cursor: move;
+    background: #f4f4f4;
+    min-height: 60px;
+    width: 8%;
+    float: left;
+    border-radius: 5px 0 0 5px;
+    -moz-border-radius: 5px 0 0 5px;
+    background: url(arrow_move.gif) center 40px no-repeat;
+}
+
+.imgdragcknumber {
+    color: #cbcbcb;
+    text-align: center;
+    text-shadow: 1px 1px #fff;
+    font-size: 20px;
+    padding-top: 5px;
+    background: #eee;
+    height: 25px;
+    border-bottom: 1px solid #ccc;
+}
+
+.imgdragckrow {
+    clear: both;
+}
+
+.imgdragckimgname {
+    width: 200px;
+    margin-left: 5px;
+}
+
+.ckselectimg, .imgdragckdelete {
+    padding: 5px;
+    color: 333;
+    text-decoration: none;
+    font-weight: normal;
+    text-align: center;
+    background: #f4f4f4;
+    background: linear-gradient(top, #fff, #eee);
+    background: -moz-linear-gradient(top, #fff, #eee);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.ckselectimg:hover {
+    background: #eee;
+}
+
+.imgdragckdelete:hover {
+    background: url(delete_hover.png) center center no-repeat;
+}
+
+.ckselectimg {
+    display: block;
+    margin-left: 80px;
+}
+
+.imgdragckdelete {
+    /*	float: right !important;*/
+    top: 0;
+    position: absolute;
+    right :0;
+    width: 16px;
+    height: 16px;
+    background: url(delete.png) center center no-repeat;
+    border: none;
+}
+
+.imgdragckimgcontainer {
+    float:left;
+    height:64px;
+    width:64px;
+    overflow:hidden;
+    border: 5px solid #fff;
+    box-shadow: 0px 0px 1px #333;
+    border-radius: 5px;
+    margin: 5px 5px 5px 0;
+}
+
+.imgdragckimgcontainer img {
+    margin: 0 !important;
+}
+
+.imgdragcklabel {
+    margin: 5px;
+    width: 75px;
+    display: inline-block;
+}
+
+.imgdragckcaptiontext, .imgdragcklinktext, .imgdragckvideotext {
+    width: 200px;
+}
+
+.imgdragcktargettext {
+    width: 210px;
+}
+
+.imgdragckaccordeonbutton {
+    padding: 5px;
+    margin: 2px;
+    color: 333;
+    text-decoration: none;
+    font-weight: normal;
+    display: block;
+    float: left;
+    text-align: center;
+    background: #f4f4f4;
+    background: linear-gradient(top, #fff, #eee);
+    background: -moz-linear-gradient(top, #fff, #eee);
+    -moz-border-radius: 10px;
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    cursor: pointer;
+}
+
+.imgdragckaccordeonbutton:hover, .imgdragckaccordeonbutton.open {
+    background: #eee;
+    color: #0080ff;
+}
+
+#cklistfolders {
+	display: none;
+}
+
+.ckfolderitem {
+	padding: 2px;
+	clear: both;
+}
+
+.ckfoldername {
+	display: inline-block;
+	padding: 0 5px;
+	cursor: pointer;
+}
+
+.ckfoldername:hover {
+	text-decoration: underline;
+}
+
+.cksubfoldertoggler {
+	/*border: 1px solid #000;*/
+	float: left;
+	padding: 0 4px;
+	position: relative;
+	margin-top: -20px;
+	cursor: pointer;
+	z-index: 99;
+	width: 8px;
+}
+
+.cksubfolder {
+	display: none;
+}
+
+input:checked + .cksubfoldertoggler {
+	transform: rotate(45deg);
+	border: none;
+}
+
+input:checked + .cksubfoldertoggler + .cksubfolder {
+	background: none repeat scroll 0 0 rgba(0, 0, 0, 0.05);
+	display: block;
+	padding: 5px 0;
+	margin: 0 10px;
+}

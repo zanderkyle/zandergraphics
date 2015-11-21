@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Text
  *
  * @package         NoNumber Framework
- * @version         15.11.2151
+ * @version         15.11.8233
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -800,5 +800,15 @@ class NNText
 		require_once __DIR__ . '/tags.php';
 
 		return NNTags::getRegexTags($tags, $include_no_attributes, $include_ending, $required_attributes);
+	}
+
+	public static function is_alphanumeric($string)
+	{
+		if (function_exists('ctype_alnum'))
+		{
+			return ctype_alnum($string);
+		}
+
+		return preg_match('#^[a-zA-Z0-9]+$#', $string);
 	}
 }

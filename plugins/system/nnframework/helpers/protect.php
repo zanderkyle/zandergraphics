@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Protect
  *
  * @package         NoNumber Framework
- * @version         15.11.2151
+ * @version         15.11.8233
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -14,6 +14,7 @@
 defined('_JEXEC') or die;
 
 require_once __DIR__ . '/cache.php';
+require_once __DIR__ . '/text.php';
 
 class NNProtect
 {
@@ -418,7 +419,7 @@ class NNProtect
 
 		foreach ($tags as $i => $tag)
 		{
-			if (ctype_alnum($tag['0']))
+			if (NNText::is_alphanumeric($tag['0']))
 			{
 				continue;
 			}

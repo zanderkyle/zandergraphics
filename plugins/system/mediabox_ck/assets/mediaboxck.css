@@ -1,0 +1,332 @@
+/*	mediaboxAdvanced Black theme	*/
+/*	version 2.1 - August 2010		*/
+/*	for mediaboxAdvanced v.1.3.1	*/
+
+/*	Overlay background styling	*/
+
+#mbOverlay {
+	position: fixed;
+	z-index: 9998;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	/*background-color: #000;*/
+	cursor: pointer;
+}
+
+		/*	Legacy fix for older browsers	*/
+
+#mbOverlay.mbOverlayFF {
+	background: transparent url(/images/80.png) repeat;
+}
+
+#mbOverlay.mbOverlayIE {
+	position: absolute;
+}
+
+		/*	Overlay panel styling	*/
+
+#mbCenter {
+	position: absolute;
+	z-index: 9999;
+	left: 50%;
+	overflow: hidden;
+	/*background-color: #1a1a1a;
+	-webkit-border-radius: 10px;
+	-khtml-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 5px 20px rgba(0,0,0,0.50);
+	-khtml-box-shadow: 0px 5px 20px rgba(0,0,0,0.50);
+	-moz-box-shadow: 0px 5px 20px rgba(0,0,0,0.50);
+	box-shadow: 0px 5px 20px rgba(0,0,0,0.50);
+	/* For IE 8 */
+	/*-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000')";
+	/* For IE 5.5 - 7 */
+	/*filter: progid:DXImageTransform.Microsoft.Shadow(Strength=5, Direction=180, Color='#000000');
+        behavior: url(plugins/system/mediabox_CK/PIE.htc);*/
+}
+
+#mbCenter.mbLoading {
+	background: url(images/loading.gif) no-repeat center;
+		/*	This style is applied only during animation.	*/
+		/*	For example, the next lines turn off shadows	*/
+		/*	improving browser performance on slow systems.	*/
+		/*	To leave shadows on, just remove the following:	*/
+	-webkit-box-shadow: none;
+	-khtml-box-shadow: none;
+	-moz-box-shadow: none;
+	box-shadow: none;
+}
+
+#mbImage, #mbMedia {
+	position: relative;
+	left: 0;
+	top: 0;
+	box-sizing : content-box;
+	/*height: 100%;*/
+		/*	Inline content styling	*/
+
+	font-family: Myriad, Verdana, Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	font-size: 12px;
+	color: #fff;
+	text-align: left;
+	background-position: center center;
+	background-repeat: no-repeat;
+	padding: 10px;
+}
+
+		/* for iframe and object to be responsive */
+#mbMedia > iframe, #mbMedia > object, #mbMedia > img, #mbMedia > video, #mbMedia > audio {
+	max-width: 100%;
+	max-height: 100%;
+}
+		/*	Title, Caption and Button styling	*/
+
+#mbBottom {
+	min-height: 20px;
+	font-family: Myriad, Verdana, Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	font-size: 12px;
+	/*color: #999;*/
+	text-align: left;
+	padding: 0 10px 10px;
+
+}
+
+#mbTitle, #mbPrevLink, #mbNextLink, #mbCloseLink, #mbPlayLink, #mbPauseLink {
+	display: inline;
+	/*color: #fff;*/
+	font-weight: bold;
+	line-height: 20px;
+	font-size: 12px;
+}
+
+#mbNumber {
+	display: inline;
+	/*color: #999;*/
+	line-height: 14px;
+	font-size: 10px;
+	margin: auto 10px;
+}
+
+#mbCaption {
+	display: block;
+	/*color: #999;*/
+	line-height: 14px;
+	font-size: 10px;
+}
+
+#mbPrevLink, #mbNextLink, #mbCloseLink, #mbPlayLink, #mbPauseLink {
+	float: right;
+	outline: none;
+	margin: 0 0 0 10px;
+	font-weight: normal;
+}
+
+#mbPrevLink b, #mbNextLink b, #mbCloseLink b, #mbPlayLink b, #mbPauseLink b {
+	/*color: #eee;*/
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+#mbPrevLink big, #mbNextLink big, #mbCloseLink big, #mbPlayLink big, #mbPauseLink big {
+	/*color: #eee;*/
+	font-size: 16px;
+	line-height: 14px;
+	font-weight: bold;
+}
+
+#mbBottom a, #mbBottom a:link, #mbBottom a:visited {	/* Thanks to Danny Jung for feedback and corrections */
+	text-decoration: none;
+	/*color: #ddd;*/
+}
+
+#mbBottom a:hover, #mbBottom a:active {
+	text-decoration: underline;
+	/*color: #fff;*/
+}
+
+
+		/*	Error message styling	*/
+
+#mbError {
+	position: relative;
+	font-family: Myriad, Verdana, Arial, Helvetica, sans-serif;
+	line-height: 20px;
+	font-size: 12px;
+	color: #fff;
+	text-align: center;
+	border: 10px solid #700;
+	padding: 10px 10px 10px;
+	margin: 20px;
+	-webkit-border-radius: 5px;
+	-khtml-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+}
+
+#mbError a, #mbError a:link, #mbError a:visited, #mbError a:hover, #mbError a:active {
+	color: #d00;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+/**
+*  Mobile behavior for touch device
+*/
+
+#mbCenter.mediaboxckmobile {
+	width: auto !important;
+	height: 100% !important;
+	bottom: 0 !important;
+	height: auto !important;
+	left: 0 !important;
+	margin-left: 0 !important;
+	margin-top: 0  !important;
+	padding: 0 !important;
+	position: fixed !important;
+	right: 0 !important;
+	top: 0 !important;
+	border-radius: 0 !important;
+}
+
+#mbCenter.mediaboxckmobile #mbContainer {
+	height: 100%;
+}
+
+#mbCenter.mediaboxckmobile #mbMedia {
+	width: 100% !important;
+	height: 100% !important;
+	padding: 0 !important;
+	text-align: center;
+}
+
+#mbCenter.mediaboxckmobile #mbBottom {
+	background: rgba(0,0,0, 0.8);
+	box-shadow: #000 0 0 10px;
+	border-top: 1px solid #666;
+	bottom: 0 !important;
+	min-height: 50px !important;
+	left: 0 !important;
+	position: absolute !important;
+	right: 0 !important;
+	width: auto !important;
+	padding-top: 0  !important;
+	padding-bottom: 0  !important;
+}
+
+#mbCenter.mediaboxckmobile #mbBottom:after {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#mbCenter.mediaboxckmobile #mbCloseLink, #mbCenter.mediaboxckmobile #mbNextLink, #mbCenter.mediaboxckmobile #mbPrevLink, #mbCenter.mediaboxckmobile #mbPlayLink, #mbCenter.mediaboxckmobile #mbPauseLink {
+	text-align: center;
+	height: 50px;
+	width: 50px;
+}
+
+#mbCenter.mediaboxckmobile #mbPrevLink big, #mbCenter.mediaboxckmobile #mbNextLink big, #mbCenter.mediaboxckmobile #mbCloseLink big, #mbCenter.mediaboxckmobile #mbPlayLink big, #mbCenter.mediaboxckmobile #mbPauseLink big {
+	font-size: 2.5em;
+	line-height: 1.5em;
+}
+
+#mbCenter.mediaboxckmobile #mbTitle {
+
+}
+
+#mbCenter.mediaboxckmobile #mbNumber {
+	display: block;
+}
+
+#mbCenter.mediaboxckmobile #mbCaption {
+	display: none;
+}
+
+/** gallery effect **/
+figure.mediaboxck {
+	float: left;
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+
+figure.mediaboxck a {
+	position: relative;
+	overflow: hidden;
+}
+
+figure.mediaboxck a:after {
+	position: absolute;
+	display: block;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+	content: "";
+	transition: all ease 0.4s;
+	background: rgba(0,0,0, 0.7) center center no-repeat;
+	opacity: 0;
+	margin-left: 0;
+}
+
+figure.mediaboxck a:hover:after {
+	opacity: 1;
+	margin-left: 0;
+	background: rgba(0,0,0, 0.7) url(images/icon_zoom.png) center center no-repeat;
+}
+
+/** Toolbar styles **/
+#mbToolbar {
+	height: 20px;
+	width: 150px;
+	position: absolute;
+	z-index: 9999;
+	margin: 5px 0 0 -85px;
+	padding: 5px 10px 10px 10px;
+	font-size: 20px;
+}
+
+#mbToolbar a {
+	display: inline-block;
+	margin: 0;
+	width: 25%;
+	height: 30px;
+	text-align: center;
+	font-size: 1em;
+}
+
+#mbToolbar big {
+	font-size: 1em;
+	line-height: 1em;
+}
+
+#mbToolbar.mediaboxckmobile {
+	font-size: 30px;
+	height: 35px;
+	width: 250px;
+	margin-left: -135px;
+	position: fixed;
+	top: 0 !important;
+}
+
+#mbPieLoader {
+	background: transparent;
+	bottom: 2px;
+	left: 5%;
+	height: 5px;
+	position: absolute;
+	width: 90%;
+}
+
+#mbPieLoaderBar {
+	background: rgba(0,0,0,0.5);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	width: 0%;
+	box-shadow: rgba(255,255,255,0.3) 0 0 10px inset;
+}

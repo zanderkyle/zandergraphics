@@ -4,7 +4,7 @@
  * Element to display the date and time
  *
  * @package         NoNumber Framework
- * @version         15.11.2151
+ * @version         15.11.8233
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl

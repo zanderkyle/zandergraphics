@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>MEDIABOXCK_NAME</name>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>Décembre 2010</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>http://www.joomlack.fr</authorUrl>
+	<version>2.1.5</version>
+	<description>MEDIABOXCK_PLUG_DESC</description>
+	
+	<files>
+		<filename plugin="mediabox_ck">mediabox_ck.php</filename>
+		<filename>mediaboxck_mobile_detect.php</filename>
+		<folder>assets</folder>
+		<folder>elements</folder>
+		<folder>language</folder>
+		<folder>pro</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_mediabox_ck.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_mediabox_ck.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_mediabox_ck.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_mediabox_ck.sys.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="Mediabox CK Update">http://update.joomlack.fr/plg_mediaboxck_update.xml</server>
+	</updateservers>
+	<config>
+		<fields name="params">
+			<fieldset name="basic" addfieldpath="/plugins/system/mediabox_ck/elements">
+				<field 
+					name="mediaboxck_vote" 
+					type="ckmediaboxvote" 
+				/>
+				<field 
+					name="mediaboxck_update" 
+					type="ckmediaboxupdatechecking" 
+				/>
+			</fieldset>
+			<fieldset name="general" label="MEDIABOXCK_GENERAL_LABEL">
+				<field 
+					name="pageselect" 
+					type="cktext" 
+					default="0" 
+					label="MEDIABOXCK_PAGESELECT" 
+					description="MEDIABOXCK_PAGESELECT_DESC"
+					icon="page_delete.png"
+				/>
+				<field 
+					name="attribtype" 
+					type="ckradio" 
+					default="rel" 
+					label="MEDIABOXCK_ATTRIBTYPE" 
+					description="MEDIABOXCK_ATTRIBTYPE_DESC" 
+					class="btn-group"
+					icon="key.png"
+					>
+					<option value="className">CLASSNAME</option>
+					<option value="rel">REL</option>
+				</field>
+				<field 
+					name="attribname" 
+					type="cktext" 
+					default="lightbox" 
+					label="MEDIABOXCK_ATTRIBNAME" 
+					description="MEDIABOXCK_ATTRIBNAME_DESC"
+					icon="text_signature.png"
+				/>
+				<field 
+					name="defaultwidth" 
+					type="cktext" 
+					default="640" 
+					label="MEDIABOXCK_DEFAULTWIDTH" 
+					description="MEDIABOXCK_DEFAULTWIDTH_DESC"
+					icon="width.png"
+				/>
+				<field 
+					name="defaultheight" 
+					type="cktext" 
+					default="360" 
+					label="MEDIABOXCK_DEFAULTHEIGHT" 
+					description="MEDIABOXCK_DEFAULTHEIGHT_DESC"
+					icon="height.png"
+				/>
+				<field 
+					name="showcaption" 
+					type="ckradio" 
+					default="1" 
+					label="MEDIABOXCK_SHOWCAPTION" 
+					description="MEDIABOXCK_SHOWCAPTION_DESC" 
+					class="btn-group" 
+					icon="text_dropcaps.png"
+					>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field 
+					name="showcounter" 
+					type="ckradio" 
+					default="1" 
+					label="MEDIABOXCK_SHOWCOUNTER" 
+					description="MEDIABOXCK_SHOWCOUNTER_DESC" 
+					class="btn-group" 
+					icon="control_end.png"
+					>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field 
+					name="loop" 
+					type="ckradio" 
+					default="0" 
+					label="MEDIABOXCK_LOOP" 
+					description="MEDIABOXCK_LOOP_DESC" 
+					class="btn-group" 
+					icon="control_repeat.png"
+					>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field 
+					name="showtoolbar" 
+					type="ckradio" 
+					default="0" 
+					label="MEDIABOXCK_TOOLBAR" 
+					description="MEDIABOXCK_TOOLBAR_DESC" 
+					class="btn-group" 
+					icon="projection-screen.png"
+					>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field 
+					name="diapotime" 
+					type="cktext" 
+					default="3000" 
+					label="MEDIABOXCK_DIAPOTIME" 
+					description="MEDIABOXCK_DIAPOTIME_DESC"
+					icon="hourglass.png"
+					suffix="ms"
+					showon="showtoolbar:1"
+				/>
+			</fieldset>
+			<fieldset name="styles" label="MEDIABOXCK_STYLES_LABEL">
+				<field 
+					name="cornerradius" 
+					type="cktext" 
+					default="10" 
+					label="MEDIABOXCK_CORNERRADIUS" 
+					description="MEDIABOXCK_CORNERRADIUS_DESC"
+					icon="border_radius_bl.png"
+					suffix="px"
+				/>
+				<field 
+					name="shadowoffset" 
+					type="cktext" 
+					default="5" 
+					label="MEDIABOXCK_SHADOWOFFSET" 
+					description="MEDIABOXCK_SHADOWOFFSET_DESC"
+					icon="shadow_blur.png"
+					suffix="px"
+				/>
+				<field 
+					name="overlayopacity" 
+					type="cktext" 
+					default="0.7" 
+					label="MEDIABOXCK_OVERLAYOPACITY" 
+					description="MEDIABOXCK_OVERLAYOPACITY_DESC" 
+					icon="layers.png"
+				/>
+				<field 
+					name="bgcolor" 
+					type="ckcolor" 
+					default="#1a1a1a" 
+					label="MEDIABOXCK_BGCOLOR" 
+					description="MEDIABOXCK_BGCOLOR_DESC" 
+				/>
+				<field 
+					name="overlaycolor" 
+					type="ckcolor" 
+					default="#000" 
+					label="MEDIABOXCK_OVERLAYCOLOR" 
+					description="MEDIABOXCK_OVERLAYCOLOR_DESC" 
+				/>
+				<field 
+					name="text1color" 
+					type="ckcolor" 
+					default="#999" 
+					label="MEDIABOXCK_TEXT1COLOR" 
+					description="MEDIABOXCK_TEXT1COLOR_DESC" 
+				/>
+				<field 
+					name="text2color" 
+					type="ckcolor" 
+					default="#fff" 
+					label="MEDIABOXCK_TEXT2COLOR" 
+					description="MEDIABOXCK_TEXT2COLOR_DESC" 
+				/>
+			</fieldset>
+			<fieldset name="effect" label="MEDIABOXCK_EFFECT_LABEL">
+				<field 
+					name="resizeopening" 
+					type="ckradio" 
+					default="1" 
+					label="MEDIABOXCK_RESIZEOPENING" 
+					description="MEDIABOXCK_RESIZEOPENING_DESC" 
+					class="btn-group" 
+					icon="shape_handles.png"
+					>
+					<option value="1">Yes</option>
+					<option value="0">No</option>
+				</field>
+				<field 
+					name="resizeduration" 
+					type="cktext" 
+					default="240" 
+					label="MEDIABOXCK_RESIZEDURATION" 
+					description="MEDIABOXCK_RESIZEDURATION_DESC" 
+					suffix="ms"
+					icon="hourglass.png"
+				/>
+				<field 
+					name="initialwidth" 
+					type="cktext" 
+					default="320" 
+					label="MEDIABOXCK_INITIALWIDTH" 
+					description="MEDIABOXCK_INITIALWIDTH_DESC"
+					suffix="px"
+					icon="width.png"
+				/>
+				<field 
+					name="initialheight" 
+					type="cktext" 
+					default="180" 
+					label="MEDIABOXCK_INITIALHEIGHT" 
+					description="MEDIABOXCK_INITIALHEIGHT_DESC" 
+					suffix="px"
+					icon="height.png"
+				/>
+			</fieldset>
+			<fieldset name="mobile" label="MEDIABOXCK_MOBILE_LABEL">
+				<field
+					name="mobile_enable"
+					type="ckradio"
+					default="1"
+					label="MEDIABOXCK_MOBILE_ENABLE_LABEL"
+					description="MEDIABOXCK_MOBILE_ENABLE_DESC"
+					class="btn-group"
+				>
+					<option value="1">JYES</option>
+					<option value="0">JNO</option>
+				</field>
+				<field
+					name="mobile_detectiontype"
+					type="cklist"
+					default="resolution"
+					label="MEDIABOXCK_MOBILE_DETECTIONTYPE_LABEL"
+					description="MEDIABOXCK_MOBILE_DETECTIONTYPE_DESC"
+					icon="ipod.png"
+				>
+					<option value="resolution">MEDIABOXCK_RESOLUTION</option>
+					<option value="tablet">MEDIABOXCK_TABLET</option>
+					<option value="phone">MEDIABOXCK_PHONE</option>
+				</field>
+				<field
+					name="mobile_resolution"
+					type="cktext"
+					label="MEDIABOXCK_MOBILE_RESOLUTION_LABEL"
+					description="MEDIABOXCK_MOBILE_RESOLUTION_DESC"
+					default="640"
+					showon="mobile_detectiontype:resolution"
+					icon="width.png"
+					suffix="px"
+				/>
+			</fieldset>
+			<fieldset name="gallery" label="MEDIABOXCK_GALLERY_LABEL">
+				<field
+					name="gallery_checkpro"
+					type="ckcheckproversion"
+					label="MEDIABOXCK_MOBILE_RESOLUTION_LABEL"
+					description="MEDIABOXCK_MOBILE_RESOLUTION_DESC"
+				/>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

@@ -95,7 +95,43 @@
 
 #front1b #mod-container {
 	background-color: #ffcc00;
-	color: #000; 
+	color: #; 
+}
+
+#front2a .sketch2, #front2a ul {
+	color: #1f4368;
+}
+
+#front2b .sketch2, #front2b ul {
+	color: #ff6600;
+}
+
+#front2c .sketch2, #front2c ul {
+	color: #1f4368;
+}
+
+#front2a ul, #front2b ul, #front2c ul {
+	margin: 15px 0px 10px 30px; 
+	font-size: 16px;
+	font-weight: bold;
+	text-shadow:
+	   -1px -1px 0 #fff,  
+	   1px -1px 0 #fff,
+	   -1px 1px 0 #fff,
+	   1px 1px 0 #fff;
+}
+
+#front2a ul li, #front2b ul li, #front2c ul li {
+	padding: 0px 0px 5px 0px; 
+}
+
+#front2a .sketch2, #front2b .sketch2, #front2c .sketch2 {
+	font-weight: bold;
+	text-shadow:
+	   -1px -1px 0 #fff,  
+	   1px -1px 0 #fff,
+	   -1px 1px 0 #fff,
+	   1px 1px 0 #fff;
 }
 
 /* Main content background color */
@@ -178,7 +214,7 @@ input[type="search"] {
 	background-color: #fff;
 	border: 1px solid #000;
 	height: 150px;
-	overflow: auto;
+	overflow: hidden;
 }
 
 #display #mod-container {
@@ -445,7 +481,7 @@ body.site {
 
 .navigation {
 	background-color: #1f4368;
-	height: 30px;
+	height: 0px;
 	overflow: auto;
     padding: 0px;
     border-top: 8px solid #fff;

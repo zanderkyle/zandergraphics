@@ -3,7 +3,7 @@
  * NoNumber Framework Helper File: Functions
  *
  * @package         NoNumber Framework
- * @version         15.11.2151
+ * @version         15.11.8233
  *
  * @author          Peter van Westen <peter@nonumber.nl>
  * @link            http://www.nonumber.nl
@@ -159,8 +159,8 @@ class NNFrameworkFunctions
 
 	public static function getNameByAlias($alias)
 	{
-		// Alias has an underscore, so is a language string
-		if (strpos($alias, '_') !== false)
+		// Alias is a language string
+		if (strpos($alias, ' ') === false && strtoupper($alias) == $alias)
 		{
 			return JText::_($alias);
 		}

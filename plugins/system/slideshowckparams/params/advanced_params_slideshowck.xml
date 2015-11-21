@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fields name="params">
+		<fieldset name="slidessource" label="MOD_SLIDESHOWCK_OPTIONS_SLIDESSOURCE">
+				<field
+					name="slidesssource"
+					type="cklist"
+					default="slidesmanager"
+					label="MOD_SLIDESHOWCK_SLIDESSOURCE_LABEL"
+					description="MOD_SLIDESHOWCK_SLIDESSOURCE_DESC"
+					icon="image_link.png"
+				>
+					<option value="slidesmanager">MOD_SLIDESHOWCK_SLIDEMANAGER</option>
+					<option value="autoloadfolder">PLG_SLIDESHOWCK_AUTOLOADFOLDER</option>
+					<option value="autoloadarticlecategory">PLG_SLIDESHOWCK_AUTOLOADARTICLECATEGORY</option>
+					<option value="flickr">PLG_SLIDESHOWCK_FLICKR</option>
+				</field>
+			</fieldset>
+		<fieldset name="slides" label="MOD_SLIDESHOWCK_OPTIONS_SLIDES">
+			<field
+				name="fromfoldername"
+				type="ckslidesfromfolderimport"
+				label="PLG_SLIDESHOWCK_FROMFOLDERNAME_LABEL"
+				description="PLG_SLIDESHOWCK_FROMFOLDERNAME_DESC"
+				default="modules/mod_slideshowck/images/slides2"
+				icon="folder_explore.png"
+			/>
+			<field
+				name="slidesfromfolder"
+				type="ckslidesfromfoldermanager"
+				label="PLG_SLIDESHOWCK_SLIDES_LABEL"
+				description="PLG_SLIDESHOWCK_SLIDES_DESC"
+				default="[]"
+			/>
+		</fieldset>
+		<fieldset name="slidesfromfolder" label="MOD_SLIDESHOWCK_OPTIONS_FROMFOLDER">
+			<field
+				name="spacerfolderautoload"
+				type="ckspacer"
+				style="title"
+				label="PLG_SLIDESHOWCK_SPACERFOLDERAUTOLOAD_LABEL"
+			/>
+			<field
+				name="autoloadfoldername"
+				type="cktext"
+				label="PLG_SLIDESHOWCK_AUTOLOADFOLDERNAME_LABEL"
+				description="PLG_SLIDESHOWCK_AUTOLOADFOLDERNAME_DESC"
+				default="modules/mod_slideshowck/images/slides2"
+				icon="folder_explore.png"
+			/>
+		</fieldset>
+		<fieldset name="slidesfromarticlecategory" label="MOD_SLIDESHOWCK_OPTIONS_FROMARTICLECATEGORY">
+				<field
+					name="articleimgsource"
+					type="cklist"
+					label="MOD_SLIDESHOWCK_ARTICLEIMAGESOURCE_LABEL"
+					description="MOD_SLIDESHOWCK_ARTICLEIMAGESOURCE_DESC"
+					icon="image_add.png"
+					default="readmore"
+				>
+					<option value="introimage">MOD_SLIDESHOWCK_ARTICLEFROMINTROIMAGE_OPTION</option>
+					<option value="firstimage">MOD_SLIDESHOWCK_ARTICLEFROMFIRSTIMAGE_OPTION</option>
+				</field>
+				<field 
+					name="mode" 
+					type="ckradio" 
+					default="normal"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_MODE_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_MODE_DESC"
+					class="btn-group"
+					icon="application_lightning.png"
+				>
+					<option value="normal">PLG_SLIDESHOWCK_CATEGORY_OPTION_NORMAL_VALUE
+					</option>
+					<option value="dynamic">PLG_SLIDESHOWCK_CATEGORY_OPTION_DYNAMIC_VALUE
+					</option>
+				</field>
+				<field 
+					name="show_front" 
+					type="ckradio" 
+					default="show"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_SHOWFEATURED_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_SHOWFEATURED_DESC"
+					class="btn-group"
+					icon="star.png"
+				>
+					<option value="show">JSHOW
+					</option>
+					<option value="hide">JHIDE
+					</option>
+					<option value="only">PLG_SLIDESHOWCK_CATEGORY_OPTION_ONLYFEATURED_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="count" 
+					type="cktext" 
+					default="5"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_COUNT_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_COUNT_DESC"
+					icon="application_view_tile.png" />
+					
+				<field 
+					name="filteringspacer1" 
+					type="ckspacer" 
+					hr="true" />
+
+				<field 
+					name="category_filtering_type" 
+					type="ckradio"
+					default="1"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_CATFILTERINGTYPE_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_CATFILTERINGTYPE_DESC"
+					class="btn-group"
+					icon="folder_wrench.png"
+				>
+					<option value="1">PLG_SLIDESHOWCK_CATEGORY_OPTION_INCLUSIVE_VALUE
+					</option>
+					<option value="0">PLG_SLIDESHOWCK_CATEGORY_OPTION_EXCLUSIVE_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="catid" 
+					type="category" 
+					extension="com_content"
+					multiple="true" 
+					size="5"
+					label="JCATEGORY"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_CATEGORY_DESC"
+					icon="folder_explore.png"
+				>
+					<option value="">JOPTION_ALL_CATEGORIES</option>
+				</field>
+
+				<field 
+					name="show_child_category_articles" 
+					type="ckradio"
+					default="0"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_SHOWCHILDCATEGORYARTICLES_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_SHOWCHILDCATEGORYARTICLES_DESC"
+					class="btn-group"
+					icon="folder_table.png"
+				>
+					<option value="1">PLG_SLIDESHOWCK_CATEGORY_OPTION_INCLUDE_VALUE
+					</option>
+					<option value="0">PLG_SLIDESHOWCK_CATEGORY_OPTION_EXCLUDE_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="levels" 
+					type="cktext" 
+					default="1"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_CATDEPTH_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_CATDEPTH_DESC" 
+					icon="application_side_tree.png" />
+				<field 
+					name="excluded_articles" 
+					type="textarea"
+					cols="10" 
+					rows="3"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_EXCLUDEDARTICLES_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_EXCLUDEDARTICLES_DESC" 
+					icon="key_delete.png" />
+				<field 
+					name="filteringspacer6" 
+					type="spacer" 
+					hr="true" />
+
+				<field 
+					name="date_filtering" 
+					type="ckradio" 
+					default="off"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_DATEFILTERING_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_DATEFILTERING_DESC"
+					class="btn-group"
+					icon="date.png"
+				>
+					<option value="off">PLG_SLIDESHOWCK_CATEGORY_OPTION_OFF_VALUE
+					</option>
+					<option value="range">PLG_SLIDESHOWCK_CATEGORY_OPTION_DATERANGE_VALUE
+					</option>
+					<option value="relative">PLG_SLIDESHOWCK_CATEGORY_OPTION_RELATIVEDAY_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="date_field" 
+					type="cklist" 
+					default="a.created"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_DATERANGEFIELD_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_DATERANGEFIELD_DESC"
+					icon="date_next.png"
+				>
+					<option value="a.created">PLG_SLIDESHOWCK_CATEGORY_OPTION_CREATED_VALUE
+					</option>
+					<option value="a.modified">PLG_SLIDESHOWCK_CATEGORY_OPTION_MODIFIED_VALUE
+					</option>
+					<option value="a.publish_up">PLG_SLIDESHOWCK_CATEGORY_OPTION_STARTPUBLISHING_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="start_date_range" 
+					type="calendar"
+					format="%Y-%m-%d %H:%M:%S"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_STARTDATE_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_STARTDATE_DESC"
+					size="22"
+					filter="user_utc" />
+
+				<field 
+					name="end_date_range" 
+					type="calendar"
+					format="%Y-%m-%d %H:%M:%S"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_ENDDATE_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_ENDDATE_DESC"
+					size="22"
+					filter="user_utc" />
+
+				<field 
+					name="relative_date" 
+					type="cktext" 
+					default="30"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_RELATIVEDATE_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_RELATIVEDATE_DESC"
+					icon="date_go.png" />
+				<field 
+					name="article_ordering" 
+					type="cklist"
+					default="a.title"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_ARTICLEORDERING_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_ARTICLEORDERING_DESC"
+					icon="arrow_switch.png"
+				>
+					<option value="a.ordering">PLG_SLIDESHOWCK_CATEGORY_OPTION_ORDERING_VALUE
+					</option>
+					<option value="fp.ordering">PLG_SLIDESHOWCK_CATEGORY_OPTION_ORDERINGFEATURED_VALUE
+					</option>
+					<option value="a.hits">PLG_SLIDESHOWCK_CATEGORY_OPTION_HITS_VALUE
+					</option>
+					<option value="a.title">JGLOBAL_TITLE
+					</option>
+					<option value="a.id">PLG_SLIDESHOWCK_CATEGORY_OPTION_ID_VALUE
+					</option>
+					<option value="a.alias">JFIELD_ALIAS_LABEL
+					</option>
+					<option value="a.created">PLG_SLIDESHOWCK_CATEGORY_OPTION_CREATED_VALUE
+					</option>
+					<option value="modified">PLG_SLIDESHOWCK_CATEGORY_OPTION_MODIFIED_VALUE
+					</option>
+					<option value="publish_up">PLG_SLIDESHOWCK_CATEGORY_OPTION_STARTPUBLISHING_VALUE
+					</option>
+					<option value="a.publish_down">PLG_SLIDESHOWCK_CATEGORY_OPTION_FINISHPUBLISHING_VALUE
+					</option>
+				</field>
+
+				<field 
+					name="article_ordering_direction" 
+					type="cklist"
+					default="ASC"
+					label="PLG_SLIDESHOWCK_CATEGORY_FIELD_ARTICLEORDERINGDIR_LABEL"
+					description="PLG_SLIDESHOWCK_CATEGORY_FIELD_ARTICLEORDERINGDIR_DESC"
+					icon="arrow_direction.png"
+				>
+					<option value="DESC">PLG_SLIDESHOWCK_CATEGORY_OPTION_DESCENDING_VALUE
+					</option>
+					<option value="ASC">PLG_SLIDESHOWCK_CATEGORY_OPTION_ASCENDING_VALUE
+					</option>
+				</field>
+			</fieldset>
+		<fieldset name="slidesfromflickr" label="MOD_SLIDESHOWCK_OPTIONS_FROM_FLICKR">
+			<field
+				name="flickr_apikey"
+				type="cktext"
+				label="PLG_SLIDESHOWCK_FLICKR_APIKEY_LABEL"
+				description="PLG_SLIDESHOWCK_FLICKR_APIKEY_DESC"
+				default=""
+				icon="key.png"
+			/>
+			<field
+				name="flickr_keyinfo"
+				type="ckspacer"
+				label="PLG_SLIDESHOWCK_FLICKR_KEYINFO"
+				icon="information.png"
+			/>
+			<field
+				name="flickr_photoset"
+				type="cktext"
+				label="PLG_SLIDESHOWCK_FLICKR_PHOTOSET_LABEL"
+				description="PLG_SLIDESHOWCK_FLICKR_PHOTOSET_DESC"
+				default=""
+				icon="textfield_key.png"
+			/>
+			<field
+				name="flickr_autolink"
+				label="PLG_SLIDESHOWCK_FLICKR_AUTOLINK_LABEL"
+				description="PLG_SLIDESHOWCK_FLICKR_AUTOLINK_DESC"
+				type="ckradio"
+				icon="link.png"
+				default="0"
+				class="btn-group"
+			>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+			<field
+				name="flickr_showcaption"
+				label="PLG_SLIDESHOWCK_FLICKR_SHOWCAPTION_LABEL"
+				description="PLG_SLIDESHOWCK_FLICKR_SHOWCAPTION_DESC"
+				type="ckradio"
+				icon="text_signature.png"
+				default="1"
+				class="btn-group"
+			>
+				<option value="1">JYES</option>
+				<option value="0">JNO</option>
+			</field>
+		</fieldset>
+		<fieldset name="lightboxoptions" label="PLG_SLIDESHOWCK_OPTIONS_LIGHTBOX">
+			<field
+				name="lightboxtype"
+				label="PLG_SLIDESHOWCK_LIGHTBOXTYPE_LABEL"
+				description="PLG_SLIDESHOWCK_LIGHTBOXTYPE_DESC"
+				type="cklist"
+				icon="magnifier_zoom_in.png"
+				default="squeezebox"
+			>
+				<option value="squeezebox">PLG_SLIDESHOWCK_SQUEEZEBOX</option>
+				<option value="mediaboxck">PLG_SLIDESHOWCK_MEDIABOXCK</option>
+			</field>
+			<field
+				name="lightboxcaption"
+				label="PLG_SLIDESHOWCK_LIGHTBOXCAPTION_LABEL"
+				description="PLG_SLIDESHOWCK_LIGHTBOXCAPTION_DESC"
+				type="cklist"
+				icon="text_signature.png"
+				default="caption"
+			>
+				<option value="caption">PLG_SLIDESHOWCK_LIGHTBOXCAPTION</option>
+				<option value="title">PLG_SLIDESHOWCK_LIGHTBOXTITLE</option>
+				<option value="captionandtitle">PLG_SLIDESHOWCK_LIGHTBOXCAPTIONANDTITLE</option>
+			</field>
+			<field
+				name="lightboxgroupalbum"
+				label="PLG_SLIDESHOWCK_LIGHTBOXGROUPALBUM_LABEL"
+				description="PLG_SLIDESHOWCK_LIGHTBOXGROUPALBUM_DESC"
+				type="cklist"
+				icon="images.png"
+				default="0"
+			>
+				<option value="0">JNO</option>
+				<option value="1">JYES</option>
+			</field>
+		</fieldset>
+	</fields>
+</form>

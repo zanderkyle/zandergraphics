@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.0" type="plugin" group="system" method="upgrade">
+	<name>System - Slideshow CK params</name>
+	<author>Cédric KEIFLIN</author>
+	<creationDate>Janvier 2013</creationDate>
+	<copyright>Cédric KEIFLIN</copyright>
+	<license>http://www.gnu.org/licenses/gpl.html</license>
+	<authorEmail>ced1870@gmail.com</authorEmail>
+	<authorUrl>http://www.joomlack.fr</authorUrl>
+	<version>1.2.4</version>
+	<description>PLG_SLIDESHOWCK_PARAMS_DESC</description>
+
+	<files>
+		<filename plugin="slideshowckparams">slideshowckparams.php</filename>
+		<filename>index.html</filename>
+		<folder>language</folder>
+		<folder>params</folder>
+		<folder>elements</folder>
+	</files>
+	<languages folder="language">
+		<language tag="en-GB">en-GB/en-GB.plg_system_slideshowckparams.sys.ini</language>
+		<language tag="en-GB">en-GB/en-GB.plg_system_slideshowckparams.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_slideshowckparams.sys.ini</language>
+		<language tag="fr-FR">fr-FR/fr-FR.plg_system_slideshowckparams.ini</language>
+	</languages>
+	<updateservers>
+		<server type="extension" priority="1" name="Slideshow CK params Update">http://update.joomlack.fr/plg_slideshowckparams_update.xml</server>
+	</updateservers>
+</extension>
