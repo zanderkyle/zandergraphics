@@ -182,6 +182,17 @@ p {
 	font-size: 18px;
 }
 
+
+/* Article heading styles */
+
+.page-header {
+    margin: 2px 0px 0px 0px;
+}
+.page-header {
+    padding-bottom: 0px;
+    border-bottom: none;
+}
+
 .heading {
 	margin-bottom: 10px;
 }
